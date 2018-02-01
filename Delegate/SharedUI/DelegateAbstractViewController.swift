@@ -11,9 +11,16 @@ class DelegateAbstractViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView?
     
+    fileprivate var currentScreenWidth: CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardObserver()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        currentScreenWidth = UIScreen.main.bounds.size.width
     }
     
     fileprivate func addKeyboardObserver()
@@ -26,6 +33,29 @@ class DelegateAbstractViewController: UIViewController {
     {
         responder.resignFirstResponder()
         anotherResponder.becomeFirstResponder()
+    }
+    
+    func animate(views: [UIView], ofTheScreen: Bool)
+    {
+        ofTheScreen ? animateOfTheScreen(views: views) : animateOnTheScreen(views: views)
+    }
+    
+    fileprivate func animateOfTheScreen(views: [UIView])
+    {
+        for (index, element) in views.enumerated() {
+            UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseInOut, animations: {
+                index % 2 == 0 ? (element.frame.origin.x -= self.currentScreenWidth) : (element.frame.origin.x += self.currentScreenWidth)
+            })
+        }
+    }
+    
+    fileprivate func animateOnTheScreen(views: [UIView])
+    {
+        for (index, element) in views.enumerated() {
+            UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseInOut, animations: {
+                index % 2 == 0 ? (element.frame.origin.x += self.currentScreenWidth) : (element.frame.origin.x -= self.currentScreenWidth)
+            })
+        }
     }
     
     deinit {

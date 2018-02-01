@@ -235,6 +235,9 @@
                                                                 <state key="normal" title="Sign up">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onPressedSignupButton:" destination="bCc-dm-GIi" eventType="touchUpInside" id="dIu-MY-Ebq"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -386,9 +389,17 @@
                         <viewLayoutGuide key="safeArea" id="nWQ-Rx-T5L"/>
                     </view>
                     <connections>
+                        <outlet property="emailInputContainer" destination="6YY-3g-6ON" id="aeF-Rq-h6U"/>
                         <outlet property="emailTextField" destination="PnD-Zp-Dy7" id="g1X-VV-kJe"/>
+                        <outlet property="forgotPasswordContainer" destination="s4i-gU-tD8" id="dAD-ZB-t1t"/>
+                        <outlet property="loginButtonContainer" destination="sEd-bJ-5YI" id="zKO-Ia-Nsd"/>
+                        <outlet property="passwordInputContainer" destination="JAf-lc-eOq" id="RQR-bx-AzC"/>
                         <outlet property="passwordTextField" destination="QkT-kM-NL7" id="jDP-KI-tgJ"/>
                         <outlet property="scrollView" destination="baC-dK-esQ" id="jOa-yg-zGM"/>
+                        <outlet property="signupButton" destination="EJx-V1-Unv" id="ePy-Fn-o5U"/>
+                        <outlet property="signupContainer" destination="VAU-35-WS1" id="bIA-n5-NWV"/>
+                        <outlet property="socialButtonsContainer" destination="Xw4-gk-6ke" id="1CL-UT-8Rp"/>
+                        <outlet property="socialPlaceholderContainer" destination="FZ8-zI-Fbo" id="SBZ-WS-t2T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzY-Zo-ShP" userLabel="First Responder" sceneMemberID="firstResponder"/>
