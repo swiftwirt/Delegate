@@ -27,9 +27,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ehV-LV-7IH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="813"/>
                             </imageView>
-                            <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-OZ-Fsg" userLabel="Fade View">
+                            <view hidden="YES" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-OZ-Fsg" userLabel="Fade View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.1764705882" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.056644856930000001" green="0.94229227299999996" blue="0.10198626669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="baC-dK-esQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -52,7 +52,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="Delegat">
                                                                 <attributes>
-                                                                    <color key="NSColor" red="0.58915430307388306" green="0.35447666049003601" blue="0.052944831550121307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="NSColor" red="1" green="0.60648602247238159" blue="0.00060962408315390348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" size="32" name="Futura-Bold"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     <integer key="NSUnderline" value="1"/>
@@ -368,7 +368,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.4113381505" green="0.52665245530000004" blue="0.68041110039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ehV-LV-7IH" firstAttribute="leading" secondItem="CgH-5m-DlP" secondAttribute="leading" id="CdE-YO-pLd"/>
                             <constraint firstAttribute="bottom" secondItem="baC-dK-esQ" secondAttribute="bottom" id="Jbn-TM-gDU"/>
