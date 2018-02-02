@@ -22,6 +22,10 @@ class DelegateAbstractViewController: UIViewController {
         return .lightContent
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
     fileprivate func addKeyboardObserver()
     {
         NotificationCenter.default.addObserver(self, selector: #selector(scrollContentUp(_:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
