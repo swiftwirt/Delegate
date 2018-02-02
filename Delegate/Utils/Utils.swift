@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum JSONKey {
+    
+    static let email = "email"
+}
+
 enum Color {
     
     static let textFieldPlaceholder: UIColor = .white
@@ -22,7 +27,10 @@ enum Strings {
     // Placeholders
     static let email = "Email"
     static let password = "Password"
+    static let repeatPassword = "Repeat password"
     
     // Titles
     static let next = "Next"
 }
+
+

@@ -16,6 +16,11 @@ class ApplicationManager {
         return appDelegate.applicationManager
     }
     
+    lazy var thirdPartiesConfigurator: ThirdPartiesConfigurator = {
+        let thirdPartiesConfigurator = ThirdPartiesConfigurator()
+        return thirdPartiesConfigurator
+    }()
+    
     lazy var apiService: ApiService = {
         let apiService = ApiService()
         return apiService

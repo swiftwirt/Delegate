@@ -35,6 +35,7 @@ class FacebookService {
             
             self.fbLoginManager.logIn(withReadPermissions: [FacebookPermission.email, FacebookPermission.publicProfile, FacebookPermission.userFriends], from: viewController) { (result, error) in
                 if let error = error {
+                    observer.onCompleted()
                     observer.on(.error(error))
                 } else {
                     let fbLoginResult : FBSDKLoginManagerLoginResult = result!

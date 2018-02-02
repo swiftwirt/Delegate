@@ -11,10 +11,6 @@ import RxCocoa
 import RxSwift
 
 class LoginViewController: DelegateAbstractViewController {
-    
-    enum SegueIdentifier {
-        static let toSignUp = "SegueToSignUpScreen"
-    }
 
     @IBOutlet weak var emailTextField: RightToLeftSensitiveTextField!
     @IBOutlet weak var passwordTextField: RightToLeftSensitiveTextField!
@@ -29,6 +25,7 @@ class LoginViewController: DelegateAbstractViewController {
     @IBOutlet weak var signupContainer: UIView!
     
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     // Social buttons
     
@@ -37,12 +34,14 @@ class LoginViewController: DelegateAbstractViewController {
     @IBOutlet weak var googlePlusButton: UIButton!
     @IBOutlet weak var linkedInButton: UIButton!
     
-    fileprivate let disposeBag = DisposeBag()
+    var output: LoginScreenInteractor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextFields()
-        observeSocialButtonsTaps()
+        LoginScreenConfigurator.configure(viewController: self)
+        output.configureTextFields()
+        output.handleSignupTaps()
+        output.handleLoginTaps(with: emailTextField.text!, password: passwordTextField.text!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,32 +49,9 @@ class LoginViewController: DelegateAbstractViewController {
         animate(views: [emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer], ofTheScreen: true)
     }
     
-    fileprivate func configureTextFields()
-    {
-        emailTextField.setAttributed(placeholder: Strings.email, with: Color.textFieldPlaceholder)
-        emailTextField.tintColor = Color.textFieldPlaceholder
-        emailTextField.resignFirstResponder()
-        
-        passwordTextField.setAttributed(placeholder: Strings.password, with: Color.textFieldPlaceholder)
-        passwordTextField.tintColor = Color.textFieldPlaceholder
-        passwordTextField.resignFirstResponder()
-    }
-    
-    fileprivate func observeSocialButtonsTaps()
-    {
-        facebookButton.rx.tap.asObservable().takeUntil(self.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<FacebookCredentials> in
-            
-        }
-    }
-    
-    @IBAction func onPressedSignupButton(_ sender: Any)
-    {
-       performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
-    }
-    
-    @IBAction func onPressedLoginButton(_ sender: Any)
-    {
-        return
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animate(views: [emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer], ofTheScreen: false)
     }
     
 }

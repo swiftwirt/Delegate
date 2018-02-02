@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import Firebase
+import RxSwift
 
 class ApiService {
     
     fileprivate let firebaseService = FirebaseService()
-    fileprivate let socialApiService = SocialApiService()
+
+    lazy var socialApiService: SocialApiService = {
+        let socialApiService = SocialApiService()
+        return socialApiService
+    }()
+    
+    func login(email: String, password: String) -> Observable<User>
+    {
+        return firebaseService.login(email: email, password: password)
+    }
+    
+    func signup(email: String, password: String) -> Observable<User>
+    {
+        return firebaseService.signup(email: email, password: password)
+    }
     
 }

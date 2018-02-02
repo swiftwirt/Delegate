@@ -24,9 +24,12 @@ class FirebaseService {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 
                 guard let firebaseUser = user, error == nil else {
-                    observer.on(.error(error))
+                    // TODO: handle expected errors
+                    observer.onCompleted()
+                    observer.on(.error(error!))
+                    return
                 }
-                observer.onNext(user)
+                observer.onNext(firebaseUser)
             }
             return Disposables.create()
         })
@@ -39,9 +42,12 @@ class FirebaseService {
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 
                 guard let firebaseUser = user, error == nil else {
-                    observer.on(.error(error))
+                    // TODO: handle expected errors
+                    observer.onCompleted()
+                    observer.on(.error(error!))
+                    return
                 }
-                observer.onNext(user)
+                observer.onNext(firebaseUser)
             }
             return Disposables.create()
         })
