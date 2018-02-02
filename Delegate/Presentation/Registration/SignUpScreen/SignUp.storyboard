@@ -29,7 +29,7 @@
                             </imageView>
                             <view hidden="YES" clipsSubviews="YES" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBP-Ef-7lq" userLabel="Fade View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.022600779309999999" green="0.97790485620000001" blue="0.1130041853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.4113381505" green="0.52665245530000004" blue="0.68041110039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="cAl-vQ-eAn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -454,16 +454,26 @@
                         <viewLayoutGuide key="safeArea" id="l05-95-I69"/>
                     </view>
                     <connections>
+                        <outlet property="emailInputContainer" destination="2n5-AY-pAb" id="15u-og-fkg"/>
                         <outlet property="emailTextField" destination="IGW-bI-Lob" id="2qd-wl-r16"/>
                         <outlet property="facebookButton" destination="RFa-ZS-SZt" id="hgP-cT-KXb"/>
                         <outlet property="googlePlusButton" destination="Gd8-Mb-MY2" id="Zrl-Au-DNj"/>
                         <outlet property="linkedInButton" destination="n0w-QU-UqY" id="hWH-0q-MFm"/>
                         <outlet property="loginButton" destination="2Pp-vb-b4K" id="4sb-Xr-fMz"/>
+                        <outlet property="loginButtonContainer" destination="Iij-nI-cZU" id="Mcl-n7-gRX"/>
+                        <outlet property="logoContainer" destination="8mF-sl-FUV" id="8ch-cT-nc7"/>
+                        <outlet property="passwordInputContainer" destination="FLd-53-0Aa" id="gfY-5e-2c6"/>
                         <outlet property="passwordTextField" destination="mhe-bY-Bh5" id="qJc-kl-4cK"/>
                         <outlet property="privacyPolicyButton" destination="QMy-zu-6mD" id="bPk-As-N3s"/>
+                        <outlet property="repeatPasswordContainer" destination="Pbf-EU-fIy" id="XYL-3L-OYr"/>
                         <outlet property="repeatPasswordTextField" destination="owu-fq-qFb" id="yqM-qg-su9"/>
+                        <outlet property="scrollView" destination="cAl-vQ-eAn" id="3as-YK-nCl"/>
                         <outlet property="signupButton" destination="SV2-PJ-Zew" id="mAy-SR-Xuc"/>
+                        <outlet property="signupContainer" destination="3Rr-W1-DWv" id="EZp-u0-bu2"/>
+                        <outlet property="socialButtonsContainer" destination="wbg-Qg-Erq" id="8zZ-Gh-t1N"/>
+                        <outlet property="socislPlaceholderContainer" destination="uVp-rf-ld3" id="THN-8M-xNb"/>
                         <outlet property="termsOfUseButton" destination="eYe-kx-cVl" id="GJA-7t-l1l"/>
+                        <outlet property="termsOfUseContainer" destination="k9Y-oR-jBS" id="wFX-mO-JfG"/>
                         <outlet property="twitterButton" destination="T0F-lh-skb" id="tdp-fV-Hq9"/>
                     </connections>
                 </viewController>

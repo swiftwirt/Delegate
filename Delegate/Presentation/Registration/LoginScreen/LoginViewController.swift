@@ -17,12 +17,16 @@ class LoginViewController: DelegateAbstractViewController {
     
     // Login containers for animation
     
+    @IBOutlet weak var logoContainer: UIStackView!
     @IBOutlet weak var emailInputContainer: UIView!
     @IBOutlet weak var passwordInputContainer: UIView!
     @IBOutlet weak var forgotPasswordContainer: UIStackView!
     
     @IBOutlet weak var loginButtonContainer: UIView!
     @IBOutlet weak var signupContainer: UIView!
+    
+    @IBOutlet weak var socislPlaceholderContainer: UIView!
+    @IBOutlet weak var socialButtonsContainer: UIStackView!
     
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
@@ -46,12 +50,12 @@ class LoginViewController: DelegateAbstractViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        animate(views: [emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer], ofTheScreen: true)
+        animate(views: [logoContainer, emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer], ofTheScreen: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animate(views: [emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer], ofTheScreen: false)
+        animate(views: [logoContainer, emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer], ofTheScreen: false)
     }
     
 }

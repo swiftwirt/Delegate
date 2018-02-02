@@ -29,7 +29,7 @@
                             </imageView>
                             <view hidden="YES" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-OZ-Fsg" userLabel="Fade View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" red="0.056644856930000001" green="0.94229227299999996" blue="0.10198626669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.4113381505" green="0.52665245530000004" blue="0.68041110039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="baC-dK-esQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -366,7 +366,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.4113381505" green="0.52665245530000004" blue="0.68041110039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ehV-LV-7IH" firstAttribute="leading" secondItem="CgH-5m-DlP" secondAttribute="leading" id="CdE-YO-pLd"/>
                             <constraint firstAttribute="bottom" secondItem="baC-dK-esQ" secondAttribute="bottom" id="Jbn-TM-gDU"/>
@@ -392,11 +392,14 @@
                         <outlet property="linkedInButton" destination="RLQ-zK-8jS" id="uKY-ET-RvD"/>
                         <outlet property="loginButton" destination="dTk-UZ-eGY" id="mXG-2B-fQZ"/>
                         <outlet property="loginButtonContainer" destination="sEd-bJ-5YI" id="zKO-Ia-Nsd"/>
+                        <outlet property="logoContainer" destination="76c-0u-dGX" id="1CU-Ih-D4G"/>
                         <outlet property="passwordInputContainer" destination="JAf-lc-eOq" id="RQR-bx-AzC"/>
                         <outlet property="passwordTextField" destination="QkT-kM-NL7" id="jDP-KI-tgJ"/>
                         <outlet property="scrollView" destination="baC-dK-esQ" id="jOa-yg-zGM"/>
                         <outlet property="signupButton" destination="EJx-V1-Unv" id="ePy-Fn-o5U"/>
                         <outlet property="signupContainer" destination="VAU-35-WS1" id="bIA-n5-NWV"/>
+                        <outlet property="socialButtonsContainer" destination="Xw4-gk-6ke" id="eV7-iT-gv0"/>
+                        <outlet property="socislPlaceholderContainer" destination="FZ8-zI-Fbo" id="Nny-QJ-vLl"/>
                         <outlet property="twitterButton" destination="SX5-Li-0Zl" id="flO-sw-gUt"/>
                         <segue destination="aNm-pI-ktb" kind="show" identifier="SegueToSignUpScreen" id="43b-48-feF"/>
                     </connections>

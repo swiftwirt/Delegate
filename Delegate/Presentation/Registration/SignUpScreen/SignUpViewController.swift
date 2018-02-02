@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: DelegateAbstractViewController {
     
     @IBOutlet weak var emailTextField: RightToLeftSensitiveTextField!
     @IBOutlet weak var passwordTextField: RightToLeftSensitiveTextField!
@@ -17,6 +17,19 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
+    // Signup containers for animation
+    
+    @IBOutlet weak var logoContainer: UIStackView!
+    @IBOutlet weak var emailInputContainer: UIView!
+    @IBOutlet weak var passwordInputContainer: UIView!
+    @IBOutlet weak var repeatPasswordContainer: UIView!
+    
+    @IBOutlet weak var loginButtonContainer: UIView!
+    @IBOutlet weak var signupContainer: UIView!
+    
+    @IBOutlet weak var socislPlaceholderContainer: UIView!
+    @IBOutlet weak var socialButtonsContainer: UIStackView!
+    @IBOutlet weak var termsOfUseContainer: UIStackView!
     // Social buttons
     
     @IBOutlet weak var facebookButton: UIButton!
@@ -36,6 +49,16 @@ class SignUpViewController: UIViewController {
         SignUpScreenConfigurator.configure(viewController: self)
         output.configureTextFields()
         output.handleLoginTaps()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        animate(views: [logoContainer, emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animate(views: [logoContainer, emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: false)
     }
 
 }
