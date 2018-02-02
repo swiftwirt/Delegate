@@ -12,8 +12,10 @@ import RxCocoa
 
 class ForgotPasswordViewController: DelegateAbstractViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    
     @IBOutlet weak var logoContainer: UIStackView!
-    @IBOutlet weak var emailInputContainer: UIView!
+    @IBOutlet weak var emailInputContainer: ValidatableView!
     @IBOutlet weak var resetButtonContainer: UIView!
     @IBOutlet weak var backButtonContainer: UIView!
     
@@ -21,16 +23,22 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configurePlaceholders()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate(views: [logoContainer, emailInputContainer, resetButtonContainer, backButtonContainer], ofTheScreen: false)
     }
+    
+    fileprivate func configurePlaceholders()
+    {
+        emailTextField.becomeFirstResponder()
+        emailTextField.setAttributed(placeholder: Strings.email, with: Color.textFieldPlaceholder)
+    }
 
     @IBAction func onPressedBackButton(_ sender: Any) {
+        view.endEditing(true)
         animate(views: [logoContainer, emailInputContainer, resetButtonContainer, backButtonContainer], ofTheScreen: true)
         Timer.after(waitingTime) {
             self.returnBack()
