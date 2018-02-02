@@ -41,7 +41,8 @@ class SignUpScreenInteractor {
     
     func handleSignUpTaps()
     {
-        output.signupButtonObservable.flatMapLatest { [unowned self] () -> Observable<User> in
+        let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitRepeatPasswordInputEvent])
+        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<User> in
             
             guard let email = self.output.currentEmailInputValue, let password = self.output.currentPasswordInputValue else { return Observable.empty() }
             

@@ -38,14 +38,29 @@ class LoginScreenPresenter {
         return output.passwordTextField.text
     }
     
+    var endOnExitEmailInputEvent: Observable<Void>
+    {
+        return output.emailTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
+    }
+    
+    var endOnExitPasswordInputEvent: Observable<Void>
+    {
+        return output.passwordTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
+    }
+    
     var loginButtonObservable: Observable<Void>
     {
-        return output.loginButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.loginButton.rx.tap.asObservable()
     }
     
     var signupButtonObservable: Observable<Void>
     {
         return output.signupButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+    }
+    
+    var forgotPasswordButtonObservable: Observable<Void>
+    {
+        return output.forgotPasswordButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
     }
     
     var facebookButtonObservable: Observable<Void>

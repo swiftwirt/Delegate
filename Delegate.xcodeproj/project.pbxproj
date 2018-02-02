@@ -36,6 +36,11 @@
 		2AA69F5F2024817C00D9ED38 /* UIViewController+ReturnBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F5E2024817C00D9ED38 /* UIViewController+ReturnBack.swift */; };
 		2AA69F622024BB0A00D9ED38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA69F612024BB0A00D9ED38 /* Main.storyboard */; };
 		2AA69F642024BBF200D9ED38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F632024BBF200D9ED38 /* MainViewController.swift */; };
+		2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F652024BDED00D9ED38 /* ValidationService.swift */; };
+		2AA69F682024CE0400D9ED38 /* ValidatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F672024CE0400D9ED38 /* ValidatableView.swift */; };
+		2AA69F6B2024D83600D9ED38 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA69F6A2024D83600D9ED38 /* ForgotPassword.storyboard */; };
+		2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F6C2024D85B00D9ED38 /* ForgotPasswordViewController.swift */; };
+		2AA69F712024E24200D9ED38 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F702024E24200D9ED38 /* SwiftyTimer.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -73,6 +78,11 @@
 		2AA69F5E2024817C00D9ED38 /* UIViewController+ReturnBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ReturnBack.swift"; sourceTree = "<group>"; };
 		2AA69F612024BB0A00D9ED38 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2AA69F632024BBF200D9ED38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2AA69F652024BDED00D9ED38 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		2AA69F672024CE0400D9ED38 /* ValidatableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableView.swift; sourceTree = "<group>"; };
+		2AA69F6A2024D83600D9ED38 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		2AA69F6C2024D85B00D9ED38 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		2AA69F702024E24200D9ED38 /* SwiftyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 			children = (
 				2AA69F2D2023468C00D9ED38 /* RightToLeftSensitiveTextField.swift */,
 				2AA69F36202357D800D9ED38 /* DelegateAbstractViewController.swift */,
+				2AA69F672024CE0400D9ED38 /* ValidatableView.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 				2AA69F442024364300D9ED38 /* FacebookService.swift */,
 				2AA69F46202436E100D9ED38 /* KeychainService.swift */,
 				2AA69F482024384800D9ED38 /* SocialApiService.swift */,
+				2AA69F652024BDED00D9ED38 /* ValidationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -159,9 +171,35 @@
 			path = MainScreen;
 			sourceTree = "<group>";
 		};
+		2AA69F692024D6D200D9ED38 /* ForgotPasswordScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AA69F6A2024D83600D9ED38 /* ForgotPassword.storyboard */,
+				2AA69F6C2024D85B00D9ED38 /* ForgotPasswordViewController.swift */,
+			);
+			path = ForgotPasswordScreen;
+			sourceTree = "<group>";
+		};
+		2AA69F6E2024E22100D9ED38 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				2AA69F6F2024E22B00D9ED38 /* SwiftyTimer */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		2AA69F6F2024E22B00D9ED38 /* SwiftyTimer */ = {
+			isa = PBXGroup;
+			children = (
+				2AA69F702024E24200D9ED38 /* SwiftyTimer.swift */,
+			);
+			path = SwiftyTimer;
+			sourceTree = "<group>";
+		};
 		2AD2D1BB202323E500A00FA0 = {
 			isa = PBXGroup;
 			children = (
+				2AA69F6E2024E22100D9ED38 /* Externals */,
 				2AD2D1C6202323E500A00FA0 /* Delegate */,
 				2AD2D1C5202323E500A00FA0 /* Products */,
 				79631CB8AB5E1576FE95001F /* Pods */,
@@ -224,6 +262,7 @@
 		2AD2D1DD20232C9600A00FA0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				2AA69F692024D6D200D9ED38 /* ForgotPasswordScreen */,
 				2AA69F3820238DA900D9ED38 /* SignUpScreen */,
 				2AD2D1DE20232CAB00A00FA0 /* LoginScreen */,
 			);
@@ -327,6 +366,7 @@
 				2AA69F4B20243ECD00D9ED38 /* GoogleService-Info.plist in Resources */,
 				2AA69F622024BB0A00D9ED38 /* Main.storyboard in Resources */,
 				2AA69F3A20238DCC00D9ED38 /* SignUp.storyboard in Resources */,
+				2AA69F6B2024D83600D9ED38 /* ForgotPassword.storyboard in Resources */,
 				2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +482,7 @@
 				2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */,
 				2AA69F532024436D00D9ED38 /* LoginScreenInteractor.swift in Sources */,
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
+				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
 				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
@@ -450,15 +491,18 @@
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
 				2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */,
 				2AA69F5F2024817C00D9ED38 /* UIViewController+ReturnBack.swift in Sources */,
+				2AA69F682024CE0400D9ED38 /* ValidatableView.swift in Sources */,
 				2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */,
 				2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */,
 				2AA69F5920247B7A00D9ED38 /* SignUpScreenInteractor.swift in Sources */,
 				2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */,
 				2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */,
 				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
+				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainViewController.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,
+				2AA69F712024E24200D9ED38 /* SwiftyTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

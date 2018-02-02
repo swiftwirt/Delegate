@@ -25,6 +25,13 @@ class LoginScreenInteractor {
         output.configurePasswordTextField(with: Strings.password, color: Color.textFieldPlaceholder)
     }
     
+    func handleForgotPasswordTaps()
+    {
+        _ = output.forgotPasswordButtonObservable.bind {
+            self.input.routeToForgotPassword()
+        }
+    }
+    
     func handleSignupTaps()
     {
         _ = output.signupButtonObservable.bind {
@@ -34,7 +41,8 @@ class LoginScreenInteractor {
     
     func handleLoginTaps(with email: String, password: String)
     {
-        output.loginButtonObservable.flatMapLatest { [unowned self] () -> Observable<User> in
+        let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitPasswordInputEvent])
+        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<User> in
             
             guard let email = self.output.currentEmailInputValue, let password = self.output.currentPasswordInputValue else { return Observable.empty() }
             

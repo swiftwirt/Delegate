@@ -45,6 +45,21 @@ class SignUpScreenPresenter {
         return output.passwordTextField.text
     }
     
+    var endOnExitEmailInputEvent: Observable<Void>
+    {
+        return output.emailTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
+    }
+    
+    var endOnExitPasswordInputEvent: Observable<Void>
+    {
+        return output.passwordTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
+    }
+    
+    var endOnExitRepeatPasswordInputEvent: Observable<Void>
+    {
+        return output.repeatPasswordTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
+    }
+    
     var currentRepeatPasswordInputValue: String?
     {
         return output.repeatPasswordTextField.text
@@ -57,7 +72,7 @@ class SignUpScreenPresenter {
     
     var signupButtonObservable: Observable<Void>
     {
-        return output.signupButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.signupButton.rx.tap.asObservable()
     }
     
     var facebookButtonObservable: Observable<Void>

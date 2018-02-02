@@ -18,8 +18,8 @@ class LoginViewController: DelegateAbstractViewController {
     // Login containers for animation
     
     @IBOutlet weak var logoContainer: UIStackView!
-    @IBOutlet weak var emailInputContainer: UIView!
-    @IBOutlet weak var passwordInputContainer: UIView!
+    @IBOutlet weak var emailInputContainer: ValidatableView!
+    @IBOutlet weak var passwordInputContainer: ValidatableView!
     @IBOutlet weak var forgotPasswordContainer: UIStackView!
     
     @IBOutlet weak var loginButtonContainer: UIView!
@@ -30,6 +30,7 @@ class LoginViewController: DelegateAbstractViewController {
     
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     // Social buttons
     
@@ -45,6 +46,7 @@ class LoginViewController: DelegateAbstractViewController {
         LoginScreenConfigurator.configure(viewController: self)
         output.configureTextFields()
         output.handleSignupTaps()
+        output.handleForgotPasswordTaps()
         output.handleLoginTaps(with: emailTextField.text!, password: passwordTextField.text!)
     }
     
