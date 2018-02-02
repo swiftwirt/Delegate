@@ -13,11 +13,6 @@ import Firebase
 
 class LoginScreenInteractor {
     
-    enum SegueIdentifier {
-        static let toSignUp = "SegueToSignUpScreen"
-        static let toMainScreen = "SegueToMainScreen"
-    }
-    
     var output: LoginScreenPresenter!
     var input: LoginScreenRouter!
     var applicationManager = ApplicationManager.instance()
@@ -33,20 +28,24 @@ class LoginScreenInteractor {
     func handleSignupTaps()
     {
         _ = output.signupButtonObservable.bind {
-            self.input.viewController.performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
+            self.input.routeToSignUp()
         }
     }
     
     func handleLoginTaps(with email: String, password: String)
     {
         output.loginButtonObservable.flatMapLatest { [unowned self] () -> Observable<User> in
+            
+            guard let email = self.output.currentEmailInputValue, let password = self.output.currentPasswordInputValue else { return Observable.empty() }
+            
             return self.applicationManager.apiService.login(email: email, password: password)
             }.catchError { error in
                 // show error
                 return Observable.empty()
             }.subscribe(onNext: { [weak self] (user) in
                 // serialize user
-                self?.input.viewController.performSegue(withIdentifier: SegueIdentifier.toMainScreen, sender: nil)
+                self?.input.routeToMain()
+                
             }).disposed(by: disposeBag)
     }
 }

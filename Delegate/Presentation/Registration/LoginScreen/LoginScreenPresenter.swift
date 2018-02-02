@@ -28,6 +28,16 @@ class LoginScreenPresenter {
         output.passwordTextField.resignFirstResponder()
     }
     
+    var currentEmailInputValue: String?
+    {
+        return output.emailTextField.text
+    }
+    
+    var currentPasswordInputValue: String?
+    {
+        return output.passwordTextField.text
+    }
+    
     var loginButtonObservable: Observable<Void>
     {
         return output.loginButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)

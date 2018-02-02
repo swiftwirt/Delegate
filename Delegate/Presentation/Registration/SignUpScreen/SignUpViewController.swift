@@ -49,6 +49,7 @@ class SignUpViewController: DelegateAbstractViewController {
         SignUpScreenConfigurator.configure(viewController: self)
         output.configureTextFields()
         output.handleLoginTaps()
+        output.handleSignUpTaps()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
