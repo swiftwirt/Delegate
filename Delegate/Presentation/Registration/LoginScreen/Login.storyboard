@@ -316,25 +316,23 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xw4-gk-6ke">
                                                 <rect key="frame" x="40" y="675" width="295" height="56"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="g9Q-Ja-zXK">
-                                                        <rect key="frame" x="0.0" y="6.3333333333333712" width="66.333333333333329" height="43.333333333333336"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="Gdl-1u-ayx">
-                                                        <rect key="frame" x="76.333333333333343" y="6.3333333333333712" width="66.333333333333343" height="43.333333333333336"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google-plus" translatesAutoresizingMaskIntoConstraints="NO" id="EkD-l7-CRk">
-                                                        <rect key="frame" x="152.66666666666666" y="6.3333333333333712" width="66" height="43.333333333333336"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="cLo-Yi-E4r">
-                                                        <rect key="frame" x="228.66666666666671" y="6.3333333333333712" width="66.333333333333343" height="43.333333333333336"/>
-                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eim-ba-77b">
+                                                        <rect key="frame" x="0.0" y="7" width="66.333333333333329" height="42"/>
+                                                        <state key="normal" image="facebook"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX5-Li-0Zl">
+                                                        <rect key="frame" x="76.333333333333343" y="7" width="66.333333333333343" height="42"/>
+                                                        <state key="normal" image="twitter"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZx-G7-D1M">
+                                                        <rect key="frame" x="152.66666666666666" y="7" width="66" height="42"/>
+                                                        <state key="normal" image="google-plus"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLQ-zK-8jS">
+                                                        <rect key="frame" x="228.66666666666671" y="7" width="66.333333333333343" height="42"/>
+                                                        <state key="normal" image="linkedin"/>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="cLo-Yi-E4r" firstAttribute="height" secondItem="Xw4-gk-6ke" secondAttribute="height" multiplier="10:13" id="PxC-0s-7uE"/>
-                                                    <constraint firstItem="g9Q-Ja-zXK" firstAttribute="height" secondItem="Xw4-gk-6ke" secondAttribute="height" multiplier="10:13" id="cRO-j5-wb6"/>
-                                                    <constraint firstItem="EkD-l7-CRk" firstAttribute="height" secondItem="Xw4-gk-6ke" secondAttribute="height" multiplier="10:13" id="l8E-7R-g5b"/>
-                                                    <constraint firstItem="Gdl-1u-ayx" firstAttribute="height" secondItem="Xw4-gk-6ke" secondAttribute="height" multiplier="10:13" id="ohx-Ir-UV2"/>
-                                                </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkU-21-1Ln">
                                                 <rect key="frame" x="67.666666666666686" y="731" width="240" height="81"/>
@@ -391,20 +389,31 @@
                     <connections>
                         <outlet property="emailInputContainer" destination="6YY-3g-6ON" id="aeF-Rq-h6U"/>
                         <outlet property="emailTextField" destination="PnD-Zp-Dy7" id="g1X-VV-kJe"/>
+                        <outlet property="facebookButton" destination="eim-ba-77b" id="OKa-Ft-RR6"/>
                         <outlet property="forgotPasswordContainer" destination="s4i-gU-tD8" id="dAD-ZB-t1t"/>
+                        <outlet property="googlePlusButton" destination="iZx-G7-D1M" id="l4D-QY-iLT"/>
+                        <outlet property="linkedInButton" destination="RLQ-zK-8jS" id="uKY-ET-RvD"/>
                         <outlet property="loginButtonContainer" destination="sEd-bJ-5YI" id="zKO-Ia-Nsd"/>
                         <outlet property="passwordInputContainer" destination="JAf-lc-eOq" id="RQR-bx-AzC"/>
                         <outlet property="passwordTextField" destination="QkT-kM-NL7" id="jDP-KI-tgJ"/>
                         <outlet property="scrollView" destination="baC-dK-esQ" id="jOa-yg-zGM"/>
                         <outlet property="signupButton" destination="EJx-V1-Unv" id="ePy-Fn-o5U"/>
                         <outlet property="signupContainer" destination="VAU-35-WS1" id="bIA-n5-NWV"/>
-                        <outlet property="socialButtonsContainer" destination="Xw4-gk-6ke" id="1CL-UT-8Rp"/>
-                        <outlet property="socialPlaceholderContainer" destination="FZ8-zI-Fbo" id="SBZ-WS-t2T"/>
+                        <outlet property="twitterButton" destination="SX5-Li-0Zl" id="flO-sw-gUt"/>
+                        <segue destination="aNm-pI-ktb" kind="presentation" identifier="SegueToSignUpScreen" id="43b-48-feF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzY-Zo-ShP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117.5" y="160.56338028169014"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="y5h-Wk-1p5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="aNm-pI-ktb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tC1-Nx-VDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="160"/>
         </scene>
     </scenes>
     <resources>

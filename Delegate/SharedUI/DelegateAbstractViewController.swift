@@ -11,16 +11,11 @@ class DelegateAbstractViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView?
     
-    fileprivate var currentScreenWidth: CGFloat = 0.0
+    fileprivate var currentScreenWidth: CGFloat = UIScreen.main.bounds.size.width
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardObserver()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        currentScreenWidth = UIScreen.main.bounds.size.width
     }
     
     fileprivate func addKeyboardObserver()
@@ -35,27 +30,29 @@ class DelegateAbstractViewController: UIViewController {
         anotherResponder.becomeFirstResponder()
     }
     
-    func animate(views: [UIView], ofTheScreen: Bool)
+    func animate(views: [UIView], ofTheScreen: Bool, completion: (() -> ())? = nil)
     {
-        ofTheScreen ? animateOfTheScreen(views: views) : animateOnTheScreen(views: views)
+        ofTheScreen ? animateOfTheScreen(views: views, completion: completion) : animateOnTheScreen(views: views, completion: completion)
     }
     
-    fileprivate func animateOfTheScreen(views: [UIView])
+    fileprivate func animateOfTheScreen(views: [UIView], completion: (() -> ())?)
     {
         for (index, element) in views.enumerated() {
             UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseInOut, animations: {
                 index % 2 == 0 ? (element.frame.origin.x -= self.currentScreenWidth) : (element.frame.origin.x += self.currentScreenWidth)
             })
         }
+        completion?()
     }
     
-    fileprivate func animateOnTheScreen(views: [UIView])
+    fileprivate func animateOnTheScreen(views: [UIView], completion: (() -> ())?)
     {
         for (index, element) in views.enumerated() {
             UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseInOut, animations: {
                 index % 2 == 0 ? (element.frame.origin.x += self.currentScreenWidth) : (element.frame.origin.x -= self.currentScreenWidth)
             })
         }
+        completion?()
     }
     
     deinit {

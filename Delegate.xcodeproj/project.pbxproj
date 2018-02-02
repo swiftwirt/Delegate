@@ -15,6 +15,14 @@
 		2AA69F312023472D00D9ED38 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F302023472D00D9ED38 /* Utils.swift */; };
 		2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F32202349A500D9ED38 /* UITextField+PlaceholderColor.swift */; };
 		2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F36202357D800D9ED38 /* DelegateAbstractViewController.swift */; };
+		2AA69F3A20238DCC00D9ED38 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA69F3920238DCC00D9ED38 /* SignUp.storyboard */; };
+		2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F3B20238DE100D9ED38 /* SignUpViewController.swift */; };
+		2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F3D2023B71500D9ED38 /* ApplicationManager.swift */; };
+		2AA69F412023B7AF00D9ED38 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F402023B7AF00D9ED38 /* ApiService.swift */; };
+		2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F422024360600D9ED38 /* FirebaseService.swift */; };
+		2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F442024364300D9ED38 /* FacebookService.swift */; };
+		2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F46202436E100D9ED38 /* KeychainService.swift */; };
+		2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F482024384800D9ED38 /* SocialApiService.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -31,6 +39,14 @@
 		2AA69F302023472D00D9ED38 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2AA69F32202349A500D9ED38 /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
 		2AA69F36202357D800D9ED38 /* DelegateAbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateAbstractViewController.swift; sourceTree = "<group>"; };
+		2AA69F3920238DCC00D9ED38 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		2AA69F3B20238DE100D9ED38 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2AA69F3D2023B71500D9ED38 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		2AA69F402023B7AF00D9ED38 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		2AA69F422024360600D9ED38 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		2AA69F442024364300D9ED38 /* FacebookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		2AA69F46202436E100D9ED38 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		2AA69F482024384800D9ED38 /* SocialApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApiService.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +98,27 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		2AA69F3820238DA900D9ED38 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AA69F3920238DCC00D9ED38 /* SignUp.storyboard */,
+				2AA69F3B20238DE100D9ED38 /* SignUpViewController.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		2AA69F3F2023B79A00D9ED38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2AA69F402023B7AF00D9ED38 /* ApiService.swift */,
+				2AA69F422024360600D9ED38 /* FirebaseService.swift */,
+				2AA69F442024364300D9ED38 /* FacebookService.swift */,
+				2AA69F46202436E100D9ED38 /* KeychainService.swift */,
+				2AA69F482024384800D9ED38 /* SocialApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		2AD2D1BB202323E500A00FA0 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +140,7 @@
 		2AD2D1C6202323E500A00FA0 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				2AA69F3F2023B79A00D9ED38 /* Services */,
 				2AA69F2F202346F600D9ED38 /* Utils */,
 				2AA69F2C2023467D00D9ED38 /* SharedUI */,
 				2AA69F25202341D700D9ED38 /* Extensions */,
@@ -127,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */,
+				2AA69F3D2023B71500D9ED38 /* ApplicationManager.swift */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -142,6 +181,7 @@
 		2AD2D1DD20232C9600A00FA0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				2AA69F3820238DA900D9ED38 /* SignUpScreen */,
 				2AD2D1DE20232CAB00A00FA0 /* LoginScreen */,
 			);
 			path = Registration;
@@ -237,6 +277,7 @@
 			files = (
 				2AD2D1E220232CD100A00FA0 /* Login.storyboard in Resources */,
 				2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */,
+				2AA69F3A20238DCC00D9ED38 /* SignUp.storyboard in Resources */,
 				2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,13 +307,51 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Delegate/Pods-Delegate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FXPageControl/FXPageControl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXPageControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -306,11 +385,18 @@
 			files = (
 				2AA69F29202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift in Sources */,
 				2AA69F2E2023468C00D9ED38 /* RightToLeftSensitiveTextField.swift in Sources */,
+				2AA69F412023B7AF00D9ED38 /* ApiService.swift in Sources */,
 				2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */,
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
+				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
+				2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */,
+				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
+				2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */,
 				2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */,
+				2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */,
 				2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */,
+				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,
 			);

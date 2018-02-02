@@ -11,6 +11,10 @@ import RxCocoa
 import RxSwift
 
 class LoginViewController: DelegateAbstractViewController {
+    
+    enum SegueIdentifier {
+        static let toSignUp = "SegueToSignUpScreen"
+    }
 
     @IBOutlet weak var emailTextField: RightToLeftSensitiveTextField!
     @IBOutlet weak var passwordTextField: RightToLeftSensitiveTextField!
@@ -24,21 +28,26 @@ class LoginViewController: DelegateAbstractViewController {
     @IBOutlet weak var loginButtonContainer: UIView!
     @IBOutlet weak var signupContainer: UIView!
     
-    @IBOutlet weak var socialPlaceholderContainer: UIView!
-    @IBOutlet weak var socialButtonsContainer: UIStackView!
-    
     @IBOutlet weak var signupButton: UIButton!
     
-    // Signup containers for animation
+    // Social buttons
+    
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
+    @IBOutlet weak var googlePlusButton: UIButton!
+    @IBOutlet weak var linkedInButton: UIButton!
     
     fileprivate let disposeBag = DisposeBag()
     
-    fileprivate var isOnScreen: Bool!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        isOnScreen = true
         configureTextFields()
+        observeSocialButtonsTaps()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        animate(views: [emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer], ofTheScreen: true)
     }
     
     fileprivate func configureTextFields()
@@ -52,10 +61,21 @@ class LoginViewController: DelegateAbstractViewController {
         passwordTextField.resignFirstResponder()
     }
     
+    fileprivate func observeSocialButtonsTaps()
+    {
+        facebookButton.rx.tap.asObservable().takeUntil(self.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<FacebookCredentials> in
+            
+        }
+    }
+    
     @IBAction func onPressedSignupButton(_ sender: Any)
     {
-        isOnScreen = !isOnScreen
-        animate(views: [emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socialPlaceholderContainer, socialButtonsContainer], ofTheScreen: isOnScreen)
+       performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
+    }
+    
+    @IBAction func onPressedLoginButton(_ sender: Any)
+    {
+        return
     }
     
 }
