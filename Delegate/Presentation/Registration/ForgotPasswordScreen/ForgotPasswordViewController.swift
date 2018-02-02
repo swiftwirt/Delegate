@@ -28,7 +28,7 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animate(views: [logoContainer, emailInputContainer, resetButtonContainer, backButtonContainer], ofTheScreen: false)
+        animate(views: [logoContainer, emailInputContainer, resetButtonContainer, backButtonContainer].reversed(), ofTheScreen: false)
     }
     
     fileprivate func configurePlaceholders()
@@ -39,7 +39,7 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
 
     @IBAction func onPressedBackButton(_ sender: Any) {
         view.endEditing(true)
-        animate(views: [logoContainer, emailInputContainer, resetButtonContainer, backButtonContainer], ofTheScreen: true)
+        animate(views: [logoContainer, emailInputContainer, resetButtonContainer, backButtonContainer].reversed(), ofTheScreen: true)
         Timer.after(waitingTime) {
             self.returnBack()
         }
