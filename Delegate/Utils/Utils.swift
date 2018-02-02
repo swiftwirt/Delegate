@@ -33,4 +33,10 @@ enum Strings {
     static let next = "Next"
 }
 
+enum AnimationDuration {
+    
+    static let defaultSlide: Double = 0.4
+}
+
+
 

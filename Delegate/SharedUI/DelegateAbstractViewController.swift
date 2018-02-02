@@ -18,6 +18,10 @@ class DelegateAbstractViewController: UIViewController {
         addKeyboardObserver()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     fileprivate func addKeyboardObserver()
     {
         NotificationCenter.default.addObserver(self, selector: #selector(scrollContentUp(_:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
@@ -38,7 +42,7 @@ class DelegateAbstractViewController: UIViewController {
     fileprivate func animateOfTheScreen(views: [UIView], completion: (() -> ())?)
     {
         for (index, element) in views.enumerated() {
-            UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: AnimationDuration.defaultSlide, delay: 0.2, options: .curveEaseInOut, animations: {
                 index % 2 == 0 ? (element.frame.origin.x -= self.currentScreenWidth) : (element.frame.origin.x += self.currentScreenWidth)
             })
         }
@@ -48,7 +52,7 @@ class DelegateAbstractViewController: UIViewController {
     fileprivate func animateOnTheScreen(views: [UIView], completion: (() -> ())?)
     {
         for (index, element) in views.enumerated() {
-            UIView.animate(withDuration: 0.6, delay: 0.2, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: AnimationDuration.defaultSlide, delay: 0.4, options: .curveEaseInOut, animations: {
                 index % 2 == 0 ? (element.frame.origin.x += self.currentScreenWidth) : (element.frame.origin.x -= self.currentScreenWidth)
             })
         }
