@@ -53,6 +53,10 @@
 		2AAB4F772025CF0A0094312A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F762025CF090094312A /* Reachability.swift */; };
 		2AAB4F792025DDDE0094312A /* Observable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F782025DDDE0094312A /* Observable+JSON.swift */; };
 		2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */; };
+		2AAB4F7E202653300094312A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F7D202653300094312A /* IntroViewController.swift */; };
+		2AAB4F802026533D0094312A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F7F2026533D0094312A /* Intro.storyboard */; };
+		2AAB4F832026539D0094312A /* SelectRole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F822026539D0094312A /* SelectRole.storyboard */; };
+		2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F84202653B10094312A /* SelectRoleViewController.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -108,6 +112,10 @@
 		2AAB4F762025CF090094312A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2AAB4F782025DDDE0094312A /* Observable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+JSON.swift"; sourceTree = "<group>"; };
 		2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersConfigurator.swift; sourceTree = "<group>"; };
+		2AAB4F7D202653300094312A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		2AAB4F7F2026533D0094312A /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		2AAB4F822026539D0094312A /* SelectRole.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectRole.storyboard; sourceTree = "<group>"; };
+		2AAB4F84202653B10094312A /* SelectRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoleViewController.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +255,24 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		2AAB4F7C202652FF0094312A /* IntroScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AAB4F7D202653300094312A /* IntroViewController.swift */,
+				2AAB4F7F2026533D0094312A /* Intro.storyboard */,
+			);
+			path = IntroScreen;
+			sourceTree = "<group>";
+		};
+		2AAB4F81202653870094312A /* SelectRoleScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2AAB4F822026539D0094312A /* SelectRole.storyboard */,
+				2AAB4F84202653B10094312A /* SelectRoleViewController.swift */,
+			);
+			path = SelectRoleScreen;
+			sourceTree = "<group>";
+		};
 		2AD2D1BB202323E500A00FA0 = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +333,7 @@
 		2AD2D1DC20232A0800A00FA0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2AAB4F81202653870094312A /* SelectRoleScreen */,
 				2AA69F602024BAF300D9ED38 /* MainScreen */,
 				2AD2D1DD20232C9600A00FA0 /* Registration */,
 			);
@@ -316,6 +343,7 @@
 		2AD2D1DD20232C9600A00FA0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				2AAB4F7C202652FF0094312A /* IntroScreen */,
 				2AA69F692024D6D200D9ED38 /* ForgotPasswordScreen */,
 				2AA69F3820238DA900D9ED38 /* SignUpScreen */,
 				2AD2D1DE20232CAB00A00FA0 /* LoginScreen */,
@@ -422,8 +450,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD2D1E220232CD100A00FA0 /* Login.storyboard in Resources */,
+				2AAB4F832026539D0094312A /* SelectRole.storyboard in Resources */,
 				2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */,
 				2AA69F4B20243ECD00D9ED38 /* GoogleService-Info.plist in Resources */,
+				2AAB4F802026533D0094312A /* Intro.storyboard in Resources */,
 				2AA69F622024BB0A00D9ED38 /* Main.storyboard in Resources */,
 				2AA69F3A20238DCC00D9ED38 /* SignUp.storyboard in Resources */,
 				2AA69F6B2024D83600D9ED38 /* ForgotPassword.storyboard in Resources */,
@@ -552,6 +582,7 @@
 				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
 				2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */,
+				2AAB4F7E202653300094312A /* IntroViewController.swift in Sources */,
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
 				2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */,
 				2AAB4F702025ACA00094312A /* Error+Code.swift in Sources */,
@@ -567,6 +598,7 @@
 				2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */,
 				2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */,
 				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
+				2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainViewController.swift in Sources */,
 				2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */,

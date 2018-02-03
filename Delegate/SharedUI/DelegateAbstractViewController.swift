@@ -9,7 +9,7 @@ import UIKit
 
 class DelegateAbstractViewController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView! // Hook it up!
+    @IBOutlet weak var scrollView: UIScrollView? // Hook it up!
     
     fileprivate var currentScreenWidth: CGFloat = UIScreen.main.bounds.size.width
     
@@ -72,7 +72,7 @@ class DelegateAbstractViewController: UIViewController {
 {
     func scrollContentUp(_ sender: Notification)
     {
-        if let keyboardSize = sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect {
+        if let keyboardSize = sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect, let scrollView = scrollView {
             let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
             scrollView.contentInset = contentInsets
             
@@ -81,7 +81,9 @@ class DelegateAbstractViewController: UIViewController {
     
     func scrollContentDown(_ sender: Notification)
     {
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        scrollView.contentInset = contentInsets
+        if let scrollView = scrollView {
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            scrollView.contentInset = contentInsets
+        }
     }
 }

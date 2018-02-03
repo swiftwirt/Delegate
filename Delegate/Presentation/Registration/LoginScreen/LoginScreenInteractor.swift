@@ -86,7 +86,7 @@ class LoginScreenInteractor {
                 return Observable.empty()
             }
             
-            }.flatMapLatest { (user) -> Observable<JSON> in
+            }.flatMap { (user) -> Observable<JSON> in
                 
                 return self.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { error in
                     do {
@@ -99,8 +99,9 @@ class LoginScreenInteractor {
                 }
                 
             }.subscribe(onNext: { [weak self] (user) in
-                // serialize user
-                self?.input.routeToMain()
+                
+                self?.applicationManager.userService.crateNewCurrentUser(with: user)
+                self?.input.routeToSelectRole()
                 
             }).disposed(by: disposeBag)
     }

@@ -12,7 +12,7 @@ class LoginScreenRouter {
     
     enum SegueIdentifier {
         static let toSignUp = "SegueToSignUpScreen"
-        static let toMainScreen = "SegueToMainScreen"
+        static let toSelectRole = "SegueToSelectRole"
         static let toForgotPasswordScreen = "SegueToForgotPasswordScreen"
     }
     
@@ -23,9 +23,9 @@ class LoginScreenRouter {
         viewController.performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
     }
     
-    func routeToMain()
+    func routeToSelectRole()
     {
-        ApplicationRouter.showMainScreen()
+        viewController.performSegue(withIdentifier: SegueIdentifier.toSelectRole, sender: nil)
     }
     
     func routeToForgotPassword()

@@ -97,7 +97,7 @@ class SignUpScreenInteractor {
                 return Observable.empty()
             }
             
-            }.flatMapLatest { (user) -> Observable<Void> in
+            }.flatMap { (user) -> Observable<Void> in
                 
                 return self.applicationManager.apiService.update(user: user).catchError { error in
                     do {
@@ -109,8 +109,11 @@ class SignUpScreenInteractor {
             }
         
             }.subscribe(onNext: { [weak self] (user) in
-                // serialize user
-                self?.input.routeToMain()
+                
+                self?.applicationManager.userService.createNewUser()
+                self?.applicationManager.userService.user?.email = self?.output.currentEmailInputValue
+                self?.applicationManager.userService.user?.password = self?.output.currentRepeatPasswordInputValue
+                self?.input.routeToPresentation()
                 
             }).disposed(by: disposeBag)
     }

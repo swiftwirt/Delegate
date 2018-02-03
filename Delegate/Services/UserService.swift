@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import SwiftyJSON
 
 class DLGUser: NSObject, NSCoding {
     
@@ -44,16 +45,16 @@ class DLGUser: NSObject, NSCoding {
     
     override init() {}
     
-    init(with dictionry: [String: Any])
+    init(with json: JSON)
     {
-        self.firstName = dictionry[FirebaseKey.firstName] as! String?
-        self.lastName = dictionry[FirebaseKey.lastName] as! String?
-        self.email = dictionry[FirebaseKey.email] as! String?
-        self.password = dictionry[FirebaseKey.password] as! String?
-        self.avatarLink = dictionry[FirebaseKey.avatarLink] as! String?
-        self.uid = dictionry[FirebaseKey.uid] as! String?
+        self.firstName = json[FirebaseKey.firstName].string
+        self.lastName = json[FirebaseKey.lastName].string
+        self.email = json[FirebaseKey.email].string
+        self.password = json[FirebaseKey.password].string
+        self.avatarLink = json[FirebaseKey.avatarLink].string
+        self.uid = json[FirebaseKey.uid].string
         
-        guard let cteatedUNIXDate = dictionry[FirebaseKey.birthDate] as? Double else { return }
+        guard let cteatedUNIXDate = json[FirebaseKey.birthDate].double else { return }
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
     }
     
@@ -80,7 +81,7 @@ class UserService: NSObject {
         static let plist = "Delegate.plist"
     }
     
-    fileprivate(set) var user: DLGUser? = nil
+    var user: DLGUser? = nil
     fileprivate let dateFormatter = Formatters.dateFormatter
     
     func createNewUser()
@@ -88,14 +89,9 @@ class UserService: NSObject {
         user = DLGUser()
     }
     
-    func crateNewCurrentUser(with dictionary: [String: Any])
+    func crateNewCurrentUser(with json: JSON)
     {
-        user = DLGUser(with: dictionary)
-    }
-    
-    func getDelegateUser(from JSON: [String: Any]) -> DLGUser
-    {
-        return DLGUser(with: JSON)
+        user = DLGUser(with: json)
     }
     
     func getDelegateUser(from snapShoot: DataSnapshot) -> DLGUser?

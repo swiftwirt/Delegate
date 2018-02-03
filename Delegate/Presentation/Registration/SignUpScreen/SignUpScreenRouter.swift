@@ -12,7 +12,7 @@ class SignUpScreenRouter {
     
     enum SegueIdentifier {
         static let toSignUp = "SegueToSignUpScreen"
-        static let toMainScreen = "SegueToMainScreen"
+        static let toPresentation = "SegueToPresentation"
     }
     
     weak var viewController: SignUpViewController!
@@ -22,9 +22,9 @@ class SignUpScreenRouter {
         viewController.performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
     }
     
-    func routeToMain()
+    func routeToPresentation()
     {
-        viewController.performSegue(withIdentifier: SegueIdentifier.toMainScreen, sender: nil)
+        viewController.performSegue(withIdentifier: SegueIdentifier.toPresentation, sender: nil)
     }
     
     func goBack()
