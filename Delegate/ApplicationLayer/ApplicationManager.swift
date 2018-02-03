@@ -16,6 +16,8 @@ class ApplicationManager {
         return appDelegate.applicationManager
     }
     
+    let keychainService = KeychainService()
+    
     lazy var thirdPartiesConfigurator: ThirdPartiesConfigurator = {
         let thirdPartiesConfigurator = ThirdPartiesConfigurator()
         return thirdPartiesConfigurator
@@ -40,4 +42,17 @@ class ApplicationManager {
         let handler = AlertHandler()
         return handler
     }()
+    
+    lazy var reachabilityService: ReachabilityService = {
+        let service = ReachabilityService()
+        return service
+    }()
+    
+    func clearKeychainIfNeeded()
+    {
+        guard userService.previouslyLaunched else {
+            keychainService.clear()
+            return
+        }
+    }
 }

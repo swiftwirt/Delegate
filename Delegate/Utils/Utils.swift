@@ -8,6 +8,16 @@
 
 import UIKit
 
+enum Formatters {
+    
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        return formatter
+    }()
+}
+
 enum JSONKey {
     
     static let email = "email"
@@ -20,6 +30,25 @@ enum Color {
     
     static let dark: UIColor = .black
     
+}
+
+enum Constants {
+
+    static let supportTitleCharactersMAX = 50
+    static let supportPasswordCharactersMAX = 30
+    static let supportDescriptionCharactersMAX = 300
+    static let messagePresentationDuration = 3.0
+    
+    // Restoration
+    static let needsRestoration = "NeedsRestoration"
+    static let previouslyLaunched = "PreviouslyLaunched"
+    
+    // Password
+    static let passwordRegex = "\\S{8,200}"
+    //"^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
+    
+    // Profile Details
+    static let ageRange = 18 ..< 100
 }
 
 enum Strings {
@@ -88,6 +117,20 @@ enum InfoMessage {
     {
         return  "\(getPasswordRestorationMessageFist) \(email). \(getPasswordRestorationMessageLast)"
     }
+}
+
+struct FirebaseKey {
+    
+    static let firstName = "firstName"
+    static let lastName = "lastName"
+    static let email = "email"
+    static let password = "password"
+    static let birthDate = "birthDate"
+    static let avatarLink = "avatarLink"
+    static let users = "users"
+    static let uid = "uid"
+    
+    private init() {}
 }
 
 

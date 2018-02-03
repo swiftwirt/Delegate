@@ -102,7 +102,7 @@ class ValidationService: NSObject {
             throw error
         }
         
-        let passwordRegex = "\\S{8,200}"
+        let passwordRegex = Constants.passwordRegex
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         
         if !passwordTest.evaluate(with: password) {

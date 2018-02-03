@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0CDAA24689412541F520AF16 /* Pods_Delegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */; };
 		2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B1B202519EA003FDA41 /* UserService.swift */; };
-		2A3B9B1F20251A13003FDA41 /* DelegateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B1E20251A13003FDA41 /* DelegateUser.swift */; };
 		2A3B9B21202527FD003FDA41 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */; };
 		2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */; };
 		2A3B9B2620252F40003FDA41 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2520252F40003FDA41 /* AlertHandler.swift */; };
@@ -48,6 +47,10 @@
 		2AA69F6B2024D83600D9ED38 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA69F6A2024D83600D9ED38 /* ForgotPassword.storyboard */; };
 		2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F6C2024D85B00D9ED38 /* ForgotPasswordViewController.swift */; };
 		2AA69F712024E24200D9ED38 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F702024E24200D9ED38 /* SwiftyTimer.swift */; };
+		2AAB4F702025ACA00094312A /* Error+Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F6F2025ACA00094312A /* Error+Code.swift */; };
+		2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F712025C8AB0094312A /* ReachabilityService.swift */; };
+		2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F732025C9080094312A /* ApplicationRouter.swift */; };
+		2AAB4F772025CF0A0094312A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F762025CF090094312A /* Reachability.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -58,7 +61,6 @@
 /* Begin PBXFileReference section */
 		12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3B9B1B202519EA003FDA41 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		2A3B9B1E20251A13003FDA41 /* DelegateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateUser.swift; sourceTree = "<group>"; };
 		2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2A3B9B22202527FD003FDA41 /* Delegate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Delegate.entitlements; sourceTree = "<group>"; };
 		2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ValidationMessage.swift"; sourceTree = "<group>"; };
@@ -98,6 +100,10 @@
 		2AA69F6A2024D83600D9ED38 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		2AA69F6C2024D85B00D9ED38 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		2AA69F702024E24200D9ED38 /* SwiftyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
+		2AAB4F6F2025ACA00094312A /* Error+Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Code.swift"; sourceTree = "<group>"; };
+		2AAB4F712025C8AB0094312A /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		2AAB4F732025C9080094312A /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
+		2AAB4F762025CF090094312A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +131,6 @@
 		2A3B9B1D202519FF003FDA41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2A3B9B1E20251A13003FDA41 /* DelegateUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */,
 				2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */,
 				2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */,
+				2AAB4F6F2025ACA00094312A /* Error+Code.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 				2AA69F652024BDED00D9ED38 /* ValidationService.swift */,
 				2A3B9B1B202519EA003FDA41 /* UserService.swift */,
 				2A3B9B2520252F40003FDA41 /* AlertHandler.swift */,
+				2AAB4F712025C8AB0094312A /* ReachabilityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 		2AA69F6E2024E22100D9ED38 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				2AAB4F752025CEEA0094312A /* Reachability */,
 				2AA69F6F2024E22B00D9ED38 /* SwiftyTimer */,
 			);
 			path = Externals;
@@ -223,6 +231,14 @@
 				2AA69F702024E24200D9ED38 /* SwiftyTimer.swift */,
 			);
 			path = SwiftyTimer;
+			sourceTree = "<group>";
+		};
+		2AAB4F752025CEEA0094312A /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				2AAB4F762025CF090094312A /* Reachability.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		2AD2D1BB202323E500A00FA0 = {
@@ -275,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */,
+				2AAB4F732025C9080094312A /* ApplicationRouter.swift */,
 				2AA69F3D2023B71500D9ED38 /* ApplicationManager.swift */,
 				2AA69F4C20243EF800D9ED38 /* ThirdPartiesConfigurator.swift */,
 			);
@@ -523,11 +540,14 @@
 				2A3B9B2A202543C1003FDA41 /* UIColor+HEX.swift in Sources */,
 				2AA69F532024436D00D9ED38 /* LoginScreenInteractor.swift in Sources */,
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
+				2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */,
 				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
 				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
+				2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */,
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
 				2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */,
+				2AAB4F702025ACA00094312A /* Error+Code.swift in Sources */,
 				2AA69F55202453AF00D9ED38 /* LoginScreenRouter.swift in Sources */,
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
 				2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */,
@@ -546,8 +566,8 @@
 				2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,
+				2AAB4F772025CF0A0094312A /* Reachability.swift in Sources */,
 				2AA69F712024E24200D9ED38 /* SwiftyTimer.swift in Sources */,
-				2A3B9B1F20251A13003FDA41 /* DelegateUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

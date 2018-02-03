@@ -25,7 +25,7 @@ class LoginScreenRouter {
     
     func routeToMain()
     {
-        viewController.performSegue(withIdentifier: SegueIdentifier.toMainScreen, sender: nil)
+        ApplicationRouter.showMainScreen()
     }
     
     func routeToForgotPassword()
