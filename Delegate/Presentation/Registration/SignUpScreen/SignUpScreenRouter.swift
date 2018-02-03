@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dmitry Ivashin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SignUpScreenRouter {
     
@@ -29,6 +29,11 @@ class SignUpScreenRouter {
     
     func goBack()
     {
-        viewController.returnBack()
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController.animate(views: [UIView(), self!.viewController.logoContainer, self!.viewController.emailInputContainer, self!.viewController.passwordInputContainer, self!.viewController.repeatPasswordContainer, self!.viewController.loginButtonContainer, self!.viewController.signupContainer, self!.viewController.socislPlaceholderContainer, self!.viewController.socialButtonsContainer, self!.viewController.termsOfUseContainer], ofTheScreen: true)
+            Timer.after(0.5) { [weak self] in
+                self?.viewController.returnBack()
+            }
+        }
     }
 }

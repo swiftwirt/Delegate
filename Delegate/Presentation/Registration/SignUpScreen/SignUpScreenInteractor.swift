@@ -35,7 +35,7 @@ class SignUpScreenInteractor {
     func handleLoginTaps()
     {
         _ = output.loginButtonObservable.bind {
-            self.input.viewController.returnBack()
+            self.input.goBack()
         }
     }
     

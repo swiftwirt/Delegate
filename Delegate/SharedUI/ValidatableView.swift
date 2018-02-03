@@ -25,7 +25,7 @@ class ValidatableView: UIView {
         case .undefined:
             tint = .white
         default:
-            tint = .orange
+            tint = UIColor(redPart: 255, greenPart: 155, bluePart: 0)
         }
         for view in self.subviews {
             view.tintColor = tint

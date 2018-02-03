@@ -62,8 +62,8 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
         DispatchQueue.main.async {
             self.view.endEditing(true)
             self.animate(views: [self.logoContainer, self.emailInputContainer, self.resetButtonContainer, self.backButtonContainer].reversed(), ofTheScreen: true)
-            Timer.after(self.waitingTime) {
-                self.returnBack()
+            Timer.after(self.waitingTime) { [weak self] in
+                self?.returnBack()
             }
         }
     }

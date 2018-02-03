@@ -54,7 +54,7 @@ class SignUpViewController: DelegateAbstractViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        animate(views: [emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: true)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
