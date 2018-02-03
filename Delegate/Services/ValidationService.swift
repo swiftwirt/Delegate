@@ -9,6 +9,38 @@
 import UIKit
 import SwiftyJSON
 
+enum FirebaseError: LocalizedError {
+    case unknownError
+    case noFirebaseUserRegistered
+    case invalidPassword
+    case invalidEmail
+    case accessRestricted
+    case emailInUse
+    case missingEmail
+    case userRemoved
+    
+    public var errorDescription: String? {
+        switch self {
+        case .unknownError:
+            return ErrorMessage.errorUnknown
+        case .noFirebaseUserRegistered:
+            return ErrorMessage.noUserFound
+        case .invalidPassword:
+            return ErrorMessage.wrongPassword
+        case .accessRestricted:
+            return ErrorMessage.accessRestricted
+        case .invalidEmail:
+            return ErrorMessage.emailIncorrectFormat
+        case .emailInUse:
+            return ErrorMessage.emailTaken
+        case .missingEmail:
+            return ErrorMessage.emailEmpty
+        case .userRemoved:
+            return ErrorMessage.userRemoved
+        }
+    }
+}
+
 enum PasswordValidationError: LocalizedError {
     
     case passwordIdentity
@@ -52,6 +84,61 @@ enum ValidationState {
 }
 
 class ValidationService: NSObject {
+    
+    enum JSONErrorKey {
+        static let errorCode = "error_code"
+    }
+    
+    enum ErrorCode {
+        static let noFirebaseUserRegistered = "17011"
+        static let invalidPassword = "17009"
+        static let noNetworkConnection = "17020"
+        static let invalidEmail = "17008"
+        static let accessRestricted = "17005"
+        static let emailInUse = "17007"
+        static let missingEmail = "17999"
+    }
+    
+    func handle(remoteResponce error: Error?) throws
+    {
+        guard let error = error else { return }
+        let firebaseError: FirebaseError
+
+        let code = String(error.code)
+        switch code {
+        case ErrorCode.noFirebaseUserRegistered:
+            firebaseError = FirebaseError.noFirebaseUserRegistered
+            throw firebaseError
+        case ErrorCode.invalidPassword:
+            firebaseError = FirebaseError.invalidPassword
+            throw firebaseError
+        case ErrorCode.invalidEmail:
+            firebaseError = FirebaseError.invalidEmail
+            throw firebaseError
+        case ErrorCode.accessRestricted:
+            firebaseError = FirebaseError.accessRestricted
+            throw firebaseError
+        case ErrorCode.emailInUse:
+            firebaseError = FirebaseError.emailInUse
+            throw firebaseError
+        case ErrorCode.missingEmail:
+            firebaseError = FirebaseError.missingEmail
+            throw firebaseError
+        default:
+            break
+        }
+    }
+    
+    // MARK: - Main methods
+    
+    fileprivate func handleFetchUserFromFirebase(with dictionary: [String: Any]?) throws
+    {
+        let error: FirebaseError
+        guard let unwrappedDictionary = dictionary else {
+            error = FirebaseError.userRemoved
+            throw error
+        }
+    }
     
     func checkPasswords(_ password: String?, with confirmedPassword: String?) throws
     {

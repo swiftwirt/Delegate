@@ -84,6 +84,8 @@ enum ErrorMessage {
     static let passwordIdentity = "Passwords111 not match"
     static let passwordIncorrectFormat = "Wrong password format"
     
+    static let accessRestricted = "Account access temporarily restricted!"
+    static let userRemoved = "Account removed!"
     
     static let fbLoginCanceled = "Facebook login canceled"
     static let fbLoginFailed = "Facebook login failed"
@@ -119,7 +121,7 @@ enum InfoMessage {
     }
 }
 
-struct FirebaseKey {
+enum FirebaseKey {
     
     static let firstName = "firstName"
     static let lastName = "lastName"
@@ -129,8 +131,7 @@ struct FirebaseKey {
     static let avatarLink = "avatarLink"
     static let users = "users"
     static let uid = "uid"
-    
-    private init() {}
+
 }
 
 
