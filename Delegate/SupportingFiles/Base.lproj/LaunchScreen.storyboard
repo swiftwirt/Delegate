@@ -25,20 +25,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M3p-LC-pxH">
-                                <rect key="frame" x="91.666666666666671" y="259.33333333333331" width="230.66666666666663" height="94.666666666666686"/>
+                                <rect key="frame" x="106.33333333333333" y="276.66666666666669" width="201.66666666666669" height="60.666666666666686"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="9Zm-kg-Nym">
-                                        <rect key="frame" x="0.0" y="0.0" width="230.66666666666666" height="76"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Zm-kg-Nym">
+                                        <rect key="frame" x="0.0" y="0.33333333333337123" width="201.66666666666666" height="42"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="WRv-7Y-P8k">
-                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                <rect key="frame" x="0.0" y="0.33333333333337123" width="42" height="42"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKX-mF-aaI">
-                                                <rect key="frame" x="75.999999999999986" y="34.333333333333371" width="154.66666666666663" height="41.666666666666657"/>
+                                                <rect key="frame" x="47.000000000000014" y="0.66666666666668561" width="154.66666666666669" height="41.666666666666664"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Delegat">
                                                         <attributes>
-                                                            <color key="NSColor" red="1" green="0.60648602247238159" blue="0.00060962408315390348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="32" name="Futura-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             <integer key="NSUnderline" value="1"/>
@@ -46,7 +46,7 @@
                                                     </fragment>
                                                     <fragment content="e">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.022600779309868813" green="0.97790485620498657" blue="0.11300418525934219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="NSColor" red="0.0" green="0.61960784313725492" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="32" name="Futura-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             <integer key="NSUnderline" value="1"/>
@@ -58,9 +58,9 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gaining time..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qc3-b6-CRn">
-                                        <rect key="frame" x="0.0" y="76" width="230.66666666666666" height="18.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="42.333333333333371" width="201.66666666666666" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.60648602250000005" blue="0.00060962408319999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -69,7 +69,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M3p-LC-pxH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="10:12" id="eSL-1d-t8S"/>
                             <constraint firstItem="M3p-LC-pxH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xLu-t3-3xj"/>
@@ -83,6 +83,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="76" height="76"/>
+        <image name="logo" width="42" height="42"/>
     </resources>
 </document>
