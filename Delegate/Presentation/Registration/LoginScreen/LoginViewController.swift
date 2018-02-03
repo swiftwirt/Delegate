@@ -48,6 +48,8 @@ class LoginViewController: DelegateAbstractViewController {
         output.handleSignupTaps()
         output.handleForgotPasswordTaps()
         output.handleLoginTaps(with: emailTextField.text!, password: passwordTextField.text!)
+        
+        handleInputsSwitch()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +65,13 @@ class LoginViewController: DelegateAbstractViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         clearAllInputs()
+    }
+    
+    fileprivate func handleInputsSwitch()
+    {
+        _ = emailTextField.rx.controlEvent(.editingDidEndOnExit).takeUntil(self.rx.deallocated).asObservable().bind {
+            self.switchFrom(one: self.emailTextField, to: self.passwordTextField)
+        }
     }
     
     fileprivate func clearAllInputs()

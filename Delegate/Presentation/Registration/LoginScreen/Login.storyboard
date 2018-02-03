@@ -366,7 +366,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ehV-LV-7IH" firstAttribute="leading" secondItem="CgH-5m-DlP" secondAttribute="leading" id="CdE-YO-pLd"/>
                             <constraint firstAttribute="bottom" secondItem="baC-dK-esQ" secondAttribute="bottom" id="Jbn-TM-gDU"/>

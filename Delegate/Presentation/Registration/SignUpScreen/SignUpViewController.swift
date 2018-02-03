@@ -50,16 +50,29 @@ class SignUpViewController: DelegateAbstractViewController {
         output.configureTextFields()
         output.handleLoginTaps()
         output.handleSignUpTaps()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         
+        handleInputsSwitch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate(views: [UIView(), logoContainer, emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        view.backgroundColor = .black
+    }
+    
+    fileprivate func handleInputsSwitch()
+    {
+        _ = emailTextField.rx.controlEvent(.editingDidEndOnExit).takeUntil(self.rx.deallocated).asObservable().bind {
+            self.switchFrom(one: self.emailTextField, to: self.passwordTextField)
+        }
+        
+        _ = passwordTextField.rx.controlEvent(.editingDidEndOnExit).takeUntil(self.rx.deallocated).asObservable().bind {
+            self.switchFrom(one: self.passwordTextField, to: self.repeatPasswordTextField)
+        }
     }
 
 }

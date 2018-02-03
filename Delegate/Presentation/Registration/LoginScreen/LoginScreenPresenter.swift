@@ -54,11 +54,6 @@ class LoginScreenPresenter {
         return output.passwordTextField.text
     }
     
-    var endOnExitEmailInputEvent: Observable<Void>
-    {
-        return output.emailTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
-    }
-    
     var endOnExitPasswordInputEvent: Observable<Void>
     {
         return output.passwordTextField.rx.controlEvent(.editingDidEndOnExit).asObservable()
