@@ -26,4 +26,18 @@ class ApplicationManager {
         return apiService
     }()
     
+    lazy var userService: UserService = {
+        let service = UserService()
+        return service
+    }()
+    
+    lazy var validationService: ValidationService = {
+        let service = ValidationService()
+        return service
+    }()
+    
+    lazy var alertHandler: AlertHandler = {
+        let handler = AlertHandler()
+        return handler
+    }()
 }

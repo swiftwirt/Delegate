@@ -53,23 +53,18 @@ enum ValidationState {
 
 class ValidationService: NSObject {
     
-    enum RequestType {
-        case registration
-        case accessToken
-    }
-    
-    func checkPasswords(_ password: String, with confirmedPassword: String) throws
+    func checkPasswords(_ password: String?, with confirmedPassword: String?) throws
     {
         let error: PasswordValidationError
         
-        guard password.count != 0 else {
+        guard let password = password, password.count != 0 else {
             error = .passwordEmpty
             throw error
         }
         
         try validate(password: password)
         
-        guard confirmedPassword.count != 0 else {
+        guard let confirmedPassword = confirmedPassword, confirmedPassword.count != 0 else {
             error = .passworConfirmedEmpty
             throw error
         }
@@ -80,11 +75,11 @@ class ValidationService: NSObject {
         }
     }
     
-    func validate(email: String) throws
+    func validate(email: String?) throws
     {
         let error: EmailValidationError
         
-        guard email.count != 0 else {
+        guard let email = email, email.count != 0 else {
             error = .emptyEmail
             throw error
         }
@@ -98,11 +93,11 @@ class ValidationService: NSObject {
         }
     }
     
-    func validate(password: String) throws
+    func validate(password: String?) throws
     {
         let error: PasswordValidationError
         
-        guard password.count != 0 else {
+        guard let password = password, password.count != 0 else {
             error = .passwordEmpty
             throw error
         }

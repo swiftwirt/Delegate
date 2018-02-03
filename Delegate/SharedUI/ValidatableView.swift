@@ -25,10 +25,13 @@ class ValidatableView: UIView {
         case .undefined:
             tint = .white
         default:
-            tint = .red
+            tint = .orange
         }
         for view in self.subviews {
             view.tintColor = tint
+            if view.isMember(of: UIView.self) {
+                view.backgroundColor = tint
+            }
         }
     }
 

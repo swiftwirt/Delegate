@@ -39,12 +39,53 @@ class SignUpScreenInteractor {
         }
     }
     
+    fileprivate var hasValidEmail: String?
+    {
+        let email = output.currentEmailInputValue ?? ""
+        
+        do {
+            try applicationManager.validationService.validate(email: email)
+            output.addEmailValidationError(message: nil, result: .undefined)
+            return email
+        } catch {
+            output.addEmailValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil))
+        }
+        // nil is used to detect that current input is not a valid email
+        return nil
+    }
+    
+    fileprivate var hasValidPassword: String?
+    {
+        let password = output.currentPasswordInputValue ?? ""
+        let confirmedPassword = output.currentRepeatPasswordInputValue ?? ""
+        
+        do {
+            
+            try applicationManager.validationService.checkPasswords(password, with: confirmedPassword)
+            output.addPasswordValidationError(message: nil, result: .undefined)
+            output.addRepeatPasswordValidationError(message: nil, result: .undefined)
+            return confirmedPassword
+            
+        } catch let error as PasswordValidationError {
+            switch error {
+            case .passwordEmpty, .passwordIncorrectFormat:
+                output.addPasswordValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil))
+            case .passworConfirmedEmpty, .passwordIdentity:
+                output.addRepeatPasswordValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil))
+            }
+        } catch {
+            // Should never reach to this point
+            applicationManager.alertHandler.showUnknownError()
+        }
+        return nil
+    }
+    
     func handleSignUpTaps()
     {
-        let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitRepeatPasswordInputEvent])
+        let taps: Observable<Void> = Observable.merge([output.signupButtonObservable, output.endOnExitRepeatPasswordInputEvent])
         taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<User> in
             
-            guard let email = self.output.currentEmailInputValue, let password = self.output.currentPasswordInputValue else { return Observable.empty() }
+            guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
             return self.applicationManager.apiService.signup(email: email, password: password)
             }.catchError { error in

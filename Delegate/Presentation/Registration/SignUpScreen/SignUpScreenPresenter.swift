@@ -35,6 +35,30 @@ class SignUpScreenPresenter {
         output.repeatPasswordTextField.resignFirstResponder()
     }
     
+    func addEmailValidationError(message: String?, result: ValidationState)
+    {
+        output.emailInputContainer.state = result
+        if let message = message {
+            output.emailTextField.insertFieldValidationMessage(message: message)
+        }
+    }
+    
+    func addPasswordValidationError(message: String?, result: ValidationState)
+    {
+        output.passwordInputContainer.state = result
+        if let message = message {
+            output.passwordTextField.insertFieldValidationMessage(message: message)
+        }
+    }
+    
+    func addRepeatPasswordValidationError(message: String?, result: ValidationState)
+    {
+        output.repeatPasswordContainer.state = result
+        if let message = message {
+            output.repeatPasswordTextField.insertFieldValidationMessage(message: message)
+        }
+    }
+    
     var currentEmailInputValue: String?
     {
         return output.emailTextField.text

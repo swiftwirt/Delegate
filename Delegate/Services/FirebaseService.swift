@@ -9,12 +9,6 @@
 import Firebase
 import RxSwift
 
-enum FirebaseRusult<T> {
-    
-    case success(User)
-    case failure(Error)
-}
-
 class FirebaseService {
     
     func login(email: String, password: String) -> Observable<User>

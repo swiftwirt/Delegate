@@ -40,6 +40,8 @@ enum AnimationDuration {
 
 enum ErrorMessage {
     
+    static let messagePresentationDuration = 2.5
+    
     static let error = "Error"
     static let errorUnknown = "Unknown error occured!"
     static let warning = "Warning"
@@ -50,7 +52,7 @@ enum ErrorMessage {
     
     static let passwordEmpty = "Enter password"
     static let confirmPasswordEmpty = "Confirm password"
-    static let passwordIdentity = "Password not match"
+    static let passwordIdentity = "Passwords111 not match"
     static let passwordIncorrectFormat = "Wrong password format"
     
     

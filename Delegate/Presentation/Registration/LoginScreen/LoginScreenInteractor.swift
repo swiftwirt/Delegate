@@ -39,12 +39,42 @@ class LoginScreenInteractor {
         }
     }
     
+    fileprivate var hasValidEmail: String?
+    {
+        let email = self.output.currentEmailInputValue ?? ""
+        
+        do {
+            try applicationManager.validationService.validate(email: email)
+            output.addEmailValidationError(message: nil, result: .undefined)
+            return email
+        } catch {
+            output.addEmailValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil))
+        }
+        // nil is used to detect that current input is not a valid email
+        return nil
+    }
+    
+    fileprivate var hasValidPassword: String?
+    {
+        let password = self.output.currentPasswordInputValue ?? ""
+        
+        do {
+            try applicationManager.validationService.validate(password: password)
+            output.addPasswordValidationError(message: nil, result: .undefined)
+            return password
+        } catch {
+            output.addPasswordValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil))
+        }
+        // nil is used to detect that current input is not a valid email
+        return nil
+    }
+    
     func handleLoginTaps(with email: String, password: String)
     {
         let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitPasswordInputEvent])
         taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<User> in
             
-            guard let email = self.output.currentEmailInputValue, let password = self.output.currentPasswordInputValue else { return Observable.empty() }
+            guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
             return self.applicationManager.apiService.login(email: email, password: password)
             }.catchError { error in
