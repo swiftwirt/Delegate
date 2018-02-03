@@ -24,6 +24,7 @@ class FirebaseService {
                     return
                 }
                 observer.onNext(firebaseUser)
+                observer.onCompleted()
             }
             return Disposables.create()
         })
@@ -42,9 +43,28 @@ class FirebaseService {
                     return
                 }
                 observer.onNext(firebaseUser)
+                observer.onCompleted()
             }
             return Disposables.create()
         })
+    }
+    
+    func resetPassword(for email: String) -> Observable<Void>
+    {
+        return Observable.create({ (observer) -> Disposable in
+            Auth.auth().languageCode = Locale.current.languageCode
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
+                guard error == nil else {
+                    // TODO: handle expected errors
+                    observer.onCompleted()
+                    observer.on(.error(error!))
+                    return
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        })
+
     }
     
 }

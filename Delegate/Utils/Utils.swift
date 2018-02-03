@@ -77,5 +77,18 @@ enum ErrorMessage {
     static let troublesInternetSubtitle = "For some reasons internet seems to get lost"
 }
 
+enum InfoMessage {
+    
+    static let success = "Success"
+    
+    static let getPasswordRestorationMessageFist = "We've sent an email to"
+    static let getPasswordRestorationMessageLast = "Open it up and reset old password."
+    
+    static func getPasswordRestorationMessage(_ email: String) -> String
+    {
+        return  "\(getPasswordRestorationMessageFist) \(email). \(getPasswordRestorationMessageLast)"
+    }
+}
+
 
 

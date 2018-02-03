@@ -29,4 +29,9 @@ class ApiService {
         return firebaseService.signup(email: email, password: password)
     }
     
+    func resetPassword(for email: String) -> Observable<Void>
+    {
+        return firebaseService.resetPassword(for: email)
+    }
+    
 }
