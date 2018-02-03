@@ -65,6 +65,7 @@ enum Strings {
 enum AnimationDuration {
     
     static let defaultSlide: Double = 0.4
+    static let defaultFade: Double = 0.6
 }
 
 enum ErrorMessage {

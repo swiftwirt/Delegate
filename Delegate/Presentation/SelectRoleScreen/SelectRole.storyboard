@@ -132,7 +132,7 @@
                                             <constraint firstItem="TEj-tK-6aB" firstAttribute="leading" secondItem="9ob-hj-o5X" secondAttribute="leading" id="se9-2J-oaX"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator_line" translatesAutoresizingMaskIntoConstraints="NO" id="FHz-N0-kMb">
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator_line" translatesAutoresizingMaskIntoConstraints="NO" id="FHz-N0-kMb">
                                         <rect key="frame" x="0.0" y="332.5" width="375" height="2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="EcE-Ms-pKW"/>
@@ -168,7 +168,7 @@
                                                         <rect key="frame" x="67.5" y="153.5" width="240" height="11.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Accept invite and you're in, Brah! Relax and enjoy your tasks!:]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsM-FB-PXh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Accept invite for getting in, Brah! Relax and enjoy your tasks!:]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsM-FB-PXh">
                                                         <rect key="frame" x="22" y="165" width="331" height="33.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,6 +261,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ht2-mq-izz"/>
                     </view>
+                    <connections>
+                        <outlet property="keymenButtonContainerr" destination="3zA-Sp-eEE" id="9pe-LK-iKQ"/>
+                        <outlet property="keymenInspiringMessageContainer" destination="MsM-FB-PXh" id="stq-eP-Jrr"/>
+                        <outlet property="keymenLogo" destination="eyc-mA-bjw" id="p9g-Jk-eey"/>
+                        <outlet property="keymenTitleContainer" destination="jMx-eJ-XhB" id="xM2-40-8yz"/>
+                        <outlet property="sarkInspiringMessageContainer" destination="5Pv-Sp-kiR" id="9Sg-aD-sgI"/>
+                        <outlet property="separatorLineContainer" destination="FHz-N0-kMb" id="GPF-0l-CEx"/>
+                        <outlet property="sharkButtonContainerr" destination="iRC-RM-dTf" id="yXc-fS-zMV"/>
+                        <outlet property="sharkLogo" destination="3JL-VJ-a1k" id="gio-xs-d8W"/>
+                        <outlet property="sharkTitleContainer" destination="vPS-2Y-CYB" id="UBy-JL-0v2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZp-IF-WaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
