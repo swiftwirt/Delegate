@@ -81,21 +81,21 @@ enum ErrorMessage {
     
     static let passwordEmpty = "Enter password"
     static let confirmPasswordEmpty = "Confirm password"
-    static let passwordIdentity = "Passwords111 not match"
+    static let passwordIdentity = "Passwords not match"
     static let passwordIncorrectFormat = "Wrong password format"
     
     static let accessRestricted = "Account access temporarily restricted!"
     static let userRemoved = "Account removed!"
     
-    static let fbLoginCanceled = "Facebook login canceled"
-    static let fbLoginFailed = "Facebook login failed"
+    static let fbLoginCanceled = "Facebook login canceled!"
+    static let fbLoginFailed = "Facebook login failed!"
     
     static let loginFailed = "Login failed"
     
     // Remote responce
-    static let noUserFound = "User not registered"
-    static let emailTaken = "User already exists"
-    static let wrongPassword = "Wrong password"
+    static let noUserFound = "User not registered!"
+    static let emailTaken = "User already exists!"
+    static let invalidCredentials = "Wrong email or password!"
     
     // Internet condition
     static let noInternetTitle = "No Connection"
@@ -132,6 +132,14 @@ enum FirebaseKey {
     static let users = "users"
     static let uid = "uid"
 
+}
+
+enum ErrorResponseCode: Int {
+    
+    case requestCanceled = -999
+    case noConnection = -1009
+    case timeOutRequest = -1001
+    case SSLError = -1200
 }
 
 

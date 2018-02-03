@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Firebase
+import SwiftyJSON
 
 class SignUpScreenInteractor {
     
@@ -83,14 +84,30 @@ class SignUpScreenInteractor {
     func handleSignUpTaps()
     {
         let taps: Observable<Void> = Observable.merge([output.signupButtonObservable, output.endOnExitRepeatPasswordInputEvent])
-        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<User> in
+        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
             
             guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
-            return self.applicationManager.apiService.signup(email: email, password: password)
-            }.catchError { error in
-                // show error
+            return self.applicationManager.apiService.signup(email: email, password: password).catchError { error in
+                do {
+                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                } catch {
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                }
                 return Observable.empty()
+            }
+            
+            }.flatMapLatest { (user) -> Observable<Void> in
+                
+                return self.applicationManager.apiService.update(user: user).catchError { error in
+                    do {
+                        try self.applicationManager.validationService.handle(remoteResponce: error)
+                    } catch {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    }
+                    return Observable.empty()
+            }
+        
             }.subscribe(onNext: { [weak self] (user) in
                 // serialize user
                 self?.input.routeToMain()

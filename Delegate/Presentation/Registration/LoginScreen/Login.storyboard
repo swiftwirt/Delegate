@@ -15,7 +15,7 @@
         <!--Login View Controller-->
         <scene sceneID="EAQ-ax-psV">
             <objects>
-                <viewController storyboardIdentifier="Login" id="bCc-dm-GIi" customClass="LoginViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" extendedLayoutIncludesOpaqueBars="YES" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="bCc-dm-GIi" customClass="LoginViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SyN-xh-cBJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Iwc-3H-q1A"/>
@@ -27,7 +27,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ehV-LV-7IH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="813"/>
                             </imageView>
-                            <view hidden="YES" alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-OZ-Fsg" userLabel="Fade View">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-OZ-Fsg" userLabel="Fade View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="0.4113381505" green="0.52665245530000004" blue="0.68041110039999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -383,6 +383,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nWQ-Rx-T5L"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="emailInputContainer" destination="6YY-3g-6ON" id="aeF-Rq-h6U"/>
                         <outlet property="emailTextField" destination="PnD-Zp-Dy7" id="g1X-VV-kJe"/>

@@ -51,6 +51,8 @@
 		2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F712025C8AB0094312A /* ReachabilityService.swift */; };
 		2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F732025C9080094312A /* ApplicationRouter.swift */; };
 		2AAB4F772025CF0A0094312A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F762025CF090094312A /* Reachability.swift */; };
+		2AAB4F792025DDDE0094312A /* Observable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F782025DDDE0094312A /* Observable+JSON.swift */; };
+		2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -104,6 +106,8 @@
 		2AAB4F712025C8AB0094312A /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		2AAB4F732025C9080094312A /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
 		2AAB4F762025CF090094312A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		2AAB4F782025DDDE0094312A /* Observable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+JSON.swift"; sourceTree = "<group>"; };
+		2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersConfigurator.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */,
 				2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */,
 				2AAB4F6F2025ACA00094312A /* Error+Code.swift */,
+				2AAB4F782025DDDE0094312A /* Observable+JSON.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				2A3B9B1B202519EA003FDA41 /* UserService.swift */,
 				2A3B9B2520252F40003FDA41 /* AlertHandler.swift */,
 				2AAB4F712025C8AB0094312A /* ReachabilityService.swift */,
+				2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -542,6 +548,7 @@
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
 				2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */,
 				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
+				2AAB4F792025DDDE0094312A /* Observable+JSON.swift in Sources */,
 				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
 				2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */,
@@ -563,6 +570,7 @@
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainViewController.swift in Sources */,
 				2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */,
+				2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */,
 				2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,

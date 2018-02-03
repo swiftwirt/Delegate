@@ -12,8 +12,7 @@ import SwiftyJSON
 enum FirebaseError: LocalizedError {
     case unknownError
     case noFirebaseUserRegistered
-    case invalidPassword
-    case invalidEmail
+    case invalidCredentials
     case accessRestricted
     case emailInUse
     case missingEmail
@@ -25,12 +24,10 @@ enum FirebaseError: LocalizedError {
             return ErrorMessage.errorUnknown
         case .noFirebaseUserRegistered:
             return ErrorMessage.noUserFound
-        case .invalidPassword:
-            return ErrorMessage.wrongPassword
+        case .invalidCredentials:
+            return ErrorMessage.invalidCredentials
         case .accessRestricted:
             return ErrorMessage.accessRestricted
-        case .invalidEmail:
-            return ErrorMessage.emailIncorrectFormat
         case .emailInUse:
             return ErrorMessage.emailTaken
         case .missingEmail:
@@ -83,11 +80,11 @@ enum ValidationState {
     case invalid(errorMessage: String?)
 }
 
+enum JSONError {
+    static let errorCode = "error_code"
+}
+
 class ValidationService: NSObject {
-    
-    enum JSONErrorKey {
-        static let errorCode = "error_code"
-    }
     
     enum ErrorCode {
         static let noFirebaseUserRegistered = "17011"
@@ -109,11 +106,8 @@ class ValidationService: NSObject {
         case ErrorCode.noFirebaseUserRegistered:
             firebaseError = FirebaseError.noFirebaseUserRegistered
             throw firebaseError
-        case ErrorCode.invalidPassword:
-            firebaseError = FirebaseError.invalidPassword
-            throw firebaseError
-        case ErrorCode.invalidEmail:
-            firebaseError = FirebaseError.invalidEmail
+        case ErrorCode.invalidPassword, ErrorCode.invalidEmail:
+            firebaseError = FirebaseError.invalidCredentials
             throw firebaseError
         case ErrorCode.accessRestricted:
             firebaseError = FirebaseError.accessRestricted

@@ -44,7 +44,7 @@ class DLGUser: NSObject, NSCoding {
     
     override init() {}
     
-    fileprivate init(with dictionry: [String: Any])
+    init(with dictionry: [String: Any])
     {
         self.firstName = dictionry[FirebaseKey.firstName] as! String?
         self.lastName = dictionry[FirebaseKey.lastName] as! String?
@@ -57,7 +57,7 @@ class DLGUser: NSObject, NSCoding {
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
     }
     
-    fileprivate init?(with snapShoot: DataSnapshot)
+    init?(with snapShoot: DataSnapshot)
     {
         guard let snap = snapShoot.value as? [String: Any] else { return nil }
         self.firstName = snap[FirebaseKey.firstName] as! String?

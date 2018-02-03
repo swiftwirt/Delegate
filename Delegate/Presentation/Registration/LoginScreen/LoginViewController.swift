@@ -60,4 +60,15 @@ class LoginViewController: DelegateAbstractViewController {
         animate(views: [logoContainer, emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer], ofTheScreen: false)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        clearAllInputs()
+    }
+    
+    fileprivate func clearAllInputs()
+    {
+        emailTextField.text = nil
+        passwordTextField.text = nil
+    }
+    
 }

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import RxSwift
+import SwiftyJSON
 
 class ApiService {
     
@@ -19,12 +20,12 @@ class ApiService {
         return socialApiService
     }()
     
-    func login(email: String, password: String) -> Observable<User>
+    func login(email: String, password: String) -> Observable<DLGUser>
     {
         return firebaseService.login(email: email, password: password)
     }
     
-    func signup(email: String, password: String) -> Observable<User>
+    func signup(email: String, password: String) -> Observable<DLGUser>
     {
         return firebaseService.signup(email: email, password: password)
     }
@@ -32,6 +33,16 @@ class ApiService {
     func resetPassword(for email: String) -> Observable<Void>
     {
         return firebaseService.resetPassword(for: email)
+    }
+    
+    func fetchUser(uid: String) -> Observable<JSON>
+    {
+        return firebaseService.fetchUser(uid: uid)
+    }
+    
+    func update(user: DLGUser) -> Observable<Void>
+    {
+        return firebaseService.update(user: user)
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import Firebase
+import SwiftyJSON
 
 class LoginScreenInteractor {
     
@@ -72,14 +72,32 @@ class LoginScreenInteractor {
     func handleLoginTaps(with email: String, password: String)
     {
         let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitPasswordInputEvent])
-        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<User> in
+        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
             
             guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
-            return self.applicationManager.apiService.login(email: email, password: password)
-            }.catchError { error in
-                // show error
+            return self.applicationManager.apiService.login(email: email, password: password).catchError { error in
+                do {
+                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                } catch {
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                }
+                
                 return Observable.empty()
+            }
+            
+            }.flatMapLatest { (user) -> Observable<JSON> in
+                
+                return self.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { error in
+                    do {
+                        try self.applicationManager.validationService.handle(remoteResponce: error)
+                    } catch {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    }
+                    
+                    return Observable.empty()
+                }
+                
             }.subscribe(onNext: { [weak self] (user) in
                 // serialize user
                 self?.input.routeToMain()
