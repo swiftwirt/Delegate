@@ -24,12 +24,12 @@ class IntroViewController: UIViewController {
     
     fileprivate let disposeBag = DisposeBag()
     
-    fileprivate let introModel: [(image: UIImage, title: String)] =
+    fileprivate let introModel: [(UIImage, String, String, String)] =
     [
-        (#imageLiteral(resourceName: "forecast"), "Analyze..."),
-        (#imageLiteral(resourceName: "plan"), "Plan..."),
-        (#imageLiteral(resourceName: "profit"), "Profit!"),
-        (UIImage(), "")
+        (image: #imageLiteral(resourceName: "forecast"), title: "Analyze...", content: "Without big data analytics, companies are blind and deaf, wandering out onto the Web like deer on a freeway.", author:  "...Geoffrey Moore"),
+        (image: #imageLiteral(resourceName: "plan"), title: "Manage...", content: "In preparing for battle I have always found that plans are useless, but planning is indispensable.", author:  "...Dwight D. Eisenhower"),
+        (image: #imageLiteral(resourceName: "profit"), title: "Profit!", content: "Money is multiplied in practical value depending on the number of W's you control in your life: what you do, when you do it, where you do it, and with whom you do it.", author:  "...Timothy Ferriss"),
+        (UIImage(), "", "", "")
     ]
     
     override func viewDidLoad() {
@@ -40,10 +40,12 @@ class IntroViewController: UIViewController {
     
     fileprivate func handleIntroContent()
     {
-        Observable<[(UIImage, String)]>.just(introModel).bind(to: collectionView.rx.items(cellIdentifier: cellReuseIdentifier)) { index, model, cell in
+        Observable<[(image: UIImage, title: String,  content: String, author: String)]>.just(introModel).bind(to: collectionView.rx.items(cellIdentifier: cellReuseIdentifier)) { index, model, cell in
             guard let cell = cell as? IntroCell else { return }
-            cell.imageView.image = model.0
-            cell.titleLabel.text = model.1
+            cell.imageView.image = model.image
+            cell.titleLabel.text = model.title
+            cell.contentLabel.text = model.content
+            cell.authorLabel.text = model.author
             }
             .disposed(by: disposeBag)
     }
@@ -56,7 +58,9 @@ extension IntroViewController: UICollectionViewDelegate {
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint)
         guard let pageNumber = visibleIndexPath?.item else { return }
+        
         pageControl.currentPage = pageNumber
+        pageControl.selectedDotColor = Color.getPageControlDotColor(pageNumber: pageNumber)
         
         if pageNumber == introModel.count - 1 {
             pageControl.isHidden = true

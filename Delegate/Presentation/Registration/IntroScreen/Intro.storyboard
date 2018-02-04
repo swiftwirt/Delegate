@@ -42,7 +42,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aEA-NE-7Hs">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="111.5" width="375" height="444.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9ch-ec-d2C">
                                     <size key="itemSize" width="415" height="228"/>
@@ -52,26 +52,40 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PageCell" id="x9a-Xg-gME" customClass="IntroCell" customModule="Delegate" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="53" width="415" height="228"/>
+                                        <rect key="frame" x="0.0" y="108.5" width="415" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="228"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QbO-N1-Zfy">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QbO-N1-Zfy">
                                                     <rect key="frame" x="-20" y="0.0" width="455" height="297"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forecast" translatesAutoresizingMaskIntoConstraints="NO" id="ymx-89-vmT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="415" height="205"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="forecast" translatesAutoresizingMaskIntoConstraints="NO" id="ymx-89-vmT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="108.5"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4K-Zx-sz1">
-                                                            <rect key="frame" x="187.5" y="205" width="40.5" height="23"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4K-Zx-sz1">
+                                                            <rect key="frame" x="0.0" y="128.5" width="40.5" height="23"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                             <color key="textColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tya-vG-Vae">
+                                                            <rect key="frame" x="0.0" y="171.5" width="0.0" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ash-m3-kmJ">
+                                                            <rect key="frame" x="0.0" y="211" width="0.0" height="17"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="ash-m3-kmJ" firstAttribute="width" secondItem="Tya-vG-Vae" secondAttribute="width" id="Zzn-bF-dWZ"/>
+                                                        <constraint firstItem="Tya-vG-Vae" firstAttribute="width" secondItem="QbO-N1-Zfy" secondAttribute="width" multiplier="10:12" id="miH-Ut-UB0"/>
                                                         <constraint firstItem="ymx-89-vmT" firstAttribute="width" secondItem="QbO-N1-Zfy" secondAttribute="width" id="tKs-48-zed"/>
                                                     </constraints>
                                                 </stackView>
@@ -85,6 +99,8 @@
                                             <constraint firstAttribute="trailing" secondItem="QbO-N1-Zfy" secondAttribute="trailing" id="zjr-N7-nMk"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="authorLabel" destination="ash-m3-kmJ" id="lN9-AS-R8Z"/>
+                                            <outlet property="contentLabel" destination="Tya-vG-Vae" id="tUl-1Z-r7n"/>
                                             <outlet property="imageView" destination="ymx-89-vmT" id="1us-Q8-vn8"/>
                                             <outlet property="titleLabel" destination="J4K-Zx-sz1" id="7gA-pi-2Rj"/>
                                         </connections>
@@ -99,9 +115,9 @@
                         <constraints>
                             <constraint firstItem="OWR-a3-6wL" firstAttribute="bottom" secondItem="Tgy-Oy-wr6" secondAttribute="bottom" constant="20" id="5TH-sd-nay"/>
                             <constraint firstItem="aEA-NE-7Hs" firstAttribute="leading" secondItem="do2-7d-tv1" secondAttribute="leading" id="BrK-6K-1tm"/>
-                            <constraint firstItem="aEA-NE-7Hs" firstAttribute="height" secondItem="do2-7d-tv1" secondAttribute="height" multiplier="1:2" id="JAW-xr-yUX"/>
+                            <constraint firstItem="aEA-NE-7Hs" firstAttribute="height" secondItem="do2-7d-tv1" secondAttribute="height" multiplier="10:15" id="JAW-xr-yUX"/>
                             <constraint firstItem="OWR-a3-6wL" firstAttribute="trailing" secondItem="aEA-NE-7Hs" secondAttribute="trailing" id="Obi-pg-z1A"/>
-                            <constraint firstItem="aEA-NE-7Hs" firstAttribute="centerY" secondItem="do2-7d-tv1" secondAttribute="centerY" multiplier="10:15" id="hx5-x7-OPW"/>
+                            <constraint firstItem="aEA-NE-7Hs" firstAttribute="centerY" secondItem="do2-7d-tv1" secondAttribute="centerY" id="hx5-x7-OPW"/>
                             <constraint firstItem="Tgy-Oy-wr6" firstAttribute="centerX" secondItem="do2-7d-tv1" secondAttribute="centerX" id="poG-ne-VDk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OWR-a3-6wL"/>

@@ -30,6 +30,27 @@ enum Color {
     
     static let dark: UIColor = .black
     
+    static let blue = UIColor(redPart: 85, greenPart: 172, bluePart: 255)
+    static let red = UIColor(redPart: 255, greenPart: 38, bluePart: 0)
+    static let green = UIColor(redPart: 0, greenPart: 158, bluePart: 131)
+    
+    static let orange = UIColor.orange
+    
+    static func getPageControlDotColor(pageNumber: Int) -> UIColor
+    {
+        switch pageNumber {
+        case 0:
+            return Color.orange
+        case 1:
+            return Color.blue
+        case 2:
+            return Color.red
+        case 3:
+            return Color.green
+        default:
+            return UIColor.white
+        }
+    }
 }
 
 enum Constants {
