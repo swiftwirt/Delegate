@@ -97,23 +97,18 @@ class FirebaseService {
         })
     }
     
-    func signup(email: String, password: String) -> Observable<DLGUser>
+    func signup(email: String, password: String) -> Observable<Void>
     {
         return Observable.create({ (observer) -> Disposable in
             
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 
-                guard let firebaseUser = user, error == nil else {
+                guard error == nil else {
                     // TODO: handle expected errors
                     observer.on(.error(error!))
                     return
                 }
-                
-                let user = DLGUser()
-                user.email = firebaseUser.email
-                user.uid = firebaseUser.uid
-                
-                observer.onNext(user)
+                observer.onNext(())
                 observer.onCompleted()
             }
             return Disposables.create()

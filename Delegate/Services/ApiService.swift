@@ -25,7 +25,7 @@ class ApiService {
         return firebaseService.login(email: email, password: password)
     }
     
-    func signup(email: String, password: String) -> Observable<DLGUser>
+    func signup(email: String, password: String) -> Observable<Void>
     {
         return firebaseService.signup(email: email, password: password)
     }

@@ -72,7 +72,7 @@ class LoginScreenInteractor {
     func handleLoginTaps(with email: String, password: String)
     {
         let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitPasswordInputEvent])
-        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
+        taps.take(1).takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
             
             guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             

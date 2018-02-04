@@ -14,6 +14,7 @@
 		2A3B9B2620252F40003FDA41 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2520252F40003FDA41 /* AlertHandler.swift */; };
 		2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */; };
 		2A3B9B2A202543C1003FDA41 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */; };
+		2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90CAC8202735F2008BBCF1 /* IntroCell.swift */; };
 		2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F262023424F00D9ED38 /* UIView+BasicInspectables.swift */; };
 		2AA69F29202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */; };
 		2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F2A2023460100D9ED38 /* String+Localization.swift */; };
@@ -73,6 +74,7 @@
 		2A3B9B2520252F40003FDA41 /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VisibleViewController.swift"; sourceTree = "<group>"; };
 		2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
+		2A90CAC8202735F2008BBCF1 /* IntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCell.swift; sourceTree = "<group>"; };
 		2AA69F262023424F00D9ED38 /* UIView+BasicInspectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BasicInspectables.swift"; sourceTree = "<group>"; };
 		2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+AttributtedPlaceholder.swift"; sourceTree = "<group>"; };
 		2AA69F2A2023460100D9ED38 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
@@ -258,8 +260,9 @@
 		2AAB4F7C202652FF0094312A /* IntroScreen */ = {
 			isa = PBXGroup;
 			children = (
-				2AAB4F7D202653300094312A /* IntroViewController.swift */,
 				2AAB4F7F2026533D0094312A /* Intro.storyboard */,
+				2AAB4F7D202653300094312A /* IntroViewController.swift */,
+				2A90CAC8202735F2008BBCF1 /* IntroCell.swift */,
 			);
 			path = IntroScreen;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */,
 				2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */,
 				2AA69F5920247B7A00D9ED38 /* SignUpScreenInteractor.swift in Sources */,
+				2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */,
 				2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */,
 				2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */,
 				2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */,

@@ -84,37 +84,18 @@ class SignUpScreenInteractor {
     func handleSignUpTaps()
     {
         let taps: Observable<Void> = Observable.merge([output.signupButtonObservable, output.endOnExitRepeatPasswordInputEvent])
-        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
+        taps.takeUntil(self.output.output.rx.deallocated).flatMapFirst { [unowned self] () -> Observable<Void> in
             
             guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
-            return self.applicationManager.apiService.signup(email: email, password: password).catchError { error in
-                do {
-                    try self.applicationManager.validationService.handle(remoteResponce: error)
-                } catch {
-                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
-                }
-                return Observable.empty()
-            }
+            return self.applicationManager.apiService.signup(email: email, password: password)
             
-            }.flatMap { (user) -> Observable<Void> in
-                
-                return self.applicationManager.apiService.update(user: user).catchError { error in
-                    do {
-                        try self.applicationManager.validationService.handle(remoteResponce: error)
-                    } catch {
-                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
-                    }
-                    return Observable.empty()
-            }
-        
-            }.subscribe(onNext: { [weak self] (user) in
+            }.subscribe(onNext: { [weak self] in
                 
                 self?.applicationManager.userService.createNewUser()
-                self?.applicationManager.userService.user?.email = self?.output.currentEmailInputValue
-                self?.applicationManager.userService.user?.password = self?.output.currentRepeatPasswordInputValue
+                self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
+                self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
                 self?.input.routeToPresentation()
-                
             }).disposed(by: disposeBag)
     }
 }
