@@ -11,6 +11,8 @@ class DelegateAbstractViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView? // Hook it up!
     
+    var needsAnimation = true
+    
     fileprivate var currentScreenWidth: CGFloat = UIScreen.main.bounds.size.width
     
     override func viewDidLoad() {
@@ -40,6 +42,7 @@ class DelegateAbstractViewController: UIViewController {
     
     func animate(views: [UIView], ofTheScreen: Bool, completion: (() -> ())? = nil)
     {
+        guard needsAnimation else { return }
         ofTheScreen ? animateOfTheScreen(views: views, completion: completion) : animateOnTheScreen(views: views, completion: completion)
     }
     

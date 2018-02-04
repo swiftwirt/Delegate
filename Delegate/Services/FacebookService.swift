@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
+import FirebaseAuth
 import RxSwift
 
 struct FacebookCredentials {
@@ -93,6 +94,7 @@ class FacebookService {
     func logOut()
     {
         fbLoginManager.logOut()
+        try? Auth.auth().signOut()
     }
 }
 

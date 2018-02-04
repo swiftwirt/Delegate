@@ -11,6 +11,8 @@ import RxCocoa
 import RxSwift
 import Firebase
 import SwiftyJSON
+import PKHUD
+import FirebaseAuth
 
 class SignUpScreenInteractor {
     
@@ -96,6 +98,38 @@ class SignUpScreenInteractor {
                 self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
                 self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
                 self?.input.routeToPresentation()
+            }).disposed(by: disposeBag)
+    }
+    
+    func observeLogInFacebookTap()
+    {
+        output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<FacebookCredentials?> in
+            
+            let facebookService = self.applicationManager.facebookService
+            facebookService.logOut()
+            
+            return facebookService.authWithFacebook(viewController: self.output.output).catchError { (error) in
+                HUD.flash(.labeledError(title: ErrorMessage.error, subtitle: ErrorMessage.fbLoginFailed), delay:  AnimationDuration.defaultFade)
+                return Observable.empty()
+            }
+            
+            }.subscribe(onNext: { [weak self] (facebookCredentials) in
+                
+                guard let token = facebookCredentials?.token else {
+                    // here we know that FBLogin canceled and safari controller was dissmissed
+                    return
+                }
+                let credentials = FacebookAuthProvider.credential(withAccessToken: token)
+                self?.output.output.needsAnimation = false 
+                Auth.auth().signIn(with: credentials) { [weak self] (user, error) in
+                    if let error = error {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                        return
+                    }
+                    self?.input.routeToPresentation()
+                }
+                }, onError: { error in
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
             }).disposed(by: disposeBag)
     }
 }

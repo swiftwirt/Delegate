@@ -48,6 +48,11 @@ class ApplicationManager {
         return service
     }()
     
+    lazy var facebookService: FacebookService = {
+        let service = FacebookService()
+        return service
+    }()
+    
     func clearKeychainIfNeeded()
     {
         guard userService.previouslyLaunched else {

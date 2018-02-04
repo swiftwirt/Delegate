@@ -14,7 +14,8 @@ import SwiftyJSON
 class ApiService {
     
     fileprivate let firebaseService = FirebaseService()
-
+    fileprivate let facebookService = FacebookService()
+    
     lazy var socialApiService: SocialApiService = {
         let socialApiService = SocialApiService()
         return socialApiService
@@ -43,6 +44,13 @@ class ApiService {
     func update(user: DLGUser) -> Observable<Void>
     {
         return firebaseService.update(user: user)
+    }
+    
+    // Socials
+    
+    func authWithFacebook(viewController: UIViewController) -> Observable<FacebookCredentials?>
+    {
+        return facebookService.authWithFacebook(viewController: viewController)
     }
     
 }

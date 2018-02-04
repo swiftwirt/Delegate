@@ -10,6 +10,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 import SwiftyJSON
+import FirebaseAuth
+import PKHUD
 
 class LoginScreenInteractor {
     
@@ -72,7 +74,7 @@ class LoginScreenInteractor {
     func handleLoginTaps(with email: String, password: String)
     {
         let taps: Observable<Void> = Observable.merge([output.loginButtonObservable, output.endOnExitPasswordInputEvent])
-        taps.take(1).takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
+        taps.takeUntil(output.output.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<DLGUser> in
             
             guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
@@ -103,6 +105,38 @@ class LoginScreenInteractor {
                 self?.applicationManager.userService.crateNewCurrentUser(with: user)
                 self?.input.routeToSelectRole()
                 
+            }).disposed(by: disposeBag)
+    }
+    
+    func observeLogInFacebookTap()
+    {
+        output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<FacebookCredentials?> in
+            
+            let facebookService = self.applicationManager.facebookService
+            facebookService.logOut()
+            
+            return facebookService.authWithFacebook(viewController: self.output.output).catchError { (error) in
+                HUD.flash(.labeledError(title: ErrorMessage.error, subtitle: ErrorMessage.fbLoginFailed), delay:  AnimationDuration.defaultFade)
+                return Observable.empty()
+            }
+            
+            }.subscribe(onNext: { [weak self] (facebookCredentials) in
+                
+                guard let token = facebookCredentials?.token else {
+                    // here we know that FBLogin canceled and safari controller was dissmissed
+                    return
+                }
+                let credentials = FacebookAuthProvider.credential(withAccessToken: token)
+                self?.output.output.needsAnimation = false 
+                Auth.auth().signIn(with: credentials) { [weak self] (user, error) in
+                    if let error = error {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                        return
+                    }
+                        self?.input.routeToSelectRole()
+                }
+                }, onError: { error in
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
             }).disposed(by: disposeBag)
     }
 }

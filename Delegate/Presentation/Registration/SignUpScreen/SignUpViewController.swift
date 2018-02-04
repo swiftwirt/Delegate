@@ -50,7 +50,7 @@ class SignUpViewController: DelegateAbstractViewController {
         output.configureTextFields()
         output.handleLoginTaps()
         output.handleSignUpTaps()
-        
+        output.observeLogInFacebookTap()
         handleInputsSwitch()
     }
     

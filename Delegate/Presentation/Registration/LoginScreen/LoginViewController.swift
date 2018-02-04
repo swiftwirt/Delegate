@@ -48,7 +48,7 @@ class LoginViewController: DelegateAbstractViewController {
         output.handleSignupTaps()
         output.handleForgotPasswordTaps()
         output.handleLoginTaps(with: emailTextField.text!, password: passwordTextField.text!)
-        
+        output.observeLogInFacebookTap()
         handleInputsSwitch()
     }
     
