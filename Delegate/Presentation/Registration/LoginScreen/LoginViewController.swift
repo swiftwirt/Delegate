@@ -52,11 +52,6 @@ class LoginViewController: DelegateAbstractViewController {
         handleInputsSwitch()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        animate(views: [logoContainer, emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer], ofTheScreen: true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate(views: [logoContainer, emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer], ofTheScreen: false)

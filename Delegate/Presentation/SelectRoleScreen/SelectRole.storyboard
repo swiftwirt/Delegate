@@ -93,6 +93,9 @@
                                                                         <color key="value" red="0.23529411764705882" green="0.58431372549019611" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onPressedCreateEnterprise:" destination="7NP-5Y-rTq" eventType="touchUpInside" id="wuO-Jl-iqE"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -201,6 +204,9 @@
                                                                         <color key="value" red="0.0" green="0.61960784313725492" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onPressedJoinTeam:" destination="7NP-5Y-rTq" eventType="touchUpInside" id="ffP-HI-TAX"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

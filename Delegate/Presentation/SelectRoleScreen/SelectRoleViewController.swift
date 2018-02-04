@@ -41,5 +41,12 @@ class SelectRoleViewController: DelegateAbstractViewController {
             self.separatorLineContainer.alpha = 1.0
         }
     }
-
+    @IBAction func onPressedCreateEnterprise(_ sender: Any)
+    {
+    }
+    
+    @IBAction func onPressedJoinTeam(_ sender: Any)
+    {
+        ApplicationRouter.showMainScreen()
+    }
 }

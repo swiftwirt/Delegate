@@ -16,25 +16,39 @@ class LoginScreenRouter {
         static let toForgotPasswordScreen = "SegueToForgotPasswordScreen"
     }
     
-    weak var viewController: UIViewController!
+    weak var viewController: LoginViewController!
     
     func routeToSignUp()
     {
-        viewController.performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
+        perform(segueID: SegueIdentifier.toSignUp)
     }
     
     func routeToSelectRole()
     {
-        viewController.performSegue(withIdentifier: SegueIdentifier.toSelectRole, sender: nil)
+        perform(segueID: SegueIdentifier.toSelectRole)
     }
     
     func routeToForgotPassword()
     {
-        viewController.performSegue(withIdentifier: SegueIdentifier.toForgotPasswordScreen, sender: nil)
+        perform(segueID: SegueIdentifier.toForgotPasswordScreen)
     }
     
-    func goBack()
+    fileprivate func perform(segueID: String)
     {
-        viewController.returnBack()
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController.animate(views: [
+                self!.viewController.logoContainer,
+                self!.viewController.emailInputContainer,
+                self!.viewController.passwordInputContainer,
+                self!.viewController.forgotPasswordContainer,
+                self!.viewController.loginButtonContainer,
+                self!.viewController.signupContainer,
+                self!.viewController.socislPlaceholderContainer,
+                self!.viewController.socialButtonsContainer
+                ], ofTheScreen: true)
+            Timer.after(0.5) { [weak self] in
+                self?.viewController.performSegue(withIdentifier: segueID, sender: nil)
+            }
+        }
     }
 }
