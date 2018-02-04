@@ -17,7 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="do2-7d-tv1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgy-Oy-wr6" customClass="FXPageControl">
+                                <rect key="frame" x="142" y="627" width="90" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="aGg-dr-DZA"/>
+                                    <constraint firstAttribute="height" constant="20" id="c33-b8-Gy7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentPage">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OWR-a3-6wL" firstAttribute="bottom" secondItem="Tgy-Oy-wr6" secondAttribute="bottom" constant="20" id="5TH-sd-nay"/>
+                            <constraint firstItem="Tgy-Oy-wr6" firstAttribute="centerX" secondItem="do2-7d-tv1" secondAttribute="centerX" id="poG-ne-VDk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OWR-a3-6wL"/>
                     </view>
                 </viewController>

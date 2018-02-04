@@ -38,48 +38,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg5-tw-AdU">
-                                                <rect key="frame" x="27.5" y="0.0" width="320" height="70.5"/>
+                                                <rect key="frame" x="27.5" y="0.0" width="320" height="91.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-sl-FUV">
-                                                <rect key="frame" x="92" y="70.5" width="191.5" height="55.5"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-aM-xpQ">
-                                                        <rect key="frame" x="0.0" y="6.5" width="32" height="42"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McK-0j-Y7M">
-                                                        <rect key="frame" x="37" y="6.5" width="154.5" height="42"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content="Delegat">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="32" name="Futura-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    <integer key="NSUnderline" value="1"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="e">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.0" green="0.61960784313725492" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="32" name="Futura-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    <integer key="NSUnderline" value="1"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="McK-0j-Y7M" firstAttribute="height" secondItem="pkW-aM-xpQ" secondAttribute="height" id="MHM-A1-y1a"/>
-                                                </constraints>
-                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_title" translatesAutoresizingMaskIntoConstraints="NO" id="5PC-KY-h9p">
+                                                <rect key="frame" x="80.5" y="91.5" width="214" height="35.5"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-9x-HSy">
-                                                <rect key="frame" x="67.5" y="126" width="240" height="55"/>
+                                                <rect key="frame" x="67.5" y="127" width="240" height="54.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n5-AY-pAb" userLabel="Input Email View" customClass="ValidatableView" customModule="Delegate" customModuleProvider="target">
-                                                <rect key="frame" x="41" y="181" width="293" height="23"/>
+                                                <rect key="frame" x="41" y="181.5" width="293" height="23"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="WLM-Ev-uZA">
                                                         <rect key="frame" x="0.0" y="5" width="16" height="14"/>
@@ -118,7 +88,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="te2-As-Rti">
-                                                <rect key="frame" x="67.5" y="204" width="240" height="35"/>
+                                                <rect key="frame" x="67.5" y="204.5" width="240" height="34.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLd-53-0Aa" userLabel="Input Password View" customClass="ValidatableView" customModule="Delegate" customModuleProvider="target">
@@ -160,11 +130,11 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EER-aS-py2">
-                                                <rect key="frame" x="67.5" y="262" width="240" height="34.5"/>
+                                                <rect key="frame" x="67.5" y="262" width="240" height="35"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbf-EU-fIy" userLabel="Input Repeat Password View" customClass="ValidatableView" customModule="Delegate" customModuleProvider="target">
-                                                <rect key="frame" x="41" y="296.5" width="293" height="23"/>
+                                                <rect key="frame" x="41" y="297" width="293" height="23"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="Ipo-SR-ka9">
                                                         <rect key="frame" x="0.0" y="3" width="16" height="18"/>
@@ -202,11 +172,11 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgH-tb-8CA">
-                                                <rect key="frame" x="67.5" y="319.5" width="240" height="56.5"/>
+                                                <rect key="frame" x="67.5" y="320" width="240" height="56.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-fv-erg">
-                                                <rect key="frame" x="41" y="376" width="293" height="105.5"/>
+                                                <rect key="frame" x="41" y="376.5" width="293" height="105.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rr-W1-DWv" userLabel="Button View">
                                                         <rect key="frame" x="0.0" y="0.0" width="293" height="45.5"/>
@@ -299,11 +269,11 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-RX-AbH">
-                                                <rect key="frame" x="67.5" y="481.5" width="240" height="37.5"/>
+                                                <rect key="frame" x="67.5" y="482" width="240" height="38"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVp-rf-ld3" userLabel="Social View">
-                                                <rect key="frame" x="41" y="519" width="293" height="16"/>
+                                                <rect key="frame" x="41" y="520" width="293" height="16"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or social" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jQ-LX-nzV">
                                                         <rect key="frame" x="121" y="0.5" width="51.5" height="16"/>
@@ -340,26 +310,26 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dh-bG-e0G">
-                                                <rect key="frame" x="67.5" y="535" width="240" height="18.5"/>
+                                                <rect key="frame" x="67.5" y="536" width="240" height="18.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wbg-Qg-Erq">
-                                                <rect key="frame" x="41" y="553.5" width="293" height="45.5"/>
+                                                <rect key="frame" x="41" y="554.5" width="293" height="46"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFa-ZS-SZt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="45.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="46"/>
                                                         <state key="normal" image="facebook"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0F-lh-skb">
-                                                        <rect key="frame" x="76" y="0.0" width="65.5" height="45.5"/>
+                                                        <rect key="frame" x="76" y="0.0" width="65.5" height="46"/>
                                                         <state key="normal" image="twitter"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gd8-Mb-MY2">
-                                                        <rect key="frame" x="151.5" y="0.0" width="66" height="45.5"/>
+                                                        <rect key="frame" x="151.5" y="0.0" width="66" height="46"/>
                                                         <state key="normal" image="google-plus"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0w-QU-UqY">
-                                                        <rect key="frame" x="227.5" y="0.0" width="65.5" height="45.5"/>
+                                                        <rect key="frame" x="227.5" y="0.0" width="65.5" height="46"/>
                                                         <state key="normal" image="linkedin"/>
                                                     </button>
                                                 </subviews>
@@ -371,11 +341,11 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSq-oW-jpC">
-                                                <rect key="frame" x="67.5" y="599" width="240" height="19"/>
+                                                <rect key="frame" x="67.5" y="600.5" width="240" height="18.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k9Y-oR-jBS">
-                                                <rect key="frame" x="40.5" y="618" width="294" height="30"/>
+                                                <rect key="frame" x="40.5" y="619" width="294" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking Sign up, you agree to our " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oem-7t-edV">
                                                         <rect key="frame" x="0.0" y="0.0" width="294" height="15"/>
@@ -414,14 +384,13 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yda-uW-iLd">
-                                                <rect key="frame" x="67.5" y="648" width="240" height="19"/>
+                                                <rect key="frame" x="67.5" y="649" width="240" height="18"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="zrX-9x-HSy" firstAttribute="height" secondItem="zg5-tw-AdU" secondAttribute="height" multiplier="41:52" id="59x-GL-W18"/>
+                                            <constraint firstItem="zrX-9x-HSy" firstAttribute="height" secondItem="zg5-tw-AdU" secondAttribute="height" multiplier="31:52" id="59x-GL-W18"/>
                                             <constraint firstItem="wbg-Qg-Erq" firstAttribute="width" secondItem="l6h-fv-erg" secondAttribute="width" id="6f5-6J-8l8"/>
-                                            <constraint firstItem="8mF-sl-FUV" firstAttribute="height" secondItem="zrX-9x-HSy" secondAttribute="height" id="7N5-Zz-I39"/>
                                             <constraint firstItem="FLd-53-0Aa" firstAttribute="height" secondItem="2n5-AY-pAb" secondAttribute="height" id="8fl-gv-5Wr"/>
                                             <constraint firstItem="wbg-Qg-Erq" firstAttribute="height" secondItem="3Rr-W1-DWv" secondAttribute="height" id="BJj-eC-WQP"/>
                                             <constraint firstItem="uVp-rf-ld3" firstAttribute="width" secondItem="l6h-fv-erg" secondAttribute="width" id="EMD-lJ-R48"/>
@@ -433,7 +402,9 @@
                                             <constraint firstItem="Pbf-EU-fIy" firstAttribute="width" secondItem="l6h-fv-erg" secondAttribute="width" id="aBB-QX-lOh"/>
                                             <constraint firstItem="9dh-bG-e0G" firstAttribute="height" secondItem="s3d-RX-AbH" secondAttribute="height" multiplier="1:2" id="cbW-og-t8A"/>
                                             <constraint firstItem="s3d-RX-AbH" firstAttribute="height" secondItem="PgH-tb-8CA" secondAttribute="height" multiplier="28:42" id="ibI-wV-wDH"/>
+                                            <constraint firstItem="5PC-KY-h9p" firstAttribute="width" secondItem="5PC-KY-h9p" secondAttribute="height" multiplier="260:43" id="lMb-RU-8LL"/>
                                             <constraint firstItem="yda-uW-iLd" firstAttribute="height" secondItem="OSq-oW-jpC" secondAttribute="height" id="pmO-MY-WEK"/>
+                                            <constraint firstItem="5PC-KY-h9p" firstAttribute="width" secondItem="6fB-w9-R6R" secondAttribute="height" multiplier="65:203" id="uXA-2F-DQW"/>
                                             <constraint firstItem="l6h-fv-erg" firstAttribute="width" secondItem="6fB-w9-R6R" secondAttribute="width" multiplier="250:320" id="xvP-IW-BeD"/>
                                             <constraint firstItem="2n5-AY-pAb" firstAttribute="width" secondItem="l6h-fv-erg" secondAttribute="width" id="zSJ-sw-aMo"/>
                                             <constraint firstItem="te2-As-Rti" firstAttribute="height" secondItem="zrX-9x-HSy" secondAttribute="height" multiplier="26:41" id="zbO-4D-8ED"/>
@@ -475,7 +446,7 @@
                         <outlet property="linkedInButton" destination="n0w-QU-UqY" id="hWH-0q-MFm"/>
                         <outlet property="loginButton" destination="2Pp-vb-b4K" id="4sb-Xr-fMz"/>
                         <outlet property="loginButtonContainer" destination="Iij-nI-cZU" id="Mcl-n7-gRX"/>
-                        <outlet property="logoContainer" destination="8mF-sl-FUV" id="8ch-cT-nc7"/>
+                        <outlet property="logoContainer" destination="5PC-KY-h9p" id="epp-Ui-6v1"/>
                         <outlet property="passwordInputContainer" destination="FLd-53-0Aa" id="gfY-5e-2c6"/>
                         <outlet property="passwordTextField" destination="mhe-bY-Bh5" id="qJc-kl-4cK"/>
                         <outlet property="privacyPolicyButton" destination="QMy-zu-6mD" id="bPk-As-N3s"/>
@@ -494,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4P-U3-5Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.5" y="157.3943661971831"/>
+            <point key="canvasLocation" x="87" y="-99"/>
         </scene>
         <!--Intro-->
         <scene sceneID="KJp-hR-WfB">
@@ -510,7 +481,7 @@
         <image name="google-plus" width="32" height="32"/>
         <image name="linkedin" width="32" height="32"/>
         <image name="lock" width="12" height="12"/>
-        <image name="logo" width="32" height="32"/>
+        <image name="logo_title" width="265" height="54"/>
         <image name="mail" width="12" height="12"/>
         <image name="padlock" width="12" height="12"/>
         <image name="twitter" width="32" height="32"/>

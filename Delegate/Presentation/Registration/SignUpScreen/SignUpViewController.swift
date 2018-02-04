@@ -19,7 +19,7 @@ class SignUpViewController: DelegateAbstractViewController {
     
     // Signup containers for animation
     
-    @IBOutlet weak var logoContainer: UIStackView!
+    @IBOutlet weak var logoContainer: UIImageView!
     @IBOutlet weak var emailInputContainer: ValidatableView!
     @IBOutlet weak var passwordInputContainer: ValidatableView!
     @IBOutlet weak var repeatPasswordContainer: ValidatableView!

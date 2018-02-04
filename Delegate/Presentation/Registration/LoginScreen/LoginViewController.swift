@@ -17,7 +17,7 @@ class LoginViewController: DelegateAbstractViewController {
     
     // Login containers for animation
     
-    @IBOutlet weak var logoContainer: UIStackView!
+    @IBOutlet weak var logoContainer: UIImageView!
     @IBOutlet weak var emailInputContainer: ValidatableView!
     @IBOutlet weak var passwordInputContainer: ValidatableView!
     @IBOutlet weak var forgotPasswordContainer: UIStackView!

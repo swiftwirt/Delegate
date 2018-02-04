@@ -14,7 +14,7 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     
-    @IBOutlet weak var logoContainer: UIStackView!
+    @IBOutlet weak var logoContainer: UIImageView!
     @IBOutlet weak var emailInputContainer: ValidatableView!
     @IBOutlet weak var resetButtonContainer: UIView!
     @IBOutlet weak var backButtonContainer: UIView!
