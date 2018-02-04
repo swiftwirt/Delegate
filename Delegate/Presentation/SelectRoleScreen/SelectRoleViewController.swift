@@ -24,12 +24,6 @@ class SelectRoleViewController: DelegateAbstractViewController {
     
     @IBOutlet weak var separatorLineContainer: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate(views: [sharkLogo, sharkTitleContainer, sarkInspiringMessageContainer, sharkButtonContainerr, keymenLogo, keymenTitleContainer, keymenInspiringMessageContainer, keymenButtonContainerr], ofTheScreen: false)

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import FXPageControl
 
-class IntroViewController: UIViewController {
+class IntroViewController: DelegateAbstractViewController {
     
     enum SegueIdentifier {
         static let toSelectRole = "SegueToSelectRole"

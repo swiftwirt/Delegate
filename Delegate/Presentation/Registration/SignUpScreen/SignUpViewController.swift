@@ -61,6 +61,7 @@ class SignUpViewController: DelegateAbstractViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        needsAnimation = true
         view.backgroundColor = .black
     }
     

@@ -121,19 +121,21 @@ class LoginScreenInteractor {
             }
             
             }.subscribe(onNext: { [weak self] (facebookCredentials) in
-                
+                self?.output.output.needsAnimation = false
                 guard let token = facebookCredentials?.token else {
                     // here we know that FBLogin canceled and safari controller was dissmissed
                     return
                 }
                 let credentials = FacebookAuthProvider.credential(withAccessToken: token)
-                self?.output.output.needsAnimation = false 
+                
                 Auth.auth().signIn(with: credentials) { [weak self] (user, error) in
+                    
                     if let error = error {
                         AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
                         return
                     }
-                        self?.input.routeToSelectRole()
+                    
+                    self?.input.routeToSelectRole()
                 }
                 }, onError: { error in
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
