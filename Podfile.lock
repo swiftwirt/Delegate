@@ -83,6 +83,9 @@ PODS:
   - SwiftMessages (4.1.0)
   - SwiftyJSON (3.1.4)
   - TOCropViewController (2.1.0)
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -105,6 +108,7 @@ DEPENDENCIES:
   - SwiftMessages
   - SwiftyJSON (~> 3.1.4)
   - TOCropViewController (~> 2.1.0)
+  - TwitterKit
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -137,7 +141,9 @@ SPEC CHECKSUMS:
   SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TOCropViewController: f88194a084f6afe1fd6f21a3f0edda7dd097e38b
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 847ccad6b0fc1678b8a7acb6bb7ce258006d2302
+PODFILE CHECKSUM: 56904a7caba0e2bd69147f579db380849d7b622d
 
 COCOAPODS: 1.3.1

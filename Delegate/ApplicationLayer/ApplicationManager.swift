@@ -53,6 +53,11 @@ class ApplicationManager {
         return service
     }()
     
+    lazy var socialsWithFirebaseService: SocialsWithFirebaseService = {
+        let service = SocialsWithFirebaseService()
+        return service
+    }()
+    
     func clearKeychainIfNeeded()
     {
         guard userService.previouslyLaunched else {

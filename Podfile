@@ -23,5 +23,6 @@ pod 'Branch', '~> 0.20.2'
 pod 'TOCropViewController', '~> 2.1.0'
 pod 'SwiftMessages'
 pod 'PKHUD'
+pod 'TwitterKit'
 
 end

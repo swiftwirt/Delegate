@@ -49,17 +49,13 @@ class LoginViewController: DelegateAbstractViewController {
         output.handleForgotPasswordTaps()
         output.handleLoginTaps(with: emailTextField.text!, password: passwordTextField.text!)
         output.observeLogInFacebookTap()
+        output.observeLogInTwitterTap()
         handleInputsSwitch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate(views: [logoContainer, emailInputContainer, passwordInputContainer, forgotPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer], ofTheScreen: false)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        needsAnimation = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {

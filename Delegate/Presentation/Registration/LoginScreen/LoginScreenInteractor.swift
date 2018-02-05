@@ -110,6 +110,7 @@ class LoginScreenInteractor {
     
     func observeLogInFacebookTap()
     {
+        self.output.output.needsAnimation = true
         output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<FacebookCredentials?> in
             
             let facebookService = self.applicationManager.facebookService
@@ -141,4 +142,20 @@ class LoginScreenInteractor {
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
             }).disposed(by: disposeBag)
     }
+    
+    func observeLogInTwitterTap()
+    {
+        self.output.output.needsAnimation = true
+        _ = output.twitterButtonObservable.flatMapLatest { [unowned self] () -> Observable<Void> in
+            
+            return self.applicationManager.socialsWithFirebaseService.register(with: .twitter).catchError({ (error) -> Observable<(Void)> in
+                self.output.output.needsAnimation = false
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                return Observable.empty()
+            })
+            }.subscribe(onNext: { [weak self] in
+                self?.input.routeToSelectRole()
+            }).disposed(by: disposeBag)
+    }
+    
 }

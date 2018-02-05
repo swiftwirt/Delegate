@@ -63,6 +63,7 @@
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
 		2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1DF20232CBF00A00FA0 /* LoginViewController.swift */; };
 		2AD2D1E220232CD100A00FA0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1E120232CD100A00FA0 /* Login.storyboard */; };
+		2AFA2DAD2027BF9E00EA29EF /* SocialsWithFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		2AD2D1D3202323E500A00FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AD2D1DF20232CBF00A00FA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2AD2D1E120232CD100A00FA0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsWithFirebaseService.swift; sourceTree = "<group>"; };
 		7E592EB671048B93CFB89FE5 /* Pods-Delegate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delegate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delegate/Pods-Delegate.debug.xcconfig"; sourceTree = "<group>"; };
 		AB6D62A82CBA4CDE123871F2 /* Pods-Delegate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delegate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delegate/Pods-Delegate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 				2A3B9B2520252F40003FDA41 /* AlertHandler.swift */,
 				2AAB4F712025C8AB0094312A /* ReachabilityService.swift */,
 				2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */,
+				2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -473,9 +476,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Delegate/Pods-Delegate-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -510,6 +517,8 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -536,6 +545,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -569,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AFA2DAD2027BF9E00EA29EF /* SocialsWithFirebaseService.swift in Sources */,
 				2AA69F29202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift in Sources */,
 				2AA69F4D20243EF800D9ED38 /* ThirdPartiesConfigurator.swift in Sources */,
 				2AA69F2E2023468C00D9ED38 /* RightToLeftSensitiveTextField.swift in Sources */,

@@ -51,6 +51,7 @@ class SignUpViewController: DelegateAbstractViewController {
         output.handleLoginTaps()
         output.handleSignUpTaps()
         output.observeLogInFacebookTap()
+        output.observeLogInTwitterTap() 
         handleInputsSwitch()
     }
     
@@ -61,7 +62,6 @@ class SignUpViewController: DelegateAbstractViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        needsAnimation = true
         view.backgroundColor = .black
     }
     
