@@ -13,8 +13,9 @@ import Firebase
 import SwiftyJSON
 import PKHUD
 import FirebaseAuth
+import GoogleSignIn
 
-class SignUpScreenInteractor {
+class SignUpScreenInteractor: NSObject {
     
     enum SegueIdentifier {
         static let toLogin = "SegueToLoginScreen"
@@ -27,6 +28,11 @@ class SignUpScreenInteractor {
     var applicationManager = ApplicationManager.instance()
     
     fileprivate let disposeBag = DisposeBag()
+    
+    override init() {
+        super.init()
+        GIDSignIn.sharedInstance().delegate = self
+    }
     
     func configureTextFields()
     {
@@ -149,5 +155,49 @@ class SignUpScreenInteractor {
             }.subscribe(onNext: { [weak self] in
                 self?.input.routeToPresentation()
             }).disposed(by: disposeBag)
+    }
+    
+    func observeLogInGoogleTaps()
+    {
+        _ = output.googleplusButtonObservable.bind {
+            self.output.output.tryGoogleSignIn()
+        }
+    }
+}
+
+extension SignUpScreenInteractor: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        
+        if let error = error {
+            self.output.output.needsAnimation = false
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            return
+        }
+        
+        guard let authentication = user.authentication else {
+            self.output.output.needsAnimation = false
+            return
+        }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                self.output.output.needsAnimation = false
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                return
+            }
+            self.input.routeToPresentation()
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        if let error = error {
+            self.output.output.needsAnimation = false
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            return
+        }
     }
 }

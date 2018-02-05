@@ -6,11 +6,11 @@
 //  Copyright © 2018 Dmitry Ivashin. All rights reserved.
 //
 
-import FirebaseAuth
+import Firebase
 import RxSwift
 import TwitterKit
 
-class SocialsWithFirebaseService {
+class SocialsWithFirebaseService: NSObject {
     
     enum Social {
         case twitter

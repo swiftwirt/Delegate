@@ -460,7 +460,7 @@
                         <outlet property="termsOfUseButton" destination="eYe-kx-cVl" id="GJA-7t-l1l"/>
                         <outlet property="termsOfUseContainer" destination="k9Y-oR-jBS" id="wFX-mO-JfG"/>
                         <outlet property="twitterButton" destination="T0F-lh-skb" id="tdp-fV-Hq9"/>
-                        <segue destination="I4h-fF-Jbw" kind="show" identifier="SegueToPresentation" id="xub-8m-hiH"/>
+                        <segue destination="I4h-fF-Jbw" kind="presentation" identifier="SegueToPresentation" id="xub-8m-hiH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4P-U3-5Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>

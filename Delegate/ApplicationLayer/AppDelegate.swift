@@ -11,6 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import RxSwift
 import TwitterKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,11 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
         if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
             return true
         }
         
         let sourceApplication: String? = options[.sourceApplication] as? String
+        
+        if GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: nil) {
+            return true
+        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: nil)
     }
     

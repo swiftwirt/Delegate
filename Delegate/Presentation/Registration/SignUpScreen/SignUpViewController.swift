@@ -51,13 +51,15 @@ class SignUpViewController: DelegateAbstractViewController {
         output.handleLoginTaps()
         output.handleSignUpTaps()
         output.observeLogInFacebookTap()
-        output.observeLogInTwitterTap() 
+        output.observeLogInTwitterTap()
+        output.observeLogInGoogleTaps()
         handleInputsSwitch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animate(views: [UIView(), logoContainer, emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: false)
+        needsAnimation = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

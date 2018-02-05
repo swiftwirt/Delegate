@@ -6,8 +6,9 @@
 //  Copyright © 2018 Dmitry Ivashin. All rights reserved.
 //
 import UIKit
+import GoogleSignIn
 
-class DelegateAbstractViewController: UIViewController {
+class DelegateAbstractViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView? // Hook it up!
     
@@ -20,12 +21,23 @@ class DelegateAbstractViewController: UIViewController {
         addKeyboardObserver()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        needsAnimation = true
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     override var prefersStatusBarHidden: Bool {
         return false
+    }
+    
+    func tryGoogleSignIn()
+    {
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
     }
     
     fileprivate func addKeyboardObserver()

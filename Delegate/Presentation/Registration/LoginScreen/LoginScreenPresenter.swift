@@ -14,6 +14,8 @@ class LoginScreenPresenter {
     
     weak var output: LoginViewController!
     
+    fileprivate let trottlingTime = 1.0
+    
     func configureEmailTextField(with text: String, color: UIColor)
     {
         output.emailTextField.setAttributed(placeholder: text, with: color)
@@ -61,36 +63,36 @@ class LoginScreenPresenter {
     
     var loginButtonObservable: Observable<Void>
     {
-        return output.loginButton.rx.tap.asObservable()
+        return output.loginButton.rx.tap.asObservable().throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var signupButtonObservable: Observable<Void>
     {
-        return output.signupButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.signupButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var forgotPasswordButtonObservable: Observable<Void>
     {
-        return output.forgotPasswordButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.forgotPasswordButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var facebookButtonObservable: Observable<Void>
     {
-        return output.facebookButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.facebookButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var googleplusButtonObservable: Observable<Void>
     {
-        return output.googlePlusButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.googlePlusButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var linkedinButtonObservable: Observable<Void>
     {
-        return output.linkedInButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.linkedInButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var twitterButtonObservable:  Observable<Void>
     {
-        return output.twitterButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.twitterButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
 }

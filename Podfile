@@ -24,5 +24,6 @@ pod 'TOCropViewController', '~> 2.1.0'
 pod 'SwiftMessages'
 pod 'PKHUD'
 pod 'TwitterKit'
+pod 'GoogleSignIn'
 
 end

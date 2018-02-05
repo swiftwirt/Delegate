@@ -14,6 +14,8 @@ class SignUpScreenPresenter {
     
     weak var output: SignUpViewController!
     
+    fileprivate let trottlingTime = 1.0
+    
     func configureEmailTextField(with text: String, color: UIColor)
     {
         output.emailTextField.setAttributed(placeholder: text, with: color)
@@ -81,41 +83,41 @@ class SignUpScreenPresenter {
     
     var loginButtonObservable: Observable<Void>
     {
-        return output.loginButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.loginButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var signupButtonObservable: Observable<Void>
     {
-        return output.signupButton.rx.tap.asObservable()
+        return output.signupButton.rx.tap.asObservable().throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var facebookButtonObservable: Observable<Void>
     {
-        return output.facebookButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.facebookButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var googleplusButtonObservable: Observable<Void>
     {
-        return output.googlePlusButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.googlePlusButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var linkedinButtonObservable: Observable<Void>
     {
-        return output.linkedInButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.linkedInButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var twitterButtonObservable:  Observable<Void>
     {
-        return output.twitterButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.twitterButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var termsOfUseButtonObservable: Observable<Void>
     {
-        return output.termsOfUseButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.termsOfUseButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
     
     var privacyPolicyButtonObservable:  Observable<Void>
     {
-        return output.privacyPolicyButton.rx.tap.asObservable().takeUntil(output.rx.deallocated)
+        return output.privacyPolicyButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
     }
 }

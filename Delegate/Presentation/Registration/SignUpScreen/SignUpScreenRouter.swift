@@ -17,11 +17,6 @@ class SignUpScreenRouter {
     
     weak var viewController: SignUpViewController!
     
-    func routeToSignUp()
-    {
-        viewController.performSegue(withIdentifier: SegueIdentifier.toSignUp, sender: nil)
-    }
-    
     func routeToPresentation()
     {
         DispatchQueue.main.async { [weak self] in

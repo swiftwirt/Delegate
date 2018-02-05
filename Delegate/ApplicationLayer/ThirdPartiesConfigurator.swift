@@ -8,6 +8,7 @@
 
 import Firebase
 import TwitterKit
+import GoogleSignIn
 
 class ThirdPartiesConfigurator {
     
@@ -15,6 +16,7 @@ class ThirdPartiesConfigurator {
     {
         configureFirebase()
         configureTwitter()
+        configureGoogle()
     }
     
     fileprivate func configureFirebase()
@@ -25,5 +27,10 @@ class ThirdPartiesConfigurator {
     fileprivate func configureTwitter()
     {
         TWTRTwitter.sharedInstance().start(withConsumerKey: "bLgnQ08xC61pMqNAl0vwNeooo", consumerSecret: "OUuatb3zVdOsZay5YTb2gwz1EYj2mdFBIqto1JCCxAmx0D6wVQ")
+    }
+    
+    fileprivate func configureGoogle()
+    {
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     }
 }

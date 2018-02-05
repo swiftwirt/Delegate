@@ -12,14 +12,20 @@ import RxSwift
 import SwiftyJSON
 import FirebaseAuth
 import PKHUD
+import GoogleSignIn
 
-class LoginScreenInteractor {
+class LoginScreenInteractor: NSObject {
     
     var output: LoginScreenPresenter!
     var input: LoginScreenRouter!
     var applicationManager = ApplicationManager.instance()
     
     fileprivate let disposeBag = DisposeBag()
+    
+    override init() {
+        super.init()
+        GIDSignIn.sharedInstance().delegate = self
+    }
     
     func configureTextFields()
     {
@@ -158,4 +164,48 @@ class LoginScreenInteractor {
             }).disposed(by: disposeBag)
     }
     
+    func observeLogInGoogleTaps()
+    {
+        _ = output.googleplusButtonObservable.bind {
+            self.output.output.tryGoogleSignIn()
+        }
+    }
+    
+}
+
+extension LoginScreenInteractor: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        
+        if let error = error {
+            self.output.output.needsAnimation = false
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            return
+        }
+        
+        guard let authentication = user.authentication else {
+            self.output.output.needsAnimation = false
+            return
+        }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                self.output.output.needsAnimation = false
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                return
+            }
+            self.input.routeToSelectRole()
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        if let error = error {
+            self.output.output.needsAnimation = false
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            return
+        }
+    }
 }

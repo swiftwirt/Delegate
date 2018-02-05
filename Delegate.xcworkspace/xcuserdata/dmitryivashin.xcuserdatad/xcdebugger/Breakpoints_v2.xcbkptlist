@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539481610.718223"
+            filePath = "Delegate/Services/SocialsWithFirebaseService.swift"
+            timestampString = "539547854.9027669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "observeLogInFacebookTap()"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "SocialsWithFirebaseService"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539548103.0575939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,60 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539481610.718544"
+            timestampString = "539548103.057899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "observeLogInFacebookTap()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Optional&lt;Delegate.FacebookCredentials&gt;) -&gt; () in Delegate.LoginScreenInteractor.observeLogInFacebookTap() -&gt; ()"
-                  moduleName = "Delegate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-                  timestampString = "539481610.942762"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "988">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.User&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #2 (Swift.Optional&lt;Delegate.FacebookCredentials&gt;) -&gt; () in Delegate.LoginScreenInteractor.observeLogInFacebookTap() -&gt; ()"
-                  moduleName = "Delegate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-                  timestampString = "539481610.944694"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539481610.7186"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "handleLoginTaps(with:password:)"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539481610.718645"
+            timestampString = "539548103.058097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "handleLoginTaps(with:password:)"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "sign(_:didDisconnectWith:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539481610.71869"
+            timestampString = "539548103.0582891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "observeLogInFacebookTap()"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +89,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Delegate/Services/FacebookService.swift"
-            timestampString = "539481610.71892"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginViewController.swift"
+            timestampString = "539547854.903046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "authWithFacebook(viewController:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539548103.0584919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "observeLogInGoogleTaps()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

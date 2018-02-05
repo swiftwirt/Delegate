@@ -11,6 +11,12 @@ import RxSwift
 
 class AlertHandler: NSObject {
     
+    static func insertMessage(_ message: String, in field: UITextField)
+    {
+        field.clearsOnBeginEditing = true
+        field.text = message
+    }
+    
     static func showSpecialAlert(with title: String, message: String, actionTitle: String = "Ok", action: ((UIAlertAction) -> ())? = nil)
     {
         DispatchQueue.main.async {
