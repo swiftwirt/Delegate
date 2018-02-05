@@ -34,12 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
-    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+        if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
+            return true
+        }
+        
+        let sourceApplication: String? = options[.sourceApplication] as? String
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: nil)
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
