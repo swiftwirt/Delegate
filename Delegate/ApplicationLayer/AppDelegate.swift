@@ -13,6 +13,7 @@ import RxSwift
 import TwitterKit
 import GoogleSignIn
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -42,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let sourceApplication: String? = options[.sourceApplication] as? String
+        
+        if LISDKCallbackHandler.shouldHandle(url) {
+            return LISDKCallbackHandler.application(app, open: url, sourceApplication: sourceApplication, annotation: nil)
+        }
         
         if GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: nil) {
             return true

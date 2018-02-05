@@ -9,28 +9,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Delegate/Services/SocialsWithFirebaseService.swift"
-            timestampString = "539547854.9027669"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "SocialsWithFirebaseService"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539548103.0575939"
+            timestampString = "539564887.248745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539548103.057899"
+            timestampString = "539564887.249118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539548103.058097"
+            timestampString = "539564887.249346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "sign(_:didDisconnectWith:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539548103.0582891"
+            timestampString = "539564887.24957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "sign(_:didSignInFor:withError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -89,13 +73,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginViewController.swift"
-            timestampString = "539547854.903046"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539564887.249786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "handleLoginTaps(with:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; RxSwift.Observable&lt;Delegate.DLGUser&gt; in Delegate.LoginScreenInteractor.handleLoginTaps(with: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+                  timestampString = "539564887.353574"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; RxSwift.Observable&lt;Delegate.DLGUser&gt; in closure #1 () -&gt; RxSwift.Observable&lt;Delegate.DLGUser&gt; in Delegate.LoginScreenInteractor.handleLoginTaps(with: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+                  timestampString = "539564887.356268"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539564887.249998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "handleLoginTaps(with:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Delegate.DLGUser) -&gt; RxSwift.Observable&lt;SwiftyJSON.JSON&gt; in Delegate.LoginScreenInteractor.handleLoginTaps(with: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+                  timestampString = "539564887.360786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; RxSwift.Observable&lt;SwiftyJSON.JSON&gt; in closure #2 (Delegate.DLGUser) -&gt; RxSwift.Observable&lt;SwiftyJSON.JSON&gt; in Delegate.LoginScreenInteractor.handleLoginTaps(with: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+                  timestampString = "539564887.363346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539564887.2502069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "handleLoginTaps(with:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +186,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "539548103.0584919"
+            timestampString = "539564887.250416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "observeLogInGoogleTaps()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "observeLogInLInkedINTaps()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539564887.250627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "observeLogInLInkedINTaps()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; () in closure #1 () -&gt; () in Delegate.LoginScreenInteractor.observeLogInLInkedINTaps() -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+                  timestampString = "539564887.3754719"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "1948">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Error) -&gt; RxSwift.Observable&lt;Delegate.DLGUser&gt; in closure #2 (Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; () in closure #1 () -&gt; () in Delegate.LoginScreenInteractor.observeLogInLInkedINTaps() -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+                  timestampString = "539564887.377399"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
+            timestampString = "539564887.250834"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "observeLogInLInkedINTaps()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -21,6 +21,8 @@ enum Formatters {
 enum JSONKey {
     
     static let email = "email"
+    static let emailAddress = "emailAddress"
+    static let id = "id"
 }
 
 enum Color {

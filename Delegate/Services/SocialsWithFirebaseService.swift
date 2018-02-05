@@ -9,6 +9,7 @@
 import Firebase
 import RxSwift
 import TwitterKit
+import SwiftyJSON
 
 class SocialsWithFirebaseService: NSObject {
     
@@ -59,4 +60,27 @@ class SocialsWithFirebaseService: NSObject {
         })
     }
     
+    // Linked in
+    
+    func registerLinkedIN() -> Observable<JSON?>
+    {
+        return Observable.create({ (observer) -> Disposable in
+            
+            LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (success) in
+                
+                if LISDKSessionManager.hasValidSession() {
+                    let link = String(format: "https://api.linkedin.com/v1/people/~:(id,email-address)?format=json")
+                    LISDKAPIHelper.sharedInstance().getRequest(link, success: { (responce) in
+                        observer.onNext(JSON(parseJSON: responce?.data ?? ""))
+                    }, error: { (error) in
+                        observer.onError(error!)
+                    })
+                }
+            }, errorBlock: { (error) in
+                observer.onError(error!)
+            })
+            
+            return Disposables.create()
+        })
+    }
 }

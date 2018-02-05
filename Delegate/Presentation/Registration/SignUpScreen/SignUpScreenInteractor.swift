@@ -200,4 +200,34 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
             return
         }
     }
+    
+    func observeLogInLInkedINTaps()
+    {
+        _ = output.linkedinButtonObservable.bind {
+            
+            _ = self.applicationManager.socialsWithFirebaseService.registerLinkedIN().catchError({ (error) -> Observable<JSON?> in
+                self.output.output.needsAnimation = false
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                return Observable.empty()
+            }).subscribe(onNext: { (result) in
+                guard let email = result?[JSONKey.emailAddress].string, let password = result?[JSONKey.id].string else { return }
+                
+                self.applicationManager.apiService.signup(email: email, password: password).catchError { (error) -> Observable<Void> in
+                    do {
+                        try self.applicationManager.validationService.handle(remoteResponce: error)
+                    } catch {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    }
+                    
+                    return Observable.empty()
+                    }.subscribe(onNext: { [weak self] (user) in
+                        self?.applicationManager.userService.createNewUser()
+                        self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
+                        self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
+                        self?.input.routeToPresentation()
+                    }).disposed(by: self.disposeBag)
+                
+            }).disposed(by: self.disposeBag)
+        }
+    }
 }

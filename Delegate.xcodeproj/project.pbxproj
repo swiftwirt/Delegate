@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0CDAA24689412541F520AF16 /* Pods_Delegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */; };
+		2A00163E2028FB5B00E481DC /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B1B202519EA003FDA41 /* UserService.swift */; };
 		2A3B9B21202527FD003FDA41 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */; };
 		2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */; };
@@ -68,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A00163C2028FAEB00E481DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 		2A3B9B1B202519EA003FDA41 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2A3B9B22202527FD003FDA41 /* Delegate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Delegate.entitlements; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A00163E2028FB5B00E481DC /* linkedin-sdk.framework in Frameworks */,
 				2A3B9B21202527FD003FDA41 /* ExternalAccessory.framework in Frameworks */,
 				0CDAA24689412541F520AF16 /* Pods_Delegate.framework in Frameworks */,
 			);
@@ -301,6 +305,7 @@
 		2AD2D1C6202323E500A00FA0 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				2A00163C2028FAEB00E481DC /* Header.h */,
 				2A3B9B22202527FD003FDA41 /* Delegate.entitlements */,
 				2A3B9B1D202519FF003FDA41 /* Models */,
 				2AA69F3F2023B79A00D9ED38 /* Services */,
@@ -317,6 +322,7 @@
 		2AD2D1DA202329E600A00FA0 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */,
 				2AD2D1CE202323E500A00FA0 /* Assets.xcassets */,
 				2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */,
 				2AD2D1D3202323E500A00FA0 /* Info.plist */,
@@ -761,11 +767,17 @@
 				CODE_SIGN_ENTITLEMENTS = Delegate/Delegate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PUK34QK43Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Delegate/SupportingFiles",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Delegate/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ivashindev.com.Delegate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Delegate/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -779,11 +791,17 @@
 				CODE_SIGN_ENTITLEMENTS = Delegate/Delegate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PUK34QK43Y;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Delegate/SupportingFiles",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Delegate/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ivashindev.com.Delegate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Delegate/Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

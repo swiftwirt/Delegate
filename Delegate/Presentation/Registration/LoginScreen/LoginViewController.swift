@@ -51,6 +51,7 @@ class LoginViewController: DelegateAbstractViewController {
         output.observeLogInFacebookTap()
         output.observeLogInTwitterTap()
         output.observeLogInGoogleTaps()
+        output.observeLogInLInkedINTaps()
         handleInputsSwitch()
     }
     
