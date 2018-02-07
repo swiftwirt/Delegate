@@ -27,6 +27,7 @@ class SignUpScreenInteractor: NSObject {
     override init() {
         super.init()
         GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     func configureTextFields()
@@ -244,8 +245,9 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (user, error) in
-            self.output.output.needsAnimation = false
+            
             if let error = error {
+                self.output.output.needsAnimation = false
                 AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                     self?.output.output.needsAnimation = true
                 }
@@ -267,3 +269,18 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
     }
 
 }
+
+extension SignUpScreenInteractor: GIDSignInUIDelegate {
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.output.output.present(viewController, animated: true, completion: nil)
+        print("present")
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.output.output.needsAnimation = false
+        self.output.output.dismiss(animated: true, completion: nil)
+        print("dissmiss")
+    }
+}
+
+

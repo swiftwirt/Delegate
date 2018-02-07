@@ -8,7 +8,7 @@
 import UIKit
 import GoogleSignIn
 
-class DelegateAbstractViewController: UIViewController, GIDSignInUIDelegate {
+class DelegateAbstractViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView? // Hook it up!
     
@@ -36,7 +36,6 @@ class DelegateAbstractViewController: UIViewController, GIDSignInUIDelegate {
     
     func tryGoogleSignIn()
     {
-        GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -99,3 +98,4 @@ class DelegateAbstractViewController: UIViewController, GIDSignInUIDelegate {
         }
     }
 }
+
