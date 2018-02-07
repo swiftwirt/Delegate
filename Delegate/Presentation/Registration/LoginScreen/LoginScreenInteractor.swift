@@ -71,7 +71,7 @@ class LoginScreenInteractor: NSObject {
             output.addPasswordValidationError(message: nil, result: .undefined)
             return password
         } catch {
-            output.addPasswordValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil))
+            output.addPasswordValidationError(message: error.localizedDescription, result: .invalid(errorMessage: nil)) 
         }
         // nil is used to detect that current input is not a valid email
         return nil
@@ -88,7 +88,9 @@ class LoginScreenInteractor: NSObject {
                 do {
                     try self.applicationManager.validationService.handle(remoteResponce: error)
                 } catch {
-                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
                 }
                 
                 return Observable.empty()
@@ -100,7 +102,9 @@ class LoginScreenInteractor: NSObject {
                     do {
                         try self.applicationManager.validationService.handle(remoteResponce: error)
                     } catch {
-                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                            self?.output.output.needsAnimation = true
+                        }
                     }
                     
                     return Observable.empty()
@@ -138,14 +142,18 @@ class LoginScreenInteractor: NSObject {
                 Auth.auth().signIn(with: credentials) { [weak self] (user, error) in
                     
                     if let error = error {
-                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                            self?.output.output.needsAnimation = true
+                        }
                         return
                     }
                     
                     self?.input.routeToSelectRole()
                 }
                 }, onError: { error in
-                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
             }).disposed(by: disposeBag)
     }
     
@@ -156,7 +164,9 @@ class LoginScreenInteractor: NSObject {
             
             return self.applicationManager.socialsWithFirebaseService.register(with: .twitter).catchError({ (error) -> Observable<(Void)> in
                 self.output.output.needsAnimation = false
-                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                    self?.output.output.needsAnimation = true
+                }
                 return Observable.empty()
             })
             }.subscribe(onNext: { [weak self] in
@@ -174,19 +184,50 @@ class LoginScreenInteractor: NSObject {
     func observeLogInLInkedINTaps()
     {
         _ = output.linkedinButtonObservable.bind {
-            
             _ = self.applicationManager.socialsWithFirebaseService.registerLinkedIN().catchError({ (error) -> Observable<JSON?> in
                 self.output.output.needsAnimation = false
-                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                guard error.code == ErrorCode.linkedInCanceled else {
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
+                    return Observable.empty()
+                }
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: ErrorMessage.linkedInCanceled) { [weak self] _ in
+                    self?.output.output.needsAnimation = true
+                }
                 return Observable.empty()
             }).subscribe(onNext: { (result) in
+                
                 guard let email = result?[JSONKey.emailAddress].string, let password = result?[JSONKey.id].string else { return }
                 
                 self.applicationManager.apiService.login(email: email, password: password).catchError { (error) -> Observable<DLGUser> in
-                    do {
-                        try self.applicationManager.validationService.handle(remoteResponce: error)
-                    } catch {
-                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    
+                    switch error.code {
+                    case Int(ErrorCode.noFirebaseUserRegistered)!:
+                        self.applicationManager.apiService.signup(email: email, password: password).catchError { (error) -> Observable<Void> in
+                            do {
+                                try self.applicationManager.validationService.handle(remoteResponce: error)
+                            } catch {
+                                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                    self?.output.output.needsAnimation = true
+                                }
+                            }
+                            
+                            return Observable.empty()
+                            }.subscribe(onNext: { [weak self] (user) in
+                                self?.applicationManager.userService.createNewUser()
+                                self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
+                                self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
+                                self?.input.routeToSelectRole()
+                            }).disposed(by: self.disposeBag)
+                    default:
+                        do {
+                            try self.applicationManager.validationService.handle(remoteResponce: error)
+                        } catch {
+                            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                self?.output.output.needsAnimation = true
+                            }
+                        }
                     }
                     
                     return Observable.empty()
@@ -206,7 +247,9 @@ extension LoginScreenInteractor: GIDSignInDelegate {
         
         if let error = error {
             self.output.output.needsAnimation = false
-            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                self?.output.output.needsAnimation = true
+            }
             return
         }
         
@@ -218,9 +261,11 @@ extension LoginScreenInteractor: GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (user, error) in
+            self.output.output.needsAnimation = false
             if let error = error {
-                self.output.output.needsAnimation = false
-                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                    self?.output.output.needsAnimation = true
+                }
                 return
             }
             self.input.routeToSelectRole()
@@ -231,7 +276,9 @@ extension LoginScreenInteractor: GIDSignInDelegate {
         // Perform any operations when the user disconnects from app here.
         if let error = error {
             self.output.output.needsAnimation = false
-            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                self?.output.output.needsAnimation = true
+            }
             return
         }
     }

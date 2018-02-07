@@ -13,10 +13,6 @@ import FXPageControl
 
 class IntroViewController: DelegateAbstractViewController {
     
-    enum SegueIdentifier {
-        static let toSelectRole = "SegueToSelectRole"
-    }
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: FXPageControl!
     
@@ -64,7 +60,7 @@ extension IntroViewController: UICollectionViewDelegate {
         
         if pageNumber == introModel.count - 1 {
             pageControl.isHidden = true
-            performSegue(withIdentifier: SegueIdentifier.toSelectRole, sender: nil)
+            ApplicationRouter.showSelectRoleScreen()
         }
     }
 }

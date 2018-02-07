@@ -116,6 +116,8 @@ enum ErrorMessage {
     
     static let loginFailed = "Login failed"
     
+    static let linkedInCanceled  = "LinkedIn login canceled"
+    
     // Remote responce
     static let noUserFound = "User not registered!"
     static let emailTaken = "User already exists!"

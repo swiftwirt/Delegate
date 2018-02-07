@@ -401,38 +401,11 @@
                         <outlet property="socialButtonsContainer" destination="Xw4-gk-6ke" id="eV7-iT-gv0"/>
                         <outlet property="socislPlaceholderContainer" destination="FZ8-zI-Fbo" id="Nny-QJ-vLl"/>
                         <outlet property="twitterButton" destination="SX5-Li-0Zl" id="flO-sw-gUt"/>
-                        <segue destination="aNm-pI-ktb" kind="show" identifier="SegueToSignUpScreen" id="43b-48-feF"/>
-                        <segue destination="Lpb-bx-yOJ" kind="show" identifier="SegueToForgotPasswordScreen" id="I44-Qr-S1M"/>
-                        <segue destination="RtN-Lc-3gQ" kind="show" identifier="SegueToSelectRole" id="pJZ-Qi-kKJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzY-Zo-ShP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117.5" y="160.56338028169014"/>
-        </scene>
-        <!--ForgotPassword-->
-        <scene sceneID="dei-RP-iNS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ForgotPassword" id="Lpb-bx-yOJ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PZd-qx-ogg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1721" y="106"/>
-        </scene>
-        <!--SignUp-->
-        <scene sceneID="y5h-Wk-1p5">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignUp" id="aNm-pI-ktb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tC1-Nx-VDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1678" y="160"/>
-        </scene>
-        <!--SelectRole-->
-        <scene sceneID="cGr-5E-0ZT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SelectRole" id="RtN-Lc-3gQ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qfw-Mv-wOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1694" y="218"/>
         </scene>
     </scenes>
     <resources>

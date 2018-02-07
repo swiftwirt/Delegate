@@ -47,9 +47,7 @@ class SelectRoleViewController: DelegateAbstractViewController {
             self.separatorLineContainer.alpha = 0.0
         }
         Timer.after(0.8) {
-            self.dismiss(animated: true) {
-                ApplicationRouter.showMainScreen()
-            }
+            ApplicationRouter.showMainScreen()
         }
     }
 }

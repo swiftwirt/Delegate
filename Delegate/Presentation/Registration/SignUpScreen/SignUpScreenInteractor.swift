@@ -17,11 +17,6 @@ import GoogleSignIn
 
 class SignUpScreenInteractor: NSObject {
     
-    enum SegueIdentifier {
-        static let toLogin = "SegueToLoginScreen"
-        static let toMainScreen = "SegueToMainScreen"
-    }
-    
     var output: SignUpScreenPresenter!
     var input: SignUpScreenRouter!
     
@@ -44,7 +39,7 @@ class SignUpScreenInteractor: NSObject {
     func handleLoginTaps()
     {
         _ = output.loginButtonObservable.bind {
-            self.input.goBack()
+            self.input.routeToLogin()
         }
     }
     
@@ -131,14 +126,18 @@ class SignUpScreenInteractor: NSObject {
                 Auth.auth().signIn(with: credentials) { [weak self] (user, error) in
                     
                     if let error = error {
-                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                            self?.output.output.needsAnimation = true
+                        }
                         return
                     }
 
                     self?.input.routeToPresentation()
                 }
                 }, onError: { error in
-                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
             }).disposed(by: disposeBag)
     }
     
@@ -149,7 +148,9 @@ class SignUpScreenInteractor: NSObject {
             
             return self.applicationManager.socialsWithFirebaseService.register(with: .twitter).catchError({ (error) -> Observable<(Void)> in
                 self.output.output.needsAnimation = false
-                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                    self?.output.output.needsAnimation = true
+                }
                 return Observable.empty()
             })
             }.subscribe(onNext: { [weak self] in
@@ -163,6 +164,64 @@ class SignUpScreenInteractor: NSObject {
             self.output.output.tryGoogleSignIn()
         }
     }
+    
+    func observeLogInLInkedINTaps()
+    {
+        _ = output.linkedinButtonObservable.bind {
+            _ = self.applicationManager.socialsWithFirebaseService.registerLinkedIN().catchError({ (error) -> Observable<JSON?> in
+                self.output.output.needsAnimation = false
+                guard error.code == ErrorCode.linkedInCanceled else {
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
+                    return Observable.empty()
+                }
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: ErrorMessage.linkedInCanceled) { [weak self] _ in
+                    self?.output.output.needsAnimation = true
+                }
+                return Observable.empty()
+            }).subscribe(onNext: { (result) in
+                
+                guard let email = result?[JSONKey.emailAddress].string, let password = result?[JSONKey.id].string else { return }
+                
+                self.applicationManager.apiService.login(email: email, password: password).catchError { (error) -> Observable<DLGUser> in
+                    
+                    switch error.code {
+                    case Int(ErrorCode.noFirebaseUserRegistered)!:
+                        self.applicationManager.apiService.signup(email: email, password: password).catchError { (error) -> Observable<Void> in
+                            do {
+                                try self.applicationManager.validationService.handle(remoteResponce: error)
+                            } catch {
+                                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                    self?.output.output.needsAnimation = true
+                                }
+                            }
+                            
+                            return Observable.empty()
+                            }.subscribe(onNext: { [weak self] (user) in
+                                self?.applicationManager.userService.createNewUser()
+                                self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
+                                self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
+                                self?.input.routeToPresentation()
+                            }).disposed(by: self.disposeBag)
+                    default:
+                        do {
+                            try self.applicationManager.validationService.handle(remoteResponce: error)
+                        } catch {
+                            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                self?.output.output.needsAnimation = true
+                            }
+                        }
+                    }
+                    
+                    return Observable.empty()
+                    }.subscribe(onNext: { [weak self] (user) in
+                        self?.input.routeToPresentation()   
+                    }).disposed(by: self.disposeBag)
+                
+            }).disposed(by: self.disposeBag)
+        }
+    }
 }
 
 extension SignUpScreenInteractor: GIDSignInDelegate {
@@ -171,7 +230,9 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
         
         if let error = error {
             self.output.output.needsAnimation = false
-            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                self?.output.output.needsAnimation = true
+            }
             return
         }
         
@@ -183,9 +244,11 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (user, error) in
+            self.output.output.needsAnimation = false
             if let error = error {
-                self.output.output.needsAnimation = false
-                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                    self?.output.output.needsAnimation = true
+                }
                 return
             }
             self.input.routeToPresentation()
@@ -196,38 +259,11 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
         // Perform any operations when the user disconnects from app here.
         if let error = error {
             self.output.output.needsAnimation = false
-            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
+            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                self?.output.output.needsAnimation = true
+            }
             return
         }
     }
-    
-    func observeLogInLInkedINTaps()
-    {
-        _ = output.linkedinButtonObservable.bind {
-            
-            _ = self.applicationManager.socialsWithFirebaseService.registerLinkedIN().catchError({ (error) -> Observable<JSON?> in
-                self.output.output.needsAnimation = false
-                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
-                return Observable.empty()
-            }).subscribe(onNext: { (result) in
-                guard let email = result?[JSONKey.emailAddress].string, let password = result?[JSONKey.id].string else { return }
-                
-                self.applicationManager.apiService.signup(email: email, password: password).catchError { (error) -> Observable<Void> in
-                    do {
-                        try self.applicationManager.validationService.handle(remoteResponce: error)
-                    } catch {
-                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription)
-                    }
-                    
-                    return Observable.empty()
-                    }.subscribe(onNext: { [weak self] (user) in
-                        self?.applicationManager.userService.createNewUser()
-                        self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
-                        self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
-                        self?.input.routeToPresentation()
-                    }).disposed(by: self.disposeBag)
-                
-            }).disposed(by: self.disposeBag)
-        }
-    }
+
 }

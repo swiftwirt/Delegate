@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             applicationManager.userService.loadUser()
             ApplicationRouter.showMainScreen()
         } else {
-            ApplicationRouter.showInitialScreen()
+            ApplicationRouter.showLoginScreen()
         }
     }
     

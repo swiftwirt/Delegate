@@ -10,30 +10,26 @@ import UIKit
 
 class LoginScreenRouter {
     
-    enum SegueIdentifier {
-        static let toSignUp = "SegueToSignUpScreen"
-        static let toSelectRole = "SegueToSelectRole"
-        static let toForgotPasswordScreen = "SegueToForgotPasswordScreen"
-    }
+    typealias Action = () -> ()
     
     weak var viewController: LoginViewController!
     
     func routeToSignUp()
     {
-        perform(segueID: SegueIdentifier.toSignUp)
+        perform(routerActiion: ApplicationRouter.showSignupScreen)
     }
     
     func routeToSelectRole()
     {
-        perform(segueID: SegueIdentifier.toSelectRole)
+        perform(routerActiion: ApplicationRouter.showSelectRoleScreen)
     }
     
     func routeToForgotPassword()
     {
-        perform(segueID: SegueIdentifier.toForgotPasswordScreen)
+        perform(routerActiion: ApplicationRouter.showForgotPasswordScreen)
     }
     
-    fileprivate func perform(segueID: String)
+    fileprivate func perform(routerActiion: @escaping Action)
     {
         DispatchQueue.main.async { [weak self] in
             self?.viewController.animate(views: [
@@ -46,9 +42,9 @@ class LoginScreenRouter {
                 self!.viewController.socislPlaceholderContainer,
                 self!.viewController.socialButtonsContainer
                 ], ofTheScreen: true)
-            Timer.after(0.5) { [weak self] in
-                self?.viewController.performSegue(withIdentifier: segueID, sender: nil)
-            }
+        }
+        Timer.after(0.5) {
+            routerActiion()
         }
     }
 }

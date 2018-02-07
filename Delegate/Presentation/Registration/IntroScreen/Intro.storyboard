@@ -14,7 +14,7 @@
         <!--Intro View Controller-->
         <scene sceneID="RMG-Z8-iwu">
             <objects>
-                <viewController id="QdJ-7x-uWX" customClass="IntroViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Presentation" id="QdJ-7x-uWX" customClass="IntroViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="do2-7d-tv1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,20 +125,11 @@
                     <connections>
                         <outlet property="collectionView" destination="aEA-NE-7Hs" id="hXD-Bx-j1o"/>
                         <outlet property="pageControl" destination="Tgy-Oy-wr6" id="mVh-hc-B3D"/>
-                        <segue destination="DTe-mM-cn6" kind="show" identifier="SegueToSelectRole" id="fFF-qt-ujs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlw-f1-Kx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5536.8000000000002" y="208.24587706146929"/>
-        </scene>
-        <!--SelectRole-->
-        <scene sceneID="uyH-oE-F3P">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SelectRole" id="DTe-mM-cn6" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qv-eV-lKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6049" y="208"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,101 @@
+
+# VS CODE
+.vscode/
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+*.log
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+#
+# We modify the source of SlackTextViewController (See README.md) so its under SCM. (JL)
+Pods/*
+
+# OS X
+.DS_Store
+Icon?
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+*.orig
+
+.idea/
+
+Podfile_BACKUP_3563
+Podfile_BASE_3563
+Podfile_REMOTE_3563
+STArchLoading.swift
+STBouncyPreloaderLoading.swift
+STGlassesLoading.swift
+STLoadingable.swift
+STLoadingGroup.swift
+STPacManLoading.swift
+STSubmitLoading.swift
+STTriangleLoading.swift
+STWalkLoading.swift
+STZhiHuLoading.swift
+Betoshook/Info_BACKUP_4131.plist
+Betoshook/Info_BASE_4131.plist
+Betoshook/Info_LOCAL_4131.plist
+Betoshook/Info_REMOTE_4131.plist
+Betoshook/PickableFilterView.xib
+Betoshook/Presentation/en.lproj/AddNewJob.storyboard
+BetoshookStickersPack/Info.plist
+BetoshookStickersPack/Stickers.xcassets/Contents.json
+BetoshookStickersPack/Stickers.xcassets/iMessage App Icon.stickersiconset/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/001.sticker/001.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/001.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/002.sticker/002.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/002.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/003.sticker/003.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/003.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/004.sticker/004.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/004.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/005.sticker/005.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/005.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/006.sticker/006.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/006.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/007.sticker/007.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/007.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/008.sticker/008.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/008.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/009.sticker/009.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/009.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/010.sticker/010.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/010.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/011.sticker/011.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/011.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/012.sticker/012.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/012.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/013.sticker/013.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/013.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/014.sticker/014.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/014.sticker/Contents.json
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/015.sticker/015.png
+BetoshookStickersPack/Stickers.xcassets/Sticker Pack.stickerpack/015.sticker/Contents.json

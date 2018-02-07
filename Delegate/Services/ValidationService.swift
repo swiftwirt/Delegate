@@ -84,17 +84,18 @@ enum JSONError {
     static let errorCode = "error_code"
 }
 
+enum ErrorCode {
+    static let noFirebaseUserRegistered = "17011"
+    static let invalidPassword = "17009"
+    static let noNetworkConnection = "17020"
+    static let invalidEmail = "17008"
+    static let accessRestricted = "17005"
+    static let emailInUse = "17007"
+    static let missingEmail = "17999"
+    static let linkedInCanceled = 3
+}
+
 class ValidationService: NSObject {
-    
-    enum ErrorCode {
-        static let noFirebaseUserRegistered = "17011"
-        static let invalidPassword = "17009"
-        static let noNetworkConnection = "17020"
-        static let invalidEmail = "17008"
-        static let accessRestricted = "17005"
-        static let emailInUse = "17007"
-        static let missingEmail = "17999"
-    }
     
     func handle(remoteResponce error: Error?) throws
     {

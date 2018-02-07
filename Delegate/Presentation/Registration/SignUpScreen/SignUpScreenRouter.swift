@@ -10,30 +10,42 @@ import UIKit
 
 class SignUpScreenRouter {
     
-    enum SegueIdentifier {
-        static let toSignUp = "SegueToSignUpScreen"
-        static let toPresentation = "SegueToPresentation"
-    }
+    typealias Action = () -> ()
     
     weak var viewController: SignUpViewController!
     
+    fileprivate let waitingInterval: Double = 0.5
+    
     func routeToPresentation()
     {
-        DispatchQueue.main.async { [weak self] in
-            self?.viewController.animate(views: [UIView(), self!.viewController.logoContainer, self!.viewController.emailInputContainer, self!.viewController.passwordInputContainer, self!.viewController.repeatPasswordContainer, self!.viewController.loginButtonContainer, self!.viewController.signupContainer, self!.viewController.socislPlaceholderContainer, self!.viewController.socialButtonsContainer, self!.viewController.termsOfUseContainer], ofTheScreen: true)
-            Timer.after(0.5) { [weak self] in
-                self?.viewController.performSegue(withIdentifier: SegueIdentifier.toPresentation, sender: nil)
-            }
-        }
+        perform(routerActiion: ApplicationRouter.showPresentationScreen, waitingTimeInterval: waitingInterval)
     }
     
-    func goBack()
+    func routeToLogin()
+    {
+        perform(routerActiion: ApplicationRouter.showLoginScreen, waitingTimeInterval: waitingInterval)
+    }
+    
+    fileprivate func perform(routerActiion: @escaping Action, waitingTimeInterval: Double)
     {
         DispatchQueue.main.async { [weak self] in
-            self?.viewController.animate(views: [UIView(), self!.viewController.logoContainer, self!.viewController.emailInputContainer, self!.viewController.passwordInputContainer, self!.viewController.repeatPasswordContainer, self!.viewController.loginButtonContainer, self!.viewController.signupContainer, self!.viewController.socislPlaceholderContainer, self!.viewController.socialButtonsContainer, self!.viewController.termsOfUseContainer], ofTheScreen: true)
-            Timer.after(0.5) { [weak self] in
-                self?.viewController.returnBack()
-            }
+            self?.viewController.animate(views: [
+                UIView(),
+                self!.viewController.logoContainer,
+                self!.viewController.emailInputContainer,
+                self!.viewController.passwordInputContainer,
+                self!.viewController.repeatPasswordContainer,
+                self!.viewController.loginButtonContainer,
+                self!.viewController.signupContainer,
+                self!.viewController.socislPlaceholderContainer,
+                self!.viewController.socialButtonsContainer,
+                self!.viewController.termsOfUseContainer
+                ],
+                ofTheScreen: true)
+        }
+
+        Timer.after(waitingTimeInterval) {
+            routerActiion()
         }
     }
 }

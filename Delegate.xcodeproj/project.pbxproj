@@ -41,7 +41,6 @@
 		2AA69F5920247B7A00D9ED38 /* SignUpScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F5820247B7900D9ED38 /* SignUpScreenInteractor.swift */; };
 		2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F5A20247BAC00D9ED38 /* SignUpScreenPresenter.swift */; };
 		2AA69F5D20247BF000D9ED38 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F5C20247BF000D9ED38 /* SignUpScreenRouter.swift */; };
-		2AA69F5F2024817C00D9ED38 /* UIViewController+ReturnBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F5E2024817C00D9ED38 /* UIViewController+ReturnBack.swift */; };
 		2AA69F622024BB0A00D9ED38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA69F612024BB0A00D9ED38 /* Main.storyboard */; };
 		2AA69F642024BBF200D9ED38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F632024BBF200D9ED38 /* MainViewController.swift */; };
 		2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F652024BDED00D9ED38 /* ValidationService.swift */; };
@@ -114,7 +113,6 @@
 		2AA69F5820247B7900D9ED38 /* SignUpScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenInteractor.swift; sourceTree = "<group>"; };
 		2AA69F5A20247BAC00D9ED38 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
 		2AA69F5C20247BF000D9ED38 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
-		2AA69F5E2024817C00D9ED38 /* UIViewController+ReturnBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ReturnBack.swift"; sourceTree = "<group>"; };
 		2AA69F612024BB0A00D9ED38 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2AA69F632024BBF200D9ED38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2AA69F652024BDED00D9ED38 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */,
 				2AA69F2A2023460100D9ED38 /* String+Localization.swift */,
 				2AA69F32202349A500D9ED38 /* UITextField+PlaceholderColor.swift */,
-				2AA69F5E2024817C00D9ED38 /* UIViewController+ReturnBack.swift */,
 				2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */,
 				2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */,
 				2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */,
@@ -693,7 +690,6 @@
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
 				2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */,
 				2AD6ED9F2029F8FD0073581F /* FriendsTableViewController.swift in Sources */,
-				2AA69F5F2024817C00D9ED38 /* UIViewController+ReturnBack.swift in Sources */,
 				2AD6ED9A2029F7CC0073581F /* TearmsTableViewController.swift in Sources */,
 				2AA69F682024CE0400D9ED38 /* ValidatableView.swift in Sources */,
 				2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */,

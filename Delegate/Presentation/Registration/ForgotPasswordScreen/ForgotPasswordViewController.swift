@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class ForgotPasswordViewController: DelegateAbstractViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var logoContainer: UIImageView!
@@ -59,12 +59,22 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
     
     fileprivate func handleReturnBack()
     {
-        DispatchQueue.main.async {
-            self.view.endEditing(true)
-            self.animate(views: [self.logoContainer, self.emailInputContainer, self.resetButtonContainer, self.backButtonContainer].reversed(), ofTheScreen: true)
-            Timer.after(self.waitingTime) { [weak self] in
-                self?.returnBack()
-            }
+        self.view.endEditing(true)
+        self.perform(routerActiion: ApplicationRouter.showLoginScreen)
+    }
+    
+    fileprivate func perform(routerActiion: @escaping () -> ())
+    {
+        DispatchQueue.main.async { [weak self] in
+            self?.animate(views: [self!.logoContainer,
+                                  self!.emailInputContainer,
+                                  self!.resetButtonContainer,
+                                  self!.backButtonContainer]
+                , ofTheScreen: false)
+        }
+        
+        Timer.after(0.5) {
+            routerActiion()
         }
     }
     

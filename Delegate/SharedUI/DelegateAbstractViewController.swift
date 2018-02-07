@@ -52,30 +52,28 @@ class DelegateAbstractViewController: UIViewController, GIDSignInUIDelegate {
         anotherResponder.becomeFirstResponder()
     }
     
-    func animate(views: [UIView], ofTheScreen: Bool, completion: (() -> ())? = nil)
+    func animate(views: [UIView], ofTheScreen: Bool)
     {
         guard needsAnimation else { return }
-        ofTheScreen ? animateOfTheScreen(views: views, completion: completion) : animateOnTheScreen(views: views, completion: completion)
+        ofTheScreen ? animateOfTheScreen(views: views) : animateOnTheScreen(views: views)
     }
     
-    fileprivate func animateOfTheScreen(views: [UIView], completion: (() -> ())?)
+    fileprivate func animateOfTheScreen(views: [UIView])
     {
         for (index, element) in views.enumerated() {
             UIView.animate(withDuration: AnimationDuration.defaultSlide, delay: 0.2, options: .curveEaseInOut, animations: {
                 index % 2 == 0 ? (element.frame.origin.x -= self.currentScreenWidth) : (element.frame.origin.x += self.currentScreenWidth)
             })
         }
-        completion?()
     }
     
-    fileprivate func animateOnTheScreen(views: [UIView], completion: (() -> ())?)
+    fileprivate func animateOnTheScreen(views: [UIView])
     {
         for (index, element) in views.enumerated() {
             UIView.animate(withDuration: AnimationDuration.defaultSlide, delay: 0.4, options: .curveEaseInOut, animations: {
                 index % 2 == 0 ? (element.frame.origin.x += self.currentScreenWidth) : (element.frame.origin.x -= self.currentScreenWidth)
             })
         }
-        completion?()
     }
     
     deinit {
@@ -90,7 +88,6 @@ class DelegateAbstractViewController: UIViewController, GIDSignInUIDelegate {
         if let keyboardSize = sender.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect, let scrollView = scrollView {
             let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
             scrollView.contentInset = contentInsets
-            
         }
     }
     
