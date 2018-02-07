@@ -20,6 +20,13 @@ enum StoryboardIdentifier {
 
 class ApplicationRouter
 {
+    
+    static func instance() -> ApplicationRouter
+    {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.applicationRouter
+    }
+    
     static func showInitialScreen()
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -53,4 +60,24 @@ class ApplicationRouter
             window?.rootViewController = viewController
         }
     }
+//    
+//    fileprivate func display<T>(_ viewController: T, onTab tab: Int) where T: UIViewController, T: ModalDismissable {
+//        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController as? DelegateRootViewController else { return }
+//        
+//        if Model.singleton.isUserLoggedIn {
+//            _ = rootViewController.switchToTab(tab, dismissingModals: true)
+//            
+//            if let navigationController = rootViewController.fitTabBarController?.selectedViewController as? UINavigationController {
+//                navigationController.pushViewController(viewController, animated: false)
+//            }
+//            
+//        } else {
+//            var viewController = viewController
+//            viewController.modalDismissable = true
+//            if rootViewController.presentedViewController is ModalDismissable {
+//                rootViewController.presentedViewController?.dismiss(animated: false, completion: nil)
+//            }
+//            rootViewController.present(viewController, animated: false, completion: nil)
+//        }
+//    }
 }

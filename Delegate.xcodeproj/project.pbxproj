@@ -64,6 +64,16 @@
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
 		2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1DF20232CBF00A00FA0 /* LoginViewController.swift */; };
 		2AD2D1E220232CD100A00FA0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1E120232CD100A00FA0 /* Login.storyboard */; };
+		2AD6ED982029F7940073581F /* Teams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6ED972029F7940073581F /* Teams.storyboard */; };
+		2AD6ED9A2029F7CC0073581F /* TearmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6ED992029F7CC0073581F /* TearmsTableViewController.swift */; };
+		2AD6ED9D2029F8EA0073581F /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6ED9C2029F8EA0073581F /* Friends.storyboard */; };
+		2AD6ED9F2029F8FD0073581F /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6ED9E2029F8FD0073581F /* FriendsTableViewController.swift */; };
+		2AD6EDA22029F9540073581F /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6EDA12029F9540073581F /* Tasks.storyboard */; };
+		2AD6EDA42029F9850073581F /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6EDA32029F9850073581F /* TasksTableViewController.swift */; };
+		2AD6EDA72029F9E10073581F /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6EDA62029F9E10073581F /* HistoryTableViewController.swift */; };
+		2AD6EDA92029F9F20073581F /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6EDA82029F9F20073581F /* History.storyboard */; };
+		2AD6EDAC2029FA260073581F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6EDAB2029FA260073581F /* Settings.storyboard */; };
+		2AD6EDAE2029FA310073581F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */; };
 		2AFA2DAD2027BF9E00EA29EF /* SocialsWithFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +139,16 @@
 		2AD2D1D3202323E500A00FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AD2D1DF20232CBF00A00FA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2AD2D1E120232CD100A00FA0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		2AD6ED972029F7940073581F /* Teams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teams.storyboard; sourceTree = "<group>"; };
+		2AD6ED992029F7CC0073581F /* TearmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TearmsTableViewController.swift; sourceTree = "<group>"; };
+		2AD6ED9C2029F8EA0073581F /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		2AD6ED9E2029F8FD0073581F /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		2AD6EDA12029F9540073581F /* Tasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
+		2AD6EDA32029F9850073581F /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		2AD6EDA62029F9E10073581F /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		2AD6EDA82029F9F20073581F /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		2AD6EDAB2029FA260073581F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsWithFirebaseService.swift; sourceTree = "<group>"; };
 		7E592EB671048B93CFB89FE5 /* Pods-Delegate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delegate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delegate/Pods-Delegate.debug.xcconfig"; sourceTree = "<group>"; };
 		AB6D62A82CBA4CDE123871F2 /* Pods-Delegate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delegate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delegate/Pods-Delegate.release.xcconfig"; sourceTree = "<group>"; };
@@ -345,7 +365,11 @@
 		2AD2D1DC20232A0800A00FA0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2AAB4F81202653870094312A /* SelectRoleScreen */,
+				2AD6EDAA2029FA070073581F /* Settings */,
+				2AD6EDA52029F9C40073581F /* History */,
+				2AD6EDA02029F9420073581F /* Tasks */,
+				2AD6ED9B2029F8BA0073581F /* Friends */,
+				2AD6ED962029F77B0073581F /* Teams */,
 				2AA69F602024BAF300D9ED38 /* MainScreen */,
 				2AD2D1DD20232C9600A00FA0 /* Registration */,
 			);
@@ -355,6 +379,7 @@
 		2AD2D1DD20232C9600A00FA0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				2AAB4F81202653870094312A /* SelectRoleScreen */,
 				2AAB4F7C202652FF0094312A /* IntroScreen */,
 				2AA69F692024D6D200D9ED38 /* ForgotPasswordScreen */,
 				2AA69F3820238DA900D9ED38 /* SignUpScreen */,
@@ -374,6 +399,51 @@
 				2AA69F54202453AF00D9ED38 /* LoginScreenRouter.swift */,
 			);
 			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		2AD6ED962029F77B0073581F /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6ED972029F7940073581F /* Teams.storyboard */,
+				2AD6ED992029F7CC0073581F /* TearmsTableViewController.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		2AD6ED9B2029F8BA0073581F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6ED9C2029F8EA0073581F /* Friends.storyboard */,
+				2AD6ED9E2029F8FD0073581F /* FriendsTableViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		2AD6EDA02029F9420073581F /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6EDA12029F9540073581F /* Tasks.storyboard */,
+				2AD6EDA32029F9850073581F /* TasksTableViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		2AD6EDA52029F9C40073581F /* History */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6EDA62029F9E10073581F /* HistoryTableViewController.swift */,
+				2AD6EDA82029F9F20073581F /* History.storyboard */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		2AD6EDAA2029FA070073581F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6EDAB2029FA260073581F /* Settings.storyboard */,
+				2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		58CE4A276C83D3D6A27501E3 /* Frameworks */ = {
@@ -470,6 +540,11 @@
 				2AA69F3A20238DCC00D9ED38 /* SignUp.storyboard in Resources */,
 				2AA69F6B2024D83600D9ED38 /* ForgotPassword.storyboard in Resources */,
 				2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */,
+				2AD6EDA22029F9540073581F /* Tasks.storyboard in Resources */,
+				2AD6ED982029F7940073581F /* Teams.storyboard in Resources */,
+				2AD6EDA92029F9F20073581F /* History.storyboard in Resources */,
+				2AD6ED9D2029F8EA0073581F /* Friends.storyboard in Resources */,
+				2AD6EDAC2029FA260073581F /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,10 +687,14 @@
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
 				2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */,
 				2AAB4F702025ACA00094312A /* Error+Code.swift in Sources */,
+				2AD6EDAE2029FA310073581F /* SettingsTableViewController.swift in Sources */,
 				2AA69F55202453AF00D9ED38 /* LoginScreenRouter.swift in Sources */,
+				2AD6EDA72029F9E10073581F /* HistoryTableViewController.swift in Sources */,
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
 				2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */,
+				2AD6ED9F2029F8FD0073581F /* FriendsTableViewController.swift in Sources */,
 				2AA69F5F2024817C00D9ED38 /* UIViewController+ReturnBack.swift in Sources */,
+				2AD6ED9A2029F7CC0073581F /* TearmsTableViewController.swift in Sources */,
 				2AA69F682024CE0400D9ED38 /* ValidatableView.swift in Sources */,
 				2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */,
 				2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */,
@@ -627,6 +706,7 @@
 				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
 				2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
+				2AD6EDA42029F9850073581F /* TasksTableViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainViewController.swift in Sources */,
 				2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */,
 				2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */,

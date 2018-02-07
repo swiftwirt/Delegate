@@ -35,12 +35,21 @@ class SelectRoleViewController: DelegateAbstractViewController {
             self.separatorLineContainer.alpha = 1.0
         }
     }
+    
     @IBAction func onPressedCreateEnterprise(_ sender: Any)
     {
     }
     
     @IBAction func onPressedJoinTeam(_ sender: Any)
     {
-        ApplicationRouter.showMainScreen()
+        animate(views: [sharkLogo, sharkTitleContainer, sarkInspiringMessageContainer, sharkButtonContainerr, keymenLogo, keymenTitleContainer, keymenInspiringMessageContainer, keymenButtonContainerr], ofTheScreen: false)
+        UIView.animate(withDuration: AnimationDuration.defaultFade) {
+            self.separatorLineContainer.alpha = 0.0
+        }
+        Timer.after(0.8) {
+            self.dismiss(animated: true) {
+                ApplicationRouter.showMainScreen()
+            }
+        }
     }
 }
