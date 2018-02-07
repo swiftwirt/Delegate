@@ -273,13 +273,11 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
 extension SignUpScreenInteractor: GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
         self.output.output.present(viewController, animated: true, completion: nil)
-        print("present")
     }
     
     func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
         self.output.output.needsAnimation = false
         self.output.output.dismiss(animated: true, completion: nil)
-        print("dissmiss")
     }
 }
 
