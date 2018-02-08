@@ -23,6 +23,51 @@ enum JSONKey {
     static let email = "email"
     static let emailAddress = "emailAddress"
     static let id = "id"
+    
+    // Team
+    static let state = "state"
+    static let title = "title"
+    static let details = "details"
+    static let members = "members"
+    static let logoLink = "logoLink"
+    
+    static let invitePending = "invitePending"
+    static let inviteAccepted = "inviteAccepted"
+    static let userCreated = "userCreated"
+    
+    // Team menber
+    static let name = "name"
+    static let avatarLink = "avatarLink"
+    static let tasks = "tasks"
+    static let position = "position"
+    
+    // Task
+    static let estimatedTime = "estimatedTime"
+    static let spentTime = "spentTime"
+    static let priority = "priority"
+    static let dueDate = "dueDate"
+    static let authorID = "authorID"
+    static let authorName = "authorName"
+    static let assigneeID = "assigneeID"
+    static let assigneeName = "assigneeName"
+    static let progress = "progress"
+    static let status = "status"
+    static let comments = "comments"
+    static let disscussion = "disscussion"
+    
+    static let assigned = "assigned"
+    static let inPregress = "inPregress"
+    static let resolved = "resolved"
+    static let completed = "completed"
+
+    static let urgent = "urgent"
+    static let hight = "hight"
+    static let normal = "normal"
+    static let low = "low"
+    
+    // Message
+    static let text = "text"
+    static let dateCreated = "dateCreated"
 }
 
 enum Color {

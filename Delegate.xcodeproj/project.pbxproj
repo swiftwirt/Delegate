@@ -59,6 +59,11 @@
 		2AAB4F832026539D0094312A /* SelectRole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F822026539D0094312A /* SelectRole.storyboard */; };
 		2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F84202653B10094312A /* SelectRoleViewController.swift */; };
 		2AC6D5FB202C7AAA00784CD2 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */; };
+		2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */; };
+		2AC6D5FF202C7DD200784CD2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FE202C7DD200784CD2 /* Team.swift */; };
+		2AC6D602202C7ECA00784CD2 /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D601202C7ECA00784CD2 /* TeamMember.swift */; };
+		2AC6D604202C85EE00784CD2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D603202C85EE00784CD2 /* Task.swift */; };
+		2AC6D606202C879D00784CD2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D605202C879D00784CD2 /* Message.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -136,6 +141,11 @@
 		2AAB4F822026539D0094312A /* SelectRole.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectRole.storyboard; sourceTree = "<group>"; };
 		2AAB4F84202653B10094312A /* SelectRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoleViewController.swift; sourceTree = "<group>"; };
 		2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DashedLine.swift"; sourceTree = "<group>"; };
+		2AC6D5FE202C7DD200784CD2 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		2AC6D601202C7ECA00784CD2 /* TeamMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
+		2AC6D603202C85EE00784CD2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		2AC6D605202C879D00784CD2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +190,10 @@
 		2A3B9B1D202519FF003FDA41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2AC6D5FE202C7DD200784CD2 /* Team.swift */,
+				2AC6D605202C879D00784CD2 /* Message.swift */,
+				2AC6D603202C85EE00784CD2 /* Task.swift */,
+				2AC6D601202C7ECA00784CD2 /* TeamMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +210,7 @@
 				2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */,
 				2AAB4F6F2025ACA00094312A /* Error+Code.swift */,
 				2AAB4F782025DDDE0094312A /* Observable+JSON.swift */,
+				2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -691,11 +706,15 @@
 				2AFA2DAD2027BF9E00EA29EF /* SocialsWithFirebaseService.swift in Sources */,
 				2AA69F29202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift in Sources */,
 				2AA69F4D20243EF800D9ED38 /* ThirdPartiesConfigurator.swift in Sources */,
+				2AC6D604202C85EE00784CD2 /* Task.swift in Sources */,
 				2AA69F2E2023468C00D9ED38 /* RightToLeftSensitiveTextField.swift in Sources */,
 				2AA69F5D20247BF000D9ED38 /* SignUpScreenRouter.swift in Sources */,
 				2AA69F412023B7AF00D9ED38 /* ApiService.swift in Sources */,
 				2AD6EDB4202C376F0073581F /* SupportEmailService.swift in Sources */,
+				2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */,
+				2AC6D602202C7ECA00784CD2 /* TeamMember.swift in Sources */,
 				2AA69F5720247B2E00D9ED38 /* SignUpScreenConfigurator.swift in Sources */,
+				2AC6D5FF202C7DD200784CD2 /* Team.swift in Sources */,
 				2A3B9B2620252F40003FDA41 /* AlertHandler.swift in Sources */,
 				2AA69F512024435A00D9ED38 /* LoginScreenPresenter.swift in Sources */,
 				2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */,
@@ -741,6 +760,7 @@
 				2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,
+				2AC6D606202C879D00784CD2 /* Message.swift in Sources */,
 				2AAB4F772025CF0A0094312A /* Reachability.swift in Sources */,
 				2AA69F712024E24200D9ED38 /* SwiftyTimer.swift in Sources */,
 			);

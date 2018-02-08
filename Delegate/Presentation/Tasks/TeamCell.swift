@@ -10,8 +10,24 @@ import UIKit
 
 class TeamCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var membersNumberLabel: UILabel!
+    
+    @IBOutlet weak var joinButton: UIButton!
+     @IBOutlet weak var leaveButton: UIButton!
+     @IBOutlet weak var dismissButton: UIButton!
+    
+    var model: Team! {
+        didSet {
+            configureOutlets(model: model)
+        }
+    }
+    
+    func configureOutlets(model: Team)
+    {
+        
     }
 }
