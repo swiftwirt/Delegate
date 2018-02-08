@@ -45,6 +45,10 @@ class IntroViewController: DelegateAbstractViewController {
             }
             .disposed(by: disposeBag)
     }
+    
+    deinit {
+        log.info("\(self) deinit")
+    }
 
 }
 

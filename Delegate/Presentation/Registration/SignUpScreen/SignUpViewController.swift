@@ -78,5 +78,9 @@ class SignUpViewController: DelegateAbstractViewController {
             self.switchFrom(one: self.passwordTextField, to: self.repeatPasswordTextField)
         }
     }
+    
+    deinit {
+        log.info("\(self) deinit")
+    }
 
 }

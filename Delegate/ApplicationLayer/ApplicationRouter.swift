@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum ViewControllerIdentifier {
     static let loginViewController = "LoginViewController"
@@ -113,5 +114,20 @@ class ApplicationRouter
         UIView.transition(with: window, duration: 0.8, options: .transitionCrossDissolve, animations: {
             window.rootViewController = viewController
         }, completion: nil)
+    }
+    
+    func display<T>(_ viewController: T, onTab tab: Int) where T: UIViewController {
+        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else { return }
+        
+        if Auth.auth().currentUser != nil {
+            _ = rootViewController.switchToTab(tab, dismissingModals: true)
+            
+            if let navigationController = rootViewController.tabBarController?.selectedViewController as? UINavigationController {
+                navigationController.pushViewController(viewController, animated: false)
+            }
+            
+        } else {
+            ApplicationRouter.showLoginScreen()
+        }
     }
 }

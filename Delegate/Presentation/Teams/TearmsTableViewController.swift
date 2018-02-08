@@ -13,5 +13,9 @@ class TearmsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    deinit {
+        log.info("\(self) deinit")
+    }
 
 }

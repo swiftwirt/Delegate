@@ -77,4 +77,8 @@ class LoginViewController: DelegateAbstractViewController {
         passwordTextField.text = nil
     }
     
+    deinit {
+        log.info("\(self) deinit")
+    }
+    
 }

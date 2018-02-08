@@ -36,6 +36,10 @@ class SelectRoleViewController: DelegateAbstractViewController {
         }
     }
     
+    deinit {
+        log.info("\(self) deinit")
+    }
+    
     @IBAction func onPressedCreateEnterprise(_ sender: Any)
     {
     }

@@ -40,6 +40,10 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
         emailTextField.setAttributed(placeholder: Strings.email, with: Color.textFieldPlaceholder)
     }
     
+    deinit {
+        log.info("\(self) deinit")
+    }
+    
     @IBAction func onPressedResetButton(_ sender: Any)
     {
         do {

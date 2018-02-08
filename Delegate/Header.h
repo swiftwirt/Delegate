@@ -13,4 +13,7 @@
 #import <UIKit/UIKit.h>
 #import <linkedin-sdk/LISDK.h>
 
+// For Logging
+#import "LoggerObjCHelper.h"
+
 #endif /* Header_h */

@@ -14,4 +14,8 @@ class HistoryTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+    deinit {
+        log.info("\(self) deinit")
+    }
 }

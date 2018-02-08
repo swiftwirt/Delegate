@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         applicationManager.clearKeychainIfNeeded()
         
+        Logger.setUpLogging()
+        
         applicationManager.thirdPartiesConfigurator.configure()
         applicationManager.reachabilityService.configureReachability()
         observeInternetConnection()

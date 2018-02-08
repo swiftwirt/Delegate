@@ -14,4 +14,8 @@ class TasksTableViewController: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+    deinit {
+        log.info("\(self) deinit")
+    }
 }

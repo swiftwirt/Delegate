@@ -25,5 +25,6 @@ pod 'SwiftMessages'
 pod 'PKHUD'
 pod 'TwitterKit'
 pod 'GoogleSignIn'
+pod 'GZIP'
 
 end

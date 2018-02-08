@@ -155,27 +155,27 @@ class UserService: NSObject {
         let archiver = NSKeyedArchiver(forWritingWith: data)
         archiver.encode(user, forKey: CodingKeys.user)
         archiver.finishEncoding()
-        data.write(toFile: dataFilePath, atomically: true)
+        data.write(toFile: UserService.dataFilePath, atomically: true)
     }
     
     func loadUser()
     {
-        if FileManager.default.fileExists(atPath: dataFilePath), let data = try? Data(contentsOf: URL(fileURLWithPath: dataFilePath)) {
+        if FileManager.default.fileExists(atPath: UserService.dataFilePath), let data = try? Data(contentsOf: URL(fileURLWithPath: UserService.dataFilePath)) {
             let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
             user = unarchiver.decodeObject(forKey: CodingKeys.user) as? DLGUser
             unarchiver.finishDecoding()
         }
     }
     
-    fileprivate var documentsDirectory: String
+    static var documentsDirectory: String
     {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return paths[0]
     }
     
-    fileprivate var dataFilePath: String
+    static var dataFilePath: String
     {
-        return (documentsDirectory as NSString).appendingPathComponent(CodingKeys.plist)
+        return (UserService.documentsDirectory as NSString).appendingPathComponent(CodingKeys.plist)
     }
     
 }

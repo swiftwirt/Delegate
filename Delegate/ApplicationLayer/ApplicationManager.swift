@@ -58,6 +58,11 @@ class ApplicationManager {
         return service
     }()
     
+    lazy var supportEmailService: SupportEmailService = {
+        let service = SupportEmailService()
+        return service
+    }()
+    
     func clearKeychainIfNeeded()
     {
         guard userService.previouslyLaunched else {

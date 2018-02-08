@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="-1864" y="-61"/>
         </scene>
-        <!--Animated Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="V03-ey-yah">
             <objects>
-                <tabBarController storyboardIdentifier="Main" id="T3Y-1Y-4Tc" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" id="T3Y-1Y-4Tc" customClass="MainTabBarController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="taW-7k-gEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
