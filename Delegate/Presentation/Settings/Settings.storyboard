@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="z2P-tf-BOF">
             <objects>
                 <tableViewController id="FCa-Dw-etj" customClass="SettingsTableViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="FCa-Dw-etj" id="vZz-Z8-TDT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NUC-bK-haz"/>
+                    <navigationItem key="navigationItem" title="Settings" id="NUC-bK-haz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPe-is-YaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

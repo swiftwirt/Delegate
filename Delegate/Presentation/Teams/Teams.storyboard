@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tearms Table View Controller-->
+        <!--Teams-->
         <scene sceneID="TIT-gC-3wg">
             <objects>
                 <tableViewController id="Sid-oG-OFv" customClass="TearmsTableViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="Sid-oG-OFv" id="vBB-gM-PaU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ea6-BS-mcn"/>
+                    <navigationItem key="navigationItem" title="Teams" id="Ea6-BS-mcn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLQ-Hm-ubd" userLabel="First Responder" sceneMemberID="firstResponder"/>

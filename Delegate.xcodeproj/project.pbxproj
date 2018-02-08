@@ -58,6 +58,7 @@
 		2AAB4F802026533D0094312A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F7F2026533D0094312A /* Intro.storyboard */; };
 		2AAB4F832026539D0094312A /* SelectRole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F822026539D0094312A /* SelectRole.storyboard */; };
 		2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F84202653B10094312A /* SelectRoleViewController.swift */; };
+		2AC6D5FB202C7AAA00784CD2 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -134,6 +135,7 @@
 		2AAB4F7F2026533D0094312A /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		2AAB4F822026539D0094312A /* SelectRole.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectRole.storyboard; sourceTree = "<group>"; };
 		2AAB4F84202653B10094312A /* SelectRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoleViewController.swift; sourceTree = "<group>"; };
+		2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD6EDA12029F9540073581F /* Tasks.storyboard */,
+				2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */,
 				2AD6EDA32029F9850073581F /* TasksTableViewController.swift */,
 			);
 			path = Tasks;
@@ -442,8 +445,8 @@
 		2AD6EDA52029F9C40073581F /* History */ = {
 			isa = PBXGroup;
 			children = (
-				2AD6EDA62029F9E10073581F /* HistoryTableViewController.swift */,
 				2AD6EDA82029F9F20073581F /* History.storyboard */,
+				2AD6EDA62029F9E10073581F /* HistoryTableViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				2AA69F5920247B7A00D9ED38 /* SignUpScreenInteractor.swift in Sources */,
 				2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */,
 				2AD6EDB2202C346C0073581F /* Logger.swift in Sources */,
+				2AC6D5FB202C7AAA00784CD2 /* TeamCell.swift in Sources */,
 				2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */,
 				2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */,
 				2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */,

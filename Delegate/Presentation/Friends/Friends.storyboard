@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Friends Table View Controller-->
+        <!--Friends-->
         <scene sceneID="h6D-ip-UeK">
             <objects>
                 <tableViewController id="olG-6F-Tv6" customClass="FriendsTableViewController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="olG-6F-Tv6" id="anL-0G-Cm5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SbY-9I-NCM"/>
+                    <navigationItem key="navigationItem" title="Friends" id="SbY-9I-NCM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uO-YX-CaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

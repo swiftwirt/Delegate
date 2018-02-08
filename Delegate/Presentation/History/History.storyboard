@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--History-->
         <scene sceneID="J3E-9t-Xwt">
             <objects>
                 <tableViewController id="zoi-2B-XlE" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="zoi-2B-XlE" id="YUN-sh-dgI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="mXO-Cw-I6z"/>
+                    <navigationItem key="navigationItem" title="History" id="mXO-Cw-I6z"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uj-ta-ywM" userLabel="First Responder" sceneMemberID="firstResponder"/>
