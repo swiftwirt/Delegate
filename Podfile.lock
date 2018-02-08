@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - AnimatableReload (0.1.0)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -92,6 +93,9 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
   - SwiftMessages (4.1.0)
   - SwiftyJSON (3.1.4)
   - TOCropViewController (2.1.0)
@@ -101,6 +105,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AnimatableReload
   - Branch (~> 0.20.2)
   - Cosmos (~> 12.0.1)
   - FBSDKCoreKit (~> 4.27.1)
@@ -119,6 +124,7 @@ DEPENDENCIES:
   - RxCocoa (~> 4.0.0)
   - RxDataSources (~> 3.0.2)
   - RxSwift (~> 4.0.0)
+  - SDWebImage (~> 4.2.1)
   - SwiftMessages
   - SwiftyJSON (~> 3.1.4)
   - TOCropViewController (~> 2.1.0)
@@ -126,6 +132,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AnimatableReload: dcef76a16258b82bf845225012aa8f3b1aa7df6c
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Branch: eec127cb61e0f7f1aa9c351adcad22fa980e001d
   Cosmos: 4a9f57998a08788a1062c7b8eefbc62d2b590f39
@@ -155,12 +162,13 @@ SPEC CHECKSUMS:
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TOCropViewController: f88194a084f6afe1fd6f21a3f0edda7dd097e38b
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 1222dd1cc63e7acc23e594097f8351a9b7033314
+PODFILE CHECKSUM: 8f743aa1568d3b226a93dbefc2fcfcebd3066b69
 
 COCOAPODS: 1.3.1

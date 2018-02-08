@@ -64,13 +64,17 @@
 		2AC6D602202C7ECA00784CD2 /* TeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D601202C7ECA00784CD2 /* TeamMember.swift */; };
 		2AC6D604202C85EE00784CD2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D603202C85EE00784CD2 /* Task.swift */; };
 		2AC6D606202C879D00784CD2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D605202C879D00784CD2 /* Message.swift */; };
+		2AC6D608202CAA5F00784CD2 /* TeamsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D607202CAA5F00784CD2 /* TeamsTableViewDataSource.swift */; };
+		2AC6D60A202CAEC000784CD2 /* TeamMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */; };
+		2AC6D60C202CB34300784CD2 /* DelegateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */; };
+		2AC6D60E202CC16000784CD2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D60D202CC16000784CD2 /* HeaderCell.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
 		2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1DF20232CBF00A00FA0 /* LoginViewController.swift */; };
 		2AD2D1E220232CD100A00FA0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1E120232CD100A00FA0 /* Login.storyboard */; };
 		2AD6ED982029F7940073581F /* Teams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6ED972029F7940073581F /* Teams.storyboard */; };
-		2AD6ED9A2029F7CC0073581F /* TearmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6ED992029F7CC0073581F /* TearmsTableViewController.swift */; };
+		2AD6ED9A2029F7CC0073581F /* TeamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6ED992029F7CC0073581F /* TeamsTableViewController.swift */; };
 		2AD6ED9D2029F8EA0073581F /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6ED9C2029F8EA0073581F /* Friends.storyboard */; };
 		2AD6ED9F2029F8FD0073581F /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6ED9E2029F8FD0073581F /* FriendsTableViewController.swift */; };
 		2AD6EDA22029F9540073581F /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD6EDA12029F9540073581F /* Tasks.storyboard */; };
@@ -146,6 +150,10 @@
 		2AC6D601202C7ECA00784CD2 /* TeamMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMember.swift; sourceTree = "<group>"; };
 		2AC6D603202C85EE00784CD2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2AC6D605202C879D00784CD2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2AC6D607202CAA5F00784CD2 /* TeamsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewDataSource.swift; sourceTree = "<group>"; };
+		2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberCell.swift; sourceTree = "<group>"; };
+		2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTableViewController.swift; sourceTree = "<group>"; };
+		2AC6D60D202CC16000784CD2 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,7 +162,7 @@
 		2AD2D1DF20232CBF00A00FA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2AD2D1E120232CD100A00FA0 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2AD6ED972029F7940073581F /* Teams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teams.storyboard; sourceTree = "<group>"; };
-		2AD6ED992029F7CC0073581F /* TearmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TearmsTableViewController.swift; sourceTree = "<group>"; };
+		2AD6ED992029F7CC0073581F /* TeamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewController.swift; sourceTree = "<group>"; };
 		2AD6ED9C2029F8EA0073581F /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		2AD6ED9E2029F8FD0073581F /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		2AD6EDA12029F9540073581F /* Tasks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 				2AA69F2D2023468C00D9ED38 /* RightToLeftSensitiveTextField.swift */,
 				2AA69F36202357D800D9ED38 /* DelegateAbstractViewController.swift */,
 				2AA69F672024CE0400D9ED38 /* ValidatableView.swift */,
+				2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -433,7 +442,11 @@
 			isa = PBXGroup;
 			children = (
 				2AD6ED972029F7940073581F /* Teams.storyboard */,
-				2AD6ED992029F7CC0073581F /* TearmsTableViewController.swift */,
+				2AD6ED992029F7CC0073581F /* TeamsTableViewController.swift */,
+				2AC6D607202CAA5F00784CD2 /* TeamsTableViewDataSource.swift */,
+				2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */,
+				2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */,
+				2AC6D60D202CC16000784CD2 /* HeaderCell.swift */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -451,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				2AD6EDA12029F9540073581F /* Tasks.storyboard */,
-				2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */,
 				2AD6EDA32029F9850073581F /* TasksTableViewController.swift */,
 			);
 			path = Tasks;
@@ -616,6 +628,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Delegate/Pods-Delegate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AnimatableReload/AnimatableReload.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
@@ -635,6 +648,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
@@ -646,6 +660,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatableReload.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
@@ -665,6 +680,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
@@ -720,6 +736,7 @@
 				2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */,
 				2A3B9B2A202543C1003FDA41 /* UIColor+HEX.swift in Sources */,
 				2AA69F532024436D00D9ED38 /* LoginScreenInteractor.swift in Sources */,
+				2AC6D60C202CB34300784CD2 /* DelegateTableViewController.swift in Sources */,
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
 				2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */,
 				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
@@ -735,9 +752,10 @@
 				2AA69F55202453AF00D9ED38 /* LoginScreenRouter.swift in Sources */,
 				2AD6EDA72029F9E10073581F /* HistoryTableViewController.swift in Sources */,
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
+				2AC6D60A202CAEC000784CD2 /* TeamMemberCell.swift in Sources */,
 				2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */,
 				2AD6ED9F2029F8FD0073581F /* FriendsTableViewController.swift in Sources */,
-				2AD6ED9A2029F7CC0073581F /* TearmsTableViewController.swift in Sources */,
+				2AD6ED9A2029F7CC0073581F /* TeamsTableViewController.swift in Sources */,
 				2AA69F682024CE0400D9ED38 /* ValidatableView.swift in Sources */,
 				2AD2D1E020232CBF00A00FA0 /* LoginViewController.swift in Sources */,
 				2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */,
@@ -748,10 +766,12 @@
 				2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */,
 				2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */,
 				2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */,
+				2AC6D608202CAA5F00784CD2 /* TeamsTableViewDataSource.swift in Sources */,
 				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
 				2AD6EDBA202C44810073581F /* LoggerObjCHelper.m in Sources */,
 				2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
+				2AC6D60E202CC16000784CD2 /* HeaderCell.swift in Sources */,
 				2AD6EDA42029F9850073581F /* TasksTableViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainTabBarController.swift in Sources */,
 				2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */,

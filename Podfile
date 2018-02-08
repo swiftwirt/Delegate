@@ -26,5 +26,7 @@ pod 'PKHUD'
 pod 'TwitterKit'
 pod 'GoogleSignIn'
 pod 'GZIP'
+pod 'SDWebImage', '~> 4.2.1'
+pod 'AnimatableReload'
 
 end

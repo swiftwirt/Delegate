@@ -9,17 +9,17 @@
 import Foundation
 import SwiftyJSON
 
+enum TeamState: String {
+    case invitePending = "invitePending"
+    case inviteAccepted = "inviteAccepted"
+    case userCreated = "userCreated"
+}
+
 struct Team: Equatable {
     
     static func ==(lhs: Team, rhs: Team) -> Bool
     {
         return lhs.id == rhs.id
-    }
-    
-    enum TeamState: String {
-        case invitePending = "invitePending"
-        case inviteAccepted = "inviteAccepted"
-        case userCreated = "userCreated"
     }
     
     var id: String!
@@ -58,7 +58,7 @@ struct Team: Equatable {
             }
         }
         
-        self.members = self.members?.sorted(by: { $0.name.compare($1.name) == .orderedDescending })
+        self.members = self.members?.sorted(by: { $0.dateCreated.compare($1.dateCreated) == .orderedDescending })
     }
     
 }

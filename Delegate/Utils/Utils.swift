@@ -40,6 +40,7 @@ enum JSONKey {
     static let avatarLink = "avatarLink"
     static let tasks = "tasks"
     static let position = "position"
+    static let userNotInvited = "userNotInvited"
     
     // Task
     static let estimatedTime = "estimatedTime"
@@ -128,6 +129,11 @@ enum Strings {
     
     // Titles
     static let next = "Next"
+    
+    // Teams
+    static let myTeams = "My Teams"
+    static let invited = "Invited"
+    static let invites = "Invites"
 }
 
 enum AnimationDuration {

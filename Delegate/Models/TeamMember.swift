@@ -9,6 +9,12 @@
 import Foundation
 import SwiftyJSON
 
+enum TeamMemberState: String {
+    case invitePending = "invitePending"
+    case inviteAccepted = "inviteAccepted"
+    case userNotInvited = "userNotInvited"
+}
+
 struct TeamMember: Equatable {
     
     static func ==(lhs: TeamMember, rhs: TeamMember) -> Bool
@@ -18,6 +24,7 @@ struct TeamMember: Equatable {
     
     var id: String!
     var dateCreated: Date!
+    var state: TeamMemberState?
     var position: String?
     var name: String?
     var avatarLink: String?
@@ -33,6 +40,10 @@ struct TeamMember: Equatable {
             self.dateCreated = convertedDate
         } else {
             return nil
+        }
+        
+        if let state = json[JSONKey.state].string {
+            self.state = TeamMemberState(rawValue: state)
         }
         
         self.name = json[JSONKey.name].string
