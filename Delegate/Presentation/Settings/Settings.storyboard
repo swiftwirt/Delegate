@@ -43,7 +43,7 @@
         <scene sceneID="lLV-Ks-Hm8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uKL-sg-MJ1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="Rbv-Wj-zHS"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings_grey" selectedImage="settings" id="Rbv-Wj-zHS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wT5-Qd-Ul4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -60,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings" width="32" height="32"/>
+        <image name="settings" width="24" height="24"/>
+        <image name="settings_grey" width="24" height="24"/>
     </resources>
 </document>

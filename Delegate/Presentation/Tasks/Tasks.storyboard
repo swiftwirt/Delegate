@@ -197,7 +197,7 @@
         <scene sceneID="rGx-aS-pW9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yO0-iQ-ZBp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chores" image="chores" selectedImage="chores" id="CNB-b1-vXl"/>
+                    <tabBarItem key="tabBarItem" title="Chores" image="chores_grey" selectedImage="chores" id="CNB-b1-vXl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z4A-KS-osQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -214,8 +214,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chores" width="18" height="32"/>
-        <image name="gang2" width="32" height="32"/>
+        <image name="chores" width="24" height="24"/>
+        <image name="chores_grey" width="24" height="24"/>
+        <image name="gang2" width="24" height="24"/>
         <image name="team_logo_placeholder" width="64" height="64"/>
     </resources>
 </document>

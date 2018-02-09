@@ -19,11 +19,11 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     ]
     
     fileprivate let arrayOfImageNameForUnselectedState = [
-        #imageLiteral(resourceName: "gang2"),
-        #imageLiteral(resourceName: "buddies"),
-        #imageLiteral(resourceName: "chores"),
-        #imageLiteral(resourceName: "histories"),
-        #imageLiteral(resourceName: "settings")
+        #imageLiteral(resourceName: "gang_grey"),
+        #imageLiteral(resourceName: "buddies_grey"),
+        #imageLiteral(resourceName: "chores_grey"),
+        #imageLiteral(resourceName: "histories_grey"),
+        #imageLiteral(resourceName: "settings_grey")
     ]
 
     override func viewDidLoad() {
@@ -57,14 +57,14 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 let imageForSelectedState   = arrayOfImageNameForSelectedState[i]
                 let imageForUnselectedState = arrayOfImageNameForUnselectedState[i]
                 
-                self.tabBar.items?[i].selectedImage = imageForSelectedState.withRenderingMode(.alwaysTemplate)
-                self.tabBar.items?[i].image = imageForUnselectedState.withRenderingMode(.alwaysTemplate)
+                self.tabBar.items?[i].selectedImage = imageForSelectedState.withRenderingMode(.alwaysOriginal)
+                self.tabBar.items?[i].image = imageForUnselectedState.withRenderingMode(.alwaysOriginal)
             }
         }
-        
-        let selectedColor = UIColor.black
+
+        let selectedColor = UIColor(redPart: 0, greenPart: 158, bluePart: 131)
         let unselectedColor = UIColor.lightGray
-        
+
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
     }

@@ -43,7 +43,7 @@
         <scene sceneID="bBz-IM-M1r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hLS-xS-dmd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="histories" selectedImage="histories" id="UPn-qd-hCd"/>
+                    <tabBarItem key="tabBarItem" title="History" image="histories_grey" selectedImage="histories" id="UPn-qd-hCd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9hA-yQ-si4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -60,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="histories" width="32" height="32"/>
+        <image name="histories" width="24" height="24"/>
+        <image name="histories_grey" width="24" height="24"/>
     </resources>
 </document>

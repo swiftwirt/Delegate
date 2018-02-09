@@ -43,7 +43,7 @@
         <scene sceneID="yii-YU-Omc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="McL-HP-5un" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" image="buddies" selectedImage="buddies" id="PjV-82-ctP"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="buddies_grey" selectedImage="buddies" id="PjV-82-ctP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rdL-b2-bKF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -60,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buddies" width="32" height="19"/>
+        <image name="buddies" width="24" height="24"/>
+        <image name="buddies_grey" width="24" height="24"/>
     </resources>
 </document>

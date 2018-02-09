@@ -13,7 +13,7 @@
         <scene sceneID="Gkt-LH-VVC">
             <objects>
                 <viewControllerPlaceholder storyboardName="Teams" id="l4k-S8-ibd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Teams" image="gang2" selectedImage="gang2" id="Kgm-Sm-Bzl"/>
+                    <tabBarItem key="tabBarItem" title="Teams" image="gang_grey" selectedImage="gang2" id="Kgm-Sm-Bzl"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOO-AE-dzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -23,7 +23,7 @@
         <scene sceneID="icu-e6-EGt">
             <objects>
                 <viewControllerPlaceholder storyboardName="Friends" id="k3w-Sl-fvb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" image="buddies" selectedImage="buddies" id="R44-Hg-ZKM"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="buddies_grey" selectedImage="buddies" id="R44-Hg-ZKM"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8c-Ri-spx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,10 +33,9 @@
         <scene sceneID="V03-ey-yah">
             <objects>
                 <tabBarController storyboardIdentifier="Main" id="T3Y-1Y-4Tc" customClass="MainTabBarController" customModule="Delegate" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="taW-7k-gEQ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="taW-7k-gEQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="l4k-S8-ibd" kind="relationship" relationship="viewControllers" id="1UN-Cd-MfS"/>
@@ -54,7 +53,7 @@
         <scene sceneID="igu-ez-PUe">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="4R2-7F-nU7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="wOt-x1-UNZ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings_grey" selectedImage="settings" id="wOt-x1-UNZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOV-Bb-WaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +63,7 @@
         <scene sceneID="Z1w-kD-Fvs">
             <objects>
                 <viewControllerPlaceholder storyboardName="History" id="Qdg-rD-TDO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" image="histories" selectedImage="histories" id="zVN-y7-dtO"/>
+                    <tabBarItem key="tabBarItem" title="History" image="histories_grey" selectedImage="histories" id="zVN-y7-dtO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M34-0C-jaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +73,7 @@
         <scene sceneID="VSQ-Wo-NZk">
             <objects>
                 <viewControllerPlaceholder storyboardName="Tasks" id="RiQ-5w-0qm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chores" image="chores" selectedImage="chores" id="5Ul-Eu-baD"/>
+                    <tabBarItem key="tabBarItem" title="Chores" image="chores_grey" selectedImage="chores" id="5Ul-Eu-baD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xld-Gg-EZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,10 +81,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buddies" width="32" height="19"/>
-        <image name="chores" width="18" height="32"/>
-        <image name="gang2" width="32" height="32"/>
-        <image name="histories" width="32" height="32"/>
-        <image name="settings" width="32" height="32"/>
+        <image name="buddies" width="24" height="24"/>
+        <image name="buddies_grey" width="24" height="24"/>
+        <image name="chores" width="24" height="24"/>
+        <image name="chores_grey" width="24" height="24"/>
+        <image name="gang2" width="24" height="24"/>
+        <image name="gang_grey" width="24" height="24"/>
+        <image name="histories" width="24" height="24"/>
+        <image name="histories_grey" width="24" height="24"/>
+        <image name="settings" width="24" height="24"/>
+        <image name="settings_grey" width="24" height="24"/>
     </resources>
 </document>

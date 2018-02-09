@@ -29,6 +29,7 @@ class TeamsTableViewController: DelegateTableViewController {
     
     @objc func refresh(_ sender: Any)
     {
+        refreshControl?.beginRefreshing()
         Timer.after(3.0) { [weak self] in
             self?.reloadWithAnimation(animationDirection: .down)
             self?.refreshControl?.endRefreshing()
@@ -39,6 +40,11 @@ class TeamsTableViewController: DelegateTableViewController {
     {
         self.currentMode = segmentedControll.selectedSegmentIndex == 0 ? .myInvites : .myTeams
         dataSource = TeamsTableViewDataSource()
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            // Fallback on earlier versions
+        }
         tableView.dataSource = dataSource
         tableView.delegate = self
     }
