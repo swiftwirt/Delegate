@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0CDAA24689412541F520AF16 /* Pods_Delegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */; };
 		2A00163E2028FB5B00E481DC /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		2A1397EF202DA7040000CB93 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397EE202DA7040000CB93 /* ContactCell.swift */; };
+		2A1397F1202DA79E0000CB93 /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F0202DA79E0000CB93 /* FriendsDataSource.swift */; };
+		2A1397F3202DD4640000CB93 /* TasksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F2202DD4640000CB93 /* TasksDataSource.swift */; };
+		2A1397F5202DDCA20000CB93 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F4202DDCA20000CB93 /* TaskCell.swift */; };
+		2A1397F7202E54610000CB93 /* TaskCutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F6202E54610000CB93 /* TaskCutCell.swift */; };
+		2A1397F9202E55190000CB93 /* Date+CalendarInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */; };
 		2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B1B202519EA003FDA41 /* UserService.swift */; };
 		2A3B9B21202527FD003FDA41 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */; };
 		2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */; };
@@ -94,6 +100,12 @@
 		12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A00163C2028FAEB00E481DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		2A1397EE202DA7040000CB93 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		2A1397F0202DA79E0000CB93 /* FriendsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
+		2A1397F2202DD4640000CB93 /* TasksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDataSource.swift; sourceTree = "<group>"; };
+		2A1397F4202DDCA20000CB93 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		2A1397F6202E54610000CB93 /* TaskCutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCutCell.swift; sourceTree = "<group>"; };
+		2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CalendarInterval.swift"; sourceTree = "<group>"; };
 		2A3B9B1B202519EA003FDA41 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2A3B9B22202527FD003FDA41 /* Delegate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Delegate.entitlements; sourceTree = "<group>"; };
@@ -219,6 +231,7 @@
 				2AAB4F6F2025ACA00094312A /* Error+Code.swift */,
 				2AAB4F782025DDDE0094312A /* Observable+JSON.swift */,
 				2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */,
+				2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,7 +468,9 @@
 			isa = PBXGroup;
 			children = (
 				2AD6ED9C2029F8EA0073581F /* Friends.storyboard */,
+				2A1397F0202DA79E0000CB93 /* FriendsDataSource.swift */,
 				2AD6ED9E2029F8FD0073581F /* FriendsTableViewController.swift */,
+				2A1397EE202DA7040000CB93 /* ContactCell.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -464,7 +479,10 @@
 			isa = PBXGroup;
 			children = (
 				2AD6EDA12029F9540073581F /* Tasks.storyboard */,
+				2A1397F4202DDCA20000CB93 /* TaskCell.swift */,
 				2AD6EDA32029F9850073581F /* TasksTableViewController.swift */,
+				2A1397F2202DD4640000CB93 /* TasksDataSource.swift */,
+				2A1397F6202E54610000CB93 /* TaskCutCell.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -735,8 +753,11 @@
 				2AA69F512024435A00D9ED38 /* LoginScreenPresenter.swift in Sources */,
 				2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */,
 				2A3B9B2A202543C1003FDA41 /* UIColor+HEX.swift in Sources */,
+				2A1397F9202E55190000CB93 /* Date+CalendarInterval.swift in Sources */,
 				2AA69F532024436D00D9ED38 /* LoginScreenInteractor.swift in Sources */,
+				2A1397F7202E54610000CB93 /* TaskCutCell.swift in Sources */,
 				2AC6D60C202CB34300784CD2 /* DelegateTableViewController.swift in Sources */,
+				2A1397F1202DA79E0000CB93 /* FriendsDataSource.swift in Sources */,
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
 				2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */,
 				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
@@ -770,13 +791,16 @@
 				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
 				2AD6EDBA202C44810073581F /* LoggerObjCHelper.m in Sources */,
 				2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */,
+				2A1397F5202DDCA20000CB93 /* TaskCell.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
 				2AC6D60E202CC16000784CD2 /* HeaderCell.swift in Sources */,
 				2AD6EDA42029F9850073581F /* TasksTableViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainTabBarController.swift in Sources */,
+				2A1397EF202DA7040000CB93 /* ContactCell.swift in Sources */,
 				2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */,
 				2AD6EDB7202C43670073581F /* XCLogger.swift in Sources */,
 				2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */,
+				2A1397F3202DD4640000CB93 /* TasksDataSource.swift in Sources */,
 				2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,

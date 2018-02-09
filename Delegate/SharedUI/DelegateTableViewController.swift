@@ -14,6 +14,13 @@ enum Mode: Int {
     case undefined
     case myTeams
     case myInvites
+    
+    case contacts
+    case contactsFacebook
+    case contactsLinkedIn
+    
+    case delegated
+    case assigned
 }
 
 class DelegateTableViewController: UITableViewController {

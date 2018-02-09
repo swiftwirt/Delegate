@@ -84,26 +84,31 @@ class TeamsTableViewDataSource: NSObject, TeamsTableViewDataSourceProtocol {
     
     fileprivate func configureCellForMyTeams(indexPath: IndexPath, tableView: UITableView) -> UITableViewCell
     {
-        guard let teamCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.teamCell) as? TeamCell,
-            let memberCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.memberCell) as? TeamMemberCell,
-            let headerCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.headerCell) as? HeaderCell
-            else { fatalError() }
-        
         switch indexPath.section {
         case 0:
+            guard let headerCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.headerCell) as? HeaderCell
+                else { fatalError() }
             headerCell.titleLabel.text = getTitleMyTeams(section: indexPath.section)
             return headerCell
         case myDealsRange:
             switch indexPath.row {
             case 0:
+                guard let teamCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.teamCell) as? TeamCell
+                    else { fatalError() }
                 return teamCell
             default:
+                guard let memberCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.memberCell) as? TeamMemberCell
+                    else { fatalError() }
                 return memberCell
             }
         case myTeams.count + 1:
+            guard let headerCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.headerCell) as? HeaderCell
+                else { fatalError() }
             headerCell.titleLabel.text = getTitleMyTeams(section: indexPath.section)
             return headerCell
         default:
+            guard let teamCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.teamCell) as? TeamCell
+                else { fatalError() }
             teamCell.clipsToBounds = false
             return teamCell
         }
@@ -111,15 +116,15 @@ class TeamsTableViewDataSource: NSObject, TeamsTableViewDataSourceProtocol {
     
     fileprivate func configureCellForInvites(indexPath: IndexPath, tableView: UITableView) -> UITableViewCell
     {
-        guard let teamCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.teamCell) as? TeamCell,
-            let headerCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.headerCell) as? HeaderCell
-            else { fatalError() }
-        
         switch indexPath.row {
         case 0:
+            guard let headerCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.headerCell) as? HeaderCell
+                else { fatalError() }
             headerCell.titleLabel.text = Strings.invites.uppercased()
             return headerCell
         default:
+            guard let teamCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.teamCell) as? TeamCell
+                else { fatalError() }
             teamCell.clipsToBounds = false
             return teamCell
         }
