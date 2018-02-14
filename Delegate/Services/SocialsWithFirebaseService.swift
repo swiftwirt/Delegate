@@ -36,6 +36,7 @@ class SocialsWithFirebaseService: NSObject {
                                 let aUser = DLGUser()
                                 aUser.avatarLink = tUser?.profileImageLargeURL
                                 aUser.userName = tUser?.name
+                                aUser.uid = Auth.auth().currentUser?.uid
                                 
                                 observer.onNext(aUser)
                                 observer.onCompleted()
@@ -70,7 +71,7 @@ class SocialsWithFirebaseService: NSObject {
             LISDKSessionManager.createSession(withAuth: [LISDK_BASIC_PROFILE_PERMISSION, LISDK_EMAILADDRESS_PERMISSION], state: nil, showGoToAppStoreDialog: true, successBlock: { (success) in
                 
                 if LISDKSessionManager.hasValidSession() {
-                    let link = String(format: "https://api.linkedin.com/v1/people/~:(id,email-address)?format=json")
+                    let link = String(format: "https://api.linkedin.com/v1/people/~:(id,email-address,picture-url,firstName,lastName)?format=json")
                     LISDKAPIHelper.sharedInstance().getRequest(link, success: { (responce) in
                         observer.onNext(JSON(parseJSON: responce?.data ?? ""))
                     }, error: { (error) in

@@ -192,6 +192,7 @@ class LoginScreenInteractor: NSObject {
                 }
                 return Observable.empty()
             })
+            
             }.subscribe(onNext: { [weak self] user in
 
                 self?.applicationManager.userService.user = user
@@ -257,10 +258,30 @@ class LoginScreenInteractor: NSObject {
                             
                             return Observable.empty()
                             }.subscribe(onNext: { [weak self] (user) in
+                                
                                 self?.applicationManager.userService.createNewUser()
-                                self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
+                                self?.applicationManager.userService.user?.email = result?[JSONKey.emailAddress].string
                                 self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
-                                self?.input.routeToSelectRole()
+                                self?.applicationManager.userService.user?.avatarLink = result?[JSONKey.pictureUrl].string
+                                self?.applicationManager.userService.user?.userName = (result?[JSONKey.firstName].string ?? "") + " " + (result?[JSONKey.lastName].string ?? "")
+                                
+                                guard let aUser = self?.applicationManager.userService.user else { return }
+                                
+                                _ = self?.applicationManager.apiService.update(user: aUser).catchError { error in
+                                    do {
+                                        try self?.applicationManager.validationService.handle(remoteResponce: error)
+                                    } catch {
+                                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                            self?.output.output.needsAnimation = true
+                                        }
+                                    }
+                                    return Observable.empty()
+                                    }.subscribe(onCompleted: { [weak self] in
+                                        self?.applicationManager.userService.saveUser()
+                                        self?.applicationManager.userService.needsRestoration = true
+                                        self?.input.routeToSelectRole()
+                                    }).disposed(by: self!.disposeBag)
+                            
                             }).disposed(by: self.disposeBag)
                     default:
                         do {
@@ -274,7 +295,24 @@ class LoginScreenInteractor: NSObject {
                     
                     return Observable.empty()
                     }.subscribe(onNext: { [weak self] (user) in
-                        self?.input.routeToSelectRole()
+                        
+                        self?.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { error in
+                            do {
+                                try self?.applicationManager.validationService.handle(remoteResponce: error)
+                            } catch {
+                                AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                    self?.output.output.needsAnimation = true
+                                }
+                            }
+                            
+                            return Observable.empty()
+                        }.subscribe(onNext: { [weak self] (user) in
+                            
+                            self?.applicationManager.userService.crateNewCurrentUser(with: user)
+                            self?.input.routeToSelectRole() // LOGIN
+                            
+                        }).disposed(by: self!.disposeBag)
+                
                     }).disposed(by: self.disposeBag)
                 
             }).disposed(by: self.disposeBag)

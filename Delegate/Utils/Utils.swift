@@ -27,6 +27,11 @@ enum JSONKey {
     static let picture = "picture"
     static let data = "data"
     
+    // linkedIn
+    static let lastName = "lastName"
+    static let pictureUrl = "pictureUrl"
+    static let firstName = "firstName"
+    
     // Team
     static let state = "state"
     static let title = "title"
