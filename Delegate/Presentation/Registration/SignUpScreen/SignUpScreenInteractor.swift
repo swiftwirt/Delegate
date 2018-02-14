@@ -24,6 +24,8 @@ class SignUpScreenInteractor: NSObject {
     
     fileprivate let disposeBag = DisposeBag()
     
+    fileprivate let googleAvatarDimensions: UInt = 400
+    
     override init() {
         super.init()
         GIDSignIn.sharedInstance().delegate = self
@@ -306,7 +308,7 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
         
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { (user, error) in
+        Auth.auth().signIn(with: credential) { (aUser, error) in
             
             if let error = error {
                 self.output.output.needsAnimation = false
@@ -315,7 +317,32 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
                 }
                 return
             }
-            self.input.routeToPresentation()
+            
+            self.applicationManager.userService.createNewUser()
+            self.applicationManager.userService.user?.email = user.profile.email
+            self.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
+            self.applicationManager.userService.user?.userName = user.profile.name
+            
+            if user.profile.hasImage, let link = user.profile.imageURL(withDimension: self.googleAvatarDimensions) {
+                self.applicationManager.userService.user?.avatarLink = String(describing: link)
+            }
+        
+            guard let user = self.applicationManager.userService.user else { fatalError() }
+            
+            _ = self.applicationManager.apiService.update(user: user).catchError { error in
+                do {
+                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                } catch {
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
+                }
+                return Observable.empty()
+                }.subscribe(onCompleted: { [weak self] in
+                    self?.applicationManager.userService.saveUser()
+                    self?.applicationManager.userService.needsRestoration = true
+                    self?.input.routeToPresentation()
+                }).disposed(by: self.disposeBag)
         }
     }
     
