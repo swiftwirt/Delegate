@@ -106,9 +106,9 @@ class SignUpScreenInteractor: NSObject {
             
             guard let userName = self.hasUsername, let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             name = userName
-            return self.applicationManager.apiService.signup(email: email, password: password).catchError { error in
+            return self.applicationManager.apiService.signup(email: email, password: password).catchError { [weak self] error in
                 do {
-                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                    try self?.applicationManager.validationService.handle(remoteResponce: error)
                 } catch {
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                         self?.output.output.needsAnimation = true
@@ -128,7 +128,7 @@ class SignUpScreenInteractor: NSObject {
                 
                 guard let user = self?.applicationManager.userService.user else { fatalError() }
                 
-                _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                _ = self?.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                     do {
                         try self?.applicationManager.validationService.handle(remoteResponce: error)
                     } catch {
@@ -184,7 +184,7 @@ class SignUpScreenInteractor: NSObject {
                     
                     guard let user = self?.applicationManager.userService.user else { fatalError() }
                     
-                    _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                    _ = self?.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                         do {
                             try self?.applicationManager.validationService.handle(remoteResponce: error)
                         } catch {
@@ -200,7 +200,7 @@ class SignUpScreenInteractor: NSObject {
                         }).disposed(by: self!.disposeBag)
                     
                 }
-                }, onError: { error in
+                }, onError: { [weak self] error in
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                         self?.output.output.needsAnimation = true
                     }
@@ -225,7 +225,7 @@ class SignUpScreenInteractor: NSObject {
                 
                 guard let user = self?.applicationManager.userService.user else { fatalError() }
                 
-                _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                _ = self?.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                     do {
                         try self?.applicationManager.validationService.handle(remoteResponce: error)
                     } catch {
@@ -292,7 +292,7 @@ class SignUpScreenInteractor: NSObject {
                                 
                                 guard let aUser = self?.applicationManager.userService.user else { return }
                                 
-                                _ = self?.applicationManager.apiService.update(user: aUser).catchError { error in
+                                _ = self?.applicationManager.apiService.update(user: aUser).catchError { [weak self] error in
                                     do {
                                         try self?.applicationManager.validationService.handle(remoteResponce: error)
                                     } catch {
@@ -319,7 +319,7 @@ class SignUpScreenInteractor: NSObject {
                     
                     return Observable.empty()
                     }.subscribe(onNext: { [weak self] (user) in
-                        self?.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { error in
+                        self?.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { [weak self] error in
                             do {
                                 try self?.applicationManager.validationService.handle(remoteResponce: error)
                             } catch {
@@ -383,9 +383,9 @@ extension SignUpScreenInteractor: GIDSignInDelegate {
         
             guard let user = self.applicationManager.userService.user else { fatalError() }
             
-            _ = self.applicationManager.apiService.update(user: user).catchError { error in
+            _ = self.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                 do {
-                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                    try self?.applicationManager.validationService.handle(remoteResponce: error)
                 } catch {
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                         self?.output.output.needsAnimation = true

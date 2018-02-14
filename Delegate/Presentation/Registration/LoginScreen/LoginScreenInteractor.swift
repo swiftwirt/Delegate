@@ -86,9 +86,9 @@ class LoginScreenInteractor: NSObject {
             
             guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
             
-            return self.applicationManager.apiService.login(email: email, password: password).catchError { error in
+            return self.applicationManager.apiService.login(email: email, password: password).catchError { [weak self] error in
                 do {
-                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                    try self?.applicationManager.validationService.handle(remoteResponce: error)
                 } catch {
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                         self?.output.output.needsAnimation = true
@@ -100,9 +100,9 @@ class LoginScreenInteractor: NSObject {
             
             }.flatMap { (user) -> Observable<JSON> in
                 
-                return self.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { error in
+                return self.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { [weak self] error in
                     do {
-                        try self.applicationManager.validationService.handle(remoteResponce: error)
+                        try self?.applicationManager.validationService.handle(remoteResponce: error)
                     } catch {
                         AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                             self?.output.output.needsAnimation = true
@@ -158,7 +158,7 @@ class LoginScreenInteractor: NSObject {
                     
                     guard let user = self?.applicationManager.userService.user else { fatalError() }
                     
-                    _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                    _ = self?.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                         do {
                             try self?.applicationManager.validationService.handle(remoteResponce: error)
                         } catch {
@@ -173,7 +173,7 @@ class LoginScreenInteractor: NSObject {
                             self?.input.routeToSelectRole()
                         }).disposed(by: self!.disposeBag)
                 }
-                }, onError: { error in
+                }, onError: { [weak self] error in
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                         self?.output.output.needsAnimation = true
                     }
@@ -199,7 +199,7 @@ class LoginScreenInteractor: NSObject {
                 
                 guard let user = self?.applicationManager.userService.user else { fatalError() }
                 
-                _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                _ = self?.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                     do {
                         try self?.applicationManager.validationService.handle(remoteResponce: error)
                     } catch {
@@ -267,7 +267,7 @@ class LoginScreenInteractor: NSObject {
                                 
                                 guard let aUser = self?.applicationManager.userService.user else { return }
                                 
-                                _ = self?.applicationManager.apiService.update(user: aUser).catchError { error in
+                                _ = self?.applicationManager.apiService.update(user: aUser).catchError { [weak self] error in
                                     do {
                                         try self?.applicationManager.validationService.handle(remoteResponce: error)
                                     } catch {
@@ -296,7 +296,7 @@ class LoginScreenInteractor: NSObject {
                     return Observable.empty()
                     }.subscribe(onNext: { [weak self] (user) in
                         
-                        self?.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { error in
+                        self?.applicationManager.apiService.fetchUser(uid: user.uid!).catchError { [weak self] error in
                             do {
                                 try self?.applicationManager.validationService.handle(remoteResponce: error)
                             } catch {
@@ -361,9 +361,9 @@ extension LoginScreenInteractor: GIDSignInDelegate {
             
             guard let user = self.applicationManager.userService.user else { fatalError() }
             
-            _ = self.applicationManager.apiService.update(user: user).catchError { error in
+            _ = self.applicationManager.apiService.update(user: user).catchError { [weak self] error in
                 do {
-                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                    try self?.applicationManager.validationService.handle(remoteResponce: error)
                 } catch {
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                         self?.output.output.needsAnimation = true

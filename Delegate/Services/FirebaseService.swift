@@ -119,7 +119,7 @@ class FirebaseService {
     {
         return Observable.create({ (observer) -> Disposable in
             Auth.auth().languageCode = Locale.current.languageCode
-            Auth.auth().sendPasswordReset(withEmail: email) { error in
+            Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
                 guard error == nil else {
                     // TODO: handle expected errors
                     observer.on(.error(error!))

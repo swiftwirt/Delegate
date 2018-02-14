@@ -39,7 +39,9 @@ class SettingsScreenPresenter {
     
     func initialSetup(native: Bool?, userName: String, email: String?, settings: Settings? = nil)
     {
-        output.profileCell.accessoryType = (native ?? false) ? .disclosureIndicator : .none
+        if native != nil, !native! {
+            output.profileCell.accessoryType = .none
+        }
         output.profileInfoCenterConstraint.constant = CGFloat((native ?? false) ? shiftDueToDisclosure : 0.0)
         output.userNameLabel.text = userName
         output.userEmailLabel.text = email
