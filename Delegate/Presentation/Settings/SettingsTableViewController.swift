@@ -12,6 +12,8 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var userAvatarImageView: UIImageView!
     
+    @IBOutlet weak var profileInfoCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var profileCell: UITableViewCell!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
     

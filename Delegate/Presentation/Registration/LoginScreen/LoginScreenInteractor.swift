@@ -183,17 +183,36 @@ class LoginScreenInteractor: NSObject {
     func observeLogInTwitterTap()
     {
         self.output.output.needsAnimation = true
-        _ = output.twitterButtonObservable.flatMapLatest { [unowned self] () -> Observable<Void> in
+        _ = output.twitterButtonObservable.flatMapLatest { [unowned self] () -> Observable<DLGUser> in
             
-            return self.applicationManager.socialsWithFirebaseService.register(with: .twitter).catchError({ (error) -> Observable<(Void)> in
+            return self.applicationManager.socialsWithFirebaseService.registerTwitter().catchError({ (error) -> Observable<DLGUser> in
                 self.output.output.needsAnimation = false
                 AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
                     self?.output.output.needsAnimation = true
                 }
                 return Observable.empty()
             })
-            }.subscribe(onNext: { [weak self] in
-                self?.input.routeToSelectRole()
+            }.subscribe(onNext: { [weak self] user in
+
+                self?.applicationManager.userService.user = user
+                
+                guard let user = self?.applicationManager.userService.user else { fatalError() }
+                
+                _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                    do {
+                        try self?.applicationManager.validationService.handle(remoteResponce: error)
+                    } catch {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                            self?.output.output.needsAnimation = true
+                        }
+                    }
+                    return Observable.empty()
+                    }.subscribe(onCompleted: { [weak self] in
+                        self?.applicationManager.userService.saveUser()
+                        self?.applicationManager.userService.needsRestoration = true
+                        self?.input.routeToSelectRole()
+                    }).disposed(by: self!.disposeBag)
+
             }).disposed(by: disposeBag)
     }
     

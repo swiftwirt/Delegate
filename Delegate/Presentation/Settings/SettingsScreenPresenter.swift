@@ -13,6 +13,8 @@ class SettingsScreenPresenter {
     
     weak var output: SettingsTableViewController!
     
+    fileprivate let shiftDueToDisclosure = 18.0
+    
     var witchersChain: [UISwitch]
     {
         return [
@@ -35,8 +37,10 @@ class SettingsScreenPresenter {
         }
     }
     
-    func initialSetup(userName: String, email: String?, settings: Settings? = nil)
+    func initialSetup(native: Bool?, userName: String, email: String?, settings: Settings? = nil)
     {
+        output.profileCell.accessoryType = (native ?? false) ? .disclosureIndicator : .none
+        output.profileInfoCenterConstraint.constant = CGFloat((native ?? false) ? shiftDueToDisclosure : 0.0)
         output.userNameLabel.text = userName
         output.userEmailLabel.text = email
         guard settings != nil else { return }

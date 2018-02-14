@@ -13,6 +13,12 @@ struct ParametersConfigurator {
     static func userUpdateParameters(_ user: DLGUser) -> [String: Any]
     {
         var values = [String: Any]()
+
+        values[FirebaseKey.naviteUser] = user.naviteUser
+        
+        if let userName = user.userName {
+            values[FirebaseKey.userName] = userName
+        }
         
         if let firstName = user.firstName {
             values[FirebaseKey.firstName] = firstName

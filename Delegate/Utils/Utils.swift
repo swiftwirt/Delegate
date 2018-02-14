@@ -218,6 +218,7 @@ enum InfoMessage {
 
 enum FirebaseKey {
     
+    static let naviteUser = "naviteUser"
     static let userName = "userName"
     static let firstName = "firstName"
     static let lastName = "lastName"

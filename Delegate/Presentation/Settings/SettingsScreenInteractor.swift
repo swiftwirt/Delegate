@@ -33,7 +33,7 @@ class SettingsScreenInteractor: NSObject {
     
     func initialSetup()
     {
-        output.initialSetup(userName: userService.user?.userName ?? ErrorMessage.noUsername, email: userService.email, settings: userService.user?.settings)
+        output.initialSetup(native: userService.user?.naviteUser ?? false, userName: userService.user?.userName ?? ErrorMessage.noUsername, email: userService.email, settings: userService.user?.settings)
     }
     
     func setupSwitchers()

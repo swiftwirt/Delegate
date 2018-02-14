@@ -13,23 +13,7 @@ import SwiftyJSON
 
 class SocialsWithFirebaseService: NSObject {
     
-    enum Social {
-        case twitter
-        case google
-        case linkedIN
-    }
-    
-    func register(with social: Social)  -> Observable<Void>
-    {
-        switch social {
-        case .twitter:
-            return registerTwitter()
-        default:
-            return Observable.empty()
-        }
-    }
-    
-    fileprivate func registerTwitter() -> Observable<Void>
+    func registerTwitter() -> Observable<DLGUser>
     {
         return Observable.create({ (observer) -> Disposable in
             
@@ -40,15 +24,24 @@ class SocialsWithFirebaseService: NSObject {
                     
                     let credential = TwitterAuthProvider.credential(withToken: authToken, secret: authTokenSecret)
                     
-                    Auth.auth().signIn(with: credential) { (user, error) in
-                        if let error = error {
-                            observer.onError(error)
-                            return
-                        } else {
-                            observer.onNext(())
-                            observer.onCompleted()
+                    let twitterClient = TWTRAPIClient(userID: session!.userID)
+                    twitterClient.loadUser(withID: session!.userID, completion: { (tUser, error) in
+                        guard error == nil else { observer.onError(error!); return }
+                        
+                        Auth.auth().signIn(with: credential) { (user, error) in
+                            if let error = error {
+                                observer.onError(error)
+                                return
+                            } else {
+                                let aUser = DLGUser()
+                                aUser.avatarLink = tUser?.profileImageLargeURL
+                                aUser.userName = tUser?.name
+                                
+                                observer.onNext(aUser)
+                                observer.onCompleted()
+                            }
                         }
-                    }
+                    })
                 } else {
                     observer.onError(error!)
                 }

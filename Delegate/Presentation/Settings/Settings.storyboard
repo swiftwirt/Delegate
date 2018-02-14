@@ -62,13 +62,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nE1-gy-hOH">
                                                     <rect key="frame" x="101.5" y="14" width="119.5" height="41.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1y-Xg-IBO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1y-Xg-IBO">
                                                             <rect key="frame" x="12.5" y="0.0" width="94.5" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="email@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgZ-Rd-fcQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="email@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgZ-Rd-fcQ">
                                                             <rect key="frame" x="0.0" y="23" width="119.5" height="18.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -233,7 +233,7 @@
                                         <rect key="frame" x="0.0" y="588" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNb-Ai-8rR" id="Y6A-HR-EJi">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vJk-Rc-c15">
@@ -251,7 +251,6 @@
                                             <constraints>
                                                 <constraint firstItem="vJk-Rc-c15" firstAttribute="centerY" secondItem="Y6A-HR-EJi" secondAttribute="centerY" id="IC7-Z9-0R5"/>
                                                 <constraint firstAttribute="bottom" secondItem="vJk-Rc-c15" secondAttribute="bottom" constant="14" id="RvK-ib-KXD"/>
-                                                <constraint firstItem="vJk-Rc-c15" firstAttribute="centerX" secondItem="Y6A-HR-EJi" secondAttribute="centerX" id="TiW-FI-w9J"/>
                                                 <constraint firstAttribute="trailing" secondItem="vJk-Rc-c15" secondAttribute="trailing" constant="20" symbolic="YES" id="VUn-qc-oZQ"/>
                                                 <constraint firstItem="vJk-Rc-c15" firstAttribute="leading" secondItem="Y6A-HR-EJi" secondAttribute="leading" constant="20" symbolic="YES" id="apM-Fu-adU"/>
                                                 <constraint firstItem="vJk-Rc-c15" firstAttribute="top" secondItem="Y6A-HR-EJi" secondAttribute="top" constant="14" id="k9h-CM-Iv4"/>
@@ -262,7 +261,7 @@
                                         <rect key="frame" x="0.0" y="658" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LH2-ff-oX4" id="h3l-8i-zKU">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-JY-WOl">
@@ -283,7 +282,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="gRZ-JY-WOl" secondAttribute="trailing" constant="20" symbolic="YES" id="Myn-7a-K9U"/>
                                                 <constraint firstItem="gRZ-JY-WOl" firstAttribute="top" secondItem="h3l-8i-zKU" secondAttribute="top" constant="14" id="aWE-sA-G7E"/>
                                                 <constraint firstItem="gRZ-JY-WOl" firstAttribute="centerY" secondItem="h3l-8i-zKU" secondAttribute="centerY" id="de4-2M-vUd"/>
-                                                <constraint firstItem="gRZ-JY-WOl" firstAttribute="centerX" secondItem="h3l-8i-zKU" secondAttribute="centerX" id="qCQ-Ia-sFa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -308,6 +306,8 @@
                         <outlet property="adsSwitcher" destination="kFk-NB-PIX" id="aqP-DT-bze"/>
                         <outlet property="congratulationsSwitcher" destination="kX3-aW-mbR" id="UzB-f2-cBc"/>
                         <outlet property="localNotificationsSwitcher" destination="EZG-wh-W9v" id="WFq-dV-QuX"/>
+                        <outlet property="profileCell" destination="KMe-O6-k76" id="gRf-cX-pqC"/>
+                        <outlet property="profileInfoCenterConstraint" destination="UOV-Nr-f0O" id="OKc-6x-WBd"/>
                         <outlet property="pushSwitcher" destination="POy-ur-kI9" id="582-9S-SnU"/>
                         <outlet property="userAvatarImageView" destination="7zx-Rb-PbZ" id="qgC-4a-r7Y"/>
                         <outlet property="userEmailLabel" destination="zgZ-Rd-fcQ" id="CYb-f7-vfx"/>

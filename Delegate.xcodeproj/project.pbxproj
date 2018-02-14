@@ -514,9 +514,9 @@
 			isa = PBXGroup;
 			children = (
 				2AD6EDAB2029FA260073581F /* Settings.storyboard */,
+				2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */,
 				2A488DD92033499D00CB0F69 /* SettingsScreenInteractor.swift */,
 				2A488DDB203349C400CB0F69 /* SettingsScreenPresenter.swift */,
-				2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */,
 				2A488DD72033493D00CB0F69 /* SettingsConfigurator.swift */,
 				2A488DDD203349DE00CB0F69 /* SettingsScreenRouter.swift */,
 			);

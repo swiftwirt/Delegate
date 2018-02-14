@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class DLGUser: NSObject, NSCoding {
     
+    var naviteUser: Bool = false // used to detect user registration with socials
     var userName: String? = nil
     var firstName: String? = nil
     var lastName: String? = nil
@@ -23,7 +24,9 @@ class DLGUser: NSObject, NSCoding {
     var uid: String? = nil
     var settings: Settings? = nil
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
+        naviteUser = aDecoder.decodeBool(forKey: FirebaseKey.naviteUser)
         userName = aDecoder.decodeObject(forKey: FirebaseKey.userName) as? String
         firstName = aDecoder.decodeObject(forKey: FirebaseKey.firstName) as? String
         lastName = aDecoder.decodeObject(forKey: FirebaseKey.lastName) as? String
@@ -36,7 +39,9 @@ class DLGUser: NSObject, NSCoding {
         super.init()
     }
     
-    func encode(with aCoder: NSCoder) {
+    func encode(with aCoder: NSCoder)
+    {
+        aCoder.encode(naviteUser, forKey: FirebaseKey.naviteUser)
         aCoder.encode(userName, forKey: FirebaseKey.userName)
         aCoder.encode(firstName, forKey: FirebaseKey.firstName)
         aCoder.encode(lastName, forKey: FirebaseKey.lastName)
@@ -52,6 +57,7 @@ class DLGUser: NSObject, NSCoding {
     
     init(with json: JSON)
     {
+        self.naviteUser = json[FirebaseKey.naviteUser].bool ?? false
         self.userName = json[FirebaseKey.userName].string
         self.firstName = json[FirebaseKey.firstName].string
         self.lastName = json[FirebaseKey.lastName].string
@@ -68,6 +74,7 @@ class DLGUser: NSObject, NSCoding {
     init?(with snapShoot: DataSnapshot)
     {
         guard let snap = snapShoot.value as? [String: Any] else { return nil }
+        self.naviteUser = snap[FirebaseKey.naviteUser] as! Bool? ?? false
         self.userName = snap[FirebaseKey.userName] as! String?
         self.firstName = snap[FirebaseKey.firstName] as! String?
         self.lastName = snap[FirebaseKey.lastName] as! String?
