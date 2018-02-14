@@ -100,6 +100,7 @@
 		2AD6EDB7202C43670073581F /* XCLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6EDB6202C43670073581F /* XCLogger.swift */; };
 		2AD6EDBA202C44810073581F /* LoggerObjCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6EDB9202C44810073581F /* LoggerObjCHelper.m */; };
 		2AFA2DAD2027BF9E00EA29EF /* SocialsWithFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */; };
+		2AFB4F0A2034E89D00824D12 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFB4F092034E89D00824D12 /* UIImage+Resize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +202,7 @@
 		2AD6EDB8202C44810073581F /* LoggerObjCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerObjCHelper.h; sourceTree = "<group>"; };
 		2AD6EDB9202C44810073581F /* LoggerObjCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerObjCHelper.m; sourceTree = "<group>"; };
 		2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsWithFirebaseService.swift; sourceTree = "<group>"; };
+		2AFB4F092034E89D00824D12 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		7E592EB671048B93CFB89FE5 /* Pods-Delegate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delegate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delegate/Pods-Delegate.debug.xcconfig"; sourceTree = "<group>"; };
 		AB6D62A82CBA4CDE123871F2 /* Pods-Delegate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delegate.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delegate/Pods-Delegate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +248,7 @@
 				2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */,
 				2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */,
 				2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */,
+				2AFB4F092034E89D00824D12 /* UIImage+Resize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				2AD6EDB7202C43670073581F /* XCLogger.swift in Sources */,
 				2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */,
 				2A1397F3202DD4640000CB93 /* TasksDataSource.swift in Sources */,
+				2AFB4F0A2034E89D00824D12 /* UIImage+Resize.swift in Sources */,
 				2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,

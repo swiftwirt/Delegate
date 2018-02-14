@@ -8,12 +8,16 @@
 
 import UIKit
 import SDWebImage
+import TOCropViewController
 
-class SettingsScreenPresenter {
+class SettingsScreenPresenter: NSObject {
     
     weak var output: SettingsTableViewController!
     
     fileprivate let shiftDueToDisclosure = 18.0
+    fileprivate let avatarCompressDimensions = 400.0
+    
+    var newCompressedAvatar: UIImage?
     
     var witchersChain: [UISwitch]
     {
@@ -41,6 +45,7 @@ class SettingsScreenPresenter {
     {
         if native != nil, !native! {
             output.profileCell.accessoryType = .none
+            output.editAvatarButton.isHidden = true
         }
         output.profileInfoCenterConstraint.constant = CGFloat((native ?? false) ? shiftDueToDisclosure : 0.0)
         output.userNameLabel.text = userName
@@ -55,5 +60,44 @@ class SettingsScreenPresenter {
         output.congratulationsSwitcher.isOn = model.congratulations
         output.pushSwitcher.isOn = model.push
         output.localNotificationsSwitcher.isOn = model.localNotifications
+    }
+    
+    // Image Picker
+    
+    func presentCropViewController(with image: UIImage?)
+    {
+        guard let picture = image else { return }
+        let controller = TOCropViewController(croppingStyle: .circular, image: picture)
+        
+        controller.toolbar.cancelTextButton.setImage(#imageLiteral(resourceName: "icon_cross"), for: .normal)
+        controller.toolbar.doneTextButton.tintColor = .red
+        controller.toolbar.cancelTextButton.setTitle("", for: .normal)
+        
+        controller.toolbar.doneTextButton.setImage(#imageLiteral(resourceName: "icon_checkmark"), for: .normal)
+        controller.toolbar.doneTextButton.tintColor = .green
+        controller.toolbar.doneTextButton.setTitle("", for: .normal)
+        
+        controller.delegate = self
+        output.present(controller, animated: true, completion: nil)
+    }
+    
+    func showImagePicker(applicationManager: ApplicationManager)
+    {
+        applicationManager.imagePickerService.fireImagePicker(in: output)
+    }
+}
+
+extension SettingsScreenPresenter: TOCropViewControllerDelegate
+{
+    func cropViewController(_ cropViewController: TOCropViewController, didCropToImage image: UIImage, rect cropRect: CGRect, angle: Int) {
+        
+        let targetSize = CGSize(width: avatarCompressDimensions, height: avatarCompressDimensions)
+        if let compressedImage = image.resizeImage(targetSize: targetSize) {
+            newCompressedAvatar = compressedImage
+            output.userAvatarImageView.layer.cornerRadius = output.userAvatarImageView.frame.width / 2
+            output.userAvatarImageView.image = image
+        }
+        
+        cropViewController.dismiss(animated: true, completion: nil)
     }
 }

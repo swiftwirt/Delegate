@@ -64,6 +64,11 @@ class ApplicationManager {
         return service
     }()
     
+    lazy var imagePickerService: ImagePickerService = {
+        let service = ImagePickerService()
+        return service
+    }()
+    
     func clearKeychainIfNeeded()
     {
         guard userService.previouslyLaunched else {

@@ -11,6 +11,7 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var userAvatarImageView: UIImageView!
+    @IBOutlet weak var editAvatarButton: UIButton!
     
     @IBOutlet weak var profileInfoCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileCell: UITableViewCell!
@@ -35,6 +36,11 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.setAvatar()
+    }
+    
+    @IBAction func onPressedEditAvatarButton(_ sender: Any)
+    {
+        output.takePhoto()
     }
     
     @IBAction func onPressedLogoutButton(_ sender: Any)

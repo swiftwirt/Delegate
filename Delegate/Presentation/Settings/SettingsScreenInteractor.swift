@@ -23,6 +23,7 @@ class SettingsScreenInteractor: NSObject {
     var output: SettingsScreenPresenter!
     var input: SettingsScreenRouter!
     
+    fileprivate let applicationManager = ApplicationManager.instance()
     fileprivate let userService = ApplicationManager.instance().userService
     fileprivate let disposeBag: DisposeBag = DisposeBag()
     
@@ -54,6 +55,16 @@ class SettingsScreenInteractor: NSObject {
                 }
             }).disposed(by: disposeBag)
         }
+    }
+    
+    func takePhoto()
+    {
+        output.showImagePicker(applicationManager: applicationManager)
+        applicationManager.imagePickerService.observableImage.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] (image) in
+            self?.output?.presentCropViewController(with: image)
+            }, onError: { (error) in
+                print(error)
+        }).disposed(by: disposeBag)
     }
     
     func logOut()

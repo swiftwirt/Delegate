@@ -145,10 +145,10 @@ enum Strings {
     static let invites = "Invites"
     
     // Image Picker
-    static let photoActionSheetTitle = "Choose image title"
-    static let cameraTitle = "Camera title"
-    static let galleryTitle = "Gallery title"
-    static let cancelTitle = "Cancel title"
+    static let photoActionSheetTitle = "Choose image"
+    static let cameraTitle = "Camera"
+    static let galleryTitle = "Gallery"
+    static let cancelTitle = "Cancel"
 }
 
 enum AnimationDuration {
