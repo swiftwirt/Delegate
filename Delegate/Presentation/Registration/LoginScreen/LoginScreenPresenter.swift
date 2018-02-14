@@ -9,12 +9,18 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import GoogleSignIn
 
-class LoginScreenPresenter {
+class LoginScreenPresenter: NSObject {
     
     weak var output: LoginViewController!
     
     fileprivate let trottlingTime = 1.0
+    
+    override init() {
+        super.init()
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
     
     func configureEmailTextField(with text: String, color: UIColor)
     {
@@ -94,5 +100,16 @@ class LoginScreenPresenter {
     var twitterButtonObservable:  Observable<Void>
     {
         return output.twitterButton.rx.tap.asObservable().takeUntil(output.rx.deallocated).throttle(trottlingTime, scheduler: MainScheduler.instance)
+    }
+}
+
+extension LoginScreenPresenter: GIDSignInUIDelegate {
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.output.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.output.needsAnimation = false
+        self.output.dismiss(animated: true, completion: nil)
     }
 }

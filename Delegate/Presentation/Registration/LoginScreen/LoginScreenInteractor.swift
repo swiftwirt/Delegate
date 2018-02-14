@@ -25,7 +25,6 @@ class LoginScreenInteractor: NSObject {
     override init() {
         super.init()
         GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     func configureTextFields()
@@ -286,13 +285,3 @@ extension LoginScreenInteractor: GIDSignInDelegate {
     }
 }
 
-extension LoginScreenInteractor: GIDSignInUIDelegate {
-    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-        self.output.output.present(viewController, animated: true, completion: nil)
-    }
-    
-    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
-        self.output.output.needsAnimation = false
-        self.output.output.dismiss(animated: true, completion: nil)
-    }
-}

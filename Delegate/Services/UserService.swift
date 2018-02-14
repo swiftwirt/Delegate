@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 import SwiftyJSON
 
 class DLGUser: NSObject, NSCoding {
@@ -19,6 +20,7 @@ class DLGUser: NSObject, NSCoding {
     var password: String? = nil
     var avatarLink: String? = nil
     var uid: String? = nil
+    var settings: Settings? = nil
     
     var vipPlanExpirationDate: Date? = nil
     
@@ -30,17 +32,19 @@ class DLGUser: NSObject, NSCoding {
         avatarLink = aDecoder.decodeObject(forKey: FirebaseKey.avatarLink) as? String
         uid = aDecoder.decodeObject(forKey: FirebaseKey.uid) as? String
         birthDate = aDecoder.decodeObject(forKey: FirebaseKey.birthDate) as? Date
+        settings = aDecoder.decodeObject(forKey: FirebaseKey.settings) as? Settings
         super.init()
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(firstName, forKey: FirebaseKey.firstName)
-        aCoder.encode(firstName, forKey: FirebaseKey.lastName)
+        aCoder.encode(lastName, forKey: FirebaseKey.lastName)
         aCoder.encode(password, forKey: FirebaseKey.password)
         aCoder.encode(email, forKey: FirebaseKey.email)
         aCoder.encode(avatarLink, forKey: FirebaseKey.avatarLink)
         aCoder.encode(uid, forKey: FirebaseKey.uid)
         aCoder.encode(birthDate, forKey: FirebaseKey.birthDate)
+        aCoder.encode(settings, forKey: FirebaseKey.settings)
     }
     
     override init() {}
@@ -53,6 +57,7 @@ class DLGUser: NSObject, NSCoding {
         self.password = json[FirebaseKey.password].string
         self.avatarLink = json[FirebaseKey.avatarLink].string
         self.uid = json[FirebaseKey.uid].string
+        self.settings = Settings(json: json[FirebaseKey.settings])
         
         guard let cteatedUNIXDate = json[FirebaseKey.birthDate].double else { return }
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
@@ -67,6 +72,10 @@ class DLGUser: NSObject, NSCoding {
         self.password = snap[FirebaseKey.password] as! String?
         self.avatarLink = snap[FirebaseKey.avatarLink] as! String?
         self.uid = snapShoot.key
+        
+        if let settingsJSON = snap[FirebaseKey.settings] as? JSON {
+            self.settings = Settings(json: settingsJSON)
+        }
         
         guard let cteatedUNIXDate = snap[FirebaseKey.birthDate] as? Double else { return nil }
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
@@ -111,6 +120,10 @@ class UserService: NSObject {
             return nil
         }
         
+    }
+    
+    var email: String? {
+        return Auth.auth().currentUser?.email
     }
     
     var needsRestoration: Bool {

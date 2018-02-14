@@ -9,9 +9,25 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var userAvatarImageView: UIImageView!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
+    
+    @IBOutlet weak var adsSwitcher: UISwitch!
+    @IBOutlet weak var congratulationsSwitcher: UISwitch!
+    
+    @IBOutlet weak var pushSwitcher: UISwitch!
+    @IBOutlet weak var localNotificationsSwitcher: UISwitch!
+    
+    var output: SettingsScreenInteractor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        SettingsConfigurator.configure(viewController: self)
+        output.setupSwitchers() 
+        output.initialSetup()
     }
     
     deinit {

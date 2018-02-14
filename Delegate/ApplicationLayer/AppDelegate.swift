@@ -36,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         observeInternetConnection()
         handleUserRestoration()
         
+        addDefaultNavigationBarBottomLineColor()
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
@@ -101,5 +103,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    
+    func addDefaultNavigationBarBottomLineColor()
+    {
+        UINavigationBar.appearance().shadowImage = UIColor.black.as1ptImage()
+    }
+    
 }
 

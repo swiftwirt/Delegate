@@ -28,5 +28,6 @@ pod 'GoogleSignIn'
 pod 'GZIP'
 pod 'SDWebImage', '~> 4.2.1'
 pod 'AnimatableReload'
+pod 'LEMirroredImagePicker', '~> 0.1'
 
 end

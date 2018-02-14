@@ -21,6 +21,13 @@
 		2A3B9B2620252F40003FDA41 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2520252F40003FDA41 /* AlertHandler.swift */; };
 		2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */; };
 		2A3B9B2A202543C1003FDA41 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */; };
+		2A488DD42032FD3100CB0F69 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DD32032FD3100CB0F69 /* Settings.swift */; };
+		2A488DD6203329BF00CB0F69 /* ImagePickingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DD5203329BF00CB0F69 /* ImagePickingService.swift */; };
+		2A488DD82033493D00CB0F69 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DD72033493D00CB0F69 /* SettingsConfigurator.swift */; };
+		2A488DDA2033499D00CB0F69 /* SettingsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DD92033499D00CB0F69 /* SettingsScreenInteractor.swift */; };
+		2A488DDC203349C500CB0F69 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DDB203349C400CB0F69 /* SettingsScreenPresenter.swift */; };
+		2A488DDE203349DE00CB0F69 /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DDD203349DE00CB0F69 /* SettingsScreenRouter.swift */; };
+		2A488DE02033729B00CB0F69 /* UIColor+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */; };
 		2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90CAC8202735F2008BBCF1 /* IntroCell.swift */; };
 		2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F262023424F00D9ED38 /* UIView+BasicInspectables.swift */; };
 		2AA69F29202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */; };
@@ -113,6 +120,13 @@
 		2A3B9B2520252F40003FDA41 /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		2A3B9B2720253066003FDA41 /* UIApplication+VisibleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VisibleViewController.swift"; sourceTree = "<group>"; };
 		2A3B9B29202543C1003FDA41 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
+		2A488DD32032FD3100CB0F69 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2A488DD5203329BF00CB0F69 /* ImagePickingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickingService.swift; sourceTree = "<group>"; };
+		2A488DD72033493D00CB0F69 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		2A488DD92033499D00CB0F69 /* SettingsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenInteractor.swift; sourceTree = "<group>"; };
+		2A488DDB203349C400CB0F69 /* SettingsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenPresenter.swift; sourceTree = "<group>"; };
+		2A488DDD203349DE00CB0F69 /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
+		2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Line.swift"; sourceTree = "<group>"; };
 		2A90CAC8202735F2008BBCF1 /* IntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCell.swift; sourceTree = "<group>"; };
 		2AA69F262023424F00D9ED38 /* UIView+BasicInspectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BasicInspectables.swift"; sourceTree = "<group>"; };
 		2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+AttributtedPlaceholder.swift"; sourceTree = "<group>"; };
@@ -214,6 +228,7 @@
 				2AC6D605202C879D00784CD2 /* Message.swift */,
 				2AC6D603202C85EE00784CD2 /* Task.swift */,
 				2AC6D601202C7ECA00784CD2 /* TeamMember.swift */,
+				2A488DD32032FD3100CB0F69 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +247,7 @@
 				2AAB4F782025DDDE0094312A /* Observable+JSON.swift */,
 				2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */,
 				2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */,
+				2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +302,7 @@
 				2AAB4F7A2025FCE10094312A /* ParametersConfigurator.swift */,
 				2AFA2DAC2027BF9E00EA29EF /* SocialsWithFirebaseService.swift */,
 				2AD6EDB3202C376F0073581F /* SupportEmailService.swift */,
+				2A488DD5203329BF00CB0F69 /* ImagePickingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -500,7 +517,11 @@
 			isa = PBXGroup;
 			children = (
 				2AD6EDAB2029FA260073581F /* Settings.storyboard */,
+				2A488DD92033499D00CB0F69 /* SettingsScreenInteractor.swift */,
+				2A488DDB203349C400CB0F69 /* SettingsScreenPresenter.swift */,
 				2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */,
+				2A488DD72033493D00CB0F69 /* SettingsConfigurator.swift */,
+				2A488DDD203349DE00CB0F69 /* SettingsScreenRouter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -662,6 +683,7 @@
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LEMirroredImagePicker/LEMirroredImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
@@ -694,6 +716,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LEMirroredImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
@@ -759,11 +782,13 @@
 				2AC6D60C202CB34300784CD2 /* DelegateTableViewController.swift in Sources */,
 				2A1397F1202DA79E0000CB93 /* FriendsDataSource.swift in Sources */,
 				2AA69F37202357D800D9ED38 /* DelegateAbstractViewController.swift in Sources */,
+				2A488DD82033493D00CB0F69 /* SettingsConfigurator.swift in Sources */,
 				2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */,
 				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
 				2AAB4F792025DDDE0094312A /* Observable+JSON.swift in Sources */,
 				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
+				2A488DD42032FD3100CB0F69 /* Settings.swift in Sources */,
 				2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */,
 				2AAB4F7E202653300094312A /* IntroViewController.swift in Sources */,
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
@@ -791,12 +816,17 @@
 				2AA69F3E2023B71500D9ED38 /* ApplicationManager.swift in Sources */,
 				2AD6EDBA202C44810073581F /* LoggerObjCHelper.m in Sources */,
 				2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */,
+				2A488DDC203349C500CB0F69 /* SettingsScreenPresenter.swift in Sources */,
 				2A1397F5202DDCA20000CB93 /* TaskCell.swift in Sources */,
+				2A488DDA2033499D00CB0F69 /* SettingsScreenInteractor.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
 				2AC6D60E202CC16000784CD2 /* HeaderCell.swift in Sources */,
 				2AD6EDA42029F9850073581F /* TasksTableViewController.swift in Sources */,
 				2AA69F642024BBF200D9ED38 /* MainTabBarController.swift in Sources */,
+				2A488DDE203349DE00CB0F69 /* SettingsScreenRouter.swift in Sources */,
+				2A488DE02033729B00CB0F69 /* UIColor+Line.swift in Sources */,
 				2A1397EF202DA7040000CB93 /* ContactCell.swift in Sources */,
+				2A488DD6203329BF00CB0F69 /* ImagePickingService.swift in Sources */,
 				2A3B9B2820253066003FDA41 /* UIApplication+VisibleViewController.swift in Sources */,
 				2AD6EDB7202C43670073581F /* XCLogger.swift in Sources */,
 				2AAB4F7B2025FCE10094312A /* ParametersConfigurator.swift in Sources */,

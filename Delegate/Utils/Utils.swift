@@ -134,6 +134,12 @@ enum Strings {
     static let myTeams = "My Teams"
     static let invited = "Invited"
     static let invites = "Invites"
+    
+    // Image Picker
+    static let photoActionSheetTitle = "Choose image title"
+    static let cameraTitle = "Camera title"
+    static let galleryTitle = "Gallery title"
+    static let cancelTitle = "Cancel title"
 }
 
 enum AnimationDuration {
@@ -183,6 +189,13 @@ enum ErrorMessage {
     
     static let troublesInternetTitle = "Connection problems"
     static let troublesInternetSubtitle = "For some reasons internet seems to get lost"
+    
+    // Camera
+    static let noCameraTitle = "No Camera title"
+    static let noCameraMessage = "Sorry, this device has no camera title"
+    
+    // Settings
+    static let noUsername = "Add username"
 }
 
 enum InfoMessage {
@@ -208,7 +221,13 @@ enum FirebaseKey {
     static let avatarLink = "avatarLink"
     static let users = "users"
     static let uid = "uid"
-
+    
+    static let settings = "settings"
+    static let needsAds = "needsAds"
+    static let congratulations = "congratulations"
+    static let push = "push"
+    static let localNotifications = "localNotifications"
+    
 }
 
 enum ErrorResponseCode: Int {
