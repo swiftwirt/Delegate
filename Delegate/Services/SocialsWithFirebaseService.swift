@@ -60,6 +60,14 @@ class SocialsWithFirebaseService: NSObject {
         })
     }
     
+    static func logOutTwitter()
+    {
+        let store = TWTRTwitter.sharedInstance().sessionStore
+        if let userID = store.session()?.userID {
+            store.logOutUserID(userID)
+        }
+    }
+    
     // Linked in
     
     func registerLinkedIN() -> Observable<JSON?>
@@ -82,5 +90,12 @@ class SocialsWithFirebaseService: NSObject {
             
             return Disposables.create()
         })
+    }
+    
+    static func logOutLinkedIn()
+    {
+        if LISDKSessionManager.hasValidSession() {
+            LISDKSessionManager.clearSession()
+        }
     }
 }

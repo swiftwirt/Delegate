@@ -22,25 +22,39 @@ class SignUpScreenPresenter: NSObject {
         GIDSignIn.sharedInstance().uiDelegate = self
     }
     
+    func configureUsernameTextField(with text: String, color: UIColor)
+    {
+        configure(textField: output.usernameTextField, text: text, color: color)
+    }
+    
     func configureEmailTextField(with text: String, color: UIColor)
     {
-        output.emailTextField.setAttributed(placeholder: text, with: color)
-        output.emailTextField.tintColor = color
-        output.emailTextField.resignFirstResponder()
+        configure(textField: output.emailTextField, text: text, color: color)
     }
     
     func configurePasswordTextField(with text: String, color: UIColor)
     {
-        output.passwordTextField.setAttributed(placeholder: text, with: color)
-        output.passwordTextField.tintColor = color
-        output.passwordTextField.resignFirstResponder()
+        configure(textField: output.passwordTextField, text: text, color: color)
     }
     
     func configureRepeatPasswordTextField(with text: String, color: UIColor)
     {
-        output.repeatPasswordTextField.setAttributed(placeholder: text, with: color)
-        output.repeatPasswordTextField.tintColor = color
-        output.repeatPasswordTextField.resignFirstResponder()
+        configure(textField: output.repeatPasswordTextField, text: text, color: color)
+    }
+    
+    fileprivate func configure(textField: UITextField, text: String, color: UIColor)
+    {
+        textField.setAttributed(placeholder: text, with: color)
+        textField.tintColor = color
+        textField.resignFirstResponder()
+    }
+    
+    func addUsernameValidationError(message: String?, result: ValidationState)
+    {
+        output.usernameInputContainer.state = result
+        if let message = message {
+            output.usernameTextField.insertFieldValidationMessage(message: message)
+        }
     }
     
     func addEmailValidationError(message: String?, result: ValidationState)
@@ -65,6 +79,11 @@ class SignUpScreenPresenter: NSObject {
         if let message = message {
             output.repeatPasswordTextField.insertFieldValidationMessage(message: message)
         }
+    }
+    
+    var currentUsernameValue: String?
+    {
+        return output.usernameTextField.text
     }
     
     var currentEmailInputValue: String?

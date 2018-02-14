@@ -10,6 +10,7 @@ import UIKit
 
 class SignUpViewController: DelegateAbstractViewController {
     
+    @IBOutlet weak var usernameTextField: RightToLeftSensitiveTextField!
     @IBOutlet weak var emailTextField: RightToLeftSensitiveTextField!
     @IBOutlet weak var passwordTextField: RightToLeftSensitiveTextField!
     @IBOutlet weak var repeatPasswordTextField: RightToLeftSensitiveTextField!
@@ -20,6 +21,7 @@ class SignUpViewController: DelegateAbstractViewController {
     // Signup containers for animation
     
     @IBOutlet weak var logoContainer: UIImageView!
+    @IBOutlet weak var usernameInputContainer: ValidatableView!
     @IBOutlet weak var emailInputContainer: ValidatableView!
     @IBOutlet weak var passwordInputContainer: ValidatableView!
     @IBOutlet weak var repeatPasswordContainer: ValidatableView!
@@ -30,8 +32,8 @@ class SignUpViewController: DelegateAbstractViewController {
     @IBOutlet weak var socislPlaceholderContainer: UIView!
     @IBOutlet weak var socialButtonsContainer: UIStackView!
     @IBOutlet weak var termsOfUseContainer: UIStackView!
-    // Social buttons
     
+    // Social buttons
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
     @IBOutlet weak var googlePlusButton: UIButton!
@@ -59,7 +61,7 @@ class SignUpViewController: DelegateAbstractViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animate(views: [UIView(), logoContainer, emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: false)
+        animate(views: [UIView(), logoContainer, usernameInputContainer, emailInputContainer, passwordInputContainer, repeatPasswordContainer, loginButtonContainer, signupContainer, socislPlaceholderContainer, socialButtonsContainer, termsOfUseContainer], ofTheScreen: false)
         needsAnimation = true
     }
     
@@ -70,6 +72,10 @@ class SignUpViewController: DelegateAbstractViewController {
     
     fileprivate func handleInputsSwitch()
     {
+        _ = usernameTextField.rx.controlEvent(.editingDidEndOnExit).takeUntil(self.rx.deallocated).asObservable().bind {
+            self.switchFrom(one: self.usernameTextField, to: self.emailTextField)
+        }
+        
         _ = emailTextField.rx.controlEvent(.editingDidEndOnExit).takeUntil(self.rx.deallocated).asObservable().bind {
             self.switchFrom(one: self.emailTextField, to: self.passwordTextField)
         }

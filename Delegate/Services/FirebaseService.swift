@@ -160,4 +160,9 @@ class FirebaseService {
         })
     }
     
+    static func logOut()
+    {
+        try? Auth.auth().signOut()
+    }
+    
 }

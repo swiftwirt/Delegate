@@ -24,16 +24,19 @@ class LoginScreenPresenter: NSObject {
     
     func configureEmailTextField(with text: String, color: UIColor)
     {
-        output.emailTextField.setAttributed(placeholder: text, with: color)
-        output.emailTextField.tintColor = color
-        output.emailTextField.resignFirstResponder()
+        configure(textField: output.emailTextField, text: text, color: color)
     }
     
     func configurePasswordTextField(with text: String, color: UIColor)
     {
-        output.passwordTextField.setAttributed(placeholder: text, with: color)
-        output.passwordTextField.tintColor = color
-        output.passwordTextField.resignFirstResponder()
+        configure(textField: output.passwordTextField, text: text, color: color)
+    }
+    
+    fileprivate func configure(textField: UITextField, text: String, color: UIColor)
+    {
+        textField.setAttributed(placeholder: text, with: color)
+        textField.tintColor = color
+        textField.resignFirstResponder()
     }
     
     func addEmailValidationError(message: String?, result: ValidationState)

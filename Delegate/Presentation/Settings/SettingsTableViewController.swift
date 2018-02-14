@@ -30,6 +30,16 @@ class SettingsTableViewController: UITableViewController {
         output.initialSetup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output.setAvatar()
+    }
+    
+    @IBAction func onPressedLogoutButton(_ sender: Any)
+    {
+        output.logOut()
+    }
+    
     deinit {
         log.info("\(self) deinit")
     }

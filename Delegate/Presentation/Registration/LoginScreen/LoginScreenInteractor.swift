@@ -121,7 +121,7 @@ class LoginScreenInteractor: NSObject {
     func observeLogInFacebookTap()
     {
         self.output.output.needsAnimation = true
-        output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<FacebookCredentials?> in
+        output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<(FacebookCredentials?, String?)> in
             
             let facebookService = self.applicationManager.facebookService
             facebookService.logOut()
@@ -131,7 +131,7 @@ class LoginScreenInteractor: NSObject {
                 return Observable.empty()
             }
             
-            }.subscribe(onNext: { [weak self] (facebookCredentials) in
+            }.subscribe(onNext: { [weak self] (facebookCredentials, link) in
                 self?.output.output.needsAnimation = false
                 guard let token = facebookCredentials?.token else {
                     // here we know that FBLogin canceled and safari controller was dissmissed
@@ -148,6 +148,11 @@ class LoginScreenInteractor: NSObject {
                         return
                     }
                     
+                    self?.applicationManager.userService.createNewUser()
+                    self?.applicationManager.userService.user?.email = facebookCredentials?.email
+                    self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
+                    self?.applicationManager.userService.user?.userName = user?.displayName
+                    self?.applicationManager.userService.user?.avatarLink = link
                     self?.input.routeToSelectRole()
                 }
                 }, onError: { error in

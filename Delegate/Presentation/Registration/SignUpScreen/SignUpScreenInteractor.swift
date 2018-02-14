@@ -31,6 +31,7 @@ class SignUpScreenInteractor: NSObject {
     
     func configureTextFields()
     {
+        output.configureUsernameTextField(with: Strings.username, color: Color.textFieldPlaceholder)
         output.configureEmailTextField(with: Strings.email, color: Color.textFieldPlaceholder)
         output.configurePasswordTextField(with: Strings.password, color: Color.textFieldPlaceholder)
         output.configureRepeatPasswordTextField(with: Strings.repeatPassword, color: Color.textFieldPlaceholder)
@@ -41,6 +42,17 @@ class SignUpScreenInteractor: NSObject {
         _ = output.loginButtonObservable.bind {
             self.input.routeToLogin()
         }
+    }
+    
+    fileprivate var hasUsername: String?
+    {
+        guard let username = output.currentUsernameValue, !username.isEmpty else {
+            
+            output.addUsernameValidationError(message: ErrorMessage.enterUsername, result: .invalid(errorMessage: nil))
+            return nil
+        }
+        output.addUsernameValidationError(message: nil, result: .undefined)
+        return username
     }
     
     fileprivate var hasValidEmail: String?
@@ -87,25 +99,54 @@ class SignUpScreenInteractor: NSObject {
     func handleSignUpTaps()
     {
         let taps: Observable<Void> = Observable.merge([output.signupButtonObservable, output.endOnExitRepeatPasswordInputEvent])
+        var name = String()
         taps.takeUntil(self.output.output.rx.deallocated).flatMapFirst { [unowned self] () -> Observable<Void> in
             
-            guard let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
-            
-            return self.applicationManager.apiService.signup(email: email, password: password)
+            guard let userName = self.hasUsername, let email = self.hasValidEmail, let password = self.hasValidPassword else { return Observable.empty() }
+            name = userName
+            return self.applicationManager.apiService.signup(email: email, password: password).catchError { error in
+                do {
+                    try self.applicationManager.validationService.handle(remoteResponce: error)
+                } catch {
+                    AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                        self?.output.output.needsAnimation = true
+                    }
+                }
+                
+                return Observable.empty()
+            }
             
             }.subscribe(onNext: { [weak self] in
                 
                 self?.applicationManager.userService.createNewUser()
                 self?.applicationManager.userService.user?.email = Auth.auth().currentUser?.email
                 self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
-                self?.input.routeToPresentation()
+                self?.applicationManager.userService.user?.userName = name
+                
+                guard let user = self?.applicationManager.userService.user else { fatalError() }
+                
+                _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                    do {
+                        try self?.applicationManager.validationService.handle(remoteResponce: error)
+                    } catch {
+                        AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                            self?.output.output.needsAnimation = true
+                        }
+                    }
+                    return Observable.empty()
+                    }.subscribe(onCompleted: { [weak self] in
+                        self?.applicationManager.userService.saveUser()
+                        self?.applicationManager.userService.needsRestoration = true
+                        self?.input.routeToPresentation()
+                    }).disposed(by: self!.disposeBag)
+                
             }).disposed(by: disposeBag)
     }
     
     func observeLogInFacebookTap()
     {
         self.output.output.needsAnimation = true
-        output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<FacebookCredentials?> in
+        output.facebookButtonObservable.flatMapLatest { [unowned self] () -> Observable<(FacebookCredentials?, String?)> in
             
             let facebookService = self.applicationManager.facebookService
             facebookService.logOut()
@@ -115,7 +156,7 @@ class SignUpScreenInteractor: NSObject {
                 return Observable.empty()
             }
             
-            }.subscribe(onNext: { [weak self] (facebookCredentials) in
+            }.subscribe(onNext: { [weak self] (facebookCredentials, link) in
                 self?.output.output.needsAnimation = false
                 guard let token = facebookCredentials?.token else {
                     // here we know that FBLogin canceled and safari controller was dissmissed
@@ -131,8 +172,30 @@ class SignUpScreenInteractor: NSObject {
                         }
                         return
                     }
-
-                    self?.input.routeToPresentation()
+                    
+                    self?.applicationManager.userService.createNewUser()
+                    self?.applicationManager.userService.user?.email = facebookCredentials?.email
+                    self?.applicationManager.userService.user?.uid = Auth.auth().currentUser?.uid
+                    self?.applicationManager.userService.user?.userName = user?.displayName
+                    self?.applicationManager.userService.user?.avatarLink = link
+                    
+                    guard let user = self?.applicationManager.userService.user else { fatalError() }
+                    
+                    _ = self?.applicationManager.apiService.update(user: user).catchError { error in
+                        do {
+                            try self?.applicationManager.validationService.handle(remoteResponce: error)
+                        } catch {
+                            AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in
+                                self?.output.output.needsAnimation = true
+                            }
+                        }
+                        return Observable.empty()
+                        }.subscribe(onCompleted: { [weak self] in
+                            self?.applicationManager.userService.saveUser()
+                            self?.applicationManager.userService.needsRestoration = true
+                            self?.input.routeToPresentation()
+                        }).disposed(by: self!.disposeBag)
+                    
                 }
                 }, onError: { error in
                     AlertHandler.showSpecialAlert(with: ErrorMessage.error, message: error.localizedDescription) { [weak self] _ in

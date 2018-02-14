@@ -42,7 +42,13 @@ class ApplicationRouter
         let storyboard = UIStoryboard(name: StoryboardIdentifier.login, bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
 
-        window?.rootViewController = viewController
+        let previousView = window?.rootViewController?.view
+        
+        UIView.transition(with: window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, animations: {
+            window?.rootViewController = viewController
+        }, completion: { finished in
+            previousView?.removeFromSuperview()
+        })
     }
     
     static func showSignupScreen()
@@ -101,19 +107,20 @@ class ApplicationRouter
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        guard let window = appDelegate.window, let rootViewController = window.rootViewController else {
+        guard let window = appDelegate.window else {
             return
         }
         
         let storyboard = UIStoryboard(name: StoryboardIdentifier.main, bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
 
-        viewController?.view.frame = rootViewController.view.frame
-        viewController?.view.layoutIfNeeded()
-        
-        UIView.transition(with: window, duration: 0.8, options: .transitionCrossDissolve, animations: {
+        if let previousView = window.rootViewController?.view{
+            UIView.transition(from: previousView, to: viewController!.view, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromLeft, completion: { _ in
+                window.rootViewController = viewController
+            })
+        } else {
             window.rootViewController = viewController
-        }, completion: nil)
+        }
     }
     
     func display<T>(_ viewController: T, onTab tab: Int) where T: UIViewController {

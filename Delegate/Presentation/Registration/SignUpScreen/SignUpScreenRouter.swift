@@ -29,9 +29,9 @@ class SignUpScreenRouter {
     fileprivate func perform(routerActiion: @escaping Action, waitingTimeInterval: Double)
     {
         DispatchQueue.main.async { [weak self] in
-            self?.viewController.animate(views: [
-                UIView(),
+            self?.viewController.animate(views: [ UIView(),
                 self!.viewController.logoContainer,
+                self!.viewController.usernameInputContainer,
                 self!.viewController.emailInputContainer,
                 self!.viewController.passwordInputContainer,
                 self!.viewController.repeatPasswordContainer,

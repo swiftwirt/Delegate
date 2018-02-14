@@ -23,6 +23,9 @@ enum JSONKey {
     static let email = "email"
     static let emailAddress = "emailAddress"
     static let id = "id"
+    static let url = "url"
+    static let picture = "picture"
+    static let data = "data"
     
     // Team
     static let state = "state"
@@ -123,6 +126,7 @@ enum Constants {
 enum Strings {
     
     // Placeholders
+    static let username = "Username"
     static let email = "Email"
     static let password = "Password"
     static let repeatPassword = "Repeat password"
@@ -157,6 +161,7 @@ enum ErrorMessage {
     static let warning = "Warning"
     
     // Password/Email validation
+    static let enterUsername = "Enter username"
     static let emailEmpty = "Enter email"
     static let emailIncorrectFormat = "Wrong email format"
     
@@ -213,6 +218,7 @@ enum InfoMessage {
 
 enum FirebaseKey {
     
+    static let userName = "userName"
     static let firstName = "firstName"
     static let lastName = "lastName"
     static let email = "email"

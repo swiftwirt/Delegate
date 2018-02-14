@@ -43,7 +43,6 @@
 		2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F422024360600D9ED38 /* FirebaseService.swift */; };
 		2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F442024364300D9ED38 /* FacebookService.swift */; };
 		2AA69F47202436E100D9ED38 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F46202436E100D9ED38 /* KeychainService.swift */; };
-		2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F482024384800D9ED38 /* SocialApiService.swift */; };
 		2AA69F4B20243ECD00D9ED38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AA69F4A20243ECD00D9ED38 /* GoogleService-Info.plist */; };
 		2AA69F4D20243EF800D9ED38 /* ThirdPartiesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F4C20243EF800D9ED38 /* ThirdPartiesConfigurator.swift */; };
 		2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F4E2024434900D9ED38 /* LoginScreenConfigurator.swift */; };
@@ -142,7 +141,6 @@
 		2AA69F422024360600D9ED38 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		2AA69F442024364300D9ED38 /* FacebookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		2AA69F46202436E100D9ED38 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
-		2AA69F482024384800D9ED38 /* SocialApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApiService.swift; sourceTree = "<group>"; };
 		2AA69F4A20243ECD00D9ED38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2AA69F4C20243EF800D9ED38 /* ThirdPartiesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartiesConfigurator.swift; sourceTree = "<group>"; };
 		2AA69F4E2024434900D9ED38 /* LoginScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenConfigurator.swift; sourceTree = "<group>"; };
@@ -294,7 +292,6 @@
 				2AA69F422024360600D9ED38 /* FirebaseService.swift */,
 				2AA69F442024364300D9ED38 /* FacebookService.swift */,
 				2AA69F46202436E100D9ED38 /* KeychainService.swift */,
-				2AA69F482024384800D9ED38 /* SocialApiService.swift */,
 				2AA69F652024BDED00D9ED38 /* ValidationService.swift */,
 				2A3B9B1B202519EA003FDA41 /* UserService.swift */,
 				2A3B9B2520252F40003FDA41 /* AlertHandler.swift */,
@@ -792,7 +789,6 @@
 				2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */,
 				2AAB4F7E202653300094312A /* IntroViewController.swift in Sources */,
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
-				2AA69F492024384800D9ED38 /* SocialApiService.swift in Sources */,
 				2AAB4F702025ACA00094312A /* Error+Code.swift in Sources */,
 				2AD6EDAE2029FA310073581F /* SettingsTableViewController.swift in Sources */,
 				2AA69F55202453AF00D9ED38 /* LoginScreenRouter.swift in Sources */,

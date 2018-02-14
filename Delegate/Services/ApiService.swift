@@ -16,11 +16,6 @@ class ApiService {
     fileprivate let firebaseService = FirebaseService()
     fileprivate let facebookService = FacebookService()
     
-    lazy var socialApiService: SocialApiService = {
-        let socialApiService = SocialApiService()
-        return socialApiService
-    }()
-    
     func login(email: String, password: String) -> Observable<DLGUser>
     {
         return firebaseService.login(email: email, password: password)
@@ -46,9 +41,9 @@ class ApiService {
         return firebaseService.update(user: user)
     }
     
-    // Socials
+    // Facebook
     
-    func authWithFacebook(viewController: UIViewController) -> Observable<FacebookCredentials?>
+    func authWithFacebook(viewController: UIViewController) -> Observable<(FacebookCredentials?, String?)>
     {
         return facebookService.authWithFacebook(viewController: viewController)
     }

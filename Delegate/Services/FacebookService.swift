@@ -30,7 +30,7 @@ class FacebookService {
     
     fileprivate var shareButton: FBSDKShareButton!
     
-    func authWithFacebook(viewController: UIViewController) -> Observable<FacebookCredentials?>
+    func authWithFacebook(viewController: UIViewController) -> Observable<(FacebookCredentials?, String?)>
     {
         return Observable.create({ (observer) -> Disposable in
             
@@ -42,35 +42,44 @@ class FacebookService {
                     let fbLoginResult : FBSDKLoginManagerLoginResult = result!
                     
                     if (fbLoginResult.isCancelled) {
-                        observer.on(.next(nil))
+                        observer.onNext((nil, nil))
                         observer.on(.completed)
                     } else if (fbLoginResult.grantedPermissions.contains(FacebookPermission.email)) {
                         if let token = FBSDKAccessToken.current().tokenString {
                             
-                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email"]).start(completionHandler: { (connection, result, error) -> Void in
+                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, picture.type(large)"]).start(completionHandler: { (connection, result, error) -> Void in
                                 
                                 guard error == nil else {
                                     
-                                    observer.on(.next(nil))
+                                    observer.onNext((nil, nil))
                                     observer.on(.completed)
                                     return
                                 }
                                 
                                 if let dictionary = result as? [String: Any], let email = dictionary[JSONKey.email] as? String {
                                     
+                                    guard let metaDict = dictionary[JSONKey.picture] as? [String: Any], let targetDict = metaDict[JSONKey.data] as? [String: Any],let link = targetDict[JSONKey.url] as? String else {
+                                        let facebookCredentials = FacebookCredentials(token: token, email: email)
+                                        
+                                        observer.on(.next((facebookCredentials, nil)))
+                                        observer.on(.completed)
+                                        return
+                                    }
+                                    
                                     let facebookCredentials = FacebookCredentials(token: token, email: email)
                                     
-                                    observer.on(.next(facebookCredentials))
+                                    observer.on(.next((facebookCredentials, link)))
                                     observer.on(.completed)
+                                    
                                 } else {
-                                    observer.on(.next(nil))
+                                    observer.on(.next((nil,nil)))
                                     observer.on(.completed)
                                 }
                                 
                             })
                             
                         } else {
-                            observer.on(.next(nil))
+                            observer.on(.next((nil, nil)))
                             observer.on(.completed)
                         }
                     }
@@ -94,7 +103,6 @@ class FacebookService {
     func logOut()
     {
         fbLoginManager.logOut()
-        try? Auth.auth().signOut()
     }
 }
 

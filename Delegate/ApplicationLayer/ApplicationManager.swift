@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class ApplicationManager {
     
@@ -69,5 +70,17 @@ class ApplicationManager {
             keychainService.clear()
             return
         }
+    }
+    
+    func clearAllUserData()
+    {
+        userService.needsRestoration = false
+        FirebaseService.logOut()
+        facebookService.logOut()
+        keychainService.clear()
+        SocialsWithFirebaseService.logOutTwitter()
+        GIDSignIn.sharedInstance().signOut()
+        SocialsWithFirebaseService.logOutLinkedIn()
+        ApplicationRouter.showLoginScreen()
     }
 }

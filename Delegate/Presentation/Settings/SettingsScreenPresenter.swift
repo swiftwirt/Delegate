@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SettingsScreenPresenter {
     
@@ -22,7 +23,19 @@ class SettingsScreenPresenter {
             ]
     }
     
-    func initialSetup(userName: String, email: String, settings: Settings? = nil)
+    func setAvatar(link: String?)
+    {
+        guard let link = link, let url = URL(string: link) else { return }
+        output.userAvatarImageView.sd_setShowActivityIndicatorView(true)
+        output.userAvatarImageView.sd_setIndicatorStyle(.gray)
+        output.userAvatarImageView.sd_setImage(with: url) { [weak self] (_, error, _, _) in
+            if let StrongSelf = self, error == nil {
+                StrongSelf.output.userAvatarImageView.layer.cornerRadius = StrongSelf.output.userAvatarImageView.frame.width / 2
+            }
+        }
+    }
+    
+    func initialSetup(userName: String, email: String?, settings: Settings? = nil)
     {
         output.userNameLabel.text = userName
         output.userEmailLabel.text = email

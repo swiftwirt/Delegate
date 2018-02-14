@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class DLGUser: NSObject, NSCoding {
     
+    var userName: String? = nil
     var firstName: String? = nil
     var lastName: String? = nil
     var birthDate: Date? = nil
@@ -22,9 +23,8 @@ class DLGUser: NSObject, NSCoding {
     var uid: String? = nil
     var settings: Settings? = nil
     
-    var vipPlanExpirationDate: Date? = nil
-    
     required init?(coder aDecoder: NSCoder) {
+        userName = aDecoder.decodeObject(forKey: FirebaseKey.userName) as? String
         firstName = aDecoder.decodeObject(forKey: FirebaseKey.firstName) as? String
         lastName = aDecoder.decodeObject(forKey: FirebaseKey.lastName) as? String
         email = aDecoder.decodeObject(forKey: FirebaseKey.email) as? String
@@ -37,6 +37,7 @@ class DLGUser: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(userName, forKey: FirebaseKey.userName)
         aCoder.encode(firstName, forKey: FirebaseKey.firstName)
         aCoder.encode(lastName, forKey: FirebaseKey.lastName)
         aCoder.encode(password, forKey: FirebaseKey.password)
@@ -51,6 +52,7 @@ class DLGUser: NSObject, NSCoding {
     
     init(with json: JSON)
     {
+        self.userName = json[FirebaseKey.userName].string
         self.firstName = json[FirebaseKey.firstName].string
         self.lastName = json[FirebaseKey.lastName].string
         self.email = json[FirebaseKey.email].string
@@ -66,6 +68,7 @@ class DLGUser: NSObject, NSCoding {
     init?(with snapShoot: DataSnapshot)
     {
         guard let snap = snapShoot.value as? [String: Any] else { return nil }
+        self.userName = snap[FirebaseKey.userName] as! String?
         self.firstName = snap[FirebaseKey.firstName] as! String?
         self.lastName = snap[FirebaseKey.lastName] as! String?
         self.email = snap[FirebaseKey.email] as! String?
@@ -123,7 +126,13 @@ class UserService: NSObject {
     }
     
     var email: String? {
-        return Auth.auth().currentUser?.email
+        if let email = user?.email {
+            return email
+        } else if let email = Auth.auth().currentUser?.email {
+            return email
+        } else {
+            return nil
+        }
     }
     
     var needsRestoration: Bool {
@@ -190,6 +199,5 @@ class UserService: NSObject {
     {
         return (UserService.documentsDirectory as NSString).appendingPathComponent(CodingKeys.plist)
     }
-    
 }
 

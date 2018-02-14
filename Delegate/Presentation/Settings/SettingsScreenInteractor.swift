@@ -26,9 +26,14 @@ class SettingsScreenInteractor: NSObject {
     fileprivate let userService = ApplicationManager.instance().userService
     fileprivate let disposeBag: DisposeBag = DisposeBag()
     
+    func setAvatar()
+    {
+        output.setAvatar(link: userService.user?.avatarLink)
+    }
+    
     func initialSetup()
     {
-        output.initialSetup(userName: userService.fullName ?? ErrorMessage.noUsername, email: userService.email ?? ErrorMessage.emailEmpty, settings: userService.user?.settings)
+        output.initialSetup(userName: userService.user?.userName ?? ErrorMessage.noUsername, email: userService.email, settings: userService.user?.settings)
     }
     
     func setupSwitchers()
@@ -49,6 +54,11 @@ class SettingsScreenInteractor: NSObject {
                 }
             }).disposed(by: disposeBag)
         }
+    }
+    
+    func logOut()
+    {
+        ApplicationManager.instance().clearAllUserData()
     }
     
 }
