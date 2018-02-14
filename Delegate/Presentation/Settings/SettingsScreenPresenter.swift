@@ -17,7 +17,12 @@ class SettingsScreenPresenter: NSObject {
     fileprivate let shiftDueToDisclosure = 18.0
     fileprivate let avatarCompressDimensions = 400.0
     
-    var newCompressedAvatar: UIImage?
+    fileprivate var newCompressedAvatar: UIImage? {
+        didSet {
+            guard let image = newCompressedAvatar else { return }
+            ApplicationManager.instance().apiService.saveAdded(avatar: image)
+        }
+    }
     
     var witchersChain: [UISwitch]
     {

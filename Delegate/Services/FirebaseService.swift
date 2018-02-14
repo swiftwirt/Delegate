@@ -19,7 +19,11 @@ class FirebaseService {
         static let postfix = ".json"
     }
     
-    private let databaseReference = Database.database().reference()
+    fileprivate let databaseReference = Database.database().reference()
+    fileprivate let storage = Storage.storage()
+    fileprivate let database = Database.database()
+    
+    fileprivate let disposeBag = DisposeBag()
     
     private func request(_ url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> Observable<Data> {
         return Observable.create({ (observer) -> Disposable in
@@ -158,6 +162,43 @@ class FirebaseService {
             })
             return Disposables.create()
         })
+    }
+    
+    func saveAdded(avatar: UIImage)
+    {
+        upload(avatar).subscribe(onNext: { (link) in
+            guard let userUID = Auth.auth().currentUser?.uid, let link = link else { return }
+            let usersReference = self.databaseReference.child(FirebaseKey.users).child(userUID)
+            usersReference.updateChildValues([FirebaseKey.avatarLink : link])
+        }).disposed(by: disposeBag)
+    }
+    
+    fileprivate func upload(_ avatar: UIImage) -> Observable<String?>
+    {
+        return Observable.create({ (observer) -> Disposable in
+            guard let userUID = Auth.auth().currentUser?.uid else { observer.onCompleted(); return Disposables.create() }
+            let imageData: Data! = UIImagePNGRepresentation(avatar)!
+            
+            let users = self.storage.reference().child(FirebaseKey.users)
+            let currentUser = users.child(userUID)
+            
+            // Upload file to Firebase Storage
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/png"
+            
+            currentUser.putData(imageData, metadata: metaData).observe(.success) { (snapshot) in
+                // When the image has successfully uploaded, we get it's download URL
+                if let text = snapshot.metadata?.downloadURL()?.absoluteString {
+                    observer.onNext(text)
+                    observer.onCompleted()
+                } else {
+                    observer.onNext(nil)
+                }
+            }
+            
+            return Disposables.create()
+        })
+        
     }
     
     static func logOut()
