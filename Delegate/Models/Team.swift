@@ -32,25 +32,25 @@ struct Team: Equatable {
     
     init?(with json: JSON)
     {
-        guard let id = json[JSONKey.id].string else { return nil }
+        guard let id = json[FirebaseKey.id.rawValue].string else { return nil }
         self.id = id
         
-        if let unixDate = json[JSONKey.dateCreated].double {
+        if let unixDate = json[FirebaseKey.dateCreated.rawValue].double {
             let convertedDate = Date.init(timeIntervalSince1970: unixDate)
             self.dateCreated = convertedDate
         } else {
             return nil
         }
         
-        self.title = json[JSONKey.title].string
-        self.details = json[JSONKey.details].string
-        self.logoLink = json[JSONKey.logoLink].string
+        self.title = json[FirebaseKey.title.rawValue].string
+        self.details = json[FirebaseKey.details.rawValue].string
+        self.logoLink = json[FirebaseKey.logoLink.rawValue].string
         
-        if let state = json[JSONKey.state].string {
+        if let state = json[FirebaseKey.state.rawValue].string {
             self.state = TeamState(rawValue: state)
         }
         
-        guard let membersArray = json[JSONKey.members].array else { return }
+        guard let membersArray = json[FirebaseKey.members.rawValue].array else { return }
         
         for json in membersArray {
             if let member = TeamMember(json: json), let members = members, !members.contains(member) {

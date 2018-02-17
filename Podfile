@@ -29,5 +29,6 @@ pod 'GZIP'
 pod 'SDWebImage', '~> 4.2.1'
 pod 'AnimatableReload'
 pod 'LEMirroredImagePicker', '~> 0.1'
+pod 'JVFloatLabeledTextField', '~> 1.2'
 
 end

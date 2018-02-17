@@ -26,68 +26,68 @@ class DLGUser: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder)
     {
-        naviteUser = aDecoder.decodeBool(forKey: FirebaseKey.naviteUser)
-        userName = aDecoder.decodeObject(forKey: FirebaseKey.userName) as? String
-        firstName = aDecoder.decodeObject(forKey: FirebaseKey.firstName) as? String
-        lastName = aDecoder.decodeObject(forKey: FirebaseKey.lastName) as? String
-        email = aDecoder.decodeObject(forKey: FirebaseKey.email) as? String
-        password = aDecoder.decodeObject(forKey: FirebaseKey.password) as? String
-        avatarLink = aDecoder.decodeObject(forKey: FirebaseKey.avatarLink) as? String
-        uid = aDecoder.decodeObject(forKey: FirebaseKey.uid) as? String
-        birthDate = aDecoder.decodeObject(forKey: FirebaseKey.birthDate) as? Date
-        settings = aDecoder.decodeObject(forKey: FirebaseKey.settings) as? Settings
+        naviteUser = aDecoder.decodeBool(forKey: FirebaseKey.naviteUser.rawValue)
+        userName = aDecoder.decodeObject(forKey: FirebaseKey.userName.rawValue) as? String
+        firstName = aDecoder.decodeObject(forKey: FirebaseKey.firstName.rawValue) as? String
+        lastName = aDecoder.decodeObject(forKey: FirebaseKey.lastName.rawValue) as? String
+        email = aDecoder.decodeObject(forKey: FirebaseKey.email.rawValue) as? String
+        password = aDecoder.decodeObject(forKey: FirebaseKey.password.rawValue) as? String
+        avatarLink = aDecoder.decodeObject(forKey: FirebaseKey.avatarLink.rawValue) as? String
+        uid = aDecoder.decodeObject(forKey: FirebaseKey.uid.rawValue) as? String
+        birthDate = aDecoder.decodeObject(forKey: FirebaseKey.birthDate.rawValue) as? Date
+        settings = aDecoder.decodeObject(forKey: FirebaseKey.settings.rawValue) as? Settings
         super.init()
     }
     
     func encode(with aCoder: NSCoder)
     {
-        aCoder.encode(naviteUser, forKey: FirebaseKey.naviteUser)
-        aCoder.encode(userName, forKey: FirebaseKey.userName)
-        aCoder.encode(firstName, forKey: FirebaseKey.firstName)
-        aCoder.encode(lastName, forKey: FirebaseKey.lastName)
-        aCoder.encode(password, forKey: FirebaseKey.password)
-        aCoder.encode(email, forKey: FirebaseKey.email)
-        aCoder.encode(avatarLink, forKey: FirebaseKey.avatarLink)
-        aCoder.encode(uid, forKey: FirebaseKey.uid)
-        aCoder.encode(birthDate, forKey: FirebaseKey.birthDate)
-        aCoder.encode(settings, forKey: FirebaseKey.settings)
+        aCoder.encode(naviteUser, forKey: FirebaseKey.naviteUser.rawValue)
+        aCoder.encode(userName, forKey: FirebaseKey.userName.rawValue)
+        aCoder.encode(firstName, forKey: FirebaseKey.firstName.rawValue)
+        aCoder.encode(lastName, forKey: FirebaseKey.lastName.rawValue)
+        aCoder.encode(password, forKey: FirebaseKey.password.rawValue)
+        aCoder.encode(email, forKey: FirebaseKey.email.rawValue)
+        aCoder.encode(avatarLink, forKey: FirebaseKey.avatarLink.rawValue)
+        aCoder.encode(uid, forKey: FirebaseKey.uid.rawValue)
+        aCoder.encode(birthDate, forKey: FirebaseKey.birthDate.rawValue)
+        aCoder.encode(settings, forKey: FirebaseKey.settings.rawValue)
     }
     
     override init() {}
     
     init(with json: JSON)
     {
-        self.naviteUser = json[FirebaseKey.naviteUser].bool ?? false
-        self.userName = json[FirebaseKey.userName].string
-        self.firstName = json[FirebaseKey.firstName].string
-        self.lastName = json[FirebaseKey.lastName].string
-        self.email = json[FirebaseKey.email].string
-        self.password = json[FirebaseKey.password].string
-        self.avatarLink = json[FirebaseKey.avatarLink].string
-        self.uid = json[FirebaseKey.uid].string
-        self.settings = Settings(json: json[FirebaseKey.settings])
+        self.naviteUser = json[FirebaseKey.naviteUser.rawValue].bool ?? false
+        self.userName = json[FirebaseKey.userName.rawValue].string
+        self.firstName = json[FirebaseKey.firstName.rawValue].string
+        self.lastName = json[FirebaseKey.lastName.rawValue].string
+        self.email = json[FirebaseKey.email.rawValue].string
+        self.password = json[FirebaseKey.password.rawValue].string
+        self.avatarLink = json[FirebaseKey.avatarLink.rawValue].string
+        self.uid = json[FirebaseKey.uid.rawValue].string
+        self.settings = Settings(json: json[FirebaseKey.settings.rawValue])
         
-        guard let cteatedUNIXDate = json[FirebaseKey.birthDate].double else { return }
+        guard let cteatedUNIXDate = json[FirebaseKey.birthDate.rawValue].double else { return }
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
     }
     
     init?(with snapShoot: DataSnapshot)
     {
         guard let snap = snapShoot.value as? [String: Any] else { return nil }
-        self.naviteUser = snap[FirebaseKey.naviteUser] as! Bool? ?? false
-        self.userName = snap[FirebaseKey.userName] as! String?
-        self.firstName = snap[FirebaseKey.firstName] as! String?
-        self.lastName = snap[FirebaseKey.lastName] as! String?
-        self.email = snap[FirebaseKey.email] as! String?
-        self.password = snap[FirebaseKey.password] as! String?
-        self.avatarLink = snap[FirebaseKey.avatarLink] as! String?
+        self.naviteUser = snap[FirebaseKey.naviteUser.rawValue] as! Bool? ?? false
+        self.userName = snap[FirebaseKey.userName.rawValue] as! String?
+        self.firstName = snap[FirebaseKey.firstName.rawValue] as! String?
+        self.lastName = snap[FirebaseKey.lastName.rawValue] as! String?
+        self.email = snap[FirebaseKey.email.rawValue] as! String?
+        self.password = snap[FirebaseKey.password.rawValue] as! String?
+        self.avatarLink = snap[FirebaseKey.avatarLink.rawValue] as! String?
         self.uid = snapShoot.key
         
-        if let settingsJSON = snap[FirebaseKey.settings] as? JSON {
+        if let settingsJSON = snap[FirebaseKey.settings.rawValue] as? JSON {
             self.settings = Settings(json: settingsJSON)
         }
         
-        guard let cteatedUNIXDate = snap[FirebaseKey.birthDate] as? Double else { return nil }
+        guard let cteatedUNIXDate = snap[FirebaseKey.birthDate.rawValue] as? Double else { return nil }
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
     }
     

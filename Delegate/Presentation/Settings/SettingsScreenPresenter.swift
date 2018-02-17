@@ -9,10 +9,14 @@
 import UIKit
 import SDWebImage
 import TOCropViewController
+import RxSwift
 
 class SettingsScreenPresenter: NSObject {
     
     weak var output: SettingsTableViewController!
+    
+    fileprivate let applicationManager = ApplicationManager.instance()
+    fileprivate let disposeBag: DisposeBag = DisposeBag()
     
     fileprivate let shiftDueToDisclosure = 18.0
     fileprivate let avatarCompressDimensions = 400.0
@@ -20,7 +24,10 @@ class SettingsScreenPresenter: NSObject {
     fileprivate var newCompressedAvatar: UIImage? {
         didSet {
             guard let image = newCompressedAvatar else { return }
-            ApplicationManager.instance().apiService.saveAdded(avatar: image)
+            ApplicationManager.instance().apiService.saveAdded(avatar: image).subscribe(onNext: { [ weak self ] (link) in
+                self?.applicationManager.userService.user?.avatarLink = link
+                self?.setAvatar(link: link)
+            }).disposed(by: disposeBag)
         }
     }
     
@@ -51,6 +58,7 @@ class SettingsScreenPresenter: NSObject {
         if native != nil, !native! {
             output.profileCell.accessoryType = .none
             output.editAvatarButton.isHidden = true
+            output.profileCell.isUserInteractionEnabled = false
         }
         output.profileInfoCenterConstraint.constant = CGFloat((native ?? false) ? shiftDueToDisclosure : 0.0)
         output.userNameLabel.text = userName
@@ -99,8 +107,6 @@ extension SettingsScreenPresenter: TOCropViewControllerDelegate
         let targetSize = CGSize(width: avatarCompressDimensions, height: avatarCompressDimensions)
         if let compressedImage = image.resizeImage(targetSize: targetSize) {
             newCompressedAvatar = compressedImage
-            output.userAvatarImageView.layer.cornerRadius = output.userAvatarImageView.frame.width / 2
-            output.userAvatarImageView.image = image
         }
         
         cropViewController.dismiss(animated: true, completion: nil)

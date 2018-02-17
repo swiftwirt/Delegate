@@ -24,15 +24,15 @@ struct Message: Equatable {
     
     init?(json: JSON)
     {
-        if let unixDate = json[JSONKey.dateCreated].double {
+        if let unixDate = json[FirebaseKey.dateCreated.rawValue].double {
             let convertedDate = Date.init(timeIntervalSince1970: unixDate)
             self.dateCreated = convertedDate
         } else {
             return nil
         }
-        self.id = json[JSONKey.id].string
-        self.authorName = json[JSONKey.name].string
-        self.authorAvatarLink = json[JSONKey.avatarLink].string
-        self.text = json[JSONKey.text].string
+        self.id = json[FirebaseKey.id.rawValue].string
+        self.authorName = json[FirebaseKey.name.rawValue].string
+        self.authorAvatarLink = json[FirebaseKey.avatarLink.rawValue].string
+        self.text = json[FirebaseKey.text.rawValue].string
     }
 }

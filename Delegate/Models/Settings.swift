@@ -17,10 +17,10 @@ class Settings: NSCoder {
     var localNotifications = true
     
     init?(json: JSON) {
-        guard let needsAds = json[FirebaseKey.needsAds].bool,
-            let congratulations = json[FirebaseKey.congratulations].bool,
-            let push = json[FirebaseKey.push].bool,
-            let localNotifications = json[FirebaseKey.localNotifications].bool else { return nil }
+        guard let needsAds = json[FirebaseKey.needsAds.rawValue].bool,
+            let congratulations = json[FirebaseKey.congratulations.rawValue].bool,
+            let push = json[FirebaseKey.push.rawValue].bool,
+            let localNotifications = json[FirebaseKey.localNotifications.rawValue].bool else { return nil }
         
         self.needsAds = needsAds
         self.congratulations = congratulations
@@ -29,18 +29,18 @@ class Settings: NSCoder {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        needsAds = aDecoder.decodeBool(forKey: FirebaseKey.needsAds)
-        congratulations = aDecoder.decodeBool(forKey: FirebaseKey.congratulations)
-        push = aDecoder.decodeBool(forKey: FirebaseKey.push)
-        localNotifications = aDecoder.decodeBool(forKey: FirebaseKey.localNotifications)
+        needsAds = aDecoder.decodeBool(forKey: FirebaseKey.needsAds.rawValue)
+        congratulations = aDecoder.decodeBool(forKey: FirebaseKey.congratulations.rawValue)
+        push = aDecoder.decodeBool(forKey: FirebaseKey.push.rawValue)
+        localNotifications = aDecoder.decodeBool(forKey: FirebaseKey.localNotifications.rawValue)
         super.init()
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(needsAds, forKey: FirebaseKey.needsAds)
-        aCoder.encode(congratulations, forKey: FirebaseKey.congratulations)
-        aCoder.encode(push, forKey: FirebaseKey.push)
-        aCoder.encode(localNotifications, forKey: FirebaseKey.localNotifications)
+        aCoder.encode(needsAds, forKey: FirebaseKey.needsAds.rawValue)
+        aCoder.encode(congratulations, forKey: FirebaseKey.congratulations.rawValue)
+        aCoder.encode(push, forKey: FirebaseKey.push.rawValue)
+        aCoder.encode(localNotifications, forKey: FirebaseKey.localNotifications.rawValue)
     }
     
 }

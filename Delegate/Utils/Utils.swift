@@ -31,52 +31,6 @@ enum JSONKey {
     static let lastName = "lastName"
     static let pictureUrl = "pictureUrl"
     static let firstName = "firstName"
-    
-    // Team
-    static let state = "state"
-    static let title = "title"
-    static let details = "details"
-    static let members = "members"
-    static let logoLink = "logoLink"
-    
-    static let invitePending = "invitePending"
-    static let inviteAccepted = "inviteAccepted"
-    static let userCreated = "userCreated"
-    
-    // Team menber
-    static let name = "name"
-    static let avatarLink = "avatarLink"
-    static let tasks = "tasks"
-    static let position = "position"
-    static let userNotInvited = "userNotInvited"
-    
-    // Task
-    static let estimatedTime = "estimatedTime"
-    static let spentTime = "spentTime"
-    static let priority = "priority"
-    static let dueDate = "dueDate"
-    static let authorID = "authorID"
-    static let authorName = "authorName"
-    static let assigneeID = "assigneeID"
-    static let assigneeName = "assigneeName"
-    static let progress = "progress"
-    static let status = "status"
-    static let comments = "comments"
-    static let disscussion = "disscussion"
-    
-    static let assigned = "assigned"
-    static let inPregress = "inPregress"
-    static let resolved = "resolved"
-    static let completed = "completed"
-
-    static let urgent = "urgent"
-    static let hight = "hight"
-    static let normal = "normal"
-    static let low = "low"
-    
-    // Message
-    static let text = "text"
-    static let dateCreated = "dateCreated"
 }
 
 enum Color {
@@ -221,24 +175,70 @@ enum InfoMessage {
     }
 }
 
-enum FirebaseKey {
+enum FirebaseKey: String {
     
-    static let naviteUser = "naviteUser"
-    static let userName = "userName"
-    static let firstName = "firstName"
-    static let lastName = "lastName"
-    static let email = "email"
-    static let password = "password"
-    static let birthDate = "birthDate"
-    static let avatarLink = "avatarLink"
-    static let users = "users"
-    static let uid = "uid"
+    case id = "id"
+    case naviteUser = "naviteUser"
+    case userName = "userName"
+    case firstName = "firstName"
+    case lastName = "lastName"
+    case email = "email"
+    case password = "password"
+    case birthDate = "birthDate"
+    case avatarLink = "avatarLink"
+    case users = "users"
+    case uid = "uid"
     
-    static let settings = "settings"
-    static let needsAds = "needsAds"
-    static let congratulations = "congratulations"
-    static let push = "push"
-    static let localNotifications = "localNotifications"
+    case settings = "settings"
+    case needsAds = "needsAds"
+    case congratulations = "congratulations"
+    case push = "push"
+    case localNotifications = "localNotifications"
+    
+    // Team
+    case state = "state"
+    case title = "title"
+    case details = "details"
+    case members = "members"
+    case logoLink = "logoLink"
+    
+    case invitePending = "invitePending"
+    case inviteAccepted = "inviteAccepted"
+    case userCreated = "userCreated"
+
+    // Team menber
+    case name = "name"
+    case tasks = "tasks"
+    case position = "position"
+    case userNotInvited = "userNotInvited"
+    
+    // Task
+    case estimatedTime = "estimatedTime"
+    case spentTime = "spentTime"
+    case priority = "priority"
+    case dueDate = "dueDate"
+    case authorID = "authorID"
+    case authorName = "authorName"
+    case assigneeID = "assigneeID"
+    case assigneeName = "assigneeName"
+    case progress = "progress"
+    case status = "status"
+    case comments = "comments"
+    case disscussion = "disscussion"
+    
+    case assigned = "assigned"
+    case inPregress = "inPregress"
+    case resolved = "resolved"
+    case completed = "completed"
+    
+    case urgent = "urgent"
+    case hight = "hight"
+    case normal = "normal"
+    case low = "low"
+    
+    // Message
+    case text = "text"
+    case dateCreated = "dateCreated"
     
 }
 

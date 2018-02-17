@@ -49,39 +49,39 @@ struct Task: Equatable {
     
     init?(json: JSON)
     {
-        if let unixDate = json[JSONKey.dateCreated].double {
+        if let unixDate = json[FirebaseKey.dateCreated.rawValue].double {
             let convertedDate = Date.init(timeIntervalSince1970: unixDate)
             self.dateCreated = convertedDate
         } else {
             return nil
         }
         
-        self.id = json[JSONKey.id].string
-        self.title = json[JSONKey.title].string
-        self.details = json[JSONKey.details].string
-        self.estimatedTime = json[JSONKey.estimatedTime].double
-        self.spentTime = json[JSONKey.spentTime].double
-        self.authorID = json[JSONKey.authorID].string
-        self.authorName = json[JSONKey.authorName].string
-        self.assigneeID = json[JSONKey.assigneeID].string
-        self.assigneeName = json[JSONKey.assigneeName].string
-        self.progress = json[JSONKey.progress].int
-        self.comments = json[JSONKey.comments].string
+        self.id = json[FirebaseKey.id.rawValue].string
+        self.title = json[FirebaseKey.title.rawValue].string
+        self.details = json[FirebaseKey.details.rawValue].string
+        self.estimatedTime = json[FirebaseKey.estimatedTime.rawValue].double
+        self.spentTime = json[FirebaseKey.spentTime.rawValue].double
+        self.authorID = json[FirebaseKey.authorID.rawValue].string
+        self.authorName = json[FirebaseKey.authorName.rawValue].string
+        self.assigneeID = json[FirebaseKey.assigneeID.rawValue].string
+        self.assigneeName = json[FirebaseKey.assigneeName.rawValue].string
+        self.progress = json[FirebaseKey.progress.rawValue].int
+        self.comments = json[FirebaseKey.comments.rawValue].string
         
-        if let priority = json[JSONKey.priority].string {
+        if let priority = json[FirebaseKey.priority.rawValue].string {
             self.priority = TaskPriority(rawValue: priority)
         }
         
-        if let status = json[JSONKey.status].string {
+        if let status = json[FirebaseKey.status.rawValue].string {
             self.status = TaskStatus(rawValue: status)
         }
         
-        if let unixDate = json[JSONKey.dueDate].double {
+        if let unixDate = json[FirebaseKey.dueDate.rawValue].double {
             let convertedDate = Date.init(timeIntervalSince1970: unixDate)
             self.dueDate = convertedDate
         }
         
-        guard let messagesArray = json[JSONKey.disscussion].array else { return }
+        guard let messagesArray = json[FirebaseKey.disscussion.rawValue].array else { return }
         
         for json in messagesArray {
             if let message = Message(json: json), let disscussion = disscussion, !disscussion.contains(message) {

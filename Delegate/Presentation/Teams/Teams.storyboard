@@ -156,7 +156,7 @@
                                                     <real key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="value" red="0.50382155179977417" green="0.37263190746307373" blue="0.65023839473724365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>

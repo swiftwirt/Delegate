@@ -73,11 +73,10 @@ class ForgotPasswordViewController: DelegateAbstractViewController {
             self?.animate(views: [self!.logoContainer,
                                   self!.emailInputContainer,
                                   self!.resetButtonContainer,
-                                  self!.backButtonContainer]
-                , ofTheScreen: false)
+                                  self!.backButtonContainer], ofTheScreen: false)
         }
         
-        Timer.after(0.5) {
+        Timer.after(0.6) {
             routerActiion()
         }
     }

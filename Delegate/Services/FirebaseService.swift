@@ -123,7 +123,7 @@ class FirebaseService {
     {
         return Observable.create({ (observer) -> Disposable in
             Auth.auth().languageCode = Locale.current.languageCode
-            Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
                 guard error == nil else {
                     // TODO: handle expected errors
                     observer.on(.error(error!))
@@ -150,7 +150,7 @@ class FirebaseService {
         
         return Observable.create({ (observer) -> Disposable in
             
-            let usersReference = self.databaseReference.child(FirebaseKey.users).child(uid)
+            let usersReference = self.databaseReference.child(FirebaseKey.users.rawValue).child(uid)
             usersReference.updateChildValues(ParametersConfigurator.userUpdateParameters(user), withCompletionBlock: { (error, reference) in
                 guard error == nil else {
                     // TODO: handle expected errors
@@ -164,13 +164,43 @@ class FirebaseService {
         })
     }
     
-    func saveAdded(avatar: UIImage)
+    func updateUser(property: FirebaseKey, value: Any?) -> Observable<Void>
     {
-        upload(avatar).subscribe(onNext: { (link) in
-            guard let userUID = Auth.auth().currentUser?.uid, let link = link else { return }
-            let usersReference = self.databaseReference.child(FirebaseKey.users).child(userUID)
-            usersReference.updateChildValues([FirebaseKey.avatarLink : link])
-        }).disposed(by: disposeBag)
+        guard let uid = Auth.auth().currentUser?.uid, let value = value else {
+            return Observable.empty()
+        }
+        
+        return Observable.create({ (observer) -> Disposable in
+            
+            let usersReference = self.databaseReference.child(FirebaseKey.users.rawValue).child(uid)
+            
+            usersReference.updateChildValues([property.rawValue: value], withCompletionBlock: { (error, reference) in
+                guard error == nil else {
+                    // TODO: handle expected errors
+                    observer.on(.error(error!))
+                    return
+                }
+                observer.onCompleted()
+            })
+            return Disposables.create()
+        })
+    }
+    
+    func saveAdded(avatar: UIImage) -> Observable<String>
+    {
+        return Observable.create({ (observer) -> Disposable in
+            
+            self.upload(avatar).subscribe(onNext: { (link) in
+                guard let userUID = Auth.auth().currentUser?.uid, let link = link else { return }
+                let usersReference = self.databaseReference.child(FirebaseKey.users.rawValue).child(userUID)
+                usersReference.updateChildValues([FirebaseKey.avatarLink : link])
+                observer.onNext(link)
+                observer.onCompleted()
+            }).disposed(by: self.disposeBag)
+            
+            return Disposables.create()
+        })
+        
     }
     
     fileprivate func upload(_ avatar: UIImage) -> Observable<String?>
@@ -179,7 +209,7 @@ class FirebaseService {
             guard let userUID = Auth.auth().currentUser?.uid else { observer.onCompleted(); return Disposables.create() }
             let imageData: Data! = UIImagePNGRepresentation(avatar)!
             
-            let users = self.storage.reference().child(FirebaseKey.users)
+            let users = self.storage.reference().child(FirebaseKey.users.rawValue)
             let currentUser = users.child(userUID)
             
             // Upload file to Firebase Storage
@@ -193,6 +223,7 @@ class FirebaseService {
                     observer.onCompleted()
                 } else {
                     observer.onNext(nil)
+                    observer.onCompleted()
                 }
             }
             

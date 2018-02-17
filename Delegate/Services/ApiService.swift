@@ -41,9 +41,14 @@ class ApiService {
         return firebaseService.update(user: user)
     }
     
-    func saveAdded(avatar: UIImage)
+    func updateUser(property: FirebaseKey, value: Any?) -> Observable<Void>
     {
-        firebaseService.saveAdded(avatar: avatar)
+        return firebaseService.updateUser(property: property, value: value)
+    }
+    
+    func saveAdded(avatar: UIImage) -> Observable<String>
+    {
+        return firebaseService.saveAdded(avatar: avatar)
     }
     
     // Facebook

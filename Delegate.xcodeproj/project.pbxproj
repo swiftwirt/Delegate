@@ -29,6 +29,7 @@
 		2A488DDE203349DE00CB0F69 /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DDD203349DE00CB0F69 /* SettingsScreenRouter.swift */; };
 		2A488DE02033729B00CB0F69 /* UIColor+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */; };
 		2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90CAC8202735F2008BBCF1 /* IntroCell.swift */; };
+		2A96478D20382791000AFCF9 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96478C20382791000AFCF9 /* UserDetailsViewController.swift */; };
 		2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F262023424F00D9ED38 /* UIView+BasicInspectables.swift */; };
 		2AA69F29202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */; };
 		2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA69F2A2023460100D9ED38 /* String+Localization.swift */; };
@@ -128,6 +129,7 @@
 		2A488DDD203349DE00CB0F69 /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
 		2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Line.swift"; sourceTree = "<group>"; };
 		2A90CAC8202735F2008BBCF1 /* IntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCell.swift; sourceTree = "<group>"; };
+		2A96478C20382791000AFCF9 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		2AA69F262023424F00D9ED38 /* UIView+BasicInspectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BasicInspectables.swift"; sourceTree = "<group>"; };
 		2AA69F28202345CF00D9ED38 /* UITextField+AttributtedPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+AttributtedPlaceholder.swift"; sourceTree = "<group>"; };
 		2AA69F2A2023460100D9ED38 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 				2A488DD32032FD3100CB0F69 /* Settings.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2A96478B2038277A000AFCF9 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2A96478C20382791000AFCF9 /* UserDetailsViewController.swift */,
+			);
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		2AA69F25202341D700D9ED38 /* Extensions */ = {
@@ -516,6 +526,7 @@
 		2AD6EDAA2029FA070073581F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				2A96478B2038277A000AFCF9 /* UserDetails */,
 				2AD6EDAB2029FA260073581F /* Settings.storyboard */,
 				2AD6EDAD2029FA310073581F /* SettingsTableViewController.swift */,
 				2A488DD92033499D00CB0F69 /* SettingsScreenInteractor.swift */,
@@ -682,6 +693,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/LEMirroredImagePicker/LEMirroredImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
@@ -715,6 +727,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LEMirroredImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
@@ -768,6 +781,7 @@
 				2AA69F5D20247BF000D9ED38 /* SignUpScreenRouter.swift in Sources */,
 				2AA69F412023B7AF00D9ED38 /* ApiService.swift in Sources */,
 				2AD6EDB4202C376F0073581F /* SupportEmailService.swift in Sources */,
+				2A96478D20382791000AFCF9 /* UserDetailsViewController.swift in Sources */,
 				2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */,
 				2AC6D602202C7ECA00784CD2 /* TeamMember.swift in Sources */,
 				2AA69F5720247B2E00D9ED38 /* SignUpScreenConfigurator.swift in Sources */,
