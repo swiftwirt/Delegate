@@ -119,6 +119,16 @@ class FirebaseService {
         })
     }
     
+    func updatePassword(_ password: String)
+    {
+        Auth.auth().currentUser?.updatePassword(to: password, completion: nil)
+    }
+    
+    func updateEmail(_ email: String)
+    {
+        Auth.auth().currentUser?.updateEmail(to: email, completion: nil)
+    }
+    
     func resetPassword(for email: String) -> Observable<Void>
     {
         return Observable.create({ (observer) -> Disposable in

@@ -30,6 +30,8 @@ class UserDetailsViewController: UITableViewController {
     
     fileprivate let userService = ApplicationManager.instance().userService
     fileprivate let apiService = ApplicationManager.instance().apiService
+    fileprivate let validationService = ApplicationManager.instance().validationService
+    
     fileprivate let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -42,7 +44,8 @@ class UserDetailsViewController: UITableViewController {
         let responderChain: [UITextField] = [usernameTextField,
                                              firstNameTextField,
                                              lastNameTextField,
-                                             emailTextField]
+                                             emailTextField,
+                                             passwordTextField]
         
         for (index, responder) in responderChain.enumerated() {
             let endEditingEvent: ControlEvent<Void>?
@@ -73,10 +76,19 @@ class UserDetailsViewController: UITableViewController {
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
                 case FieldIndex.email:
-                    _ = self.apiService.updateUser(property: FirebaseKey.email, value: responder.text).subscribe(onCompleted: {
+                    guard let email = self.hasValidEmail else { return }
+                    _ = self.apiService.updateUser(property: FirebaseKey.email, value: responder.text).subscribe(onCompleted: { [weak self] in
+                        
+                        self?.apiService.updateEmail(email)
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        
                     }).disposed(by: self.disposeBag)
-                    _ = responderChain[index + 1].becomeFirstResponder()
+                    _ = responder.resignFirstResponder()
+                case FieldIndex.password:
+                    guard let password = self.hasValidPassword else { return }
+                    self.apiService.updatePassword(password)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    _ = responder.resignFirstResponder()
                 default:
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     _ = responder.resignFirstResponder()
@@ -103,5 +115,35 @@ class UserDetailsViewController: UITableViewController {
         if let email = userService.email {
             emailTextField.text = email
         }
+    }
+    
+    fileprivate var hasValidEmail: String?
+    {
+        let email = emailTextField.text ?? ""
+        
+        do {
+            try validationService.validate(email: email)
+            emailTextField.tintColor = .gray
+            return email
+        } catch {
+            emailTextField.tintColor = Color.orange
+        }
+        // nil is used to detect that current input is not a valid email
+        return nil
+    }
+    
+    fileprivate var hasValidPassword: String?
+    {
+        let password = passwordTextField.text ?? ""
+        
+        do {
+            try validationService.validate(password: password)
+            passwordTextField.tintColor = .gray
+            return password
+        } catch {
+            passwordTextField.tintColor = Color.orange
+        }
+        // nil is used to detect that current input is not a valid email
+        return nil
     }
 }
