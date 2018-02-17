@@ -48,6 +48,11 @@ class SettingsTableViewController: UITableViewController {
         output.logOut()
     }
     
+    @IBAction func onPressedSupportCell(_ sender: Any)
+    {
+        output.showSupportScreen()
+    }
+    
     deinit {
         log.info("\(self) deinit")
     }

@@ -23,7 +23,7 @@ class SettingsScreenInteractor: NSObject {
     var output: SettingsScreenPresenter!
     var input: SettingsScreenRouter!
     
-    fileprivate let applicationManager = ApplicationManager.instance()
+    let applicationManager = ApplicationManager.instance()
     fileprivate let userService = ApplicationManager.instance().userService
     fileprivate let disposeBag: DisposeBag = DisposeBag()
     
@@ -68,6 +68,11 @@ class SettingsScreenInteractor: NSObject {
             }, onError: { (error) in
                 print(error)
         }).disposed(by: disposeBag)
+    }
+    
+    func showSupportScreen()
+    {
+        input.showSupportMessageScreen()
     }
     
     func logOut()

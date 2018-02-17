@@ -263,13 +263,23 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFR-4s-4Sg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="341" height="69.5"/>
+                                                    <connections>
+                                                        <action selector="onPressedSupportCell:" destination="FCa-Dw-etj" eventType="touchUpInside" id="cs4-s3-Ay0"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bFR-4s-4Sg" firstAttribute="top" secondItem="Y6A-HR-EJi" secondAttribute="top" id="DRt-Ak-GaZ"/>
                                                 <constraint firstItem="vJk-Rc-c15" firstAttribute="centerY" secondItem="Y6A-HR-EJi" secondAttribute="centerY" id="IC7-Z9-0R5"/>
                                                 <constraint firstAttribute="bottom" secondItem="vJk-Rc-c15" secondAttribute="bottom" constant="14" id="RvK-ib-KXD"/>
                                                 <constraint firstAttribute="trailing" secondItem="vJk-Rc-c15" secondAttribute="trailing" constant="20" symbolic="YES" id="VUn-qc-oZQ"/>
+                                                <constraint firstItem="bFR-4s-4Sg" firstAttribute="leading" secondItem="Y6A-HR-EJi" secondAttribute="leading" id="aYn-gq-8Y2"/>
                                                 <constraint firstItem="vJk-Rc-c15" firstAttribute="leading" secondItem="Y6A-HR-EJi" secondAttribute="leading" constant="20" symbolic="YES" id="apM-Fu-adU"/>
                                                 <constraint firstItem="vJk-Rc-c15" firstAttribute="top" secondItem="Y6A-HR-EJi" secondAttribute="top" constant="14" id="k9h-CM-Iv4"/>
+                                                <constraint firstAttribute="bottom" secondItem="bFR-4s-4Sg" secondAttribute="bottom" id="lpU-1U-XQP"/>
+                                                <constraint firstAttribute="trailing" secondItem="bFR-4s-4Sg" secondAttribute="trailing" id="tHc-XK-jdl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

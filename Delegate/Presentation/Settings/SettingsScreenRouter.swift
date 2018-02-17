@@ -12,4 +12,10 @@ class SettingsScreenRouter {
     
     weak var viewController: SettingsTableViewController!
     
+    func showSupportMessageScreen()
+    {
+        let supportService = ApplicationManager.instance().supportEmailService
+        supportService.presentEmailController(inViewController: viewController)
+    }
+    
 }
