@@ -213,6 +213,14 @@ class FirebaseService {
         
     }
     
+    func updateSettings(settings: Settings?)
+    {
+        guard let uid = Auth.auth().currentUser?.uid, let settings = settings else { return }
+        let usersReference = self.databaseReference.child(FirebaseKey.users.rawValue).child(uid)
+        let targetRefrence = usersReference.child(FirebaseKey.settings.rawValue)
+        targetRefrence.updateChildValues(ParametersConfigurator.userSettingsUpdateParameters(settings))
+    }
+    
     fileprivate func upload(_ avatar: UIImage) -> Observable<String?>
     {
         return Observable.create({ (observer) -> Disposable in

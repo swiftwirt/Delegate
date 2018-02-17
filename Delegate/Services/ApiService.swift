@@ -41,6 +41,11 @@ class ApiService {
         return firebaseService.resetPassword(for: email)
     }
     
+    func updateSettings(settings: Settings?)
+    {
+        firebaseService.updateSettings(settings: settings)
+    }
+    
     func fetchUser(uid: String) -> Observable<JSON>
     {
         return firebaseService.fetchUser(uid: uid)

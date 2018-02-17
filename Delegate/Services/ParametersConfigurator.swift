@@ -13,7 +13,7 @@ struct ParametersConfigurator {
     static func userUpdateParameters(_ user: DLGUser) -> [String: Any]
     {
         var values = [String: Any]()
-
+        
         values[FirebaseKey.naviteUser.rawValue] = user.naviteUser
         
         if let userName = user.userName {
@@ -47,7 +47,22 @@ struct ParametersConfigurator {
         if let uid  = user.uid  {
             values[FirebaseKey.uid.rawValue] = uid
         }
-
+        
+        return values
+    }
+    
+    static func userSettingsUpdateParameters(_ settings: Settings) -> [String: Any]
+    {
+        var values = [String: Any]()
+        
+        values[FirebaseKey.needsAds.rawValue] = settings.needsAds
+        
+        values[FirebaseKey.congratulations.rawValue] = settings.congratulations
+        
+        values[FirebaseKey.push.rawValue] = settings.push
+        
+        values[FirebaseKey.localNotifications.rawValue] = settings.localNotifications
+        
         return values
     }
 }

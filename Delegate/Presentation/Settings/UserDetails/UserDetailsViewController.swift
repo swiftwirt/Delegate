@@ -63,16 +63,19 @@ class UserDetailsViewController: UITableViewController {
                 case FieldIndex.username:
                     _ = self.apiService.updateUser(property: FirebaseKey.userName, value: responder.text).subscribe(onCompleted: {
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        self.userService.user?.userName = responder.text
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
                 case FieldIndex.firstname:
                     _ = self.apiService.updateUser(property: FirebaseKey.firstName, value: responder.text).subscribe(onCompleted: {
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        self.userService.user?.firstName = responder.text
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
                 case FieldIndex.lastname:
                     _ = self.apiService.updateUser(property: FirebaseKey.lastName, value: responder.text).subscribe(onCompleted: {
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        self.userService.user?.lastName = responder.text
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
                 case FieldIndex.email:
@@ -80,6 +83,7 @@ class UserDetailsViewController: UITableViewController {
                     _ = self.apiService.updateUser(property: FirebaseKey.email, value: responder.text).subscribe(onCompleted: { [weak self] in
                         
                         self?.apiService.updateEmail(email)
+                        self?.userService.user?.email = email
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         
                     }).disposed(by: self.disposeBag)

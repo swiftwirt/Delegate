@@ -11,16 +11,22 @@ import SwiftyJSON
 
 class Settings: NSCoder {
     
-    var needsAds = true
-    var congratulations = true
-    var push = true
-    var localNotifications = true
+    var needsAds: Bool? = nil
+    var congratulations: Bool? = nil
+    var push: Bool? = nil
+    var localNotifications: Bool? = nil
     
-    init?(json: JSON) {
+    init(json: JSON) {
         guard let needsAds = json[FirebaseKey.needsAds.rawValue].bool,
             let congratulations = json[FirebaseKey.congratulations.rawValue].bool,
             let push = json[FirebaseKey.push.rawValue].bool,
-            let localNotifications = json[FirebaseKey.localNotifications.rawValue].bool else { return nil }
+            let localNotifications = json[FirebaseKey.localNotifications.rawValue].bool else {
+                self.needsAds = true
+                self.congratulations = true
+                self.push = true
+                self.localNotifications = true
+                return
+        }
         
         self.needsAds = needsAds
         self.congratulations = congratulations

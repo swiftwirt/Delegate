@@ -42,7 +42,7 @@ class SettingsScreenInteractor: NSObject {
         let switchersChain = output.witchersChain
         
         for (index, switcher) in switchersChain.enumerated() {
-            switcher.rx.value.asObservable().takeUntil(self.output.output.rx.deallocated).subscribe(onNext: { (bool) in
+            switcher.rx.value.asObservable().skip(1).takeUntil(self.output.output.rx.deallocated).subscribe(onNext: { (bool) in
                 switch index {
                 case SwitcherIndexes.adsSwitcher.rawValue:
                     self.userService.user?.settings?.needsAds = bool
@@ -53,6 +53,9 @@ class SettingsScreenInteractor: NSObject {
                 default:
                     self.userService.user?.settings?.push = bool
                 }
+                
+                self.applicationManager.apiService.updateSettings(settings: self.userService.user?.settings)
+                
             }).disposed(by: disposeBag)
         }
     }

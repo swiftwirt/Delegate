@@ -29,13 +29,13 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         SettingsConfigurator.configure(viewController: self)
-        output.setupSwitchers() 
-        output.initialSetup()
+        output.setupSwitchers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.setAvatar()
+        output.initialSetup()
     }
     
     @IBAction func onPressedEditAvatarButton(_ sender: Any)
