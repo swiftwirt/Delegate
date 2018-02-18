@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
@@ -25,11 +26,24 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         #imageLiteral(resourceName: "histories_grey"),
         #imageLiteral(resourceName: "settings_grey")
     ]
+    
+    fileprivate let applicationManager = ApplicationManager.instance()
+    fileprivate let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBar()
         self.delegate = self
+        fetchSettings()
+    }
+    
+    fileprivate func fetchSettings()
+    {
+        if let uid = applicationManager.userService.user?.uid {
+            applicationManager.apiService.fetchUserSettings(uid: uid).subscribe(onNext: { [weak self] (json) in
+                self?.applicationManager.userService.user?.settings = Settings(json: json) ?? Settings()
+            }).disposed(by: disposeBag)
+        }
     }
     
     func switchToTab(_ index:Int, dismissingModals: Bool) -> UIViewController?

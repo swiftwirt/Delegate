@@ -48,6 +48,10 @@ struct ParametersConfigurator {
             values[FirebaseKey.uid.rawValue] = uid
         }
         
+        if let settings  = user.settings  {
+            values[FirebaseKey.settings.rawValue] = userSettingsUpdateParameters(settings)
+        } 
+        
         return values
     }
     

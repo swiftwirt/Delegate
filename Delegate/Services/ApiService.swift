@@ -51,6 +51,11 @@ class ApiService {
         return firebaseService.fetchUser(uid: uid)
     }
     
+    func fetchUserSettings(uid: String) -> Observable<JSON>
+    {
+        return firebaseService.fetchUserSettings(uid: uid)
+    }
+    
     func update(user: DLGUser) -> Observable<Void>
     {
         return firebaseService.update(user: user)

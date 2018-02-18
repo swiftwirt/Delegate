@@ -69,10 +69,10 @@ class SettingsScreenPresenter: NSObject {
     
     fileprivate func configureSwitchers(with model: Settings)
     {
-        output.adsSwitcher.isOn = model.needsAds!
-        output.congratulationsSwitcher.isOn = model.congratulations!
-        output.pushSwitcher.isOn = model.push!
-        output.localNotificationsSwitcher.isOn = model.localNotifications!
+        output.adsSwitcher.isOn = model.needsAds
+        output.congratulationsSwitcher.isOn = model.congratulations
+        output.pushSwitcher.isOn = model.push
+        output.localNotificationsSwitcher.isOn = model.localNotifications
     }
     
     // Image Picker

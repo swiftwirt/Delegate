@@ -93,8 +93,11 @@ class DLGUser: NSObject, NSCoding {
         self.password = json[FirebaseKey.password.rawValue].string
         self.avatarLink = json[FirebaseKey.avatarLink.rawValue].string
         self.uid = json[FirebaseKey.uid.rawValue].string
-        self.settings = Settings(json: json[FirebaseKey.settings.rawValue])
         
+        if let settings = Settings(json: json[FirebaseKey.settings.rawValue]) {
+            self.settings = settings
+        }
+
         guard let cteatedUNIXDate = json[FirebaseKey.birthDate.rawValue].double else { return }
         self.birthDate = Date(timeIntervalSince1970: TimeInterval(cteatedUNIXDate))
     }

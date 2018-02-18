@@ -13,9 +13,11 @@ import SwiftyJSON
 
 class FirebaseService {
     
-    enum EndPoint {
+    enum EndPoint
+    {
         static let baseUrl = "https://delegate-100d7.firebaseio.com/"
         static let users = "users/"
+        static let settings = "/settings/"
         static let postfix = ".json"
     }
     
@@ -148,6 +150,13 @@ class FirebaseService {
     func fetchUser(uid: String) -> Observable<JSON>
     {
         let url = EndPoint.baseUrl + EndPoint.users + uid + EndPoint.postfix
+        
+        return request(url).mapJSON()
+    }
+    
+    func fetchUserSettings(uid: String) -> Observable<JSON>
+    {
+        let url = EndPoint.baseUrl + EndPoint.users + uid + EndPoint.settings + EndPoint.postfix
         
         return request(url).mapJSON()
     }

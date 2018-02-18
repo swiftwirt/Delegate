@@ -11,21 +11,21 @@ import SwiftyJSON
 
 class Settings: NSObject, NSCoding {
     
-    var needsAds: Bool? = nil
-    var congratulations: Bool? = nil
-    var push: Bool? = nil
-    var localNotifications: Bool? = nil
+    var needsAds = true
+    var congratulations = true
+    var push = true
+    var localNotifications = true
     
-    init(json: JSON) {
+    override init() {
+        super.init()
+    }
+    
+    init?(json: JSON) {
         guard let needsAds = json[FirebaseKey.needsAds.rawValue].bool,
             let congratulations = json[FirebaseKey.congratulations.rawValue].bool,
             let push = json[FirebaseKey.push.rawValue].bool,
             let localNotifications = json[FirebaseKey.localNotifications.rawValue].bool else {
-                self.needsAds = true
-                self.congratulations = true
-                self.push = true
-                self.localNotifications = true
-                return
+                return nil
         }
         
         self.needsAds = needsAds
@@ -44,21 +44,13 @@ class Settings: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         
-        if let needsAds = needsAds {
-            aCoder.encode(needsAds, forKey: FirebaseKey.needsAds.rawValue)
-        }
+        aCoder.encode(needsAds, forKey: FirebaseKey.needsAds.rawValue)
         
-        if let congratulations = congratulations {
-            aCoder.encode(congratulations, forKey: FirebaseKey.congratulations.rawValue)
-        }
+        aCoder.encode(congratulations, forKey: FirebaseKey.congratulations.rawValue)
         
-        if let push = push {
-            aCoder.encode(push, forKey: FirebaseKey.push.rawValue)
-        }
+        aCoder.encode(push, forKey: FirebaseKey.push.rawValue)
         
-        if let localNotifications = localNotifications {
-            aCoder.encode(localNotifications, forKey: FirebaseKey.localNotifications.rawValue)
-        }
+        aCoder.encode(localNotifications, forKey: FirebaseKey.localNotifications.rawValue)
     }
     
 }
