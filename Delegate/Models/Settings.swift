@@ -43,10 +43,22 @@ class Settings: NSCoder {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(needsAds, forKey: FirebaseKey.needsAds.rawValue)
-        aCoder.encode(congratulations, forKey: FirebaseKey.congratulations.rawValue)
-        aCoder.encode(push, forKey: FirebaseKey.push.rawValue)
-        aCoder.encode(localNotifications, forKey: FirebaseKey.localNotifications.rawValue)
+        
+        if let needsAds = needsAds {
+            aCoder.encode(needsAds, forKey: FirebaseKey.needsAds.rawValue)
+        }
+        
+        if let congratulations = congratulations {
+            aCoder.encode(congratulations, forKey: FirebaseKey.congratulations.rawValue)
+        }
+        
+        if let push = push {
+            aCoder.encode(push, forKey: FirebaseKey.push.rawValue)
+        }
+        
+        if let localNotifications = localNotifications {
+            aCoder.encode(localNotifications, forKey: FirebaseKey.localNotifications.rawValue)
+        }
     }
     
 }

@@ -58,23 +58,31 @@ class UserDetailsViewController: UITableViewController {
             }
             
             endEditingEvent?.subscribe(onNext: { [unowned self] in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                
+                let activityIndicator = UIActivityIndicatorView()
+                activityIndicator.hidesWhenStopped = true
+
+                if let cell = responder.superview as? UITableViewCell {
+                    cell.accessoryView = activityIndicator
+                    activityIndicator.startAnimating()
+                }
+                
                 switch index {
                 case FieldIndex.username:
                     _ = self.apiService.updateUser(property: FirebaseKey.userName, value: responder.text).subscribe(onCompleted: {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        activityIndicator.stopAnimating()
                         self.userService.user?.userName = responder.text
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
                 case FieldIndex.firstname:
                     _ = self.apiService.updateUser(property: FirebaseKey.firstName, value: responder.text).subscribe(onCompleted: {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        activityIndicator.stopAnimating()
                         self.userService.user?.firstName = responder.text
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
                 case FieldIndex.lastname:
                     _ = self.apiService.updateUser(property: FirebaseKey.lastName, value: responder.text).subscribe(onCompleted: {
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        activityIndicator.stopAnimating()
                         self.userService.user?.lastName = responder.text
                     }).disposed(by: self.disposeBag)
                     _ = responderChain[index + 1].becomeFirstResponder()
@@ -84,17 +92,17 @@ class UserDetailsViewController: UITableViewController {
                         
                         self?.apiService.updateEmail(email)
                         self?.userService.user?.email = email
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        activityIndicator.stopAnimating()
                         
                     }).disposed(by: self.disposeBag)
                     _ = responder.resignFirstResponder()
                 case FieldIndex.password:
                     guard let password = self.hasValidPassword else { return }
                     self.apiService.updatePassword(password)
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    activityIndicator.stopAnimating()
                     _ = responder.resignFirstResponder()
                 default:
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    activityIndicator.stopAnimating()
                     _ = responder.resignFirstResponder()
                 }
                 

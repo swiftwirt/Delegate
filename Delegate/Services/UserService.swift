@@ -42,15 +42,43 @@ class DLGUser: NSObject, NSCoding {
     func encode(with aCoder: NSCoder)
     {
         aCoder.encode(naviteUser, forKey: FirebaseKey.naviteUser.rawValue)
-        aCoder.encode(userName, forKey: FirebaseKey.userName.rawValue)
-        aCoder.encode(firstName, forKey: FirebaseKey.firstName.rawValue)
-        aCoder.encode(lastName, forKey: FirebaseKey.lastName.rawValue)
-        aCoder.encode(password, forKey: FirebaseKey.password.rawValue)
-        aCoder.encode(email, forKey: FirebaseKey.email.rawValue)
-        aCoder.encode(avatarLink, forKey: FirebaseKey.avatarLink.rawValue)
-        aCoder.encode(uid, forKey: FirebaseKey.uid.rawValue)
-        aCoder.encode(birthDate, forKey: FirebaseKey.birthDate.rawValue)
-        aCoder.encode(settings, forKey: FirebaseKey.settings.rawValue)
+        
+        if let userName = userName {
+            aCoder.encode(userName, forKey: FirebaseKey.userName.rawValue)
+        }
+        
+        if let firstName = firstName {
+            aCoder.encode(firstName, forKey: FirebaseKey.firstName.rawValue)
+        }
+        
+        if let lastName = lastName {
+            aCoder.encode(lastName, forKey: FirebaseKey.lastName.rawValue)
+        }
+        
+        if let password = password {
+            aCoder.encode(password, forKey: FirebaseKey.password.rawValue)
+        }
+        
+        if let email = email {
+            aCoder.encode(email, forKey: FirebaseKey.email.rawValue)
+        }
+        
+        if let avatarLink = avatarLink {
+            aCoder.encode(avatarLink, forKey: FirebaseKey.avatarLink.rawValue)
+        }
+        
+        if let uid = uid {
+            aCoder.encode(uid, forKey: FirebaseKey.uid.rawValue)
+        }
+        
+        if let birthDate = birthDate {
+            aCoder.encode(birthDate, forKey: FirebaseKey.birthDate.rawValue)
+        }
+        
+        if let settings = settings {
+            aCoder.encode(settings, forKey: FirebaseKey.settings.rawValue)
+        }
+
     }
     
     override init() {}
