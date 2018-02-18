@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class Settings: NSCoder {
+class Settings: NSObject, NSCoding {
     
     var needsAds: Bool? = nil
     var congratulations: Bool? = nil
@@ -35,11 +35,11 @@ class Settings: NSCoder {
     }
     
     required init?(coder aDecoder: NSCoder) {
+        super.init()
         needsAds = aDecoder.decodeBool(forKey: FirebaseKey.needsAds.rawValue)
         congratulations = aDecoder.decodeBool(forKey: FirebaseKey.congratulations.rawValue)
         push = aDecoder.decodeBool(forKey: FirebaseKey.push.rawValue)
         localNotifications = aDecoder.decodeBool(forKey: FirebaseKey.localNotifications.rawValue)
-        super.init()
     }
     
     func encode(with aCoder: NSCoder) {

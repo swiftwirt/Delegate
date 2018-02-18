@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.0655659"
+            timestampString = "540641607.9647911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "313"
@@ -58,7 +58,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "540631016.9511631"
+                  timestampString = "540642091.320814"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
@@ -73,7 +73,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "540631016.953478"
+                  timestampString = "540642091.322964"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.065643"
+            timestampString = "540641607.9648629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "407"
@@ -106,7 +106,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "540631016.959777"
+                  timestampString = "540642091.327701"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
@@ -121,7 +121,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "540631016.96227"
+                  timestampString = "540642091.3298171"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "540638544.9935369"
+            timestampString = "540642090.929395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "347"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "540638544.993603"
+            timestampString = "540642090.929562"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "343"
@@ -186,7 +186,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Teams/TeamsTableViewController.swift"
-                  timestampString = "540631016.982026"
+                  timestampString = "540642091.342487"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -201,7 +201,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Teams/TeamsTableViewController.swift"
-                  timestampString = "540631016.985424"
+                  timestampString = "540642091.344856"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Services/UserService.swift"
-            timestampString = "540638544.993682"
+            timestampString = "540642090.92974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.065858"
+            timestampString = "540641607.965144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.065906"
+            timestampString = "540641607.965189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.065964"
+            timestampString = "540641607.965234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "375"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.06603"
+            timestampString = "540641607.965276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "270"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.066077"
+            timestampString = "540641607.965318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "287"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.066142"
+            timestampString = "540641607.965361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "334"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-            timestampString = "540343835.0662071"
+            timestampString = "540641607.965403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "540638544.993897"
+            timestampString = "540642090.929992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Registration/LoginScreen/LoginScreenInteractor.swift"
-            timestampString = "540638544.9939491"
+            timestampString = "540642090.930042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "215"
@@ -384,6 +384,150 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "handleUserRestoration()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Services/UserService.swift"
+            timestampString = "540642090.93011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "loadUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Services/UserService.swift"
+            timestampString = "540642090.930162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "saveUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Services/UserService.swift"
+            timestampString = "540642090.930209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Services/UserService.swift"
+            timestampString = "540642090.930254"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Settings/UserDetails/UserDetailsViewController.swift"
+            timestampString = "540642090.930303"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "fillInFields()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Models/Settings.swift"
+            timestampString = "540642090.930346"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Models/Settings.swift"
+            timestampString = "540642090.930663"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "encode(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Services/UserService.swift"
+            timestampString = "540642090.9308881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "encode(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Services/UserService.swift"
+            timestampString = "540642090.930935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
