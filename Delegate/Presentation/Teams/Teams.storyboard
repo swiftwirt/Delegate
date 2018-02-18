@@ -18,16 +18,16 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pUD-RF-S5g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="120" id="jS0-fK-Nva" customClass="TeamCell" customModule="Delegate" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TeamCell" rowHeight="120" id="jS0-fK-Nva" customClass="TeamCell" customModule="Delegate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jS0-fK-Nva" id="kAi-NG-ipL">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jS0-fK-Nva" id="kAi-NG-ipL">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om4-V7-qNW">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om4-V7-qNW">
                                             <rect key="frame" x="8" y="8" width="359" height="89.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team_logo_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="TpI-Qt-Yhr">
@@ -69,7 +69,7 @@
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRF-NQ-lmg">
                                                                     <rect key="frame" x="59" y="0.0" width="76" height="20.5"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RJ-5f-abP">
                                                                     <rect key="frame" x="140" y="0.0" width="116.5" height="20.5"/>
@@ -165,7 +165,7 @@
                                     <constraints>
                                         <constraint firstItem="Om4-V7-qNW" firstAttribute="top" secondItem="kAi-NG-ipL" secondAttribute="top" constant="8" id="bFj-Nq-tfE"/>
                                         <constraint firstAttribute="trailing" secondItem="Om4-V7-qNW" secondAttribute="trailing" constant="8" id="hP0-Wd-QTP"/>
-                                        <constraint firstAttribute="bottom" secondItem="Om4-V7-qNW" secondAttribute="bottom" constant="-5" id="qJU-ga-BrX"/>
+                                        <constraint firstAttribute="bottom" secondItem="Om4-V7-qNW" secondAttribute="bottom" id="qJU-ga-BrX"/>
                                         <constraint firstItem="Om4-V7-qNW" firstAttribute="leading" secondItem="kAi-NG-ipL" secondAttribute="leading" constant="8" id="yj5-PR-7nP"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -189,7 +189,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-gu-0FY">
-                                            <rect key="frame" x="8" y="-2" width="359" height="69"/>
+                                            <rect key="frame" x="8" y="-6" width="359" height="69"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="D3i-e6-EsH">
                                                     <rect key="frame" x="10" y="14.5" width="40" height="40"/>
@@ -304,7 +304,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="V1c-gu-0FY" firstAttribute="top" secondItem="agp-Yv-M9G" secondAttribute="top" constant="-2" id="N2A-fW-IGW"/>
+                                        <constraint firstItem="V1c-gu-0FY" firstAttribute="top" secondItem="agp-Yv-M9G" secondAttribute="top" constant="-6" id="N2A-fW-IGW"/>
                                         <constraint firstAttribute="bottom" secondItem="V1c-gu-0FY" secondAttribute="bottom" id="Wdd-a4-tZY"/>
                                         <constraint firstAttribute="trailing" secondItem="V1c-gu-0FY" secondAttribute="trailing" constant="8" id="bUS-cu-cmZ"/>
                                         <constraint firstItem="V1c-gu-0FY" firstAttribute="leading" secondItem="agp-Yv-M9G" secondAttribute="leading" constant="8" id="noc-oD-9bQ"/>

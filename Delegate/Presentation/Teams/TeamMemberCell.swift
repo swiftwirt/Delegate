@@ -19,6 +19,19 @@ class TeamMemberCell: UITableViewCell {
     @IBOutlet weak var inviteButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var dissmiseButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if #available(iOS 11.0, *) {
+            self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        } else {
+            let rectShape = CAShapeLayer()
+            rectShape.bounds = self.frame
+            rectShape.position = self.center
+            rectShape.path =  UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .topLeft, cornerRadii: CGSize(width: 4, height: 4)).cgPath
+            self.layer.mask = rectShape
+        }
+    }
 
 //    var model: TeamMember! {
 //        didSet {
