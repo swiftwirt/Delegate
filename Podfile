@@ -30,5 +30,6 @@ pod 'SDWebImage', '~> 4.2.1'
 pod 'AnimatableReload'
 pod 'LEMirroredImagePicker', '~> 0.1'
 pod 'JVFloatLabeledTextField', '~> 1.2'
+pod 'SkyFloatingLabelTextField', '~> 3.4'
 
 end

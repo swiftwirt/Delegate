@@ -310,6 +310,7 @@ class LoginScreenInteractor: NSObject {
                         }.subscribe(onNext: { [weak self] (user) in
                             
                             self?.applicationManager.userService.crateNewCurrentUser(with: user)
+                            self?.applicationManager.userService.needsRestoration = true
                             self?.input.routeToSelectRole() // LOGIN
                             
                         }).disposed(by: self!.disposeBag)

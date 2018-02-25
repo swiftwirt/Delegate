@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0CDAA24689412541F520AF16 /* Pods_Delegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */; };
 		2A00163E2028FB5B00E481DC /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		2A1250EE2042DE6A0048249F /* Optional+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1250ED2042DE6A0048249F /* Optional+Empty.swift */; };
 		2A1397EF202DA7040000CB93 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397EE202DA7040000CB93 /* ContactCell.swift */; };
 		2A1397F1202DA79E0000CB93 /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F0202DA79E0000CB93 /* FriendsDataSource.swift */; };
 		2A1397F3202DD4640000CB93 /* TasksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F2202DD4640000CB93 /* TasksDataSource.swift */; };
@@ -81,6 +82,14 @@
 		2AC6D60A202CAEC000784CD2 /* TeamMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */; };
 		2AC6D60C202CB34300784CD2 /* DelegateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */; };
 		2AC6D60E202CC16000784CD2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D60D202CC16000784CD2 /* HeaderCell.swift */; };
+		2AD16B9B203DE66E00C565A6 /* AddTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B94203DE66C00C565A6 /* AddTeamInteractor.swift */; };
+		2AD16B9C203DE66E00C565A6 /* AddTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B95203DE66D00C565A6 /* AddTeamModel.swift */; };
+		2AD16B9D203DE66E00C565A6 /* AddTeamConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B96203DE66D00C565A6 /* AddTeamConfigurator.swift */; };
+		2AD16B9E203DE66E00C565A6 /* AddTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B97203DE66D00C565A6 /* AddTeamPresenter.swift */; };
+		2AD16B9F203DE66E00C565A6 /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */; };
+		2AD16BA0203DE66E00C565A6 /* CreateImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B99203DE66E00C565A6 /* CreateImageModel.swift */; };
+		2AD16BA1203DE66E00C565A6 /* AddTeamScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD16B9A203DE66E00C565A6 /* AddTeamScreen.storyboard */; };
+		2AD16BA3203DEFCF00C565A6 /* DelegateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16BA2203DEFCF00C565A6 /* DelegateTextField.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -108,6 +117,7 @@
 		12DA06EDFC5815F1BB107530 /* Pods_Delegate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delegate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A00163C2028FAEB00E481DC /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		2A00163D2028FB5B00E481DC /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		2A1250ED2042DE6A0048249F /* Optional+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Empty.swift"; sourceTree = "<group>"; };
 		2A1397EE202DA7040000CB93 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		2A1397F0202DA79E0000CB93 /* FriendsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
 		2A1397F2202DD4640000CB93 /* TasksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDataSource.swift; sourceTree = "<group>"; };
@@ -181,6 +191,14 @@
 		2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberCell.swift; sourceTree = "<group>"; };
 		2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTableViewController.swift; sourceTree = "<group>"; };
 		2AC6D60D202CC16000784CD2 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		2AD16B94203DE66C00C565A6 /* AddTeamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamInteractor.swift; sourceTree = "<group>"; };
+		2AD16B95203DE66D00C565A6 /* AddTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamModel.swift; sourceTree = "<group>"; };
+		2AD16B96203DE66D00C565A6 /* AddTeamConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamConfigurator.swift; sourceTree = "<group>"; };
+		2AD16B97203DE66D00C565A6 /* AddTeamPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamPresenter.swift; sourceTree = "<group>"; };
+		2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
+		2AD16B99203DE66E00C565A6 /* CreateImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateImageModel.swift; sourceTree = "<group>"; };
+		2AD16B9A203DE66E00C565A6 /* AddTeamScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTeamScreen.storyboard; sourceTree = "<group>"; };
+		2AD16BA2203DEFCF00C565A6 /* DelegateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTextField.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -259,6 +277,7 @@
 				2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */,
 				2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */,
 				2AFB4F092034E89D00824D12 /* UIImage+Resize.swift */,
+				2A1250ED2042DE6A0048249F /* Optional+Empty.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +289,7 @@
 				2AA69F36202357D800D9ED38 /* DelegateAbstractViewController.swift */,
 				2AA69F672024CE0400D9ED38 /* ValidatableView.swift */,
 				2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */,
+				2AD16BA2203DEFCF00C565A6 /* DelegateTextField.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -380,6 +400,41 @@
 			path = SelectRoleScreen;
 			sourceTree = "<group>";
 		};
+		2AD16B8F203DD3EB00C565A6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */,
+				2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */,
+				2AC6D60D202CC16000784CD2 /* HeaderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2AD16B90203DD3FD00C565A6 /* TeamsScene */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6ED972029F7940073581F /* Teams.storyboard */,
+				2AD6ED992029F7CC0073581F /* TeamsTableViewController.swift */,
+				2AC6D607202CAA5F00784CD2 /* TeamsTableViewDataSource.swift */,
+				2AD16B8F203DD3EB00C565A6 /* Cells */,
+			);
+			path = TeamsScene;
+			sourceTree = "<group>";
+		};
+		2AD16B91203DD40E00C565A6 /* AddTeamScene */ = {
+			isa = PBXGroup;
+			children = (
+				2AD16B9A203DE66E00C565A6 /* AddTeamScreen.storyboard */,
+				2AD16B96203DE66D00C565A6 /* AddTeamConfigurator.swift */,
+				2AD16B94203DE66C00C565A6 /* AddTeamInteractor.swift */,
+				2AD16B97203DE66D00C565A6 /* AddTeamPresenter.swift */,
+				2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */,
+				2AD16B95203DE66D00C565A6 /* AddTeamModel.swift */,
+				2AD16B99203DE66E00C565A6 /* CreateImageModel.swift */,
+			);
+			path = AddTeamScene;
+			sourceTree = "<group>";
+		};
 		2AD2D1BB202323E500A00FA0 = {
 			isa = PBXGroup;
 			children = (
@@ -481,12 +536,8 @@
 		2AD6ED962029F77B0073581F /* Teams */ = {
 			isa = PBXGroup;
 			children = (
-				2AD6ED972029F7940073581F /* Teams.storyboard */,
-				2AD6ED992029F7CC0073581F /* TeamsTableViewController.swift */,
-				2AC6D607202CAA5F00784CD2 /* TeamsTableViewDataSource.swift */,
-				2AC6D609202CAEC000784CD2 /* TeamMemberCell.swift */,
-				2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */,
-				2AC6D60D202CC16000784CD2 /* HeaderCell.swift */,
+				2AD16B91203DD40E00C565A6 /* AddTeamScene */,
+				2AD16B90203DD3FD00C565A6 /* TeamsScene */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -643,6 +694,7 @@
 				2AD6ED982029F7940073581F /* Teams.storyboard in Resources */,
 				2AD6EDA92029F9F20073581F /* History.storyboard in Resources */,
 				2AD6ED9D2029F8EA0073581F /* Friends.storyboard in Resources */,
+				2AD16BA1203DE66E00C565A6 /* AddTeamScreen.storyboard in Resources */,
 				2AD6EDAC2029FA260073581F /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +753,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
@@ -735,6 +788,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
@@ -782,6 +836,7 @@
 				2AA69F412023B7AF00D9ED38 /* ApiService.swift in Sources */,
 				2AD6EDB4202C376F0073581F /* SupportEmailService.swift in Sources */,
 				2A96478D20382791000AFCF9 /* UserDetailsViewController.swift in Sources */,
+				2AD16BA0203DE66E00C565A6 /* CreateImageModel.swift in Sources */,
 				2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */,
 				2AC6D602202C7ECA00784CD2 /* TeamMember.swift in Sources */,
 				2AA69F5720247B2E00D9ED38 /* SignUpScreenConfigurator.swift in Sources */,
@@ -791,6 +846,7 @@
 				2AA69F272023424F00D9ED38 /* UIView+BasicInspectables.swift in Sources */,
 				2A3B9B2A202543C1003FDA41 /* UIColor+HEX.swift in Sources */,
 				2A1397F9202E55190000CB93 /* Date+CalendarInterval.swift in Sources */,
+				2AD16B9F203DE66E00C565A6 /* AddTeamViewController.swift in Sources */,
 				2AA69F532024436D00D9ED38 /* LoginScreenInteractor.swift in Sources */,
 				2A1397F7202E54610000CB93 /* TaskCutCell.swift in Sources */,
 				2AC6D60C202CB34300784CD2 /* DelegateTableViewController.swift in Sources */,
@@ -800,15 +856,19 @@
 				2AAB4F722025C8AB0094312A /* ReachabilityService.swift in Sources */,
 				2AA69F662024BDED00D9ED38 /* ValidationService.swift in Sources */,
 				2AAB4F792025DDDE0094312A /* Observable+JSON.swift in Sources */,
+				2AD16B9B203DE66E00C565A6 /* AddTeamInteractor.swift in Sources */,
 				2AA69F3C20238DE100D9ED38 /* SignUpViewController.swift in Sources */,
 				2AA69F312023472D00D9ED38 /* Utils.swift in Sources */,
 				2A488DD42032FD3100CB0F69 /* Settings.swift in Sources */,
 				2AAB4F742025C9080094312A /* ApplicationRouter.swift in Sources */,
 				2AAB4F7E202653300094312A /* IntroViewController.swift in Sources */,
+				2AD16B9E203DE66E00C565A6 /* AddTeamPresenter.swift in Sources */,
 				2AA69F4F2024434900D9ED38 /* LoginScreenConfigurator.swift in Sources */,
 				2AAB4F702025ACA00094312A /* Error+Code.swift in Sources */,
 				2AD6EDAE2029FA310073581F /* SettingsTableViewController.swift in Sources */,
 				2AA69F55202453AF00D9ED38 /* LoginScreenRouter.swift in Sources */,
+				2AD16B9D203DE66E00C565A6 /* AddTeamConfigurator.swift in Sources */,
+				2AD16BA3203DEFCF00C565A6 /* DelegateTextField.swift in Sources */,
 				2AD6EDA72029F9E10073581F /* HistoryTableViewController.swift in Sources */,
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
 				2AC6D60A202CAEC000784CD2 /* TeamMemberCell.swift in Sources */,
@@ -822,6 +882,7 @@
 				2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */,
 				2AD6EDB2202C346C0073581F /* Logger.swift in Sources */,
 				2AC6D5FB202C7AAA00784CD2 /* TeamCell.swift in Sources */,
+				2A1250EE2042DE6A0048249F /* Optional+Empty.swift in Sources */,
 				2AA69F33202349A500D9ED38 /* UITextField+PlaceholderColor.swift in Sources */,
 				2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */,
 				2AA69F5B20247BAC00D9ED38 /* SignUpScreenPresenter.swift in Sources */,
@@ -846,6 +907,7 @@
 				2A1397F3202DD4640000CB93 /* TasksDataSource.swift in Sources */,
 				2AFB4F0A2034E89D00824D12 /* UIImage+Resize.swift in Sources */,
 				2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */,
+				2AD16B9C203DE66E00C565A6 /* AddTeamModel.swift in Sources */,
 				2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */,
 				2AA69F2B2023460100D9ED38 /* String+Localization.swift in Sources */,
 				2AC6D606202C879D00784CD2 /* Message.swift in Sources */,
