@@ -6,14 +6,17 @@
 import Foundation
 import RxDataSources
 
-enum CreateImageModel {
+enum CreateImageModel
+{
     case image(UIImage)
     case url(String)
-    case photo(Photo)
+    case photo(URL)
 }
 
 extension CreateImageModel: Equatable {
-    static func ==(lhs: CreateImageModel, rhs: CreateImageModel) -> Bool {
+    
+    static func ==(lhs: CreateImageModel, rhs: CreateImageModel) -> Bool
+    {
         switch (lhs, rhs) {
         case (.image(let image1), .image(let image2)):
             return image1 == image2
@@ -28,7 +31,9 @@ extension CreateImageModel: Equatable {
 }
 
 extension CreateImageModel: Hashable {
-    var hashValue: Int {
+    
+    var hashValue: Int
+    {
         switch self {
         case .image(let image):
             return image.hashValue
@@ -41,7 +46,9 @@ extension CreateImageModel: Hashable {
 }
 
 extension CreateImageModel: IdentifiableType {
-    var identity: CreateImageModel {
+    
+    var identity: CreateImageModel
+    {
         return self
     }
 }

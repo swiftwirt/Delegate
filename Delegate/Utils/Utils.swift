@@ -103,6 +103,10 @@ enum Strings {
     static let cameraTitle = "Camera"
     static let galleryTitle = "Gallery"
     static let cancelTitle = "Cancel"
+    
+    // Create team
+    static let title = "Title"
+    static let details = "Details"
 }
 
 enum AnimationDuration {

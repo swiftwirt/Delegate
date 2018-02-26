@@ -86,7 +86,7 @@ class DelegateTextField: SkyFloatingLabelTextFieldWithIcon {
         
         let doneButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 80, y: 5, width: 70.0, height: 30.0))
         doneButton.addTarget(self, action: #selector(done(_:)), for: .touchUpInside)
-        doneButton.setTitle(BetoshookStrings.next, for: .normal)
+        doneButton.setTitle(Strings.next, for: .normal)
         
         let accessoryView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 40))
         accessoryView.backgroundColor = UIColor(redPart: 63, greenPart: 63, bluePart: 63)
@@ -98,11 +98,14 @@ class DelegateTextField: SkyFloatingLabelTextFieldWithIcon {
     private func updateImage() {
         switch validationState {
         case .undefined:
-            iconImage = #imageLiteral(resourceName:"icon_unchecked")
+            iconImageView?.image = #imageLiteral(resourceName: "field_unknown")
+            iconImageView?.tintColor = UIColor.lightGray
         case .valid:
-            iconImage = #imageLiteral(resourceName:"icon_checked")
+            iconImageView?.image = #imageLiteral(resourceName: "field_valid")
+            iconImageView?.tintColor = Color.green
         case .invalid:
-            iconImage = #imageLiteral(resourceName:"icon_not_filled")
+            iconImageView?.image = #imageLiteral(resourceName: "field_invalid")
+            iconImageView?.tintColor = Color.textFieldHighlighted
         }
     }
     
@@ -111,3 +114,8 @@ class DelegateTextField: SkyFloatingLabelTextFieldWithIcon {
         _ = resignFirstResponder()
     }
 }
+
+
+
+
+

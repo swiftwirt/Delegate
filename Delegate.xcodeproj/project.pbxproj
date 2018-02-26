@@ -72,6 +72,9 @@
 		2AAB4F802026533D0094312A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F7F2026533D0094312A /* Intro.storyboard */; };
 		2AAB4F832026539D0094312A /* SelectRole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AAB4F822026539D0094312A /* SelectRole.storyboard */; };
 		2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAB4F84202653B10094312A /* SelectRoleViewController.swift */; };
+		2AB6745D2042EB8B000D1388 /* DelegateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6745C2042EB8B000D1388 /* DelegateTextView.swift */; };
+		2AB674602042F5F7000D1388 /* AddPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6745F2042F5F7000D1388 /* AddPhotoCell.swift */; };
+		2AB674622043F52C000D1388 /* DelegateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB674612043F52C000D1388 /* DelegateTextField.swift */; };
 		2AC6D5FB202C7AAA00784CD2 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */; };
 		2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */; };
 		2AC6D5FF202C7DD200784CD2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6D5FE202C7DD200784CD2 /* Team.swift */; };
@@ -89,7 +92,7 @@
 		2AD16B9F203DE66E00C565A6 /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */; };
 		2AD16BA0203DE66E00C565A6 /* CreateImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16B99203DE66E00C565A6 /* CreateImageModel.swift */; };
 		2AD16BA1203DE66E00C565A6 /* AddTeamScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD16B9A203DE66E00C565A6 /* AddTeamScreen.storyboard */; };
-		2AD16BA3203DEFCF00C565A6 /* DelegateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16BA2203DEFCF00C565A6 /* DelegateTextField.swift */; };
+		2AD16BA3203DEFCF00C565A6 /* DelegateFloationgLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD16BA2203DEFCF00C565A6 /* DelegateFloationgLabelTextField.swift */; };
 		2AD2D1C8202323E500A00FA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */; };
 		2AD2D1CF202323E500A00FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1CE202323E500A00FA0 /* Assets.xcassets */; };
 		2AD2D1D2202323E500A00FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AD2D1D0202323E500A00FA0 /* LaunchScreen.storyboard */; };
@@ -181,6 +184,9 @@
 		2AAB4F7F2026533D0094312A /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		2AAB4F822026539D0094312A /* SelectRole.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectRole.storyboard; sourceTree = "<group>"; };
 		2AAB4F84202653B10094312A /* SelectRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoleViewController.swift; sourceTree = "<group>"; };
+		2AB6745C2042EB8B000D1388 /* DelegateTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTextView.swift; sourceTree = "<group>"; };
+		2AB6745F2042F5F7000D1388 /* AddPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoCell.swift; sourceTree = "<group>"; };
+		2AB674612043F52C000D1388 /* DelegateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTextField.swift; sourceTree = "<group>"; };
 		2AC6D5FA202C7AAA00784CD2 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		2AC6D5FC202C7BFF00784CD2 /* UIView+DashedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DashedLine.swift"; sourceTree = "<group>"; };
 		2AC6D5FE202C7DD200784CD2 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -198,7 +204,7 @@
 		2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
 		2AD16B99203DE66E00C565A6 /* CreateImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateImageModel.swift; sourceTree = "<group>"; };
 		2AD16B9A203DE66E00C565A6 /* AddTeamScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTeamScreen.storyboard; sourceTree = "<group>"; };
-		2AD16BA2203DEFCF00C565A6 /* DelegateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateTextField.swift; sourceTree = "<group>"; };
+		2AD16BA2203DEFCF00C565A6 /* DelegateFloationgLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateFloationgLabelTextField.swift; sourceTree = "<group>"; };
 		2AD2D1C4202323E500A00FA0 /* Delegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD2D1C7202323E500A00FA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AD2D1CE202323E500A00FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -285,11 +291,14 @@
 		2AA69F2C2023467D00D9ED38 /* SharedUI */ = {
 			isa = PBXGroup;
 			children = (
+				2AB6745E2042F5E0000D1388 /* Cells */,
 				2AA69F2D2023468C00D9ED38 /* RightToLeftSensitiveTextField.swift */,
 				2AA69F36202357D800D9ED38 /* DelegateAbstractViewController.swift */,
 				2AA69F672024CE0400D9ED38 /* ValidatableView.swift */,
 				2AC6D60B202CB34300784CD2 /* DelegateTableViewController.swift */,
-				2AD16BA2203DEFCF00C565A6 /* DelegateTextField.swift */,
+				2AD16BA2203DEFCF00C565A6 /* DelegateFloationgLabelTextField.swift */,
+				2AB674612043F52C000D1388 /* DelegateTextField.swift */,
+				2AB6745C2042EB8B000D1388 /* DelegateTextView.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -398,6 +407,14 @@
 				2AAB4F84202653B10094312A /* SelectRoleViewController.swift */,
 			);
 			path = SelectRoleScreen;
+			sourceTree = "<group>";
+		};
+		2AB6745E2042F5E0000D1388 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2AB6745F2042F5F7000D1388 /* AddPhotoCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		2AD16B8F203DD3EB00C565A6 /* Cells */ = {
@@ -835,6 +852,7 @@
 				2AA69F5D20247BF000D9ED38 /* SignUpScreenRouter.swift in Sources */,
 				2AA69F412023B7AF00D9ED38 /* ApiService.swift in Sources */,
 				2AD6EDB4202C376F0073581F /* SupportEmailService.swift in Sources */,
+				2AB674602042F5F7000D1388 /* AddPhotoCell.swift in Sources */,
 				2A96478D20382791000AFCF9 /* UserDetailsViewController.swift in Sources */,
 				2AD16BA0203DE66E00C565A6 /* CreateImageModel.swift in Sources */,
 				2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */,
@@ -868,7 +886,7 @@
 				2AD6EDAE2029FA310073581F /* SettingsTableViewController.swift in Sources */,
 				2AA69F55202453AF00D9ED38 /* LoginScreenRouter.swift in Sources */,
 				2AD16B9D203DE66E00C565A6 /* AddTeamConfigurator.swift in Sources */,
-				2AD16BA3203DEFCF00C565A6 /* DelegateTextField.swift in Sources */,
+				2AD16BA3203DEFCF00C565A6 /* DelegateFloationgLabelTextField.swift in Sources */,
 				2AD6EDA72029F9E10073581F /* HistoryTableViewController.swift in Sources */,
 				2AA69F432024360600D9ED38 /* FirebaseService.swift in Sources */,
 				2AC6D60A202CAEC000784CD2 /* TeamMemberCell.swift in Sources */,
@@ -880,6 +898,7 @@
 				2AA69F452024364300D9ED38 /* FacebookService.swift in Sources */,
 				2AA69F5920247B7A00D9ED38 /* SignUpScreenInteractor.swift in Sources */,
 				2A90CAC9202735F2008BBCF1 /* IntroCell.swift in Sources */,
+				2AB6745D2042EB8B000D1388 /* DelegateTextView.swift in Sources */,
 				2AD6EDB2202C346C0073581F /* Logger.swift in Sources */,
 				2AC6D5FB202C7AAA00784CD2 /* TeamCell.swift in Sources */,
 				2A1250EE2042DE6A0048249F /* Optional+Empty.swift in Sources */,
@@ -891,6 +910,7 @@
 				2AD6EDBA202C44810073581F /* LoggerObjCHelper.m in Sources */,
 				2AAB4F85202653B10094312A /* SelectRoleViewController.swift in Sources */,
 				2A488DDC203349C500CB0F69 /* SettingsScreenPresenter.swift in Sources */,
+				2AB674622043F52C000D1388 /* DelegateTextField.swift in Sources */,
 				2A1397F5202DDCA20000CB93 /* TaskCell.swift in Sources */,
 				2A488DDA2033499D00CB0F69 /* SettingsScreenInteractor.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,

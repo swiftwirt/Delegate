@@ -7,7 +7,25 @@ import Foundation
 import TOCropViewController
 
 class AddTeamPresenter {
+    
     weak var output: AddTeamViewController!
+    
+    var responderChain: [UIResponder]  {
+        return [output.titleTextField, output.detailsTextView]
+    }
+    
+    var optionalFields: [UIView] {
+        return [output.detailsTextView]
+    }
+    
+    var requiredFields: [UIView] {
+        return [output.titleTextField]
+    }
+    
+    func reloadCollectionView()
+    {
+        output.photosCollectionView.reloadData()
+    }
 
     func presentCropViewController(with image: UIImage?)
     {
@@ -29,8 +47,8 @@ class AddTeamPresenter {
         output.present(controller, animated: true, completion: nil)
     }
 
-    func showImagePicker()
+    func showImagePicker(manager: ImagePickerService)
     {
-        output.applicationManager.imagePickerService.fireImagePicker(in: output)
+        manager.fireImagePicker(in: output)
     }
 }
