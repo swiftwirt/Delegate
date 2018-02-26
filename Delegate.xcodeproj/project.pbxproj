@@ -442,10 +442,10 @@
 			isa = PBXGroup;
 			children = (
 				2AD16B9A203DE66E00C565A6 /* AddTeamScreen.storyboard */,
-				2AD16B96203DE66D00C565A6 /* AddTeamConfigurator.swift */,
+				2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */,
 				2AD16B94203DE66C00C565A6 /* AddTeamInteractor.swift */,
 				2AD16B97203DE66D00C565A6 /* AddTeamPresenter.swift */,
-				2AD16B98203DE66D00C565A6 /* AddTeamViewController.swift */,
+				2AD16B96203DE66D00C565A6 /* AddTeamConfigurator.swift */,
 				2AD16B95203DE66D00C565A6 /* AddTeamModel.swift */,
 				2AD16B99203DE66E00C565A6 /* CreateImageModel.swift */,
 			);

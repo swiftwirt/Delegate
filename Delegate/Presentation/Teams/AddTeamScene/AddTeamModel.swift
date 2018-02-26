@@ -12,8 +12,7 @@ struct CreateTeamModel {
     var dateCreated: Date?
     var teamDetails: String?
     var members: [TeamMember]?
-    var teamPhotoLink: URL?
-    var teamPhoto: UIImage?
+    var teamPhoto: CreateImageModel?
 
     var isValid: Bool {
         return id != nil && !title.isNilOrEmpty && dateCreated != nil && !teamDetails.isNilOrEmpty
@@ -29,7 +28,7 @@ extension CreateTeamModel {
         self.teamDetails = team.details
         self.members = team.members
         if let url = team.logoLink {
-            self.teamPhotoLink = URL(string: url)
+            self.teamPhoto = .url(url)
         }
     }
 }

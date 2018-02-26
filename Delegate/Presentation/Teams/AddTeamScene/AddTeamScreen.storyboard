@@ -77,7 +77,7 @@
                                                                                                 <constraint firstAttribute="height" constant="18" id="1gj-ds-DGm"/>
                                                                                                 <constraint firstAttribute="width" constant="18" id="dcl-IU-WZT"/>
                                                                                             </constraints>
-                                                                                            <state key="normal" image="icon_cross"/>
+                                                                                            <state key="normal" image="delete_image"/>
                                                                                             <connections>
                                                                                                 <action selector="onPressedClearPictureBtn:" destination="8xR-VV-lD2" eventType="touchUpInside" id="U8g-z8-e1q"/>
                                                                                             </connections>
@@ -109,7 +109,7 @@
                                                                         </cells>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cIR-m1-q6o" id="S9r-N0-Kdq"/>
-                                                                            <outlet property="delegate" destination="cIR-m1-q6o" id="xZv-8A-Dln"/>
+                                                                            <outlet property="delegate" destination="cIR-m1-q6o" id="Bi9-kK-n9c"/>
                                                                         </connections>
                                                                     </collectionView>
                                                                 </subviews>
@@ -357,10 +357,10 @@
     </scenes>
     <resources>
         <image name="add_logo_icon" width="32" height="32"/>
+        <image name="delete_image" width="16" height="16"/>
         <image name="field_unknown" width="16" height="16"/>
         <image name="field_valid" width="16" height="16"/>
         <image name="icon_clear_button" width="14" height="14"/>
-        <image name="icon_cross" width="22" height="22"/>
     </resources>
     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

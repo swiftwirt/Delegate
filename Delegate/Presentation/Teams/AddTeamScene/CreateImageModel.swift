@@ -10,7 +10,6 @@ enum CreateImageModel
 {
     case image(UIImage)
     case url(String)
-    case photo(URL)
 }
 
 extension CreateImageModel: Equatable {
@@ -22,8 +21,6 @@ extension CreateImageModel: Equatable {
             return image1 == image2
         case (.url(let url1), .url(let url2)):
             return url1 == url2
-        case (.photo(let photo1), .photo(let photo2)):
-            return photo1 == photo2
         default:
             return false
         }
@@ -39,8 +36,6 @@ extension CreateImageModel: Hashable {
             return image.hashValue
         case .url(let url):
             return url.hashValue
-        case .photo(let photo):
-            return photo.hashValue
         }
     }
 }

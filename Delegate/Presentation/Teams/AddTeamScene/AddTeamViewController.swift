@@ -124,8 +124,10 @@ class AddTeamViewController: DelegateAbstractViewController {
     }
 }
 
-extension AddTeamViewController { // Actions
-    @IBAction private func onAddPhotoPressed() {
+extension AddTeamViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        assert(indexPath.row == 0)
         output.takePhoto()
     }
 }
@@ -140,27 +142,19 @@ extension AddTeamViewController: UICollectionViewDataSource {
         
         if let photoCell = cell as? AddPhotoCell {
             if let teamPhoto = output.model.teamPhoto {
-                //                switch teamPhoto {
-                //                case .image(let image):
-                //                    photoCell.picture = image
-                //                case .photo(let photo):
-                //                    if let url = photo.url {
-                //                        SDWebImageManager.shared().loadImage(with: URL(string: url), options: [], progress: nil, completed: { image, _, _, _, _, _ in
-                //                            photoCell.offerPicture = image
-                //                        })
-                //                    }
-                //                case .url(let url):
-                //                    SDWebImageManager.shared().loadImage(with: URL(string: url), options: [], progress: nil, completed: { image, _, _, _, _, _ in
-                //                        photoCell.offerPicture = image
-                //                    })
-                //                }
-                //            }
-                photoCell.closure = { [weak self] in
-                    self?.output.model.teamPhoto = nil
+                switch teamPhoto {
+                case .image(let image):
+                    photoCell.offerPicture = image
+                case .url(let url):
+                    SDWebImageManager.shared().loadImage(with: URL(string: url), options: [], progress: nil, completed: { image, _, _, _, _, _ in
+                        photoCell.offerPicture = image
+                    })
                 }
             }
+            photoCell.closure = { [weak self] in
+                self?.output.model.teamPhoto = nil
+            }
         }
-        
         return cell
     }
 }
@@ -169,7 +163,7 @@ extension AddTeamViewController: TOCropViewControllerDelegate {
     func cropViewController(_ cropViewController: TOCropViewController, didCropToImage image: UIImage, rect cropRect: CGRect, angle: Int) {
         let targetSize = CGSize(width: 640.0, height: 640.0)
         if let compressedImage = image.resizeImage(targetSize: targetSize) {
-            output.model.teamPhoto = compressedImage
+            output.model.teamPhoto = .image(compressedImage)
         }
         cropViewController.dismiss(animated: true, completion: nil)
     }
