@@ -83,4 +83,9 @@ class ApiService {
         return facebookService.authWithFacebook(viewController: viewController)
     }
     
+    func fetchFBFriends() -> Observable<JSON>
+    {
+        return facebookService.fetchFriends()
+    }
+    
 }

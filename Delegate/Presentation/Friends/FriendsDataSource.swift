@@ -20,6 +20,8 @@ class FriendsDataSource: NSObject, FriendsDataSourceProtocol {
     
     var mode: Mode = .undefined
     
+    fileprivate let applicationManager = ApplicationManager.instance()
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -27,11 +29,11 @@ class FriendsDataSource: NSObject, FriendsDataSourceProtocol {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch mode {
         case .contacts:
-            return 10
+            return applicationManager.userService.contacts.count
         case .contactsFacebook:
             return 5
         default:
-            return 3
+            return 0
         }
     }
     
@@ -40,6 +42,7 @@ class FriendsDataSource: NSObject, FriendsDataSourceProtocol {
         switch mode {
         case .contacts:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.contactCell, for: indexPath) as! ContactCell
+            cell.contact = applicationManager.userService.contacts[indexPath.row]
             return cell
         case .contactsFacebook:
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.contactCell, for: indexPath) as! ContactCell

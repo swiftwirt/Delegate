@@ -17,7 +17,6 @@ enum Mode: Int {
     
     case contacts
     case contactsFacebook
-    case contactsLinkedIn
     
     case delegated
     case assigned

@@ -12,6 +12,7 @@ import FBSDKLoginKit
 import FBSDKShareKit
 import FirebaseAuth
 import RxSwift
+import SwiftyJSON
 
 struct FacebookCredentials {
     var token: String
@@ -85,6 +86,28 @@ class FacebookService {
                     }
                 }
             }
+            return Disposables.create()
+        })
+    }
+    
+    func fetchFriends() -> Observable<JSON>
+    {
+        let params = ["fields": "id, first_name, last_name, name, email, picture"]
+        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: params)
+        let connection = FBSDKGraphRequestConnection()
+        
+        return Observable.create({ (observer) -> Disposable in
+            
+            connection.add(graphRequest) { (connection, result, error) in
+                if error == nil, let data = result as? Data {
+                    let json = JSON(data: data)
+                    observer.onNext(json)
+                } else {
+                    observer.onError(error!)
+                }
+            }
+            connection.start()
+            
             return Disposables.create()
         })
     }

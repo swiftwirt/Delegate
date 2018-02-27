@@ -35,6 +35,14 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         setUpBar()
         self.delegate = self
         fetchSettings()
+        fetchFBFriends()
+    }
+    
+    fileprivate func fetchFBFriends()
+    {
+        applicationManager.apiService.fetchFBFriends().subscribe(onNext: { (json) in
+            print(json)
+        }).disposed(by: disposeBag)
     }
     
     fileprivate func fetchSettings()

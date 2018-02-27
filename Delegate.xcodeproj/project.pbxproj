@@ -17,6 +17,7 @@
 		2A1397F7202E54610000CB93 /* TaskCutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F6202E54610000CB93 /* TaskCutCell.swift */; };
 		2A1397F9202E55190000CB93 /* Date+CalendarInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */; };
 		2A156C6B20446BC800E5E7B0 /* UIViewController+ReturnBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A156C6A20446BC800E5E7B0 /* UIViewController+ReturnBack.swift */; };
+		2A156C6F2045DC0300E5E7B0 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A156C6E2045DC0300E5E7B0 /* Contact.swift */; };
 		2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B1B202519EA003FDA41 /* UserService.swift */; };
 		2A3B9B21202527FD003FDA41 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */; };
 		2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */; };
@@ -129,6 +130,7 @@
 		2A1397F6202E54610000CB93 /* TaskCutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCutCell.swift; sourceTree = "<group>"; };
 		2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CalendarInterval.swift"; sourceTree = "<group>"; };
 		2A156C6A20446BC800E5E7B0 /* UIViewController+ReturnBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ReturnBack.swift"; sourceTree = "<group>"; };
+		2A156C6E2045DC0300E5E7B0 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2A3B9B1B202519EA003FDA41 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2A3B9B22202527FD003FDA41 /* Delegate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Delegate.entitlements; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				2AC6D605202C879D00784CD2 /* Message.swift */,
 				2AC6D603202C85EE00784CD2 /* Task.swift */,
 				2AC6D601202C7ECA00784CD2 /* TeamMember.swift */,
+				2A156C6E2045DC0300E5E7B0 /* Contact.swift */,
 				2A488DD32032FD3100CB0F69 /* Settings.swift */,
 			);
 			path = Models;
@@ -860,6 +863,7 @@
 				2AD16BA0203DE66E00C565A6 /* CreateImageModel.swift in Sources */,
 				2AC6D5FD202C7BFF00784CD2 /* UIView+DashedLine.swift in Sources */,
 				2AC6D602202C7ECA00784CD2 /* TeamMember.swift in Sources */,
+				2A156C6F2045DC0300E5E7B0 /* Contact.swift in Sources */,
 				2AA69F5720247B2E00D9ED38 /* SignUpScreenConfigurator.swift in Sources */,
 				2AC6D5FF202C7DD200784CD2 /* Team.swift in Sources */,
 				2A3B9B2620252F40003FDA41 /* AlertHandler.swift in Sources */,

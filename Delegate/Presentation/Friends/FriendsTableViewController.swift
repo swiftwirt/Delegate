@@ -25,27 +25,12 @@ class FriendsTableViewController: DelegateTableViewController {
         super.viewDidLoad()
         tableViewInitialSetUp()
         observeSegmentedControlValueChanged()
-        refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-    }
-    
-    @objc func refresh(_ sender: Any)
-    {
-        refreshControl?.beginRefreshing()
-        Timer.after(3.0) { [weak self] in
-            self?.reloadWithAnimation(animationDirection: .down)
-            self?.refreshControl?.endRefreshing()
-        }
     }
     
     fileprivate func tableViewInitialSetUp()
     {
         self.currentMode = getCurrentMode(segmentedControlValue: segmentedControll.selectedSegmentIndex)
         dataSource = FriendsDataSource()
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            // Fallback on earlier versions
-        }
         tableView.dataSource = dataSource
         tableView.delegate = self
     }
@@ -63,10 +48,8 @@ class FriendsTableViewController: DelegateTableViewController {
         switch segmentedControlValue {
         case myContactsSelectedIndex:
             return .contacts
-        case fbContactsSelectedIndex:
-            return .contactsFacebook
         default:
-            return .contactsLinkedIn
+            return .contactsFacebook
         }
     }
     

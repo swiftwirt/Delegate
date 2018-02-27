@@ -58,12 +58,12 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "541360456.528532"
+                  timestampString = "541451489.917528"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
                   endingLineNumber = "313"
-                  offsetFromSymbolStart = "2359">
+                  offsetFromSymbolStart = "1752">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -73,12 +73,12 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "541360456.531299"
+                  timestampString = "541451489.920673"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
                   endingLineNumber = "313"
-                  offsetFromSymbolStart = "3188">
+                  offsetFromSymbolStart = "2400">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Services/UserService.swift"
-            timestampString = "540662093.2900341"
+            timestampString = "541451489.523652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "init(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -352,6 +352,54 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "observeSubmitTaps()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Delegate.AddTeamViewController.(observeSubmitTaps in _BA44F9F7D90E8F373D35D3D17B1FC79E)() -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Teams/AddTeamScene/AddTeamViewController.swift"
+                  timestampString = "541451489.999114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; RxSwift.Observable&lt;Delegate.CreateTeamModel&gt; in Delegate.AddTeamViewController.(observeSubmitTaps in _BA44F9F7D90E8F373D35D3D17B1FC79E)() -&gt; ()"
+                  moduleName = "Delegate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Teams/AddTeamScene/AddTeamViewController.swift"
+                  timestampString = "541451490.002141"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/MainScreen/MainTabBarController.swift"
+            timestampString = "541451489.523846"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetchFBFriends()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
