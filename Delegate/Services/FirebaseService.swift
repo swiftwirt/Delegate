@@ -17,6 +17,7 @@ class FirebaseService {
     {
         static let baseUrl = "https://delegate-100d7.firebaseio.com/"
         static let users = "users/"
+        static let teams = "teams/"
         static let settings = "/settings/"
         static let postfix = ".json"
     }
@@ -257,6 +258,26 @@ class FirebaseService {
             return Disposables.create()
         })
         
+    }
+    
+    func updateTeam(_ team: Team) -> Observable<String>
+    {
+        let id = team.id ?? NSUUID().uuidString
+
+        return Observable.create({ (observer) -> Disposable in
+            
+            let usersReference = self.databaseReference.child(EndPoint.teams).child(id)
+            usersReference.updateChildValues(ParametersConfigurator.parametersForTeam(team), withCompletionBlock: { (error, reference) in
+                guard error == nil else {
+                    // TODO: handle expected errors
+                    observer.on(.error(error!))
+                    return
+                }
+                observer.onNext(id)
+                observer.onCompleted()
+            })
+            return Disposables.create()
+        })
     }
     
     static func logOut()

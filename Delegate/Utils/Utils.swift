@@ -205,10 +205,6 @@ enum FirebaseKey: String {
     case details = "details"
     case members = "members"
     case logoLink = "logoLink"
-    
-    case invitePending = "invitePending"
-    case inviteAccepted = "inviteAccepted"
-    case userCreated = "userCreated"
 
     // Team menber
     case name = "name"

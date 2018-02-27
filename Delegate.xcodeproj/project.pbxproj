@@ -16,6 +16,7 @@
 		2A1397F5202DDCA20000CB93 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F4202DDCA20000CB93 /* TaskCell.swift */; };
 		2A1397F7202E54610000CB93 /* TaskCutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F6202E54610000CB93 /* TaskCutCell.swift */; };
 		2A1397F9202E55190000CB93 /* Date+CalendarInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */; };
+		2A156C6B20446BC800E5E7B0 /* UIViewController+ReturnBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A156C6A20446BC800E5E7B0 /* UIViewController+ReturnBack.swift */; };
 		2A3B9B1C202519EA003FDA41 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B1B202519EA003FDA41 /* UserService.swift */; };
 		2A3B9B21202527FD003FDA41 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */; };
 		2A3B9B2420252936003FDA41 /* UITextField+ValidationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B9B2320252936003FDA41 /* UITextField+ValidationMessage.swift */; };
@@ -127,6 +128,7 @@
 		2A1397F4202DDCA20000CB93 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		2A1397F6202E54610000CB93 /* TaskCutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCutCell.swift; sourceTree = "<group>"; };
 		2A1397F8202E55190000CB93 /* Date+CalendarInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CalendarInterval.swift"; sourceTree = "<group>"; };
+		2A156C6A20446BC800E5E7B0 /* UIViewController+ReturnBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ReturnBack.swift"; sourceTree = "<group>"; };
 		2A3B9B1B202519EA003FDA41 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2A3B9B20202527FD003FDA41 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2A3B9B22202527FD003FDA41 /* Delegate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Delegate.entitlements; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				2A488DDF2033729B00CB0F69 /* UIColor+Line.swift */,
 				2AFB4F092034E89D00824D12 /* UIImage+Resize.swift */,
 				2A1250ED2042DE6A0048249F /* Optional+Empty.swift */,
+				2A156C6A20446BC800E5E7B0 /* UIViewController+ReturnBack.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -913,6 +916,7 @@
 				2AB674622043F52C000D1388 /* DelegateTextField.swift in Sources */,
 				2A1397F5202DDCA20000CB93 /* TaskCell.swift in Sources */,
 				2A488DDA2033499D00CB0F69 /* SettingsScreenInteractor.swift in Sources */,
+				2A156C6B20446BC800E5E7B0 /* UIViewController+ReturnBack.swift in Sources */,
 				2AA69F6D2024D85B00D9ED38 /* ForgotPasswordViewController.swift in Sources */,
 				2AC6D60E202CC16000784CD2 /* HeaderCell.swift in Sources */,
 				2AD6EDA42029F9850073581F /* TasksTableViewController.swift in Sources */,

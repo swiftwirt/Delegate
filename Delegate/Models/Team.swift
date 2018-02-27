@@ -9,12 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-enum TeamState: String {
-    case invitePending = "invitePending"
-    case inviteAccepted = "inviteAccepted"
-    case userCreated = "userCreated"
-}
-
 struct Team: Equatable {
     
     static func ==(lhs: Team, rhs: Team) -> Bool
@@ -22,13 +16,18 @@ struct Team: Equatable {
         return lhs.id == rhs.id
     }
     
-    var id: String!
+    var id: String?
     var dateCreated: Date!
-    var state: TeamState?
     var title: String?
     var details: String?
     var members: [TeamMember]?
     var logoLink: String?
+    
+    init(with model: CreateTeamModel) {
+        self.dateCreated = Date()
+        self.title = model.title
+        self.details = model.teamDetails
+    }
     
     init?(with json: JSON)
     {
@@ -45,10 +44,6 @@ struct Team: Equatable {
         self.title = json[FirebaseKey.title.rawValue].string
         self.details = json[FirebaseKey.details.rawValue].string
         self.logoLink = json[FirebaseKey.logoLink.rawValue].string
-        
-        if let state = json[FirebaseKey.state.rawValue].string {
-            self.state = TeamState(rawValue: state)
-        }
         
         guard let membersArray = json[FirebaseKey.members.rawValue].array else { return }
         

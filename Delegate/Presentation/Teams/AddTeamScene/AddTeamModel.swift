@@ -15,7 +15,7 @@ struct CreateTeamModel {
     var teamPhoto: CreateImageModel?
 
     var isValid: Bool {
-        return id != nil && !title.isNilOrEmpty && dateCreated != nil && !teamDetails.isNilOrEmpty
+        return !title.isNilOrEmpty
     }
 }
 

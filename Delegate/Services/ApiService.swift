@@ -71,6 +71,11 @@ class ApiService {
         return firebaseService.saveAdded(avatar: avatar)
     }
     
+    func updateTeam(_ team: Team) -> Observable<String>
+    {
+        return firebaseService.updateTeam(team)
+    }
+    
     // Facebook
     
     func authWithFacebook(viewController: UIViewController) -> Observable<(FacebookCredentials?, String?)>

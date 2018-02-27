@@ -58,7 +58,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "541330310.368152"
+                  timestampString = "541360456.528532"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
@@ -73,7 +73,7 @@
                   moduleName = "Delegate"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dmitryivashin/Desktop/Delegate/Delegate/Presentation/Registration/SignUpScreen/SignUpScreenInteractor.swift"
-                  timestampString = "541330310.3710279"
+                  timestampString = "541360456.531299"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
@@ -281,22 +281,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Delegate/Services/UserService.swift"
-            timestampString = "540662093.289875"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "init(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Delegate/Presentation/Settings/UserDetails/UserDetailsViewController.swift"
             timestampString = "540662093.289939"
             startingColumnNumber = "9223372036854775807"
@@ -304,22 +288,6 @@
             startingLineNumber = "115"
             endingLineNumber = "115"
             landmarkName = "fillInFields()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Delegate/Services/UserService.swift"
-            timestampString = "540662093.289983"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "encode(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -346,12 +314,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Delegate/Services/FirebaseService.swift"
-            timestampString = "540662093.290084"
+            timestampString = "541360456.24224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "updateSettings(settings:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Teams/AddTeamScene/AddTeamViewController.swift"
+            timestampString = "541360456.2423019"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "observeSubmitTaps()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Delegate/Presentation/Teams/AddTeamScene/AddTeamViewController.swift"
+            timestampString = "541360456.242352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "observeSubmitTaps()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

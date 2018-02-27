@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class AddTeamViewController: DelegateAbstractViewController {
     
-    private enum ReuseIdentifier
+    fileprivate enum ReuseIdentifier
     {
         static let cell = "AddPhotoCell"
     }
@@ -37,12 +37,14 @@ class AddTeamViewController: DelegateAbstractViewController {
         configurePlaceholders()
     }
     
-    fileprivate func configurePlaceholders() {
+    fileprivate func configurePlaceholders()
+    {
         titleTextField.placeholder = Strings.title
         detailsTextView.placeholder = Strings.details
     }
     
-    func prepareForEditing(team: Team) {
+    func prepareForEditing(team: Team)
+    {
         loadViewIfNeeded()
         
         output.model = CreateTeamModel(team: team)
@@ -62,59 +64,48 @@ class AddTeamViewController: DelegateAbstractViewController {
         }).disposed(by: disposeBag)
     }
     
-    private func observeSubmitTaps() {
-        //        createButton.rx.tap.takeUntil(self.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<CreateTeamModel> in
-        //            guard self.model.isValid else {
-        //                self.showValidationErrors()
-        //                return Observable.empty()
-        //            }
-        //
-        //            HUD.show(.progress)
-        //
-        //            if let photo = self.model.teamPhoto, case .image(let image) = photo {
-        //                return self.applicationManager.apiService.uploadteamPhoto(image).takeUntil(self.rx.deallocated).map { [unowned self] json in
-        //                    guard let json = json, let url = json[JSONKey.url].string else {
-        //                        throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Failed to upload photo"])
-        //                    }
-        //
-        //                    self.model.teamPhoto = .url(url)
-        //                    return self.model
-        //                }.catchError { error in
-        //                    HUD.flash(.labeledError(title: BetoshookErrorMessage.error, subtitle: error.localizedDescription))
-        //                    return Observable.empty()
-        //                }
-        //            } else {
-        //                return Observable.just(self.model)
-        //            }
-        //        }.takeUntil(self.rx.deallocated).flatMapLatest { [unowned self] model -> Observable<JSON> in
-        //            guard model.isValid else {
-        //                self.showValidationErrors()
-        //                return Observable.empty()
-        //            }
-        //
-        //            let team = Team(with: model)
-        //
-        //            let requestObservable: Observable<JSON>
-        //            if team.id != nil {
-        //                requestObservable = self.applicationManager.apiService.editteam(team)
-        //            } else {
-        //                team.isDefault = self.applicationManager.userService.user?.betoparkInfo?.teams.filter { $0.isDefault == true }.count == 0
-        //                requestObservable = self.applicationManager.apiService.AddTeam(team)
-        //            }
-        //
-        //            return requestObservable.catchError { error in
-        //                HUD.flash(.labeledError(title: BetoshookErrorMessage.error, subtitle: error.localizedDescription))
-        //                return Observable.empty()
-        //            }
-        //        }.subscribe(onNext: { [weak self] json in
-        //            self?.applicationManager.userService.user?.betoparkInfo?.updateUserteams(withProfile: json)
-        //            HUD.flash(.success)
-        //            self?.updateProfileActiveIfNeeded()
-        //            self?.returnBack()
-        //        }).disposed(by: disposeBag)
+    fileprivate func observeSubmitTaps()
+    {
+        createButton.rx.tap.takeUntil(self.rx.deallocated).flatMapLatest { [unowned self] () -> Observable<CreateTeamModel> in
+            guard self.output.model.isValid else {
+                self.showValidationErrors()
+                return Observable.empty()
+            }
+            
+            HUD.show(.progress)
+            
+            if let photo = self.output.model.teamPhoto, case .image(let image) = photo {
+                return self.output.applicationManager.apiService.saveAdded(avatar: image).takeUntil(self.rx.deallocated).map { [unowned self] link in
+                    
+                    self.output.model.teamPhoto = .url(link)
+                    return self.output.model
+                    }.catchError { error in
+                        HUD.flash(.labeledError(title: ErrorMessage.error, subtitle: error.localizedDescription))
+                        return Observable.empty()
+                }
+            } else {
+                return Observable.just(self.output.model)
+            }
+            }.takeUntil(self.rx.deallocated).flatMapLatest { [unowned self] model -> Observable<String> in
+                guard model.isValid else {
+                    self.showValidationErrors()
+                    return Observable.empty()
+                }
+                
+                let team = Team(with: self.output.model)
+                
+                return self.output.applicationManager.apiService.updateTeam(team).catchError { error in
+                    HUD.flash(.labeledError(title: ErrorMessage.error, subtitle: error.localizedDescription))
+                    return Observable.empty()
+                }
+            }.subscribe(onNext: { [weak self] (id) in
+                HUD.flash(.success)
+                self?.returnBack()
+            }).disposed(by: disposeBag)
     }
     
-    private func showValidationErrors() {
+    fileprivate func showValidationErrors()
+    {
         let requiredFields: [DelegateTextField] = [titleTextField]
         for textField in requiredFields {
             if !textField.hasText {
